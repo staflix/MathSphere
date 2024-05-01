@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+}
+
+.layout {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, #fff 0%, #ffd59c 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card {
+    margin: 193.78px 231.11px;
+    border-radius: 35.556px;
+    box-shadow: -4.444px 4.444px 8.889px 0px rgba(0, 0, 0, 0.25), 4.444px -4.444px 8.889px 0px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    width: 818px;
+    max-width: 100%;
+    gap: 20px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    flex-grow: 1;
+}
+
+.login-title {
+    margin-top: 87px;
+    color: #1f1f1f;
+    text-align: center;
+    font: 700 36px/67% Inter, sans-serif;
+}
+
+.input-container {
+    width: 300px;
+    margin-top: 20px;
+    border-width: 0;
+    border-radius: 10px;
+    background-color: rgba(238, 238, 238, 1);
+    padding: 10px;
+    margin-left: 20px;
+}
+.input-container:focus-visible{
+    outline: none;
+}
+
+
+.btn-primary {
+    border: 0;
+    width: 150px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.promo-section {
+    height: 516px;
+    width: 410px;
+    border-radius: 133.333px 35.556px 35.556px 133.333px;
+    background-color: #ffb053;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* для мобилки */
+@media (min-width: 320px) and (max-width: 768px) {
+    .promo-section {
+        display: none;
+    }
+
+    .card {
+        margin: 0 120px;
+    }
+
+    .btn-primary {
+        margin-bottom: 20px;
+    }
+
+    .mobile-button {
+        width: 150px;
+        height: 40px;
+        background-color: #fba025;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        border-style: solid;
+        border-width: 0;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .mobile-button:hover {
+        background-color: #ff960e;
+        transition: background-color 0.5s ease;
+    }
+
+    .mobile-button:active {
+        background-color: #ff9300;
+        transition: background-color 0.5s ease;
+    }
+}
+
+/* для пк */
+@media (min-width: 1200px) {
+    .mobile-button {
+        display: none;
+    }
+}
+
+/* для планшетов */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .mobile-button {
+        display: none;
+    }
+
+    .input-container {
+        width: 300px;
+    }
+}
+
+.hello-message {
+    font: 36px "Inter Semi Bold", sans-serif;
+    margin-top: 176px;
+}
+
+.register-message {
+    font: 15px "Inter Medium", sans-serif;
+    margin-top: 33px;
+}
+
+.register-button {
+    width: 150px;
+    height: 40px;
+    box-sizing: border-box;
+    margin-top: 31px;
+    background-color: #fba025;
+    color: white;
+    border-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 2px;
+    text-align: center;
+}
+
+.register-button:hover {
+    background-color: #ff960e;
+    transition: background-color 0.5s ease;
+}
+
+.register-button:active {
+    background-color: #ff9300;
+    transition: background-color 0.5s ease;
+}
