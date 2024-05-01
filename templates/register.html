@@ -1,58 +1,29 @@
 {% extends "base.html" %}
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/register.css') }}"/>
+{% endblock %}
 
 {% block content %}
-    <title> {{ title }}</title>
-    <h1>Регистрация</h1>
-    <form action="" method="post">
-        {{ form.hidden_tag() }}
-        <p>
-            Фамилия<br>
-            {{ form.surname(class="form-control", type="string") }}<br>
-            {% for error in form.surname.errors %}
-                <div class="alert alert-danger" role="alert">
-                    {{ error }}
-                </div>
-            {% endfor %}
-        </p>
-        <p>
-            Имя<br>
-            {{ form.name(class="form-control", type="string") }}<br>
-            {% for error in form.name.errors %}
-                <div class="alert alert-danger" role="alert">
-                    {{ error }}
-                </div>
-            {% endfor %}
-        </p>
-        <p>
-            Почта<br>
-            <p>{{ message_email }}</p>
-            {{ form.email(class="form-control", type="email") }}<br>
-            {% for error in form.email.errors %}
-                <div class="alert alert-danger" role="alert">
-                    {{ error }}
-                </div>
-            {% endfor %}
-        </p>
-        <p>
-            Пароль<br>
-            <p> {{ message_password}}</p>
-            {{ form.password(class="form-control", type="password") }}<br>
-            {% for error in form.password.errors %}
-                <div class="alert alert-danger" role="alert">
-                    {{ error }}
-                </div>
-            {% endfor %}
-        </p>
-        <p>
-            Подтверждение пароля<br>
-            {{ form.password_confirmation(class="form-control", type="password") }}<br>
-            {% for error in form.password_confirmation.errors %}
-                <div class="alert alert-danger" role="alert">
-                    {{ error }}
-                </div>
-            {% endfor %}
-        </p>
-        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
-        <div>{{ message }}</div>
-    </form>
+<div class="layout">
+    <div class="card">
+        <section class="promo-section">
+            <h1 class="hello-message">Тут что-то</h1>
+            <p class="register-message">Уже зарегистрированы?</p>
+            <button class="register-button" onclick="location.href='/login'">Войти</button>
+        </section>
+        <section class="form-section">
+            <h2 class="login-title">Регистрация</h2>
+            <form action="" method="post" class="form-section">
+                {{ form.surname(class="input-container", type="text") }}
+                {{ form.name(class="input-container", type="text") }}
+                {{ form.email(class="input-container", type="email") }}
+                {{ form.password(class="input-container", type="password") }}
+                {{ form.password_confirmation(class="input-container", type="password") }}
+                {{ form.submit(type="submit", class="btn btn-primary") }}
+                <button class="mobile-button" onclick="location.href='/login'">Войти</button>
+                {{ message }}
+            </form>
+        </section>
+    </div>
+</div>
 {% endblock %}
