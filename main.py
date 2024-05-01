@@ -1,11 +1,9 @@
 # НУЖНО УСТАНОВИТЬ requirements.txt командой 'pip install -r requirements.txt'
 from flask_login import LoginManager, login_user, login_required, logout_user
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, EmailField
-from wtforms.validators import DataRequired
-from flask_wtf import FlaskForm
 from flask import Flask, render_template, redirect
 from forms.loginForm import LoginForm
 from forms.registerForm import RegisterForm
+from forms.simplearithmeticForm import SimpleArithmeticForm
 from data import db_session
 from sqlalchemy import select
 from data.users import User
@@ -66,9 +64,7 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    print(form.submit.data)
     if form.submit.data:
-        print(1)
         db_session.global_init("db/MathSphereBase.db")
         db_sess = db_session.create_session()
         user = db_sess.query(User).filter(User.email == form.email.data).first()
@@ -115,43 +111,6 @@ def simple_arithmetic():
             status = 'Решено неверно!'
             return render_template('simple_arithmetic.html', example=example, status=status, form=form)
     return render_template('simple_arithmetic.html', example=example, status=status, form=form)
-
-
-# форма для логина
-class LoginForm(FlaskForm):
-    email = EmailField('Почта', validators=[DataRequired()])
-    password = PasswordField('Пароль', validators=[DataRequired()])
-    remember_me = BooleanField('Запомнить меня')
-    submit = SubmitField('Войти')
-
-
-# форма для регистрации
-class RegisterForm(FlaskForm):
-    surname = StringField('Фамилия', validators=[DataRequired()])
-    name = StringField('Имя', validators=[DataRequired()])
-    email = EmailField('Почта', validators=[DataRequired()])
-    password = PasswordField('Пароль', validators=[DataRequired()])
-    password_confirmation = PasswordField('Пароль', validators=[DataRequired()])
-    submit = SubmitField('Зарегестрироваться')
-
-
-# форма менюшки
-class MenuForm(FlaskForm):
-    trainer = SubmitField('Тренажер', validators=[DataRequired()])
-    # здесь добавить кнопочки меню
-
-
-# форма тренажера
-class TrainerForm(FlaskForm):
-    simple_arithmetic = SubmitField('Простая арифметика', validators=[DataRequired()])  # пример 23 + 43 =
-    # здесь добавить разные виды математических действий
-
-
-# форма для режима простая арифметика
-class SimpleArithmeticForm(FlaskForm):
-    answer = StringField('Ответить', validators=[DataRequired()])
-    check = SubmitField('Проверить')
-    next = SubmitField('Продолжить')
 
 
 if __name__ == '__main__':
