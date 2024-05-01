@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+{% if current_user.is_authenticated %}
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+    <p> {{ example }}</p>
+    <p>
+        <br>{{ form.answer(class="form-control") }}<br>
+            {% for error in form.answer.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        {% if status != 'Решено верно!' %}
+    <p>{{ form.check(type="submit", class="btn btn-primary") }}</p>
+        {% endif %}
+        {% if status == 'Решено верно!' %}
+        <p>{{ form.next(type="submit", class="btn btn-primary") }}</p>
+    {% endif %}
+    <p>{{ status }}</p>
+    </form>
+{% endif %}
+{% endblock %}
