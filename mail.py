@@ -1,4 +1,5 @@
 import smtplib
+from email.mime.text import MIMEText
 
 
 def send_email(recipient, subject, body):
@@ -8,16 +9,17 @@ def send_email(recipient, subject, body):
     TEXT = body
     message = """From: %s\nTo: %s\nSubject: %s\n\n%s
     """ % (FROM, ", ".join(TO), SUBJECT, TEXT)
+    msg = MIMEText(message, 'plain', 'utf-8')
     try:
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.ehlo()
         server.starttls()
         server.login(FROM, 'fubt tijc dfgz zzlw')
-        server.sendmail(FROM, TO, message)
+        server.sendmail(FROM, TO, msg.as_string())
         server.close()
-    except Exception:
-        print('Ошибка отправки!')
+    except Exception as e:
+        print('Ошибка отправки!', e)
 
 
-send_email("почта пользователя", 'Сброс пароля MathUp!', 'текст сброса пароля')
+send_email("staflix@yandex.ru", 'Сброс пароля MathUp!', 'Приветик')
 
