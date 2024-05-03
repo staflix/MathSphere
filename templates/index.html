@@ -1,4 +1,96 @@
 {% extends "base.html" %}
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}"/>
+{% endblock %}
 {% block content %}
-    <a class="btn btn-primary " href="/trainer">Тренажер</a>
+<header>
+    <div class="logo">
+        <a href="/"><img src="{{ url_for('static', filename='media/logo.png') }}" alt="Mathup"></a>
+    </div>
+
+</header>
+<main>
+    <section class="first-section">
+        <div class="left-content">
+            <h1 class="reg-title">Здесь вы можете прокачать свои навыки счета!</h1>
+            <p class="reg-subtitle">Mathup — удобная образовательная платформа, где можно в форматах тренироваться и
+                изучать математику!</p>
+            <button class="register-button" onclick="">Зарегистрироваться</button>
+        </div>
+        <div class="right-content">
+            <h2 class="login-title">Вход</h2>
+            <form>
+                <input type="text" placeholder="Логин">
+                <input type="password" placeholder="Пароль">
+                <button type="submit">Войти</button>
+            </form>
+            <p>Забыли пароль?</p>
+        </div>
+    </section>
+    <section class="carousel" aria-label="Gallery">
+        <ol class="carousel__viewport">
+            <li id="carousel__slide1"
+                tabindex="0"
+                class="carousel__slide">
+                <div class="carousel__snapper">
+                    <a href="#carousel__slide4"
+                       class="carousel__prev">Go to last slide</a>
+                    <a href="#carousel__slide2"
+                       class="carousel__next">Go to next slide</a>
+                </div>
+            </li>
+            <li id="carousel__slide2"
+                tabindex="0"
+                class="carousel__slide">
+                <div class="carousel__snapper"></div>
+                <a href="#carousel__slide1"
+                   class="carousel__prev">Go to previous slide</a>
+                <a href="#carousel__slide3"
+                   class="carousel__next">Go to next slide</a>
+            </li>
+            <li id="carousel__slide3"
+                tabindex="0"
+                class="carousel__slide">
+                <div class="carousel__snapper"></div>
+                <a href="#carousel__slide2"
+                   class="carousel__prev">Go to previous slide</a>
+                <a href="#carousel__slide4"
+                   class="carousel__next">Go to next slide</a>
+            </li>
+            <li id="carousel__slide4"
+                tabindex="0"
+                class="carousel__slide">
+                <div class="carousel__snapper"></div>
+                <a href="#carousel__slide3"
+                   class="carousel__prev">Go to previous slide</a>
+                <a href="#carousel__slide1"
+                   class="carousel__next">Go to first slide</a>
+            </li>
+        </ol>
+        <aside class="carousel__navigation">
+            <ol class="carousel__navigation-list">
+                <li class="carousel__navigation-item">
+                    <a href="#carousel__slide1"
+                       class="carousel__navigation-button">Go to slide 1</a>
+                </li>
+                <li class="carousel__navigation-item">
+                    <a href="#carousel__slide2"
+                       class="carousel__navigation-button">Go to slide 2</a>
+                </li>
+                <li class="carousel__navigation-item">
+                    <a href="#carousel__slide3"
+                       class="carousel__navigation-button">Go to slide 3</a>
+                </li>
+                <li class="carousel__navigation-item">
+                    <a href="#carousel__slide4"
+                       class="carousel__navigation-button">Go to slide 4</a>
+                </li>
+            </ol>
+        </aside>
+    </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/carousel.js') }}"></script>
 {% endblock %}

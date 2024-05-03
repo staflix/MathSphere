@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/study.css') }}"/>
+{% endblock %}
+{% block content %}
+<main class="main-page">
+    <header>
+        <div class="logo">
+            <a href="#"><img src="logo.png" alt="Mathup"></a>
+        </div>
+        <div class="profile">
+            <img src="profile-icon.png" alt="Профиль">
+            <div class="profile-box">
+                <!-- Контент профиля здесь -->
+            </div>
+        </div>
+    </header>
+
+    <section class="main-content">
+        <div class="category-row">
+            <div class="category-item featured-item"></div>
+            <div class="category-item"></div>
+            <div class="category-item"></div>
+            <div class="category-item"></div>
+        </div>
+
+        <div class="category-row">
+            <div class="category-item"></div>
+            <div class="category-item"></div>
+            <div class="category-item"></div>
+            <div class="category-item"></div>
+        </div>
+
+        <div class="category-row">
+            <div class="category-item"></div>
+            <div class="category-item"></div>
+            <div class="category-item"></div>
+            <div class="category-item"></div>
+        </div>
+    </section>
+</main>
+{% endblock %}
