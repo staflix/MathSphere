@@ -9,16 +9,9 @@
         <section class="form-section">
             <h2 class="login-title">Вход</h2>
             <form action="" method="post" class="form-section">
-                {% if message_mode == 'почта' %}
-                    {{ form.hidden_tag() }}
-                    {{ form.email(class="input-container", type="email") }}
-                    {{ form.input_password(type="submit", class="btn btn-primary") }}
-                {% elif message_mode == 'пароль' %}
-                    {{ form.email(class="input-container", type="email") }}
-                    {{ form.password(class="input-container", type="password") }}
-                    <a href="/reset_password?email={{ email }}">Забыли пароль?</a>
-                    {{ form.submit(type="submit", class="btn btn-primary") }}
-                {% endif %}
+                {{ form.hidden_tag() }}
+                {{ form.email(class="input-container", type="email") }}
+                {{ form.input_password(type="submit", class="btn btn-primary") }}
                 <button class="mobile-button" onclick="location.href='/register'">Зарегистрироваться</button>
                 {{ message }}
             </form>
