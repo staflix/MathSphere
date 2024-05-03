@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9581e8d-8671-4625-abf9-0f66b20bdc88" name="Changes" comment="add base mobile, connect db">
-      <change beforePath="$PROJECT_DIR$/.idea/MathSphere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MathSphere.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d9581e8d-8671-4625-abf9-0f66b20bdc88" name="Changes" comment="garbage">
+      <change afterPath="$PROJECT_DIR$/!mobile_server/data/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/!mobile_server/main-mobile.py" beforeDir="false" afterPath="$PROJECT_DIR$/!mobile_server/main-mobile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,13 +185,22 @@
       <option name="project" value="LOCAL" />
       <updated>1714754241435</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="garbage">
+      <option name="closed" value="true" />
+      <created>1714754417122</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714754417122</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add handler error 404" />
     <MESSAGE value="reg user 123@123.123 123" />
     <MESSAGE value="add base mobile, connect db" />
-    <option name="LAST_COMMIT_MESSAGE" value="add base mobile, connect db" />
+    <MESSAGE value="garbage" />
+    <option name="LAST_COMMIT_MESSAGE" value="garbage" />
   </component>
 </project>
