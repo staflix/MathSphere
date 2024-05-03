@@ -11,12 +11,12 @@ blueprint = flask.Blueprint(
     template_folder='templates'
 )
 
-message = 'почта'
+email = None
 
 
 @blueprint.route('/login', methods=['GET', 'POST'])
-def login():
-    global message, email
+def login_email():
+    global email
     form = LoginForm()
 
     if form.input_password.data:
@@ -27,15 +27,25 @@ def login():
         db_sess.close()
 
         if user:
-            message = 'пароль'
-            email = form.email.data
-            return render_template('login.html', message_mode='пароль',
-                                   form=form, email=email)
+
+            email = user.email
+            return redirect('/login/password')
+
         else:
-            return render_template('login.html',
-                                   message="Аккаунта с такой почтой не существует!",
-                                   message_mode='пароль', form=form, email=email)
-    if form.submit.data:
+
+            return render_template('login_email.html',
+                                   message="Аккаунта с такой почтой не существует!", form=form)
+
+    return render_template('login_email.html', form=form)
+
+
+@blueprint.route('/login/password', methods=['GET', 'POST'])
+def login_password():
+    global email
+    form = LoginForm()
+    form.email.data = email
+
+    if form.validate_on_submit():
 
         db_session.global_init("db/MathSphereBase.db")
         db_sess = db_session.create_session()
@@ -43,12 +53,12 @@ def login():
         db_sess.close()
 
         if user and user.check_password(form.password.data):
+
             login_user(user, remember=form.remember_me.data)
             return redirect("/")
 
         else:
-            render_template('login.html', form=form, message='Неправильный пароль',
-                            message_mode='пароль',
-                            email=email)
+            return render_template('login_password.html', form=form, message='Неправильный пароль'
+                                   , email=email)
 
-    return render_template('login.html', form=form, message_mode='почта')
+    return render_template('login_password.html', form=form, email=email)
