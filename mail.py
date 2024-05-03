@@ -1,21 +1,19 @@
 import smtplib
 from email.mime.text import MIMEText
+from email.header import Header
 
 
 def send_email(recipient, subject, body):
-    FROM = 'mathup.help@gmail.com'
-    TO = recipient if isinstance(recipient, list) else [recipient]
-    SUBJECT = subject
-    TEXT = body
-    message = """From: %s\nTo: %s\nSubject: %s\n\n%s
-    """ % (FROM, ", ".join(TO), SUBJECT, TEXT)
-    msg = MIMEText(message, 'plain', 'utf-8')
+    msg = MIMEText(body, 'plain', 'utf-8')
+    msg['Subject'] = Header(subject, 'utf-8')
+    msg['From'] = 'mathup.help@gmail.com'
+    msg['To'] = recipient
     try:
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.ehlo()
         server.starttls()
-        server.login(FROM, 'fubt tijc dfgz zzlw')
-        server.sendmail(FROM, TO, msg.as_string())
+        server.login('mathup.help@gmail.com', 'fubt tijc dfgz zzlw')
+        server.sendmail(msg['From'], msg['To'], msg.as_string())
         server.close()
     except Exception as e:
         print('Ошибка отправки!', e)
