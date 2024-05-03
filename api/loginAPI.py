@@ -11,18 +11,54 @@ blueprint = flask.Blueprint(
     template_folder='templates'
 )
 
+email = None
+
 
 @blueprint.route('/login', methods=['GET', 'POST'])
-def login():
+def login_email():
+    global email
     form = LoginForm()
-    if form.submit.data:
+
+    if form.input_password.data:
+
         db_session.global_init("db/MathSphereBase.db")
         db_sess = db_session.create_session()
         user = db_sess.query(User).filter(User.email == form.email.data).first()
+        db_sess.close()
+
+        if user:
+
+            email = user.email
+            return redirect('/login/password')
+
+        else:
+
+            return render_template('login_email.html',
+                                   message="Аккаунта с такой почтой не существует!", form=form)
+
+    return render_template('login_email.html', form=form)
+
+
+@blueprint.route('/login/password', methods=['GET', 'POST'])
+def login_password():
+    global email
+    form = LoginForm()
+    form.email.data = email
+
+    if form.validate_on_submit():
+
+        db_session.global_init("db/MathSphereBase.db")
+        db_sess = db_session.create_session()
+        user = db_sess.query(User).filter(User.email == email).first()
+        db_sess.close()
+
         if user and user.check_password(form.password.data):
+
             login_user(user, remember=form.remember_me.data)
             return redirect("/")
-        return render_template('login.html',
-                               message="Неправильный логин или пароль",
-                               form=form)
-    return render_template('login.html', title='Авторизация', form=form)
+
+        else:
+            return render_template('login_password.html', form=form, message='Неправильный пароль'
+                                   , email=email)
+
+    return render_template('login_password.html', form=form, email=email)
