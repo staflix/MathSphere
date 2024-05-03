@@ -40,6 +40,12 @@ def trainer():
     return render_template('trainer.html')
 
 
+# обработка ошибки 404
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html')
+
+
 def main():
     app.register_blueprint(registerAPI.blueprint)
     app.register_blueprint(loginAPI.blueprint)
