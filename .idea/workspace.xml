@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9581e8d-8671-4625-abf9-0f66b20bdc88" name="Changes" comment="garbage">
-      <change afterPath="$PROJECT_DIR$/!mobile_server/data/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/!mobile_server/main-mobile.py" beforeDir="false" afterPath="$PROJECT_DIR$/!mobile_server/main-mobile.py" afterDir="false" />
+    <list default="true" id="d9581e8d-8671-4625-abf9-0f66b20bdc88" name="Changes" comment="add page / which get user.name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +191,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714754417122</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="get information from the table">
+      <option name="closed" value="true" />
+      <created>1714758699540</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714758699540</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add page / which get user.name">
+      <option name="closed" value="true" />
+      <created>1714818004162</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714818004162</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -201,6 +215,8 @@
     <MESSAGE value="reg user 123@123.123 123" />
     <MESSAGE value="add base mobile, connect db" />
     <MESSAGE value="garbage" />
-    <option name="LAST_COMMIT_MESSAGE" value="garbage" />
+    <MESSAGE value="get information from the table" />
+    <MESSAGE value="add page / which get user.name" />
+    <option name="LAST_COMMIT_MESSAGE" value="add page / which get user.name" />
   </component>
 </project>
