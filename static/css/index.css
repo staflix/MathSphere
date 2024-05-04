@@ -1,29 +1,23 @@
-/* Reset стилей */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* Общие стили */
 body {
     font-family: 'Manrope', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #343a40;
 }
 
 /* Стили для header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    padding: 10px 20%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-    height: 50px;
-}
-
-.profile img {
-    height: 30px;
+    height: 37px;
 }
 
 /* Стили для main */
@@ -34,344 +28,237 @@ main {
 /* Стили для первого section */
 .first-section {
     display: flex;
-    justify-content: space-between;
-
-    background-color: #FFA200FF;
+    flex-wrap: wrap;
+    padding: 40px 40px 40px 56px;
+    background-color: #fba025;
+    max-width: 60%;
+    margin: 5% auto;
     border-radius: 32px;
-    padding: 40px;
-    width: 1224px;
-    height: 490px;
-    margin: 0 auto;
 }
 
 .left-content {
-    display: grid;
-    color: #ffffff;
-    width: 50%;
-    gap: 20px;
+    flex: 1;
+    max-width: 40%;
+
 }
 
 .reg-title {
-    margin-top: 40px;
-    font-size: 48px;
+    font-size: 2.5rem;
+    margin-top: 0px;
+    color: white;
 }
 
 .reg-subtitle {
-    font-size: 18px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #333;
 }
 
 .register-button {
-    width: 50%;
-
+    width: 100%;
+    max-width: 300px;
+    height: 50px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Manrope', sans-serif;
+    color: black;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.right-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.register-button:hover {
+    background-color: #f4e9f6;
+}
+.dino{
+    width: 15%;
+}
+.dino-image{
+    flex: 1;
+    position: relative;
     width: 100%;
-    max-width: 400px; /* Ширина блока входа */
-    padding: 32px;
-    background-color: #ffffff;
+    margin-left: 16px;
+}
+.right-content {
+    flex: 1;
+    width: 30%;
+    text-align: center;
+    background: white;
+    padding: 20px;
     border-radius: 20px;
-    margin-left: 20px; /* Отступ от левого блока */
 }
 
 .login-title {
+    font-size: 1.8rem;
     margin-bottom: 20px;
-    font-size: 24px;
+    color: black;
 }
 
-.right-content form {
-    width: 100%;
+.right-content form input[type="email"],
+.right-content form input[type="password"] {
+    width: calc(100% - 40px);
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
 }
 
-.right-content form input,
-.right-content form button {
-    margin-bottom: 10px;
-}
-
-.right-content form button {
-    background-color: #FFA200FF;
-    color: white;
+.right-content form input[type="submit"] {
+    width: calc(100% - 20px);
+    padding: 15px;
     border: none;
+    border-radius: 8px;
+    background-color: #f6269a;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.right-content form input[type="submit"]:hover {
+    background-color: #d80581;
 }
 
 .right-content p {
     margin-top: 10px;
+    font-size: 1.1rem;
 }
 
 /* Стили для второго section */
-.second-section {
-    /* Стили для карусели здесь */
+.carousel-section {
+    text-align: center;
+    padding: 40px 20px;
+
 }
 
-form {
+.carousel-section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ffa500;
+}
+
+.carousel-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* или любое другое значение, в зависимости от вашего предпочтения */
+}
+
+.carousel-container {
+    max-width: 50%; /* или любое другое значение, чтобы ограничить ширину блока */
+    margin: 0 auto; /* чтобы выровнять блок по центру горизонтально */
+    height: auto; /* убедитесь, что высота может быть автоматически адаптирована к содержимому */
+    overflow: hidden;
+    position: relative;
+    display: flex; /* Для выравнивания слайдов горизонтально */
+}
+
+.carousel-slide {
+    width: 100%; /* Ширина каждого слайда занимает всю ширину контейнера */
+    min-width: 100%; /* Необходимо для корректного отображения в случае изменения размера окна браузера */
+    height: 100%; /* Высота каждого слайда занимает всю доступную высоту */
+    flex: 0 0 auto; /* Указывает, что слайд не должен изменять свой размер */
+    display: flex; /* Чтобы видео заполняло всю доступную область слайда */
+    justify-content: center; /* Чтобы видео оставалось по центру горизонтально */
+    align-items: center; /* Чтобы видео оставалось по центру вертикально */
+    transition: transform 0.5s ease; /* Добавляем переход для свойства transform (сдвиг) */
+}
+
+.carousel-slide video {
+    width: 100%; /* Видео занимает всю доступную ширину слайда */
+    height: 100%; /* Видео занимает всю доступную высоту слайда */
+    object-fit: cover; /* Чтобы видео заполняло всю доступную область слайда */
+}
+
+
+.prev-button, .next-button {
+    position: absolute;
+    margin-top: 10%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev-button {
+    left: 10%;
+}
+
+.next-button {
+    right: 10%;
+}
+
+.slide-indicators {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-input[type="text"],
-input[type="password"],
-button {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-button {
-    background-color: white;
-    color: black;
+.slide-indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 10px;
     cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-    .first-section {
-        flex-direction: column;
-        align-items: center;
-        width: auto;
-        padding: 20px;
-    }
-
-    .left-content,
-    .right-content {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .right-content {
-        margin-top: 20px;
-    }
+.slide-indicator.active {
+    background-color: black;
+}
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    color: #333;
 }
 
-
-@keyframes tonext {
-    75% {
-        left: 0;
-    }
-    95% {
-        left: 100%;
-    }
-    98% {
-        left: 100%;
-    }
-    99% {
-        left: 0;
-    }
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
-@keyframes tostart {
-    75% {
-        left: 0;
-    }
-    95% {
-        left: -300%;
-    }
-    98% {
-        left: -300%;
-    }
-    99% {
-        left: 0;
-    }
+.team-info, .contact-info {
+    flex-basis: 48%;
 }
 
-@keyframes snap {
-    96% {
-        scroll-snap-align: center;
-    }
-    97% {
-        scroll-snap-align: none;
-    }
-    99% {
-        scroll-snap-align: none;
-    }
-    100% {
-        scroll-snap-align: center;
-    }
+.team-info h3, .contact-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
-body {
-    margin: 0;
-
-}
-
-* {
-    box-sizing: border-box;
-    scrollbar-color: transparent transparent; /* thumb and track color */
-    scrollbar-width: 0px;
-}
-
-*::-webkit-scrollbar {
-    width: 0;
-}
-
-*::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-*::-webkit-scrollbar-thumb {
-    background: transparent;
-    border: none;
-}
-
-* {
-    -ms-overflow-style: none;
-}
-
-ol, li {
-    list-style: none;
-    margin: 0;
+.team-info ul {
+    list-style-type: none;
     padding: 0;
 }
 
-.carousel {
-    margin: 200px auto;
-    width: 800px;
-    height: 500px;
-    position: relative;
-    filter: drop-shadow(0 0 10px #0003);
-    perspective: 100px;
+.team-info ul li {
+    margin-bottom: 5px;
 }
 
-.carousel__viewport {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    overflow-x: scroll;
-    counter-reset: item;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-}
-
-.carousel__slide {
-    position: relative;
-    flex: 0 0 100%;
-    width: 100%;
-    background-color: #f99;
-    counter-increment: item;
-}
-
-.carousel__slide:nth-child(even) {
-    background-color: #99f;
-}
-
-.carousel__slide:before {
-    content: counter(item);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -40%, 70px);
-    color: #fff;
-    font-size: 2em;
-}
-
-.carousel__snapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    scroll-snap-align: center;
-}
-
-@media (hover: hover) {
-    .carousel__snapper {
-        animation-name: tonext, snap;
-        animation-timing-function: ease;
-        animation-duration: 4s;
-        animation-iteration-count: infinite;
-    }
-
-    .carousel__slide:last-child .carousel__snapper {
-        animation-name: tostart, snap;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .carousel__snapper {
-        animation-name: none;
-    }
-}
-
-.carousel:hover .carousel__snapper,
-.carousel:focus-within .carousel__snapper {
-    animation-name: none;
-}
-
-.carousel__navigation {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
     text-align: center;
 }
+@media only screen and (max-width: 768px) {
+    .first-section {
+        flex-direction: column; /* Изменение направления flex на вертикальное */
+        padding: 40px 20px; /* Уменьшение внутренних отступов */
+    }
 
-.carousel__navigation-list,
-.carousel__navigation-item {
-    display: inline-block;
-}
+    .dino {
+        display: none; /* Скрыть динозаврика на маленьких устройствах */
+    }
 
-.carousel__navigation-button {
-    display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: #333;
-    background-clip: content-box;
-    border: 0.25rem solid transparent;
-    border-radius: 50%;
-    font-size: 0;
-    transition: transform 0.1s;
-}
-
-.carousel::before,
-.carousel::after,
-.carousel__prev,
-.carousel__next {
-    position: absolute;
-    top: 0;
-    margin-top: 37.5%;
-    width: 4rem;
-    height: 4rem;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    font-size: 0;
-    outline: 0;
-}
-
-.carousel::before,
-.carousel__prev {
-    left: -1rem;
-}
-
-.carousel::after,
-.carousel__next {
-    right: -1rem;
-}
-
-.carousel::before,
-.carousel::after {
-    content: '';
-    z-index: 1;
-    background-color: #333;
-    background-size: 1.5rem 1.5rem;
-    background-repeat: no-repeat;
-    background-position: center center;
-    color: #fff;
-    font-size: 2.5rem;
-    line-height: 4rem;
-    text-align: center;
-    pointer-events: none;
-}
-
-.carousel::before {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
-}
-
-.carousel::after {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+    .right-content {
+        width: 100%; /* Занимать всю доступную ширину */
+        margin-top: 20px; /* Добавить отступ сверху */
+    }
 }

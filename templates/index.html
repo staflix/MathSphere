@@ -7,90 +7,84 @@
     <div class="logo">
         <a href="/"><img src="{{ url_for('static', filename='media/logo.png') }}" alt="Mathup"></a>
     </div>
-
 </header>
 <main>
     <section class="first-section">
         <div class="left-content">
-            <h1 class="reg-title">Здесь вы можете прокачать свои навыки счета!</h1>
-            <p class="reg-subtitle">Mathup — удобная образовательная платформа, где можно в форматах тренироваться и
-                изучать математику!</p>
-            <button class="register-button" onclick="">Зарегистрироваться</button>
+            <h1 class="reg-title">Улучшите ваши математические навыки с Mathup!</h1>
+            <p class="reg-subtitle">Mathup - это удобная образовательная платформа, где вы можете тренироваться и
+                улучшать свои навыки в игровой форме!</p>
+            <button class="register-button" onclick="location.href='/register'">Начать обучение</button>
+        </div>
+        <div class="dino">
+            <img class="dino-image" src="{{ url_for('static', filename='media/dino.png') }}">
         </div>
         <div class="right-content">
             <h2 class="login-title">Вход</h2>
             <form>
-                <input type="text" placeholder="Логин">
-                <input type="password" placeholder="Пароль">
-                <button type="submit">Войти</button>
+                {{ form.email(type="email", placeholder="Email") }}
+                {{ form.password(type="password", placeholder="Пароль") }}
+                {{ form.submit(type="submit", class="login-button", value="Войти") }}
             </form>
-            <p>Забыли пароль?</p>
+            <p><a href="#">Забыли пароль?</a></p>
         </div>
     </section>
-    <section class="carousel" aria-label="Gallery">
-        <ol class="carousel__viewport">
-            <li id="carousel__slide1"
-                tabindex="0"
-                class="carousel__slide">
-                <div class="carousel__snapper">
-                    <a href="#carousel__slide4"
-                       class="carousel__prev">Go to last slide</a>
-                    <a href="#carousel__slide2"
-                       class="carousel__next">Go to next slide</a>
-                </div>
-            </li>
-            <li id="carousel__slide2"
-                tabindex="0"
-                class="carousel__slide">
-                <div class="carousel__snapper"></div>
-                <a href="#carousel__slide1"
-                   class="carousel__prev">Go to previous slide</a>
-                <a href="#carousel__slide3"
-                   class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide3"
-                tabindex="0"
-                class="carousel__slide">
-                <div class="carousel__snapper"></div>
-                <a href="#carousel__slide2"
-                   class="carousel__prev">Go to previous slide</a>
-                <a href="#carousel__slide4"
-                   class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide4"
-                tabindex="0"
-                class="carousel__slide">
-                <div class="carousel__snapper"></div>
-                <a href="#carousel__slide3"
-                   class="carousel__prev">Go to previous slide</a>
-                <a href="#carousel__slide1"
-                   class="carousel__next">Go to first slide</a>
-            </li>
-        </ol>
-        <aside class="carousel__navigation">
-            <ol class="carousel__navigation-list">
-                <li class="carousel__navigation-item">
-                    <a href="#carousel__slide1"
-                       class="carousel__navigation-button">Go to slide 1</a>
-                </li>
-                <li class="carousel__navigation-item">
-                    <a href="#carousel__slide2"
-                       class="carousel__navigation-button">Go to slide 2</a>
-                </li>
-                <li class="carousel__navigation-item">
-                    <a href="#carousel__slide3"
-                       class="carousel__navigation-button">Go to slide 3</a>
-                </li>
-                <li class="carousel__navigation-item">
-                    <a href="#carousel__slide4"
-                       class="carousel__navigation-button">Go to slide 4</a>
-                </li>
-            </ol>
-        </aside>
+    <section class="carousel-section">
+        <div class="carousel-section-title">
+            <h2>Тренируйтесь в игровой форме!</h2>
+        </div>
+        <div class="carousel-controls">
+            <button class="prev-button"><img src="{{ url_for('static', filename='media/prev-carousel.png') }}"
+                                             alt="Previous"/></button>
+            <button class="next-button"><img src="{{ url_for('static', filename='media/next-carousel.png') }}"
+                                             alt="Next"/></button>
+        </div>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <video src="{{ url_for('static', filename='media/video1.mp4') }}" alt="Carousel Image 1" autoplay muted
+                       loop playsinline></video>
+            </div>
+            <div class="carousel-slide">
+                <video src="{{ url_for('static', filename='media/video1.mp4') }}" alt="Carousel Image 1" autoplay muted
+                       loop playsinline></video>
+            </div>
+            <div class="carousel-slide">
+                <video src="{{ url_for('static', filename='media/video1.mp4') }}" alt="Carousel Image 1" autoplay muted
+                       loop playsinline></video>
+            </div>
+        </div>
+        <div class="slide-indicators">
+            <div class="slide-indicator active"></div>
+            <div class="slide-indicator"></div>
+            <div class="slide-indicator"></div>
+        </div>
     </section>
 </main>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="team-info">
+            <h3>Команда разработчиков - CodeBlaze</h3>
+            <p>Frontend: Артём <a href="https://t.me/flamymc">@flamymc</a></p>
+            <p>Backend:
+            <ul>
+                <li>Данил <a href="https://t.me/DanSivets">@DanSivets</a></li>
+                <li>Дима <a href="https://t.me/d1temnd">@d1temnd</a></li>
+                <li>Назар <a href="https://t.me/staflix">@staflix</a></li>
+            </ul>
+            </p>
+        </div>
+        <div class="contact-info">
+            <h3>Контакты</h3>
+            <p>Телефон: +7 (XXX) XXX-XX-XX</p>
+            <p>Email: info@codeblaze.com</p>
+            <p>Telegram: <a href="https://t.me/codeblaze">@codeblaze</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 CodeBlaze. Все права защищены.</p>
+    </div>
+</footer>
 {% endblock %}
-
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/carousel.js') }}"></script>
 {% endblock %}

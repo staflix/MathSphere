@@ -1,6 +1,7 @@
 # НУЖНО УСТАНОВИТЬ requirements.txt командой 'pip install -r requirements.txt'
 from flask_login import LoginManager, login_required, logout_user
 from flask import Flask, render_template, redirect
+from forms.loginForm import LoginForm
 from data import db_session
 from data.users import User
 from api import registerAPI, loginAPI, simplearithmeticAPI, resetpasswordAPI
@@ -31,7 +32,8 @@ def logout():
 # главная страница
 @app.route('/')
 def index():
-    return render_template('index.html')
+    form = LoginForm()
+    return render_template('index.html', form=form)
 
 
 # выбор математичесих методов
