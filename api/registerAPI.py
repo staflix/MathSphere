@@ -4,6 +4,7 @@ from sqlalchemy import select
 from forms.registerForm import RegisterForm
 from data import db_session
 from data.users import User
+from check_email import is_valid_email
 
 blueprint = flask.Blueprint(
     'register_api',
@@ -22,22 +23,28 @@ def register():
         existing_user = db_sess.execute(query).fetchone()
         db_sess.close()
         if not existing_user:
-            if form.password.data == form.password_confirmation.data:
-                user = User(
-                    surname=form.surname.data,
-                    name=form.name.data,
-                    profile_level=1,
-                    email=form.email.data
-                )
-                user.set_password(form.password.data)
-                db_sess.add(user)
-                db_sess.commit()
-                db_sess.close()
-                return redirect("/")
+            if is_valid_email(form.email.data):
+                if form.password.data == form.password_confirmation.data:
+                    user = User(
+                        surname=form.surname.data,
+                        name=form.name.data,
+                        profile_level=1,
+                        email=form.email.data
+                    )
+                    user.set_password(form.password.data)
+                    db_sess.add(user)
+                    db_sess.commit()
+                    db_sess.close()
+                    return redirect("/login")
+                else:
+                    return render_template('register.html',
+                                           message='Пароли не совпадают', form=form)
             else:
-                return render_template('register.html', title='MathSphere',
-                                       message_password='Пароли не совпадают', form=form)
+                return render_template('register.html',
+                                       message='Такой почты не существует',
+                                       form=form)
         else:
-            return render_template('register.html', title='MathSphere',
-                                   message_email='Аккаунт с данной почтой уже существует', form=form)
-    return render_template('register.html', title='MathSphere', form=form)
+            return render_template('register.html',
+                                   message='Аккаунт с данной почтой уже существует',
+                                   form=form)
+    return render_template('register.html', form=form)

@@ -45,7 +45,7 @@ def login_password():
     form = LoginForm()
     form.email.data = email
 
-    if form.validate_on_submit():
+    if form.submit.data:
 
         db_session.global_init("db/MathSphereBase.db")
         db_sess = db_session.create_session()
