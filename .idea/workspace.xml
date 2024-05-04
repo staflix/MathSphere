@@ -5,13 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7da42c8f-d1a5-49d2-9d2f-ae887ea1852f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MathSphere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MathSphere.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/404.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/components/active-users.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/components/active-users.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/components/card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/components/card.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/components/schedule.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/components/schedule.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/components/testimonal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/components/testimonal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/components/you-tube.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/components/you-tube.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/video1mp4.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/video1.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/404.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,9 +102,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Lyceum_lessons\MusicCloud\MathSphere\static\media" />
+      <recent name="C:\Lyceum_lessons\MusicCloud\MathSphere\static\css" />
+      <recent name="C:\Lyceum_lessons\MusicCloud\MathSphere\templates\components" />
       <recent name="C:\Lyceum_lessons\MusicCloud\MathSphere\templates" />
       <recent name="C:\Lyceum_lessons\MusicCloud\MathSphere\static\js" />
-      <recent name="C:\Lyceum_lessons\MusicCloud\MathSphere\data" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
