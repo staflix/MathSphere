@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7da42c8f-d1a5-49d2-9d2f-ae887ea1852f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/study.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/carousel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/study.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MathSphere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MathSphere.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/video1mp4.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/video1.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="CSS File" />
+        <option value="Python Script" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -95,6 +95,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Lyceum_lessons\MusicCloud\MathSphere\templates" />
+      <recent name="C:\Lyceum_lessons\MusicCloud\MathSphere\static\js" />
       <recent name="C:\Lyceum_lessons\MusicCloud\MathSphere\data" />
     </key>
   </component>
@@ -108,9 +109,8 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (MathSphere)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -185,12 +185,6 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Flask server.MathSphere" />
-      <item itemvalue="Python.simplearithmeticAPI" />
-      <item itemvalue="Python.tools" />
-      <item itemvalue="Python.main" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
@@ -216,8 +210,7 @@
       <updated>1714479144220</updated>
       <workItem from="1714479146822" duration="10000000" />
       <workItem from="1714530979082" duration="450000" />
-      <workItem from="1714727938020" duration="746000" />
-      <workItem from="1714731656855" duration="14053000" />
+      <workItem from="1714795824663" duration="23165000" />
     </task>
     <servers />
   </component>
@@ -249,6 +242,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MathSphere$MathSphere.coverage" NAME="MathSphere Coverage Results" MODIFIED="1714530979975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/MathSphere$main.coverage" NAME="main Coverage Results" MODIFIED="1714736817383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MathSphere$main.coverage" NAME="main Coverage Results" MODIFIED="1714795838859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
