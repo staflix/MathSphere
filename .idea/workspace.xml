@@ -7,11 +7,13 @@
     <list default="true" id="7da42c8f-d1a5-49d2-9d2f-ae887ea1852f" name="Changes" comment="Смена пароля. Небольшое изменение меню логина">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/loginAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/loginAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/registerAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/registerAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/resetpasswordAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/resetpasswordAPI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/MathSphereBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/MathSphereBase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math_techniques.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" /><change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/scroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -74,8 +76,6 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "Flask server.MathSphere.executor": "Run",
-    "Python.generate_string.executor": "Run",
-    "Python.information.executor": "Run",
     "Python.loginAPI.executor": "Run",
     "Python.mail.executor": "Run",
     "Python.main.executor": "Run",
@@ -84,7 +84,6 @@
     "Python.resetpasswordAPI.executor": "Run",
     "Python.simplearithmeticAPI.executor": "Run",
     "Python.tools.executor": "Run",
-    "Python.users.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -107,50 +106,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="generate_string" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MathSphere" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/generate_string.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="information" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MathSphere" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/information.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="loginAPI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MathSphere" />
       <option name="ENV_FILES" value="" />
@@ -165,6 +120,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/loginAPI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mail" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MathSphere" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mail.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -195,7 +172,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="users" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="reset_password" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MathSphere" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -204,11 +181,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/users.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/reset_password.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="resetpasswordAPI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MathSphere" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/api" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/resetpasswordAPI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -236,10 +235,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.generate_string" />
-        <item itemvalue="Python.information" />
-        <item itemvalue="Python.users" />
         <item itemvalue="Python.loginAPI" />
+        <item itemvalue="Python.mail" />
+        <item itemvalue="Python.resetpasswordAPI" />
+        <item itemvalue="Python.reset_password" />
       </list>
     </recent_temporary>
   </component>
@@ -310,7 +309,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="develope" />
+                        <option value="origin/skeleton" />
                       </list>
                     </value>
                   </entry>
