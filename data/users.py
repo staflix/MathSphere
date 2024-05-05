@@ -1,7 +1,9 @@
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-from sqlalchemy.orm import declarative_base
+from sqlalchemy.orm import declarative_base, relationship
 from sqlalchemy_serializer import SerializerMixin
+from data import db_session
+from sqlalchemy import ForeignKey
 import sqlalchemy
 
 SqlAlchemyBase = declarative_base()
@@ -25,5 +27,18 @@ class User(SqlAlchemyBase, UserMixin, SerializerMixin):
         return check_password_hash(self.hashed_password, password)
 
     def __repr__(self):
-        return f"{self.id}-{self.surname}-{self.name}-{self.age}-" \
+        return f"{self.id}-{self.surname}-{self.name}-" \
                f"{self.profile_level}-{self.email}-{self.hashed_password}"
+
+
+class Info(SqlAlchemyBase):
+    __tablename__ = "Information"
+
+    id = sqlalchemy.Column(sqlalchemy.Integer, autoincrement=True, primary_key=True)
+    user_id = sqlalchemy.Column(sqlalchemy.Integer, ForeignKey("Users.id"))
+    random_string = sqlalchemy.Column(sqlalchemy.String)
+
+    user = relationship("User")
+
+    def __repr__(self):
+        return f"{self.id}-{self.user_id}-{self.random_string}"
