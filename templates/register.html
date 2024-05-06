@@ -1,29 +1,150 @@
-{% extends "base.html" %}
-{% block links %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/register.css') }}"/>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en"
+  ><head
+    ><title>Register - Active Online Software Page</title
+    ><meta
+      property="og:title"
+      content="Register - Active Online Software Page"
+    /><meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    /><meta charset="utf-8" /><meta
+      property="twitter:card"
+      content="summary_large_image"
+    /><style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }</style
+    ><style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
 
-{% block content %}
-<div class="layout">
-    <div class="card">
-        <section class="promo-section">
-            <h1 class="hello-message">Тут что-то</h1>
-            <p class="register-message">Уже зарегистрированы?</p>
-            <button class="register-button" onclick="location.href='/login_email'">Войти</button>
-        </section>
-        <section class="form-section">
-            <h2 class="login-title">Регистрация</h2>
-            <form action="" method="post" class="form-section">
-                {{ form.surname(class="input-container", type="text") }}
-                {{ form.name(class="input-container", type="text") }}
-                {{ form.email(class="input-container", type="email") }}
-                {{ form.password(class="input-container", type="password") }}
-                {{ form.password_confirmation(class="input-container", type="password") }}
-                {{ form.submit(type="submit", class="btn btn-primary") }}
-                <button class="mobile-button" onclick="location.href='/login_email'">Войти</button>
-                {{ message }}
-            </form>
-        </section>
-    </div>
-</div>
-{% endblock %}
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+        fill: var(--dl-color-gray-black);
+      }</style
+    ><link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    /><link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+      data-tag="font"
+    /><link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    /><link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    /><style>
+       body::-webkit-scrollbar {
+         width: 0.5em;
+         z-index: 100;
+         background-color:transparent;
+       }
+
+
+      body::-webkit-scrollbar-thumb {
+         background-color:white;
+         box-shadow:0 -100vh 0 100vh #5128f5;//magic
+       }
+    </style></head
+  ><body
+    ><link rel="stylesheet" href="../static/css/style.css" /><div
+      ><link href="../static/css/register.css" rel="stylesheet" /><div
+        class="register-container"
+        ><div class="register-container1"
+          ><div class="register-container2"></div
+          ><div class="register-max-width thq-section-max-width"
+            ><div class="register-form thq-section-padding"
+              ><div class="register-title-root"
+                ><h2 class="register-text thq-heading-2"
+                  ><span>Регистрация</span><br /></h2
+                ><div class="register-container3"
+                  ><p class="thq-body-large register-text03"
+                    >Уже есть аккаунт? </p
+                  ><p class="register-text04 thq-body-large"
+                    >&nbsp;Войти</p
+                  ></div
+                ></div
+              ><div class="register-container4"
+                ><button class="register-button thq-button-outline"
+                  ><img
+                    src="../static/media/logos/yandex-1500h.png"
+                    alt="image"
+                    class="register-image"
+                  /><span class="thq-body-small"
+                    >Продолжить с Яндекс</span
+                  ></button
+                ><button class="register-button1 thq-button-outline"
+                  ><svg viewBox="0 0 1024 1024" class="register-icon">
+                    <path
+                      d="M928 0h-832c-52.8 0-96 43.2-96 96v832c0 52.8 43.2 96 96 96h832c52.8 0 96-43.2 96-96v-832c0-52.8-43.2-96-96-96zM829.4 716.8l-93.6 1.4c0 0-20.2 4-46.6-14.2-35-24-68-86.6-93.8-78.4-26 8.2-25.2 64.4-25.2 64.4s0.2 12-5.8 18.4c-6.4 7-19.2 8.4-19.2 8.4h-41.8c0 0-92.4 5.6-173.8-79.2-88.8-92.4-167.2-275.8-167.2-275.8s-4.6-12 0.4-17.8c5.6-6.6 20.6-7 20.6-7l100.2-0.6c0 0 9.4 1.6 16.2 6.6 5.6 4 8.6 11.8 8.6 11.8s16.2 41 37.6 78c41.8 72.2 61.4 88 75.6 80.4 20.6-11.2 14.4-102.2 14.4-102.2s0.4-33-10.4-47.6c-8.4-11.4-24.2-14.8-31-15.6-5.6-0.8 3.6-13.8 15.6-19.8 18-8.8 49.8-9.4 87.4-9 29.2 0.2 37.8 2.2 49.2 4.8 34.6 8.4 22.8 40.6 22.8 117.8 0 24.8-4.4 59.6 13.4 71 7.6 5 26.4 0.8 73.4-79 22.2-37.8 39-82.2 39-82.2s3.6-8 9.2-11.4c5.8-3.4 13.6-2.4 13.6-2.4l105.4-0.6c0 0 31.6-3.8 36.8 10.6 5.4 15-11.8 50-54.8 107.4-70.6 94.2-78.6 85.4-19.8 139.8 56 52 67.6 77.4 69.6 80.6 22.8 38.4-26 41.4-26 41.4z"
+                    ></path></svg
+                  ><span class="thq-body-small">Продолжить с VK</span></button
+                ></div
+              ><div class="register-divider"
+                ><div class="register-divider1"></div
+                ><p class="thq-body-large">Или </p
+                ><div class="register-divider2"></div></div
+              ><form class="register-form1"
+                ><div class="register-email"
+                  ><label for="thq-sign-up-4-email" class="thq-body-large"
+                    >Почта</label
+                  ><input
+                    type="email"
+                    id="thq-sign-up-4-email"
+                    required="true"
+                    placeholder="Введите почту"
+                    class="register-textinput thq-body-large thq-input" /></div
+                ><div class="register-email1"
+                  ><label for="thq-sign-up-4-email" class="thq-body-large"
+                    >Пароль</label
+                  ><input
+                    type="password"
+                    id="thq-sign-up-4-email"
+                    required="true"
+                    placeholder="Введите пароль"
+                    class="register-textinput1 thq-body-large thq-input" /></div
+                ><div class="register-email2"
+                  ><label for="thq-sign-up-4-email" class="thq-body-large"
+                    >Повтор пароля</label
+                  ><input
+                    type="password"
+                    id="thq-sign-up-4-email"
+                    required="true"
+                    placeholder="Повторите пароль"
+                    class="register-textinput2 thq-body-large thq-input" /></div></form
+              ><div class="register-container5"
+                ><div class="register-terms-agree"
+                  ><input
+                    type="checkbox"
+                    id="thq-sign-up-4-terms"
+                    class="register-checkbox thq-checkbox" /><label
+                    for="thq-sign-up-4-terms"
+                    class="thq-body-large"
+                    ><span>Я принимаю политику конфиденциальности</span
+                    ><br /></label></div></div
+              ><button type="submit" class="register-button2 thq-button-filled"
+                ><span class="register-text14 thq-body-small"
+                  >Зарегистрироваться
+                </span></button
+              ><div class="register-error-container"
+                ><span class="register-text15"
+                  ><span>Место для ошибок</span
+                  ><br /></span></div></div></div></div></div
+    ></div>
+    <script
+      defer=""
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script></body
+></html>
