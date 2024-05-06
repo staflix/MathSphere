@@ -49,6 +49,7 @@
   align-items: center;
   border-radius: 70px;
   flex-direction: column;
+  padding-bottom: var(--dl-space-space-unit);
   justify-content: flex-end;
   background-color: var(--dl-color-theme-neutral-light);
 }
@@ -200,6 +201,43 @@
   width: 100%;
   border-radius: var(--dl-radius-radius-button-radius);
 }
+.register-email3 {
+  gap: var(--dl-space-space-halfunit);
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.register-textinput3 {
+  width: 100%;
+  border-radius: var(--dl-radius-radius-button-radius);
+}
+.register-email4 {
+  gap: var(--dl-space-space-halfunit);
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.register-textinput4 {
+  width: 100%;
+  border-radius: var(--dl-radius-radius-button-radius);
+}
+.register-button2 {
+  width: 100%;
+  transition: 0.3s;
+  background-color: var(--dl-color-gray-black);
+}
+.register-button2:hover {
+  background-color: #3e19c9;
+}
+.register-text13 {
+  font-size: 20px;
+  text-align: center;
+  font-family: "Inter";
+}
 .register-container5 {
   gap: var(--dl-space-space-halfunit);
   display: flex;
@@ -216,28 +254,14 @@
 .register-checkbox {
   cursor: pointer;
 }
-.register-button2 {
-  width: 100%;
-  transition: 0.3s;
-  background-color: var(--dl-color-gray-black);
+.register-link {
+  display: contents;
 }
-.register-button2:hover {
-  background-color: #3e19c9;
-}
-.register-text14 {
-  font-size: 20px;
-  text-align: center;
-}
-.register-error-container {
-  flex: 0 0 auto;
-  width: 100%;
-  height: auto;
-  display: flex;
-  align-items: flex-start;
-}
-.register-text15 {
-  font-style: normal;
-  font-weight: 600;
+.register-text17 {
+  color: #183de6;
+  cursor: pointer;
+  font-family: "Inter";
+  text-decoration: none;
 }
 @media(max-width: 1600px) {
   .register-container1 {
@@ -262,7 +286,7 @@
   .register-form {
     width: auto;
     max-width: auto;
-    border-radius: 30px;
+    border-radius: 70px;
   }
 }
 @media(max-width: 479px) {
@@ -274,6 +298,7 @@
   }
   .register-form {
     padding-left: var(--dl-space-space-oneandhalfunits);
+    border-radius: 30px;
     padding-right: var(--dl-space-space-oneandhalfunits);
   }
   .register-text {
@@ -293,5 +318,11 @@
   }
   .register-button2 {
     width: 100%;
+  }
+  .register-text14 {
+    font-size: 14px;
+  }
+  .register-text17 {
+    font-size: 14px;
   }
 }

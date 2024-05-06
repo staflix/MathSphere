@@ -225,7 +225,7 @@
   display: flex;
   align-items: flex-start;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .login-text12 {
   transition: 0.3s;
@@ -258,19 +258,9 @@
   font-size: 20px;
   text-align: center;
   transition: 0.3s;
+  font-family: "Inter";
 }
 
-.login-error-container {
-  flex: 0 0 auto;
-  width: 100%;
-  height: auto;
-  display: flex;
-  align-items: flex-start;
-}
-.login-text16 {
-  font-style: normal;
-  font-weight: 600;
-}
 .login-container8 {
   top: 0px;
   flex: 0 0 auto;
@@ -295,7 +285,7 @@
 }
 @media(max-width: 991px) {
   .login-max-width {
-    border-radius: 30px;
+    border-radius: 70px;
   }
   .login-form-root {
     width: auto;
@@ -305,7 +295,7 @@
 @media(max-width: 479px) {
   .login-max-width {
     padding-top: var(--dl-space-space-oneandhalfunits);
-    border-radius: 30px;
+    border-radius: 70px;
   }
   .login-form-root {
     padding: 0px;
