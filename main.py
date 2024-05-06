@@ -4,7 +4,7 @@ from flask import Flask, render_template, redirect
 from forms.loginForm import LoginForm
 from data import db_session
 from data.users import User
-from api import registerAPI, loginAPI, simplearithmeticAPI, resetpasswordAPI
+from api import registerAPI, loginAPI, simplearithmeticAPI, resetpasswordAPI, mainpageAPI
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -29,13 +29,6 @@ def logout():
     return redirect("/")
 
 
-# главная страница
-@app.route('/')
-def index():
-    form = LoginForm()
-    return render_template('index.html', form=form)
-
-
 # выбор математичесих методов
 @app.route('/trainer', methods=['GET', 'POST'])
 def trainer():
@@ -53,6 +46,7 @@ def main():
     app.register_blueprint(loginAPI.blueprint)
     app.register_blueprint(simplearithmeticAPI.blueprint)
     app.register_blueprint(resetpasswordAPI.blueprint)
+    app.register_blueprint(mainpageAPI.blueprint)
     app.run(port=5000, host='127.0.0.1', debug=True)
 
 
