@@ -5,10 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7da42c8f-d1a5-49d2-9d2f-ae887ea1852f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/static/media/1-1200w.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/pastedimage-fii6m-200h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/pastedimage-l6p-200h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/pastedimage-mimg-200h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/pastedimage-vyi5-200h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/pastedimage-yxbd.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/loginAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/loginAPI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/scroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/active-users.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/active-users.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/card.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/card.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/schedule.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/schedule.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/testimonal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/testimonal.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/you-tube.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/you-tube.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,8 +113,8 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Lyceum_lessons\MusicCloud\MathSphere\static\media" />
       <recent name="C:\Lyceum_lessons\MusicCloud\MathSphere\static\css" />
-      <recent name="C:\Lyceum_lessons\MusicCloud\MathSphere\templates\components" />
       <recent name="C:\Lyceum_lessons\MusicCloud\MathSphere\templates" />
+      <recent name="C:\Lyceum_lessons\MusicCloud\MathSphere\templates\components" />
       <recent name="C:\Lyceum_lessons\MusicCloud\MathSphere\static\js" />
     </key>
   </component>
@@ -241,6 +262,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MathSphere$MathSphere.coverage" NAME="MathSphere Coverage Results" MODIFIED="1714530979975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/MathSphere$main.coverage" NAME="main Coverage Results" MODIFIED="1714795838859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MathSphere$main.coverage" NAME="main Coverage Results" MODIFIED="1715002116278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -33,10 +33,10 @@ def login_email():
 
         else:
 
-            return render_template('login_email.html',
+            return render_template('login.html',
                                    message="Аккаунта с такой почтой не существует!", form=form)
 
-    return render_template('login_email.html', form=form)
+    return render_template('login.html', form=form)
 
 
 @blueprint.route('/login/password', methods=['GET', 'POST'])
