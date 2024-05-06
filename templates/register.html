@@ -9,19 +9,18 @@
         <section class="promo-section">
             <h1 class="hello-message">Тут что-то</h1>
             <p class="register-message">Уже зарегистрированы?</p>
-            <button class="register-button" onclick="location.href='/login'">Войти</button>
+            <button class="register-button" onclick="location.href='/login_email'">Войти</button>
         </section>
         <section class="form-section">
             <h2 class="login-title">Регистрация</h2>
             <form action="" method="post" class="form-section">
-                {{ form.hidden_tag() }}
                 {{ form.surname(class="input-container", type="text") }}
                 {{ form.name(class="input-container", type="text") }}
                 {{ form.email(class="input-container", type="email") }}
                 {{ form.password(class="input-container", type="password") }}
                 {{ form.password_confirmation(class="input-container", type="password") }}
                 {{ form.submit(type="submit", class="btn btn-primary") }}
-                <button class="mobile-button" onclick="location.href='/login'">Войти</button>
+                <button class="mobile-button" onclick="location.href='/login_email'">Войти</button>
                 {{ message }}
             </form>
         </section>
