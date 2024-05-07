@@ -24,17 +24,17 @@ def login_email():
         if user:
 
             rdm_string = db_sess.query(Info).filter(Info.user_id == user.id).first()
-            return redirect(f'/login/password/key={rdm_string.random_string}')
+            return redirect(f'/login/key={rdm_string.random_string}')
 
         else:
 
-            return render_template('login.html',
+            return render_template('login_email.html',
                                    message="Аккаунта с такой почтой не существует!", form=form)
 
-    return render_template('login.html', form=form)
+    return render_template('login_email.html', form=form)
 
 
-@blueprint.route('/login/password/key=<rdm_string>', methods=['GET', 'POST'])
+@blueprint.route('/login/key=<rdm_string>', methods=['GET', 'POST'])
 def login_password(rdm_string):
     form = LoginForm()
     db_session.global_init("db/MathSphereBase.db")
