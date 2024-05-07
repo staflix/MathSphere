@@ -1,6 +1,4 @@
-from company import *
-from tasks_images import *
-
+from tasks_images.company import *
 
 year = Class(1)
 first_topic = Topic('Счет предметов. Сравнение групп предметов. Пространственные и временные представления.')
