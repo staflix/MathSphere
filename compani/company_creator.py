@@ -1,5 +1,5 @@
 from company import *
-from tasks_images import *
+from compani import *
 
 
 year = Class(1)
