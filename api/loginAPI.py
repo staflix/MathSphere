@@ -45,7 +45,7 @@ def login_password(rdm_string):
     db_sess.close()
     form_new = LoginForm()
 
-    if form_new.submit.data:
+    if form_new.validate_on_submit():
 
         db_session.global_init("db/MathSphereBase.db")
         db_sess = db_session.create_session()
