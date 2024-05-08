@@ -40,7 +40,7 @@ def reset_password(rdm_string):
                                    message=f'Ваш пароль был сброшен. Новый пароль на почте {email}')
 
     if form.back.data:
-        return redirect(f'/login/password/key={rdm_string}')
+        return redirect(f'/login/key={rdm_string}')
 
     return render_template('reset_password.html', form=form, email=user.email,
                            message_question=f'Сбросить пароль на аккаунте с почтой {user.email}?')

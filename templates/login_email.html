@@ -162,8 +162,8 @@
                             <div class="login-container3">
                                 <p class="login-text01 thq-body-large">Нету аккаунта? </p>
                                 <p class="login-text02 thq-body-large">
-                                    <span>&nbsp;Зарегистрироваться</span><br/>
-                                </p>
+                                <a href="/register">&nbsp;Зарегистрироваться</a><br/>
+                            </p>
                             </div>
                         </div>
                         <div class="login-container4">
@@ -205,6 +205,11 @@
                             </div>
                             <div class="login-container6">
                                 {{ form.input_password(type="submit", class="login-button2 thq-button-filled login-text13 thq-body-small") }}
+                            </div>
+                            <div class="login-error-container">
+                                {% if message %}
+                                <span class="login-text16">{{ message }}</span>
+                                {% endif %}
                             </div>
                         </form>
                     </div>
