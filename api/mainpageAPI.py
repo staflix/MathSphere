@@ -19,7 +19,7 @@ def main_page_unlog(rdm_string):
 
 
 # главная страница для зарегестрированного пользователя
-# @blueprint.route('/key=<rdm_string>', methods=['GET', 'POST'])
-# def main_page_log(rdm_string):
-#     form = LogMainPageForm()
-#     return render_template('reg_index.html', form=form)
+@blueprint.route('/key=<rdm_string>', methods=['GET', 'POST'])
+def main_page_log(rdm_string):
+    form = LogMainPageForm()
+    return render_template('authorizated.html', form=form)
