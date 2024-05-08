@@ -1,5 +1,5 @@
 from flask import render_template, redirect
-from forms.mainpageForm import MainPageForm
+from forms.mainpageForm import UnLogMainPageForm, LogMainPageForm
 from flask_login import login_user
 from data import db_session
 from data.users import User, Info
@@ -12,13 +12,14 @@ blueprint = flask.Blueprint(
 )
 
 
-@blueprint.route('/', methods=['GET', 'POST'])
-def main_page_unlog():
-    form = MainPageForm()
-    return render_template('index.html', form=form)
-
-
 @blueprint.route('/key=<rdm_string>', methods=['GET', 'POST'])
-def main_page_log(rdm_string):
-    form = MainPageForm()
-    return render_template('index.html', form=form)
+def main_page_unlog(rdm_string):
+    form = UnLogMainPageForm()
+    return render_template('unlog_index.html', form=form)
+
+
+# главная страница для зарегестрированного пользователя
+# @blueprint.route('/key=<rdm_string>', methods=['GET', 'POST'])
+# def main_page_log(rdm_string):
+#     form = LogMainPageForm()
+#     return render_template('reg_index.html', form=form)
