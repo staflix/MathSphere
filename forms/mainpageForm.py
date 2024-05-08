@@ -3,6 +3,10 @@ from wtforms import PasswordField, StringField, SubmitField, EmailField
 from wtforms.validators import DataRequired
 
 
-class MainPageForm(FlaskForm):
+class UnLogMainPageForm(FlaskForm):
     register = SubmitField('Зарегистрироваться')
     login = SubmitField('Войти')
+
+
+class LogMainPageForm(FlaskForm):
+    pass

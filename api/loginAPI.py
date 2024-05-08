@@ -61,10 +61,10 @@ def login_password(rdm_string):
                 return redirect(f'/key={random_string}')
 
             else:
-                return render_template('login_password.html', form=form, message='Неправильный пароль',
+                return render_template('login_password.html', form=form_new, message='Неправильный пароль',
                                        rdm_string=rdm_string)
         else:
-            return render_template('login_password.html', form=form, message='Такого аккаунта не существует',
+            return render_template('login_password.html', form=form_new, message='Такого аккаунта не существует',
                                    rdm_string=rdm_string)
 
     return render_template('login_password.html', form=form, rdm_string=rdm_string)
