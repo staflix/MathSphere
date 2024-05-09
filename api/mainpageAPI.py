@@ -12,8 +12,8 @@ blueprint = flask.Blueprint(
 )
 
 
-@blueprint.route('/key=<rdm_string>', methods=['GET', 'POST'])
-def main_page_unlog(rdm_string):
+@blueprint.route('/', methods=['GET', 'POST'])
+def main_page_unlog():
     form = UnLogMainPageForm()
     return render_template('unlog_index.html', form=form)
 
@@ -22,4 +22,4 @@ def main_page_unlog(rdm_string):
 @blueprint.route('/key=<rdm_string>', methods=['GET', 'POST'])
 def main_page_log(rdm_string):
     form = LogMainPageForm()
-    return render_template('authorizated.html', form=form)
+    return render_template('log_index.html', form=form)
