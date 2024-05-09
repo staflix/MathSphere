@@ -4,7 +4,7 @@ from flask import Flask, render_template, redirect
 from forms.loginForm import LoginForm
 from data import db_session
 from data.users import User
-from api import registerAPI, loginAPI, simplearithmeticAPI, resetpasswordAPI, mainpageAPI
+from api import registerAPI, loginAPI, trainerAPI, resetpasswordAPI, mainpageAPI
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -44,7 +44,7 @@ def not_found_error(_):
 def main():
     app.register_blueprint(registerAPI.blueprint)
     app.register_blueprint(loginAPI.blueprint)
-    app.register_blueprint(simplearithmeticAPI.blueprint)
+    app.register_blueprint(trainerAPI.blueprint)
     app.register_blueprint(resetpasswordAPI.blueprint)
     app.register_blueprint(mainpageAPI.blueprint)
     app.run(port=5000, host='127.0.0.1', debug=True)
