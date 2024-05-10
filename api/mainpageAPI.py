@@ -22,4 +22,8 @@ def main_page_unlog():
 @blueprint.route('/key=<rdm_string>', methods=['GET', 'POST'])
 def main_page_log(rdm_string):
     form = LogMainPageForm()
+
+    if form.trainer_btn.data:
+        return redirect(f"/choice_class/key={rdm_string}")
+
     return render_template('log_index.html', form=form)

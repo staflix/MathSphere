@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Учебное задание</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+
+    .button {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+    <form action="" method="post" class="container">
+    {{ form.hidden_tag() }}
+    <h1>Тренировочное задание</h1>
+    <p>{{ text }}</p>
+    <img src="{{ url_for('static', filename=img_path) }}" alt="Изображение">
+    {% if message_type == 'check' %}
+        {{ form.answer_text(type="text", placeholder="Введите ваш ответ") }}
+        {{ form.check(class="button") }}
+    {% endif %}
+    {% if message_type == 'next' %}
+        {{ form.next(class="button") }}
+    {% endif %}
+    {{ message }}
+</form>
+</body>
+</html>

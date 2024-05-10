@@ -9,4 +9,4 @@ class UnLogMainPageForm(FlaskForm):
 
 
 class LogMainPageForm(FlaskForm):
-    pass
+    trainer_btn = SubmitField('Тренажер')

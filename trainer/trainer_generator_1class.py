@@ -46,7 +46,7 @@ generator = Generator1(1, 'Счет предметов. Сравнение гр�
 # Добавляем задачи и сохраняем обновленный словарь
 generator.generate_item_count_etc(dictionary_trainer, 11,
                                   Task(text='А сколько здесь всего яблок?',
-                                       image='./img_trainer/item_count_etc/apple.jpg'))
+                                       image='img_trainer/item_count_etc/apple.jpg'))
 
 # Выводим обновленный словарь
 print(dictionary_trainer)
