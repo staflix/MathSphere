@@ -146,29 +146,17 @@
             </div>
           </div>
         </section>
-        <section class="authorizated-features">
+         <form action="" method="post" class="authorizated-features">
+            {{ form.hidden_tag() }}
           <div class="authorizated-title">
             <span class="authorizated-text03">
               <span>Тут какой-то текст</span>
-              <br />
+              <br/>
             </span>
           </div>
           <div class="authorizated-cards">
-            <a
-              href="trainer.html"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="authorizated-link"
-            >
-              <div class="authorizated-container3">
-                <div class="authorizated-trainer card">
-                  <span class="authorizated-text06">
-                    <span>Тренажёр</span>
-                    <br />
-                  </span>
-                </div>
-              </div>
-            </a>
+            {{ form.trainer_btn(class="authorizated-link authorizated-container3 authorizated-trainer card authorizated-text06", target="_blank", rel="noreferrer noopener") }}
+          </div>
             <a
               href="company.html"
               target="_blank"
@@ -194,7 +182,7 @@
               </div>
             </a>
           </div>
-        </section>
+         </form>
         <section class="authorizated-statistics">
           <div class="authorizated-container6">
             <div class="active-users-active-users metrics">
