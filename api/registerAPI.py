@@ -36,14 +36,15 @@ def register():
                     db_sess.add(user)
                     db_sess.commit()
                     db_sess.refresh(user)
+                    rdm_string = generate_string()
                     info = Info(
                         user_id=user.id,
-                        random_string=generate_string()
+                        random_string=rdm_string
                     )
                     db_sess.add(info)
                     db_sess.commit()
                     db_sess.close()
-                    return redirect("/login")
+                    return redirect(f"/key={rdm_string}")
                 else:
                     return render_template('register.html',
                                            message='Пароли не совпадают', form=form)
