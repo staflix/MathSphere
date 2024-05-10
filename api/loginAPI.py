@@ -4,6 +4,7 @@ from forms.loginForm import LoginForm
 from flask_login import login_user
 from data import db_session
 from data.users import User, Info
+from data.generate_string import generate_string
 
 blueprint = flask.Blueprint(
     'login_api',
@@ -50,15 +51,22 @@ def login_password(rdm_string):
         db_session.global_init("db/MathSphereBase.db")
         db_sess = db_session.create_session()
         user = db_sess.query(User).filter(User.email == form_new.email.data).first()
-        user_id = user.id
-        random_string = db_sess.query(Info).filter(Info.user_id == user_id).first().random_string
         db_sess.close()
 
         if user:
 
             if user.check_password(form.password.data):
+                db_session.global_init("db/MathSphereBase.db")
+                db_sess = db_session.create_session()
+                user = db_sess.query(User).filter(User.email == form_new.email.data).first()
+                user_id = user.id
+                new_random_string = generate_string()
+                user_info = db_sess.query(Info).filter(Info.user_id == user_id).first()
+                user_info.random_string = new_random_string
+                db_sess.commit()
+                db_sess.close()
                 login_user(user, remember=form.remember_me.data)
-                return redirect(f'/key={random_string}')
+                return redirect(f'/key={new_random_string}')
 
             else:
                 return render_template('login_password.html', form=form_new, message='Неправильный пароль',
