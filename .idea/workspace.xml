@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="Super security. bgfix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/loginAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/loginAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/mainpageAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/mainpageAPI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/MathSphereBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/MathSphereBase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/log_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/log_index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/unlog_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/unlog_index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,6 +96,19 @@
       <option name="presentableId" value="Default" />
       <updated>1715357401232</updated>
     </task>
+    <task id="LOCAL-00001" summary="Super security. bgfix">
+      <option name="closed" value="true" />
+      <created>1715411605329</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715411605329</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Super security. bgfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Super security. bgfix" />
   </component>
 </project>
