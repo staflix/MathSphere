@@ -76,10 +76,36 @@ lvl_12.add(Task(text='Какая морковка самая короткая?',
 lvl_22 = Level(1, info="Определи на каком месте?")
 lvl_22.add(Task(text="На каом месте четвертая по размеру гусиница?", image='pic/21.jpg', answer='3', choice=['1', '2', '3', '4', '5']))
 
-
 lvl_32 = Level(1, info='какой предмет толще ?')
 lvl_32.add(Task(text="какой ствол толще?", image='pic/22.jpg', answer='левый', choice=['правый', 'лелый']))
 lvl_32.add(Task(text="Какая морковка толще?", image="pic/23.jpg", answer='правая', choice=['правая', 'левая']))
 
+lvl_32 = Level(1, info='одинаковые ли длинны?')
+lvl_32.add(Task(text="Есть ли на картинке ленточки одинаковой длинны", image='pic/23.jpg', answer='да', choice=['нет', 'да']))
+lvl_32.add(Task(text="Все ли линии одиноковые по длинне?", image="pic/25.jpg", answer='нет', choice=['да', 'нет']))
 
 
+
+lvl_42 = Level(1, info='Рассмотрим картинку', style='test', time=60, topic='Сравнение предметов по форме(длинна толщина).')
+lvl_42.add(Task(text="какая палочка самая длинная?", image='pic/25.jpg', answer='Крассная', choice=['зеланая', 'синяя', 'крассная']))
+lvl_42.add(Task(text="А какая самая короткая ?", image="pic/25.jpg", answer='нет', choice=['зеланая', 'синяя', 'крассная']))
+lvl_42.add(Task(text="Чего больше перцев или морковок?", image='pic/9.jpg', answer='Одинокого', choice=['морковок', 'перцев', 'одинакого']))
+lvl_42.add(Task(text="Какая палочка между длинной и короткой", image="pic/18.jpg", answer='2', choice=['2', '3', '1']))
+lvl_42.add(Task(text="под каким номером самая кароткая гусеница?", image='pic/21.jpg', answer='2'))
+lvl_42.add(Task(text="Есть ли на картинке предметы одиниковой длинны?", image="pic/17.jpg", answer='да', choice=['нет', 'да']))
+
+# тема 3
+third_topic = Topic('Знаки «+», «-». Состав числа 5 из двухслагаемых.')
+
+lvl_13 = Level(1, info='Знаки «+», «-»')
+lvl_13.add(Task(text='какой знак нужно поставить?', image='pic/26.jpg', answer='-', choice=['-', '+']))
+lvl_13.add(Task(text='Выберите знак + или -', image='pic/27.jpg', answer='+', choice=['+', '-']))
+lvl_13.add(Task(text='+ или -', image='pic/28.jpg', answer='+', choice=['-', '+']))
+lvl_13.add(Task(text='Выберите знак', image='pic/29.jpg', answer='-', choice=['+', '-']))
+lvl_13.add(Task(text='Ну и последний раз', image='pic/30.jpg', answer='+', choice=['+', '-']))
+
+lvl_23 = Level(1, info='Состав числа 5 из двухслагаемых.')
+lvl_13.add(Task(text='Какую цифру нужно постаивть?', image='pic/31.jpg', answer='2'))
+lvl_13.add(Task(text='Что нужно поставить ?', image='pic/32.jpg', answer='1'))
+lvl_13.add(Task(text='', image='pic/33.jpg', answer='1'))
+lvl_13.add(Task(text='Ну и последний раз', image='pic/34.jpg', answer='5'))
