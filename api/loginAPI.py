@@ -3,7 +3,8 @@ import flask
 from forms.loginForm import LoginForm
 from flask_login import login_user
 from data import db_session
-from data.users import User
+from data.users import User, Info
+from data.generate_string import generate_string
 
 blueprint = flask.Blueprint(
     'login_api',
@@ -11,12 +12,9 @@ blueprint = flask.Blueprint(
     template_folder='templates'
 )
 
-email = None
-
 
 @blueprint.route('/login', methods=['GET', 'POST'])
 def login_email():
-    global email
     form = LoginForm()
 
     if form.input_password.data:
@@ -24,12 +22,10 @@ def login_email():
         db_session.global_init("db/MathSphereBase.db")
         db_sess = db_session.create_session()
         user = db_sess.query(User).filter(User.email == form.email.data).first()
-        db_sess.close()
-
         if user:
 
-            email = user.email
-            return redirect('/login/password')
+            rdm_string = db_sess.query(Info).filter(Info.user_id == user.id).first()
+            return redirect(f'/login/key={rdm_string.random_string}')
 
         else:
 
@@ -39,26 +35,44 @@ def login_email():
     return render_template('login_email.html', form=form)
 
 
-@blueprint.route('/login/password', methods=['GET', 'POST'])
-def login_password():
-    global email
+@blueprint.route('/login/key=<rdm_string>', methods=['GET', 'POST'])
+def login_password(rdm_string):
     form = LoginForm()
-    form.email.data = email
 
-    if form.submit.data:
+    db_session.global_init("db/MathSphereBase.db")
+    db_sess = db_session.create_session()
 
-        db_session.global_init("db/MathSphereBase.db")
+    user_info = db_sess.query(Info).filter(Info.random_string == rdm_string).first()
+    user = db_sess.query(User).filter(User.id == user_info.user_id).first()
+    form.email.data = user.email
+    db_sess.close()
+
+    if form.validate_on_submit():
+
         db_sess = db_session.create_session()
-        user = db_sess.query(User).filter(User.email == email).first()
-        db_sess.close()
+        user = db_sess.query(User).filter(User.email == form.email.data).first()
 
-        if user and user.check_password(form.password.data):
+        if user:
+            if user.check_password(form.password.data):
+                user_id = user.id
+                new_random_string = generate_string()
 
-            login_user(user, remember=form.remember_me.data)
-            return redirect("/")
+                db_sess.query(Info).filter(Info.user_id == user_id).update({'random_string': new_random_string})
+                db_sess.commit()
 
+                db_sess.refresh(user)
+
+                db_sess.close()
+
+                login_user(user, remember=form.remember_me.data)
+                return redirect(f'/key={new_random_string}')
+            else:
+                db_sess.close()
+                return render_template('login_password.html', form=form, message='Неправильный пароль',
+                                       rdm_string=rdm_string)
         else:
-            return render_template('login_password.html', form=form, message='Неправильный пароль'
-                                   , email=email)
+            db_sess.close()
+            return render_template('login_password.html', form=form, message='Такого аккаунта не существует',
+                                   rdm_string=rdm_string)
 
-    return render_template('login_password.html', form=form, email=email)
+    return render_template('login_password.html', form=form, rdm_string=rdm_string)

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Выберите тему</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 20px 40px;
+        font-size: 18px;
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        margin: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+<h1>Тут передавать смс темы и if проверять тему. Печатать карточки нужныхз тем</h1>
+    <form action="" method="post" class="container">
+            {{ form.hidden_tag() }}
+        {{ form.item_count_etc(class="button") }}
+        {{ form.topic1(class="button") }}
+        {{ form.topic2(class="button") }}
+        {{ form.topic3(class="button") }}
+    </form>
+</body>
+</html>

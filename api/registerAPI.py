@@ -3,8 +3,9 @@ import flask
 from sqlalchemy import select
 from forms.registerForm import RegisterForm
 from data import db_session
-from data.users import User
+from data.users import User, Info
 from check_email import is_valid_email
+from data.generate_string import generate_string
 
 blueprint = flask.Blueprint(
     'register_api',
@@ -34,8 +35,16 @@ def register():
                     user.set_password(form.password.data)
                     db_sess.add(user)
                     db_sess.commit()
+                    db_sess.refresh(user)
+                    rdm_string = generate_string()
+                    info = Info(
+                        user_id=user.id,
+                        random_string=rdm_string
+                    )
+                    db_sess.add(info)
+                    db_sess.commit()
                     db_sess.close()
-                    return redirect("/login")
+                    return redirect(f"/key={rdm_string}")
                 else:
                     return render_template('register.html',
                                            message='Пароли не совпадают', form=form)
