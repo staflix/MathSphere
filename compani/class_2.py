@@ -16,9 +16,11 @@ lvl_2.add(Task(text='Теперь уменьши на 2 число 12', answer='
 lvl_2.add(Task(text='Уменьши 9 на 3', answer='6'))
 
 lvl_3 = Level(1, info='Порешаем задачи!')
-lvl_3.add(Task(text='В первом ряду кинотеатра 8 мест, а во втором на 2 места больше. Сколько мест во втором ряду?', answer='10'))
+lvl_3.add(Task(text='В первом ряду кинотеатра 8 мест, а во втором на 2 места больше. Сколько мест во втором ряду?',
+               answer='10'))
 lvl_3.add(Task(text='А сколько всего мест в кинотеатре?', answer='18'))
-lvl_3.add(Task(text='Длина первого звена ломаной 1 дм, а второго 3 см. Какая длина всей этой ломанной в сантиметрах?', answer='13'))
+lvl_3.add(Task(text='Длина первого звена ломаной 1 дм, а второго 3 см. Какая длина всей этой ломанной в сантиметрах?',
+               answer='13'))
 lvl_3.add(Task(text='Дима старше Оли на 6 лет, а Даша моложе димы на 4 года. Кто старше: Оля или Даша?', answer='Даша'))
 
 lvl_4 = Level(1, info='Будем учиться вести счёт десятками!')
@@ -296,3 +298,75 @@ topic_4.add_level(lvl_8)
 topic_4.add_level(lvl_9)
 topic_4.add_level(lvl_10)
 year_2.add_level(topic_4)
+
+topic_5 = Topic('Угол. Виды углов.')
+
+lvl_1 = Level(1, info='Привет! Называй виды углов!')
+lvl_1.add(Task(text='Какой это угол?', answer='Тупой', image='pic/108.jpg', choice=['Тупой', 'Прямой', 'Острый']))
+lvl_1.add(Task(text='А этот угол?', answer='Прямой', image='pic/109.jpg', choice=['Тупой', 'Прямой', 'Острый']))
+lvl_1.add(Task(text='Ну а этот?', answer='Острый', image='pic/110.jpg', choice=['Тупой', 'Прямой', 'Острый']))
+lvl_1.add(Task(text='Сколько здесь тупых углов?', answer='2', image='pic/111.jpg'))
+
+
+lvl_2 = Level(1, info='Привет! Рассмотрим фигуры.')
+lvl_2.add(Task(text='Сколько углов у второй фигуры?', answer='4', image='pic/107.jpg'))
+lvl_2.add(Task(text='Сколько на картинке прямых углов?', answer='4', image='pic/107.jpg'))
+lvl_2.add(Task(text='Напиши сумму чисел, написанных на острых углах', answer='19', image='pic/107.jpg'))
+
+lvl_3 = Level(1, info='А теперь рассмотрим чертёж.')
+lvl_3.add(Task(text='Сколько острых углов на чертеже?', answer='2', image='pic/112.jpg'))
+lvl_3.add(Task(text='А сколько прямых углов?', answer='5', image='pic/112.jpg'))
+lvl_3.add(Task(text='Сколько же тогда тупых углов?', answer='1', image='pic/112.jpg'))
+
+lvl_4 = Level(1, info='Немного примеров!')
+lvl_4.add(Task(text='80 - (12 - 7)', answer='75'))
+lvl_4.add(Task(text='90 - (14 - 8)', answer='84'))
+lvl_4.add(Task(text='32 - 7', answer='25'))
+
+lvl_5 = Level(1, info='Бонусное задание!')
+lvl_5.add(Task(text='Продолжи ряд чисел: 1 3 7 13 21 ?', answer='31'))
+
+
+lvl_6 = Level(1, info='А теперь рассмотрим картинку.')
+lvl_6.add(Task(text='Фигура под номером 4 прямоугольник?', answer='Нет', image='pic/113.jpg', choice=['Да', 'Нет']))
+lvl_6.add(Task(text='Прямоугольник это?', answer='Четырехугольник, у которого все угры прямые', image='pic/113.jpg',
+               choice=['Четырехугольник, у которого все угры тупые', 'Четырехугольник', "Четырехугольник, у которого "
+                                                                                        "все угры прямые"]))
+lvl_6.add(Task(text='Сколько же тогда на картинке прямоугольников?', answer='3', image='pic/113.jpg'))
+
+
+lvl_7 = Level(1, info='Немного уравнений')
+lvl_7.add(Task(text='x - 9 = 4', answer='13'))
+lvl_7.add(Task(text='35 - x = 30', answer='5'))
+lvl_7.add(Task(text='y + 7 = 14', answer='7'))
+
+lvl_8 = Level(1, info='Задача для любознательных!')
+lvl_8.add(Task(text='Белка запасала орехи на зиму. В первый день она принесла 2 ореха, а в каждый последующий на 1 '
+                    'больше. Сколько она запасла орехов за неделю?', answer='27'))
+lvl_8.add(Task(text='А если бы она в первый день принесла три ореха?', answer='34'))
+
+lvl_9 = Level(1, info='Найди правило, по которому в первом домике получено число 11 с использование остальных чисел'
+                      ' и применяй его на остальных')
+lvl_9.add(Task(text='Что напишем во второй домик?', answer='20', image='pic/114.jpg'))
+lvl_9.add(Task(text='А в синий домик?', answer='16', image='pic/114.jpg'))
+lvl_9.add(Task(text='Теперь в зелёный', answer='15', image='pic/114.jpg'))
+
+
+lvl_10 = Level(1, info='Закрепим пройденное!', style='test', time=60, topic='Угол. Виды углов. Логика.')
+lvl_10.add(Task(text='', answer=''))
+lvl_10.add(Task(text='', answer=''))
+lvl_10.add(Task(text='', answer=''))
+lvl_10.add(Task(text='', answer=''))
+lvl_10.add(Task(text='', answer=''))
+lvl_10.add(Task(text='', answer=''))
+topic_5.add_level(lvl_1)
+topic_5.add_level(lvl_2)
+topic_5.add_level(lvl_3)
+topic_5.add_level(lvl_4)
+topic_5.add_level(lvl_5)
+topic_5.add_level(lvl_6)
+topic_5.add_level(lvl_7)
+topic_5.add_level(lvl_8)
+topic_5.add_level(lvl_9)
+topic_5.add_level(lvl_10)
+year_2.add_level(topic_5)
