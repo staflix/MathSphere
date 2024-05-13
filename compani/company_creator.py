@@ -362,31 +362,31 @@ lvl_412.add(Task(text="7+?=19", answer='12'))
 
 trinadcati_topic = Topic("Общие приемы вычитания с переходом через десяток")
 
-lvl_19 = Level(1, info='реши примеры или составь примеры ')
-lvl_19.add(Task(text="8-10=?", answer='-2'))
-lvl_19.add(Task(text="-1-2=?", answer='-3'))
-lvl_19.add(Task(text="8-8=?", answer='0'))
+lvl_113 = Level(1, info='реши примеры или составь примеры ')
+lvl_113.add(Task(text="8-10=?", answer='-2'))
+lvl_113.add(Task(text="-1-2=?", answer='-3'))
+lvl_113.add(Task(text="8-8=?", answer='0'))
 
 
-lvl_29 = Level(1, info='реши примеры или составь примеры ')
-lvl_29.add(Task(text='5-7=?', answer="-2"))
-lvl_29.add(Task(text='5-10=?', answer="-5"))
-lvl_29.add(Task(text='5-11=?', answer="-6"))
+lvl_213 = Level(1, info='реши примеры или составь примеры ')
+lvl_213.add(Task(text='5-7=?', answer="-2"))
+lvl_213.add(Task(text='5-10=?', answer="-5"))
+lvl_213.add(Task(text='5-11=?', answer="-6"))
 
 
-lvl_39 = Level(1, info='а теперь составь примеры.')
-lvl_39.add(Task(text='5-?=-1', answer="6"))
-lvl_39.add(Task(text='5-?=-10', answer="15"))
-lvl_39.add(Task(text='5-?=-5', answer="10"))
+lvl_313 = Level(1, info='а теперь составь примеры.')
+lvl_313.add(Task(text='5-?=-1', answer="6"))
+lvl_313.add(Task(text='5-?=-10', answer="15"))
+lvl_313.add(Task(text='5-?=-5', answer="10"))
 
 
-lvl_49 = Level(1, info='реши примеры или стоставь их', style='test', time=40, topic='Общие приемы вычитания с переходом через десяток')
-lvl_49.add(Task(text='6-?=-15', answer="9"))
-lvl_49.add(Task(text='5-?=-1', answer="6"))
-lvl_49.add(Task(text='5-?=19', answer="14"))
-lvl_49.add(Task(text='6-3=?', answer="3"))
-lvl_49.add(Task(text='5-6=?', answer="-1"))
-lvl_49.add(Task(text='5-?=-7', answer="2"))
+lvl_413 = Level(1, info='реши примеры или стоставь их', style='test', time=40, topic='Общие приемы вычитания с переходом через десяток')
+lvl_413.add(Task(text='6-?=-15', answer="9"))
+lvl_413.add(Task(text='5-?=-1', answer="6"))
+lvl_413.add(Task(text='5-?=19', answer="14"))
+lvl_413.add(Task(text='6-3=?', answer="3"))
+lvl_413.add(Task(text='5-6=?', answer="-1"))
+lvl_413.add(Task(text='5-?=-7', answer="2"))
 
 
 
