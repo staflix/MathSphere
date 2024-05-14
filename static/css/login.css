@@ -176,7 +176,6 @@
 .login-textinput {
   width: 100%;
   border-color: #7350f7;
-  border-radius: var(--dl-radius-radius-button-radius);
   background-color: transparent;
 }
 .login-password {
