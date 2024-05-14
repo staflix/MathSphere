@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Authorizated - Active Online Software Page</title>
-    <meta
-      property="og:title"
-      content="Authorizated - Active Online Software Page"
-    />
+    <title>Keen Magnificent Armadillo</title>
+    <meta property="og:title" content="Keen Magnificent Armadillo" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -26,10 +23,10 @@
         text-transform: none;
         letter-spacing: normal;
         line-height: 1.15;
-        color: var(--dl-color-gray-black);
-        background-color: var(--dl-color-gray-white);
+        color: var(--dl-color-theme-neutral-dark);
+        background-color: var(--dl-color-theme-neutral-light);
 
-        fill: var(--dl-color-gray-black);
+        fill: var(--dl-color-theme-neutral-dark);
       }
     </style>
     <link
@@ -38,7 +35,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
       data-tag="font"
     />
     <link
@@ -48,204 +45,295 @@
     />
     <link
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
       href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
     />
-    <style>
-       body::-webkit-scrollbar {
-         width: 0.5em;
-         z-index: 100;
-         background-color:transparent;
-       }
-
-
-      body::-webkit-scrollbar-thumb {
-         background-color:white;
-         box-shadow:0 -100vh 0 100vh #5128f5;//magic
-       }
-    </style>
   </head>
   <body>
     <link rel="stylesheet" href="../static/css/style.css" />
     <div>
-      <link href="../static/css/authorizated.css" rel="stylesheet" />
+      <link href="../static/css/log_index.css" rel="stylesheet" />
 
       <div class="authorizated-container">
-        <section class="authorizated-hero">
-          <div id="header" class="authorizated-menu">
-            <div id="mobile-menu" class="authorizated-mobile-navigation">
+        <div class="authorizated-container01">
+          <div data-role="Header" class="authorizated-navbar-container">
+            <div class="authorizated-navbar">
+              <div class="authorizated-logo">
+                <img
+                  alt="image"
+                  src="../static/media/logo-1500w-1500w.png"
+                  class="authorizated-image"
+                />
+              </div>
+              <div class="authorizated-container02">
+                <div class="authorizated-container03">
+                  <link
+                    rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+                    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+                    crossorigin="anonymous"
+                    referrerpolicy="no-referrer"
+                  />
+
+                  <div class="container">
+                    <div class="card">
+                      <div class="card-img">
+                        <img
+                          src="https://i.postimg.cc/Wb6Zchv2/profile-pic.png"
+                          alt=""
+                        />
+                      </div>
+                      <h2>
+                        Данька крутой
+                        <br />
+                        <span>Любит бездельничать</span>
+                      </h2>
+                    </div>
+                    <ul>
+                      <li>
+                        <a href="/settings">
+                          <i class="fa fa-cog" aria-hidden="true"></i>
+                          Настройки
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/avatar">
+                          <i class="fa fa-user" aria-hidden="true"></i>
+                          Сменить аватар
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <i class="fa fa-sign-out" aria-hidden="true"></i>
+                          Выйти
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="toggle">
+                      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <style>
+                    *,
+                    *::before,
+                    *::after {
+                        padding: 0;
+                        margin: 0;
+                        box-sizing: inherit;
+                    }
+
+                    html{
+                        box-sizing: border-box;
+                        font-size: 62.5%; // 10px
+                    }
+
+                    ul{
+                        list-style-type: none;
+                    }
+
+                    a{
+                        text-decoration: none;
+                    }
+
+
+
+                    .container{
+                        position: relative;
+                        width: 35rem;
+                        height: 11.5rem;
+                        background-color: #fff;
+                        padding: 2rem;
+                        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                        overflow: hidden;
+                        transition: height .4s ease-in;
+                        border-radius: 15px;
+                    }
+                    .container.active{
+                        height: 30rem;
+
+                    }
+
+                    .card{
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .card-img img{
+                        width: 80px;
+
+                    }
+
+                    .card h2{
+                        font-size: 2.2rem;
+                        margin-left: 1.5rem;
+                        color: #222;
+                        letter-spacing: 2px;
+                    }
+                    .card h2 span{
+                        font-size: 1.6rem;
+                        font-weight: 400;
+                        color: #777;
+                        letter-spacing: 0px;
+                    }
+
+                    .container ul {
+                        position: relative;
+                        border-top: 1px solid rgba(0,0,0,0.1);
+                        margin-top: 1.5rem;
+                        padding: 2rem 0;
+
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2rem;
+                    }
+                    .container ul a{
+                        font-size: 1.8rem;
+                        color: #444;
+                        transition: 0.2s;
+                    }
+                    .fa{
+                        font-size: 2rem;
+                        margin-right: 1rem;
+
+                    }
+                    .container ul a:hover{
+                        color: #5228F5;
+                    }
+
+                    .toggle{
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        width: 4rem;
+                        height: 4rem;
+                        background-color: #5228F5;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                    }
+
+                    .toggle > .fa{
+                        margin: auto;
+                        color: #fff;
+                        text-align: center;
+                        cursor: pointer;
+                        transition: 0.25s;
+                       font-size: 1.8rem;
+                    }
+
+                    .container.active .toggle > .fa{
+                        transform: rotate(-540deg);
+                    }
+                  </style>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="authorizated-features">
+            <div class="authorizated-title">
+              <span class="authorizated-text">
+                <span>Тут какой-то текст</span>
+                <br />
+              </span>
+            </div>
+            <div class="authorizated-maps">
+              <div class="authorizated-container04">
+                <div class="authorizated-trainer Map">
+                  <span class="authorizated-text03">
+                    <span>Тренажёр</span>
+                    <br />
+                  </span>
+                </div>
+              </div>
+              <div class="authorizated-container05">
+                <div class="authorizated-company Map">
+                  <span class="authorizated-text06">Кампания</span>
+                </div>
+              </div>
+              <div class="authorizated-container06">
+                <div class="authorizated-multiplayer Map">
+                  <span class="authorizated-text07">Мультиплеер</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="authorizated-statistics">
+            <div class="authorizated-container07"></div>
+          </section>
+          <footer class="authorizated-footer">
+            <div class="authorizated-top">
+              <div class="authorizated-right">
+                <div class="authorizated-category">
+                  <span class="authorizated-text08">Команда CodeBlaze</span>
+                  <div class="authorizated-links">
+                    <span class="authorizated-text09">
+                      <span>Frontend: @flamymc</span>
+                      <br />
+                    </span>
+                    <span class="authorizated-text12">Backend: @staflix</span>
+                    <span class="authorizated-text13">Backend: @DanSivets</span>
+                    <span class="authorizated-text14">Server: @d1temend</span>
+                  </div>
+                </div>
+                <div class="authorizated-category1">
+                  <span class="authorizated-text15">
+                    <span>Контакты</span>
+                    <br />
+                  </span>
+                  <div class="authorizated-links1">
+                    <span class="authorizated-text18">
+                      Телефон:&nbsp;+7 (XXX) XXX-XX-XX
+                    </span>
+                    <span class="authorizated-text19">
+                      Email:&nbsp;info@codeblaze.com
+                    </span>
+                    <span class="authorizated-text20">
+                      Telegram: @codeblaze
+                    </span>
+                    <span class="authorizated-text21">Instagram</span>
+                    <span class="authorizated-text22">Facebook</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="authorizated-bottom">
               <img
                 alt="pastedImage"
                 src="https://play.teleporthq.io/static/svg/placeholders/no-image.svg"
-                class="authorizated-logo"
+                class="authorizated-branding"
               />
-              <div class="authorizated-links">
-                <span class="Link">Solutions</span>
-                <span class="Link">How it works</span>
-                <span class="Link">Prices</span>
-              </div>
-              <div
-                id="close-mobile-menu"
-                class="authorizated-close-mobile-menu"
-              >
-                <svg
-                  viewBox="0 0 804.5714285714286 1024"
-                  class="authorizated-icon"
-                >
-                  <path
-                    d="M741.714 755.429c0 14.286-5.714 28.571-16 38.857l-77.714 77.714c-10.286 10.286-24.571 16-38.857 16s-28.571-5.714-38.857-16l-168-168-168 168c-10.286 10.286-24.571 16-38.857 16s-28.571-5.714-38.857-16l-77.714-77.714c-10.286-10.286-16-24.571-16-38.857s5.714-28.571 16-38.857l168-168-168-168c-10.286-10.286-16-24.571-16-38.857s5.714-28.571 16-38.857l77.714-77.714c10.286-10.286 24.571-16 38.857-16s28.571 5.714 38.857 16l168 168 168-168c10.286-10.286 24.571-16 38.857-16s28.571 5.714 38.857 16l77.714 77.714c10.286 10.286 16 24.571 16 38.857s-5.714 28.571-16 38.857l-168 168 168 168c10.286 10.286 16 24.571 16 38.857z"
-                  ></path>
-                </svg>
-              </div>
-            </div>
-            <div class="authorizated-desktop-navigation">
-              <nav class="authorizated-centered">
-                <div class="authorizated-left">
-                  <img
-                    alt="image"
-                    src="../static/media/logos/logo-200h.png"
-                    class="authorizated-image"
-                  />
-                </div>
-                <div class="authorizated-right">
-                  <svg
-                    viewBox="0 0 731.4285714285713 1024"
-                    class="authorizated-icon2"
-                  >
-                    <path
-                      d="M731.429 799.429c0 83.429-54.857 151.429-121.714 151.429h-488c-66.857 0-121.714-68-121.714-151.429 0-150.286 37.143-324 186.857-324 46.286 45.143 109.143 73.143 178.857 73.143s132.571-28 178.857-73.143c149.714 0 186.857 173.714 186.857 324zM585.143 292.571c0 121.143-98.286 219.429-219.429 219.429s-219.429-98.286-219.429-219.429 98.286-219.429 219.429-219.429 219.429 98.286 219.429 219.429z"
-                    ></path>
-                  </svg>
-                </div>
-              </nav>
-            </div>
-            <div>
-              <div class="authorizated-container2">
-                <script defer="">
-                  /*
-                  Mobile menu - Code Embed
-                  */
-
-                  // Mobile menu
-                  const mobileMenu = document.querySelector('#mobile-menu')
-
-                  // Buttons
-                  const closeButton = document.querySelector('#close-mobile-menu')
-                  const openButton = document.querySelector('#open-mobile-menu')
-
-                  // On openButton click, set the mobileMenu position left to -100vw
-                  openButton.addEventListener('click', function() {
-                      mobileMenu.style.transform = 'translateX(0%)'
-                  })
-
-                  // On closeButton click, set the mobileMenu position to 0vw
-                  closeButton.addEventListener('click', function() {
-                      mobileMenu.style.transform = 'translateX(100%)'
-                  })
-                </script>
-              </div>
-            </div>
-          </div>
-        </section>
-         <form action="" method="post" class="authorizated-features">
-            {{ form.hidden_tag() }}
-          <div class="authorizated-title">
-            <span class="authorizated-text03">
-              <span>Тренируйтесь, проходите тесты, соревнуйтесь, повышайте свой уровень и становитесь настоящим математическим героем вместе с MathUp!</span>
-              <br/>
-            </span>
-          </div>
-          <div class="authorizated-cards">
-            {{ form.trainer_btn(class="authorizated-link authorizated-container3 authorizated-trainer card authorizated-text06", target="_blank", rel="noreferrer noopener") }}
-          </div>
-           {{ form.company_btn(class="authorizated-link1 authorizated-container4 authorizated-company card authorizated-text09", target="_blank", rel="noreferrer noopener") }}
-            <a
-              href="https://multiplayer"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="authorizated-link2"
-            >
-              <div class="authorizated-container5">
-                <div class="authorizated-multiplayer card">
-                  <span class="authorizated-text10">Мультиплеер</span>
-                </div>
-              </div>
-            </a>
-          </div>
-         </form>
-        <section class="authorizated-statistics">
-          <div class="authorizated-container6">
-            <div class="active-users-active-users metrics">
-              <span class="active-users-text"><span>3.5M</span></span>
-              <span class="active-users-text1">
-                <span>— Active users</span>
-              </span>
-            </div>
-            <div class="active-users-active-users metrics">
-              <span class="active-users-text"><span>50k</span></span>
-              <span class="active-users-text1"><span>— Brands</span></span>
-            </div>
-            <div class="active-users-active-users metrics">
-              <span class="active-users-text"><span>250K</span></span>
-              <span class="active-users-text1">
-                <span>— Accounts Managed</span>
-              </span>
-            </div>
-            <div class="active-users-active-users metrics">
-              <span class="active-users-text"><span>30M</span></span>
-              <span class="active-users-text1">
-                <span>— Active leads</span>
-              </span>
-            </div>
-          </div>
-        </section>
-        <footer class="authorizated-footer">
-          <div class="authorizated-top">
-            <div class="authorizated-right1">
-              <div class="authorizated-category">
-                <span class="authorizated-text11">Команда CodeBlaze</span>
-                <div class="authorizated-links1">
-                  <span class="authorizated-text12">
-                    <span>Frontend: @flamymc</span>
-                    <br />
-                  </span>
-                  <span class="authorizated-text15">Backend: @staflix</span>
-                  <span class="authorizated-text16">Backend: @DanSivets</span>
-                  <span class="authorizated-text17">Server: @d1temend</span>
-                </div>
-              </div>
-              <div class="authorizated-category1">
-                <span class="authorizated-text18">
-                  <span>Контакты</span>
-                  <br />
+              <span class="authorizated-text23">
+                <span class="authorizated-text24">
+                  © 2024 CodeBlaze. Все права защищены
                 </span>
-                <div class="authorizated-links2">
-                  <span class="authorizated-text21">
-                    Телефон:&nbsp;+7 (XXX) XXX-XX-XX
-                  </span>
-                  <span class="authorizated-text22">
-                    Email:&nbsp;info@codeblaze.com
-                  </span>
-                  <span class="authorizated-text23">Telegram: @codeblaze</span>
-                  <span class="authorizated-text24">Instagram</span>
-                  <span class="authorizated-text25">Facebook</span>
-                </div>
-              </div>
+                <br />
+              </span>
+            </div>
+          </footer>
+          <div>
+            <div class="authorizated-container09">
+              <script>
+                const container = document.querySelector('.container');
+                    const toggle = document.querySelector('.toggle');
+
+                    toggle.addEventListener('click', () => {
+                        container.classList.toggle('active');
+                    });
+              </script>
             </div>
           </div>
-          <div class="authorizated-bottom">
-            <img
-              alt="pastedImage"
-              src="https://play.teleporthq.io/static/svg/placeholders/no-image.svg"
-              class="authorizated-branding"
-            />
-            <span class="authorizated-text26">
-              <span class="authorizated-text27">
-                © 2024 CodeBlaze. Все права защищены
-              </span>
-              <br />
-            </span>
-          </div>
-        </footer>
+        </div>
       </div>
     </div>
     <script
