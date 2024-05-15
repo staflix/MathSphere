@@ -1,3 +1,84 @@
+.home-container {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.home-container01 {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.home-navbar-container {
+  top: 0;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+  position: sticky;
+  box-shadow: 5px 5px 10px 0px #d4d4d4;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--dl-color-gray-white);
+}
+.home-navbar {
+  width: 100%;
+  display: flex;
+  position: relative;
+  max-width: var(--dl-size-size-maxcontent);
+  align-items: center;
+  padding-top: var(--dl-space-space-doubleunit1);
+  padding-left: var(--dl-space-space-tripleunit1);
+  padding-right: var(--dl-space-space-tripleunit1);
+  flex-direction: row;
+  padding-bottom: var(--dl-space-space-doubleunit1);
+  justify-content: space-between;
+}
+.home-logo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.home-image {
+  width: 100%;
+  cursor: pointer;
+  object-fit: cover;
+}
+.home-right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: var(--dl-space-space-halfunit);
+  flex-direction: row;
+  padding-bottom: var(--dl-space-space-halfunit);
+}
+.home-sign-in {
+  margin-right: 20px;
+  text-decoration: none;
+}
+.home-get-started {
+  cursor: pointer;
+  display: flex;
+  transition: 0.3s;
+  align-items: center;
+  padding-top: var(--dl-space-space-unit);
+  padding-left: var(--dl-space-space-oneandhalfunits);
+  border-radius: 56px;
+  padding-right: var(--dl-space-space-oneandhalfunits);
+  flex-direction: column;
+  padding-bottom: var(--dl-space-space-unit);
+  text-decoration: none;
+  background-color: #000000;
+}
+.home-get-started:hover {
+  background-color: #5228F5;
+}
+.home-text {
+  color: rgb(255, 255, 255);
+}
 .list-item3-container {
   flex: 0 0 auto;
   display: flex;
@@ -18,9 +99,7 @@
 .main-container {
   width: 100%;
   display: flex;
-  overflow: auto;
   min-height: 100vh;
-  overflow-x: hidden;
   flex-direction: column;
 }
 .main-hero {

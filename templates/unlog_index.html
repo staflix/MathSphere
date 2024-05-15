@@ -113,62 +113,25 @@
 <div>
     <link href="../static/css/index.css" rel="stylesheet">
     <div class="main-container">
-        <section class="main-hero">
-            <div id="header" class="main-menu">
-                <div id="mobile-menu" class="main-mobile-navigation"><img alt="pastedImage"
-                                                                          src="https://play.teleporthq.io/static/svg/placeholders/no-image.svg"
-                                                                          class="main-logo">
-                    <div class="main-links"><span class="Link">Solutions</span><span
-                            class="Link">How it works</span><span class="Link">Prices</span></div>
-                    <div id="close-mobile-menu" class="main-close-mobile-menu">
-                        <svg viewBox="0 0 804.5714285714286 1024" class="main-icon">
-                            <path d="M741.714 755.429c0 14.286-5.714 28.571-16 38.857l-77.714 77.714c-10.286 10.286-24.571 16-38.857 16s-28.571-5.714-38.857-16l-168-168-168 168c-10.286 10.286-24.571 16-38.857 16s-28.571-5.714-38.857-16l-77.714-77.714c-10.286-10.286-16-24.571-16-38.857s5.714-28.571 16-38.857l168-168-168-168c-10.286-10.286-16-24.571-16-38.857s5.714-28.571 16-38.857l77.714-77.714c10.286-10.286 24.571-16 38.857-16s28.571 5.714 38.857 16l168 168 168-168c10.286-10.286 24.571-16 38.857-16s28.571 5.714 38.857 16l77.714 77.714c10.286 10.286 16 24.571 16 38.857s-5.714 28.571-16 38.857l-168 168 168 168c10.286 10.286 16 24.571 16 38.857z"></path>
-                        </svg>
-                    </div>
+        <div class="home-container01">
+          <div data-role="Header" class="home-navbar-container">
+            <div class="home-navbar">
+              <div class="home-logo">
+                <img
+                  alt="image"
+                  src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/538af5d6-3673-4de0-b11e-ccad9ffccc7d/4629f8d0-38ce-418d-b32f-0a9dc163d14d?org_if_sml=1760&amp;force_format=original"
+                  class="home-image"
+                />
+              </div>
+              <div class="home-right">
+                <a href="/login"><span class="home-sign-in Link">Войти</span></a>
+                <div class="home-get-started">
+                    <a href="/register"><span class="home-text">Зарегистрироваться</span></a>
                 </div>
-                <div class="main-desktop-navigation">
-                    <nav class="main-centered">
-                        <div class="main-left"><img alt="image" src="../static/media/logos/logo-200h.png"
-                                                    class="main-image"></div>
-                        <div class="main-right"><a href="/login"
-                                                   class="main-sign-in Link">Войти</a><a
-                                href="/register" class="main-navlink">
-                            <div class="main-get-started"><span class="main-text03">Зарегистрироваться</span></div>
-                        </a>
-                            <div id="open-mobile-menu" class="main-burger-menu"><img alt="pastedImage"
-                                                                                     src="../static/media/pastedimage-yxbd.svg"
-                                                                                     class="main-mobile-menu-button">
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-                <div>
-                    <div class="main-container02">
-                        <script defer="">
-                            /*
-                            Mobile menu - Code Embed
-                            */
-
-                            // Mobile menu
-                            const mobileMenu = document.querySelector('#mobile-menu')
-
-                            // Buttons
-                            const closeButton = document.querySelector('#close-mobile-menu')
-                            const openButton = document.querySelector('#open-mobile-menu')
-
-                            // On openButton click, set the mobileMenu position left to -100vw
-                            openButton.addEventListener('click', function () {
-                                mobileMenu.style.transform = 'translateX(0%)'
-                            })
-
-                            // On closeButton click, set the mobileMenu position to 0vw
-                            closeButton.addEventListener('click', function () {
-                                mobileMenu.style.transform = 'translateX(100%)'
-                            })
-                        </script>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
+        <section class="main-hero">
             <header class="main-header"><h1 class="main-text04">Улучшите ваши математические навыки с MathUp!</h1>
                 <p class="main-text05">MathUp - это удобная образовательная платформа, где вы можете
                     тренироваться и улучшать навыки в игровой форме!</p></header>
