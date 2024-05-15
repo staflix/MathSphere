@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>settings - Keen Magnificent Armadillo</title>
-    <meta property="og:title" content="settings - Keen Magnificent Armadillo" />
+    <title>Settings - Keen Magnificent Armadillo</title>
+    <meta property="og:title" content="Settings - Keen Magnificent Armadillo" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -12,7 +12,7 @@
     </style>
     <style data-tag="default-style-sheet">
       html {
-        font-family: Inter;
+        font-family: Noto Sans;
         font-size: 16px;
       }
 
@@ -45,11 +45,6 @@
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
       data-tag="font"
     />
@@ -65,12 +60,6 @@
 
       <div class="settings-container">
         <div class="settings-container1">
-          <img
-            alt="SignUp Image"
-            src="https://play.teleporthq.io/static/svg/default-img.svg"
-            class="settings-sign-up-image thq-img-ratio-16-9"
-          />
-          <div class="settings-container2"></div>
           <div class="settings-max-width thq-section-max-width">
             <div class="settings-form thq-section-padding">
               <div class="settings-title-root">
@@ -78,52 +67,69 @@
                   Редактирование данных
                 </h2>
               </div>
-              <div class="settings-container3">
-                <label for="thq-sign-up-4-email" class="thq-body-large">
-                  Изменить имя, фамилию
-                </label>
-                <input
-                  type="email"
-                  id="thq-sign-up-4-email"
-                  required="true"
-                  placeholder="Имя"
-                  class="settings-textinput thq-body-large thq-input"
-                />
-                <input
-                  type="email"
-                  id="thq-sign-up-4-email"
-                  required="true"
-                  placeholder="Фамилия"
-                  class="settings-textinput1 thq-body-large thq-input"
-                />
-              </div>
+              <form class="settings-form1">
+                <div class="settings-name">
+                  <label
+                    for="thq-sign-up-4-email"
+                    class="settings-text1 thq-body-large"
+                  >
+                    <span>Изменить имя</span>
+                    <br />
+                  </label>
+                  <input
+                    type="text"
+                    id="thq-sign-up-4-email"
+                    required="true"
+                    placeholder="Имя"
+                    class="settings-textinput thq-input thq-body-large"
+                  />
+                </div>
+                <div class="settings-surname">
+                  <label
+                    for="thq-sign-up-4-email"
+                    class="settings-text4 thq-body-large"
+                  >
+                    <span>Изменить фамилию</span>
+                    <br />
+                  </label>
+                  <input
+                    type="text"
+                    id="thq-sign-up-4-email"
+                    required="true"
+                    placeholder="Фамилия"
+                    class="settings-textinput1 thq-input thq-body-large"
+                  />
+                </div>
+              </form>
               <div class="settings-divider">
                 <div class="settings-divider1"></div>
               </div>
-              <form class="settings-form1">
-                <div class="settings-email">
-                  <label for="thq-sign-up-4-email" class="thq-body-large">
-                    <span>Изменить пароль</span>
-                    <br />
+              <form class="settings-form2">
+                <div class="settings-password">
+                  <label
+                    for="thq-sign-up-4-email"
+                    class="settings-text7 thq-body-large"
+                  >
+                    Сменить пароль
                   </label>
                   <input
                     type="password"
                     id="thq-sign-up-4-email"
                     required="true"
                     placeholder="Пароль"
-                    class="settings-textinput2 thq-body-large thq-input"
+                    class="settings-textinput2 thq-input thq-body-large"
                   />
                   <input
                     type="password"
                     id="thq-sign-up-4-email"
                     required="true"
                     placeholder="Повторите пароль"
-                    class="settings-textinput3 thq-body-large thq-input"
+                    class="settings-textinput3 thq-input thq-body-large"
                   />
                 </div>
               </form>
               <button type="submit" class="settings-button thq-button-filled">
-                <span class="settings-text5 thq-body-small">
+                <span class="settings-text8 thq-body-small">
                   Сохранить изменения
                 </span>
               </button>
