@@ -21,16 +21,17 @@ def settings(rdm_string):
 
     user_info = db_sess.query(Info).filter(Info.random_string == rdm_string).first()
     user = db_sess.query(User).filter(User.id == user_info.user_id).first()
-    form.name.data = user.name
-    form.surname.data = user.surname
 
     form2 = SettingsForm()
 
     if form2.next.data:
         if form2.password.data == form2.confirm_password.data:
-            user.name = form2.name.data
-            user.surname = form2.surname.data
-            user.set_password(form2.password.data)
+            if form2.name.data:
+                user.name = form2.name.data
+            if form2.surname.data:
+                user.surname = form2.surname.data
+            if form2.password.data:
+                user.set_password(form2.password.data)
             db_sess.commit()
             db_sess.close()
             return redirect(f"/key={rdm_string}")
