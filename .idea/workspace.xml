@@ -6,12 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="Super security. bgfix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/settings_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/settings_API.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/MathSphereBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/MathSphereBase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/item_count_etc_Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/item_count_etc_Form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/settings_Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/settings_Form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/unlog_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/unlog_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/log_index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/log_index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/gif1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/gif2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/gif3.gif" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +103,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
+        <option value="bundled-python-sdk-d68999036c7f-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.14475.56" />
       </set>
     </attachedChunks>
   </component>
@@ -118,7 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1715357401232</updated>
       <workItem from="1715700264187" duration="5028000" />
-      <workItem from="1715780495270" duration="2100000" />
+      <workItem from="1715780495270" duration="5513000" />
     </task>
     <task id="LOCAL-00001" summary="Super security. bgfix">
       <option name="closed" value="true" />
@@ -134,22 +132,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Super security. bgfix" />
     <option name="LAST_COMMIT_MESSAGE" value="Super security. bgfix" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MathSphere$main.coverage" NAME="main Coverage Results" MODIFIED="1715782233523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MathSphere$main.coverage" NAME="main Coverage Results" MODIFIED="1715785543922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
