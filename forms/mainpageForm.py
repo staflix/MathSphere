@@ -9,5 +9,8 @@ class UnLogMainPageForm(FlaskForm):
 
 
 class LogMainPageForm(FlaskForm):
+    settings = SubmitField('Настройки')
+    change_avatar = SubmitField('Сменить аватар')
+    exit = SubmitField('Выйти')
     trainer_btn = SubmitField('Тренажер')
     company_btn = SubmitField('Кампания')

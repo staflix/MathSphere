@@ -36,6 +36,7 @@ class Info(SqlAlchemyBase):
 
     id = sqlalchemy.Column(sqlalchemy.Integer, autoincrement=True, primary_key=True)
     user_id = sqlalchemy.Column(sqlalchemy.Integer, ForeignKey("Users.id"))
+    avatar_href = sqlalchemy.Column(sqlalchemy.String)
     random_string = sqlalchemy.Column(sqlalchemy.String)
 
     user = relationship("User")
@@ -86,3 +87,6 @@ def clear_users_table(db_file):
 
     # Сохранение изменений в базе данных
     db_sess.commit()
+
+
+# clear_and_create_tables("db/MathSphereBase.db")

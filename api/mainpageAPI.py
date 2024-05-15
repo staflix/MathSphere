@@ -23,10 +23,30 @@ def main_page_unlog():
 def main_page_log(rdm_string):
     form = LogMainPageForm()
 
+    db_session.global_init("db/MathSphereBase.db")
+    db_sess = db_session.create_session()
+
+    user_info = db_sess.query(Info).filter(Info.random_string == rdm_string).first()
+    user = db_sess.query(User).filter(User.id == user_info.user_id).first()
+    user_name = user.name
+    user_surname = user.surname
+    user_email = user.email
+    user_avatar = user_info.avatar_href
+
+    if form.settings.data:
+        return redirect(f"/settings/key={rdm_string}")
+
+    if form.change_avatar.data:
+        return redirect(f"/change_avatar/key={rdm_string}")
+
+    if form.exit.data:
+        return redirect(f"/")
+
     if form.trainer_btn.data:
         return redirect(f"/choice_class/key={rdm_string}")
 
     if form.company_btn.data:
         return redirect(f"/menu_company/key={rdm_string}")
 
-    return render_template('log_index.html', form=form)
+    return render_template('log_index.html', name=user_name, surname=user_surname,
+                           email=user_email, avatar=user_avatar, form=form)
