@@ -4,7 +4,7 @@ from flask import Flask, render_template, redirect
 from data import db_session
 from data.users import User
 from api import registerAPI, loginAPI, resetpasswordAPI, mainpageAPI, choice_class_API, choice_topic_class1_API, \
-    item_count_etc_API
+    item_count_etc_API, menu_company_API
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -49,6 +49,7 @@ def main():
     app.register_blueprint(choice_class_API.blueprint)
     app.register_blueprint(choice_topic_class1_API.blueprint)
     app.register_blueprint(item_count_etc_API.blueprint)
+    app.register_blueprint(menu_company_API.blueprint)
     app.run(port=5000, host='127.0.0.1', debug=True)
 
 

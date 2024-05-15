@@ -42,3 +42,47 @@ class Info(SqlAlchemyBase):
 
     def __repr__(self):
         return f"{self.id}-{self.user_id}-{self.random_string}"
+
+
+def clear_and_create_tables(db_file):
+    engine = sqlalchemy.create_engine(f'sqlite:///{db_file.strip()}?check_same_thread=False')
+    SqlAlchemyBase.metadata.create_all(engine)
+
+    # Инициализация соединения с базой данных
+    db_session.global_init(db_file)
+
+    # Создание сессии
+    db_sess = db_session.create_session()
+
+    # Проверка существования таблицы Info и ее создание, если не существует
+    if not table_exists(engine, "Info"):
+        Info.__table__.create(engine)
+
+    # Очистка всех записей из таблицы User
+    db_sess.query(User).delete()
+
+    # Сохранение изменений в базе данных
+    db_sess.commit()
+
+
+# Определяем функцию для проверки существования таблицы
+def table_exists(engine, table_name):
+    inspector = sqlalchemy.inspect(engine)
+    return inspector.has_table(table_name)
+
+
+def clear_users_table(db_file):
+    engine = sqlalchemy.create_engine(f'sqlite:///{db_file.strip()}?check_same_thread=False')
+    SqlAlchemyBase.metadata.create_all(engine)
+
+    # Инициализация соединения с базой данных
+    db_session.global_init(db_file)
+
+    # Создание сессии
+    db_sess = db_session.create_session()
+
+    # Очистка всех записей из таблицы User
+    db_sess.query(User).delete()
+
+    # Сохранение изменений в базе данных
+    db_sess.commit()
