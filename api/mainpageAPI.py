@@ -26,4 +26,7 @@ def main_page_log(rdm_string):
     if form.trainer_btn.data:
         return redirect(f"/choice_class/key={rdm_string}")
 
+    if form.company_btn.data:
+        return redirect(f"/menu_company/key={rdm_string}")
+
     return render_template('log_index.html', form=form)
