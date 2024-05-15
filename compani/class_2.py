@@ -353,12 +353,14 @@ lvl_9.add(Task(text='Теперь в зелёный', answer='15', image='pic/11
 
 
 lvl_10 = Level(1, info='Закрепим пройденное!', style='test', time=60, topic='Угол. Виды углов. Логика.')
-lvl_10.add(Task(text='', answer=''))
-lvl_10.add(Task(text='', answer=''))
-lvl_10.add(Task(text='', answer=''))
-lvl_10.add(Task(text='', answer=''))
-lvl_10.add(Task(text='', answer=''))
-lvl_10.add(Task(text='', answer=''))
+lvl_10.add(Task(text='(15 - 12) + (23 - 4)', answer='22'))
+lvl_10.add(Task(text='Чей путь короче?', answer='Ёжика', image='pic/115.jpg', choice=['Зайчика', 'Мышки', 'Ёжика']))
+lvl_10.add(Task(text='На полке было 12 книг. После того, как несколько взяли, осталось на 4 книги больше, чем забрали.'
+                     ' Сколько книг взяли с полки?', answer='4'))
+lvl_10.add(Task(text='Поменяй карточки с выражениями, имеющими одинаковые ответы, местами. Какое слово получилось?',
+                answer='Гвоздика', image='pic/116.jpg'))
+lvl_10.add(Task(text='70 - (15 - 15)', answer='70'))
+lvl_10.add(Task(text='39 + 10 - 20 ? 30', answer='<', choice=['>', '<', '=']))
 topic_5.add_level(lvl_1)
 topic_5.add_level(lvl_2)
 topic_5.add_level(lvl_3)
@@ -370,3 +372,73 @@ topic_5.add_level(lvl_8)
 topic_5.add_level(lvl_9)
 topic_5.add_level(lvl_10)
 year_2.add_level(topic_5)
+
+topic_6 = Topic('Квадрат.')
+
+lvl_1 = Level(1, info='Привет! Немного задачек.')
+lvl_1.add(Task(text='Какой периметр у прямоугольника, если длина одной стороны 4 см, а другой 5.', answer='18'))
+lvl_1.add(Task(text='Длина комнаты 6 м, а её ширина 4 м. Какой должна быть длина полоски, наклеенной по верхнему краю '
+                    'обоев?', answer='20'))
+
+lvl_2 = Level(1, info='Что называют квадратом?.')
+lvl_2.add(Task(text='Это квадрат?', answer='Нет', image='pic/117.jpg', choice=['Да', 'Нет']))
+lvl_2.add(Task(text='А это квадрат?', answer='Нет', image='pic/118.jpg', choice=['Да', 'Нет']))
+lvl_2.add(Task(text='Что насчёт этой фигуры, квадрат?', answer='Да', image='pic/119.jpg', choice=['Да', 'Нет']))
+lvl_2.add(Task(text='Это квадрат?', answer='Нет', image='pic/120.jpg', choice=['Да', 'Нет']))
+
+lvl_3 = Level(1, info='А теперь немного счёта!')
+lvl_3.add(Task(text='Начерти квадрат со стороной 4 см. Какой у него периметр?', answer='16'))
+lvl_3.add(Task(text='А если со стороной 7 см?', answer='28'))
+lvl_3.add(Task(text='Самое сложное, со стороной 12 см.', answer='48'))
+
+lvl_4 = Level(1, info='Реши уравнения!')
+lvl_4.add(Task(text='75 - х = 75', answer='0'))
+lvl_4.add(Task(text='4 + х = 84', answer='80'))
+lvl_4.add(Task(text='89 - х = 0', answer='89'))
+
+lvl_5 = Level(1, info='Вычислительная машина!')
+lvl_5.add(Task(text='Какое число будет на выходе, если ввести 11?', answer='8', image='pic/121.jpg'))
+lvl_5.add(Task(text='А если ввести 22?', answer='19', image='pic/121.jpg'))
+lvl_5.add(Task(text='А что получится из 34?', answer='32', image='pic/121.jpg'))
+lvl_5.add(Task(text='Какое число нужно ввести, чтобы получить 65?', answer='68', image='pic/121.jpg'))
+
+lvl_6 = Level(1, info='Сравни выражения.')
+lvl_6.add(Task(text='54 + 7 ? 54 + 5 + 1', answer='>', choice=['>', '<', '=']))
+lvl_6.add(Task(text='63 + 8 ? 63 + 3 + 5', answer='=', choice=['>', '<', '=']))
+lvl_6.add(Task(text='1 м ? 8 дм 6 см', answer='>', choice=['>', '<', '=']))
+lvl_6.add(Task(text='46 + 0 ? 46 - 0', answer='=', choice=['>', '<', '=']))
+
+lvl_7 = Level(1, info='Немного уравнений')
+lvl_7.add(Task(text='x - 9 = 4', answer='13'))
+lvl_7.add(Task(text='35 - x = 30', answer='5'))
+lvl_7.add(Task(text='y + 7 = 14', answer='7'))
+
+lvl_8 = Level(1, info='Сравни уравнения!')
+lvl_8.add(Task(text='а + 1 ? а + 0', answer='>', choice=['>', '<', '=']))
+lvl_8.add(Task(text='1 + b ? b + (89 - 88)', answer='=', choice=['>', '<', '=']))
+
+lvl_9 = Level(1, info='Верно или нет?')
+lvl_9.add(Task(text='Если число 47 увеличить на 30 получится 17', answer='Неверно', choice=['Верно', 'Неверно']))
+lvl_9.add(Task(text='Разность чисел 32 и 8 равна 24', answer='Верно', choice=['Верно', 'Неверно']))
+lvl_9.add(Task(text='Если вместо ? поставить 73 то будет верно ? - 4 = 68', answer='Неверно', choice=['Верно', 'Неверно']))
+lvl_9.add(Task(text='Число 34 больше 9 на 25', answer='Верно', choice=['Верно', 'Неверно']))
+
+lvl_10 = Level(1, info='Закрепим пройденное!', style='test', time=60, topic='Угол. Виды углов. Логика.')
+lvl_10.add(Task(text='с + 12 ? с + 21', answer='<', choice=['>', '<', '=']))
+lvl_10.add(Task(text='Какой у него периметр у квадрата со стороной 7 см?', answer='28'))
+lvl_10.add(Task(text='Число 40 настолько же больше, чем 6, на сколько 35 больше 1', answer='Верно', choice=['Верно', 'Неверно']))
+lvl_10.add(Task(text='1 м ? 9 дм 16 см', answer='<', choice=['>', '<', '=']))
+lvl_10.add(Task(text='Реши уравнение 75 - x = 67', answer='8'))
+
+topic_6.add_level(lvl_1)
+topic_6.add_level(lvl_2)
+topic_6.add_level(lvl_3)
+topic_6.add_level(lvl_4)
+topic_6.add_level(lvl_5)
+topic_6.add_level(lvl_6)
+topic_6.add_level(lvl_7)
+topic_6.add_level(lvl_8)
+topic_6.add_level(lvl_9)
+topic_6.add_level(lvl_10)
+year_2.add_level(topic_6)
+
