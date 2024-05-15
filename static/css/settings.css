@@ -1,5 +1,12 @@
 .settings-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
   min-height: 100vh;
+  align-items: center;
+  font-family: "Inter";
+  flex-direction: column;
+  background-color: #5228F5;
 }
 .settings-container1 {
   width: 100%;
@@ -9,31 +16,6 @@
   align-items: center;
   flex-direction: row;
   justify-content: center;
-}
-.settings-sign-up-image {
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  width: 100%;
-  bottom: 0px;
-  height: 100%;
-  position: absolute;
-}
-.settings-container2 {
-  top: 0px;
-  flex: 0 0 auto;
-  left: 0px;
-  right: 0px;
-  width: 100%;
-  border: 2px dashed rgba(120, 120, 120, 0.4);
-  bottom: 0px;
-  height: 100%;
-  display: flex;
-  z-index: 10;
-  position: absolute;
-  align-items: flex-start;
-  flex-direction: column;
-  background-color: #5228F5;
 }
 .settings-max-width {
   gap: var(--dl-space-space-unit);
@@ -51,7 +33,7 @@
   width: auto;
   display: flex;
   align-items: center;
-  border-radius: 50px;
+  border-radius: 70px;
   flex-direction: column;
   justify-content: flex-end;
   background-color: var(--dl-color-theme-neutral-light);
@@ -66,18 +48,38 @@
   text-align: center;
   font-family: "Inter";
 }
-.settings-container3 {
+.settings-form1 {
   gap: var(--dl-space-space-unit);
   width: 100%;
+  height: auto;
   display: flex;
-  box-sizing: border-box;
-  align-items: center;
   flex-direction: column;
-  justify-content: flex-end;
+}
+.settings-name {
+  gap: var(--dl-space-space-halfunit);
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.settings-text1 {
+  align-self: center;
 }
 .settings-textinput {
   width: 100%;
   border-color: #7350f7;
+}
+.settings-surname {
+  gap: var(--dl-space-space-halfunit);
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.settings-text4 {
+  align-self: center;
 }
 .settings-textinput1 {
   width: 100%;
@@ -101,20 +103,23 @@
   flex-direction: column;
   background-color: #7350f7;
 }
-.settings-form1 {
+.settings-form2 {
   gap: var(--dl-space-space-unit);
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
 }
-.settings-email {
+.settings-password {
   gap: var(--dl-space-space-halfunit);
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-shrink: 0;
   flex-direction: column;
+}
+.settings-text7 {
+  align-self: center;
 }
 .settings-textinput2 {
   width: 100%;
@@ -127,18 +132,18 @@
 .settings-button {
   width: 100%;
   transition: 0.3s;
-  background-color: #020202;
+  background-color: black;
 }
 .settings-button:hover {
   background-color: #3e19c9;
 }
-.settings-text5 {
+.settings-text8 {
   text-align: center;
 }
 @media(max-width: 991px) {
   .settings-container1 {
     gap: var(--dl-space-space-twounits);
-    height: auto;
+    height: 100vh;
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -158,7 +163,17 @@
     padding-right: var(--dl-space-space-oneandhalfunits);
   }
   .settings-text {
+    font-size: 30px;
     text-align: center;
+  }
+  .settings-text1 {
+    align-self: center;
+  }
+  .settings-text4 {
+    align-self: center;
+  }
+  .settings-text7 {
+    align-self: center;
   }
   .settings-button {
     width: 100%;
