@@ -411,3 +411,14 @@
     padding-right: var(--dl-space-space-unit);
   }
 }
+input[type="submit"]{
+  background-color: white;
+  transition: 0.2s;
+}
+input[type="submit"]:hover{
+  color: #5228F5;
+  cursor: pointer;
+}
+.card-img img{
+  border-radius: 100%;
+}
