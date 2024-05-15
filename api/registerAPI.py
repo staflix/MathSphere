@@ -36,9 +36,12 @@ def register():
                     db_sess.add(user)
                     db_sess.commit()
                     db_sess.refresh(user)
+                    # по умолчанию аватарка вот
+                    avatar = 'https://i.ibb.co/C2WLdyY/avatar1.png'
                     rdm_string = generate_string()
                     info = Info(
                         user_id=user.id,
+                        avatar_href=avatar,
                         random_string=rdm_string
                     )
                     db_sess.add(info)

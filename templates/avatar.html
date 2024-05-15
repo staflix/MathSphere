@@ -6,37 +6,40 @@
 </head>
 <body>
 <link rel="stylesheet" href="../static/css/avatar.css"/>
-<div class="choose-avatar">
-    <span class="title">Выберите аватарку</span>
-    <div class="avatars-container">
-        <span class="left"></span>
-        <div class="avatars">
-            <div class="avatar-item" style="background-image: url('https://i.ibb.co/C2WLdyY/avatar1.png');">
-                <span id="text-avatar">Выбрать</span>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <div class="choose-avatar">
+        <span class="title">Выберите аватарку</span>
+        <div class="avatars-container">
+            <span class="left"></span>
+            <div class="avatars">
+                <div class="avatar-item" style="background-image: url('https://i.ibb.co/C2WLdyY/avatar1.png');">
+                    {{ form.submit1(class="text-avatar") }}
+                </div>
+                <div class="avatar-item" style="background-image: url('https://i.ibb.co/0t3JTMz/avatar2.png');">
+                    {{ form.submit2(class="text-avatar") }}
+                </div>
+                <div class="avatar-item" style="background-image: url('https://i.ibb.co/K08BjJx/avatar3.png');">
+                    {{ form.submit3(class="text-avatar") }}
+                </div>
+                <div class="avatar-item" style="background-image: url('https://i.ibb.co/6XW1X2L/avatar4.png');">
+                    {{ form.submit4(class="text-avatar") }}
+                </div>
+                <div class="avatar-item" style="background-image: url('https://i.ibb.co/DVfTxB2/avatar5.png');">
+                    {{ form.submit5(class="text-avatar") }}
+                </div>
+                <div class="avatar-item" style="background-image: url('https://i.ibb.co/Bzvqgg3/avatar6.png');">
+                    {{ form.submit6(class="text-avatar") }}
+                </div>
+                <div class="avatar-item" style="background-image: url('https://i.ibb.co/FDg3t8m/avatar7.png');">
+                    {{ form.submit7(class="text-avatar") }}
+                </div>
             </div>
-            <div class="avatar-item" style="background-image: url('https://i.ibb.co/0t3JTMz/avatar2.png');">
-                <span id="text-avatar">Выбрать</span>
-            </div>
-            <div class="avatar-item" style="background-image: url('https://i.ibb.co/K08BjJx/avatar3.png');">
-                <span id="text-avatar">Выбрать</span>
-            </div>
-            <div class="avatar-item" style="background-image: url('https://i.ibb.co/6XW1X2L/avatar4.png');">
-                <span id="text-avatar">Выбрать</span>
-            </div>
-            <div class="avatar-item" style="background-image: url('https://i.ibb.co/DVfTxB2/avatar5.png');">
-                <span id="text-avatar">Выбрать</span>
-            </div>
-            <div class="avatar-item" style="background-image: url('https://i.ibb.co/Bzvqgg3/avatar6.png');">
-                <span id="text-avatar">Выбрать</span>
-            </div>
-            <div class="avatar-item" style="background-image: url('https://i.ibb.co/FDg3t8m/avatar7.png');">
-                <span id="text-avatar">Выбрать</span>
-            </div>
+            <span class="right"></span>
         </div>
-        <span class="right"></span>
+        {{ form.back(class="button-simple") }}
     </div>
-    <button class="button-simple">Назад</button>
-</div>
+</form>
 <!-- partial -->
 <script src="../static/js/avatar.js"></script>
 

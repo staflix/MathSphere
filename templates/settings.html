@@ -67,7 +67,8 @@
                   Редактирование данных
                 </h2>
               </div>
-              <form class="settings-form1">
+              <form action="" method="post" class="settings-form1 settings-form2">
+                {{ form.hidden_tag() }}
                 <div class="settings-name">
                   <label
                     for="thq-sign-up-4-email"
@@ -76,13 +77,7 @@
                     <span>Изменить имя</span>
                     <br />
                   </label>
-                  <input
-                    type="text"
-                    id="thq-sign-up-4-email"
-                    required="true"
-                    placeholder="Имя"
-                    class="settings-textinput thq-input thq-body-large"
-                  />
+                  {{ form.name(class="settings-textinput thq-input thq-body-large", required="true", id="thq-sign-up-4-email", type="text") }}
                 </div>
                 <div class="settings-surname">
                   <label
@@ -92,19 +87,11 @@
                     <span>Изменить фамилию</span>
                     <br />
                   </label>
-                  <input
-                    type="text"
-                    id="thq-sign-up-4-email"
-                    required="true"
-                    placeholder="Фамилия"
-                    class="settings-textinput1 thq-input thq-body-large"
-                  />
+                  {{ form.surname(class="settings-textinput1 thq-input thq-body-large", required="true", id="thq-sign-up-4-email", type="text") }}
                 </div>
-              </form>
               <div class="settings-divider">
                 <div class="settings-divider1"></div>
               </div>
-              <form class="settings-form2">
                 <div class="settings-password">
                   <label
                     for="thq-sign-up-4-email"
@@ -112,27 +99,12 @@
                   >
                     Сменить пароль
                   </label>
-                  <input
-                    type="password"
-                    id="thq-sign-up-4-email"
-                    required="true"
-                    placeholder="Пароль"
-                    class="settings-textinput2 thq-input thq-body-large"
-                  />
-                  <input
-                    type="password"
-                    id="thq-sign-up-4-email"
-                    required="true"
-                    placeholder="Повторите пароль"
-                    class="settings-textinput3 thq-input thq-body-large"
-                  />
+                  {{ form.password(class="settings-textinput2 thq-input thq-body-large", required="true", id="thq-sign-up-4-email", type="password") }}
+                  {{ form.confirm_password(class="settings-textinput3 thq-input thq-body-large", required="true", id="thq-sign-up-4-email", type="password") }}
                 </div>
+                {{ form.next( class="settings-button thq-button-filled settings-text8 thq-body-small", required="true", id="thq-sign-up-4-email", type="submit") }}
               </form>
-              <button type="submit" class="settings-button thq-button-filled">
-                <span class="settings-text8 thq-body-small">
-                  Сохранить изменения
-                </span>
-              </button>
+              {{ message }}
             </div>
           </div>
         </div>
