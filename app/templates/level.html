@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math-Up Level</title>
+    <link rel="stylesheet" href="../static/css/level.css">
+</head>
+<body>
+    <div class="level-container">
+        <header class="level-header">
+            <button id="backButton" class="back-button">Выйти</button>
+            <h1>Тема 1</h1>
+            <div class="timer">60:00</div>
+        </header>
+        <main class="level-main">
+            <h2 id="question">Вопрос? </h2>
+            <div class="image-container">
+                <img id="questionImage" src="" alt="Картинка">
+            </div>
+            <div class="options">
+                <button class="option-button">Вариант 1</button>
+                <button class="option-button">Вариант 2</button>
+                <button class="option-button">Вариант 3</button>
+                <button class="option-button">Вариант 4</button>
+            </div>
+        </main>
+        <footer class="level-footer">
+            <button id="prevButton" class="prev-button">Назад</button>
+            <div class="progress">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <button id="nextButton" class="next-button">Дальше</button>
+        </footer>
+    </div>
+    <script src="../static/js/level.js"></script>
+</body>
+</html>
