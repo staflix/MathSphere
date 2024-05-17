@@ -423,7 +423,7 @@ lvl_9.add(Task(text='Разность чисел 32 и 8 равна 24', answer=
 lvl_9.add(Task(text='Если вместо ? поставить 73 то будет верно ? - 4 = 68', answer='Неверно', choice=['Верно', 'Неверно']))
 lvl_9.add(Task(text='Число 34 больше 9 на 25', answer='Верно', choice=['Верно', 'Неверно']))
 
-lvl_10 = Level(1, info='Закрепим пройденное!', style='test', time=60, topic='Угол. Виды углов. Логика.')
+lvl_10 = Level(1, info='Закрепим пройденное!', style='test', time=60, topic='Квадрат.')
 lvl_10.add(Task(text='с + 12 ? с + 21', answer='<', choice=['>', '<', '=']))
 lvl_10.add(Task(text='Какой у него периметр у квадрата со стороной 7 см?', answer='28'))
 lvl_10.add(Task(text='Число 40 настолько же больше, чем 6, на сколько 35 больше 1', answer='Верно', choice=['Верно', 'Неверно']))
@@ -442,3 +442,304 @@ topic_6.add_level(lvl_9)
 topic_6.add_level(lvl_10)
 year_2.add_level(topic_6)
 
+topic_7 = Topic('Умножение.')
+
+lvl_1 = Level(1, info='Привет! Немного логики, выбери знак!')
+lvl_1.add(Task(text='10 ? 9 > 1', answer='+', choice=['+', '-']))
+lvl_1.add(Task(text='10 ? 9 = 1', answer='-', choice=['+', '-']))
+lvl_1.add(Task(text='28 ? 12 < 30', answer='-', choice=['+', '-']))
+lvl_1.add(Task(text='28 ? 12 > 30', answer='+', choice=['+', '-']))
+
+lvl_2 = Level(1, info='Рассмотри подсказки и ответь.')
+lvl_2.add(Task(text='6 * 3 = ?', answer='18', image='pic/122.jpg'))
+lvl_2.add(Task(text='4 * 2 = ?', answer='8', image='pic/123.jpg'))
+lvl_2.add(Task(text='10 * 5 = ?', answer='50', image='pic/124.jpg'))
+lvl_2.add(Task(text='5 * 4 = ?', answer='20', image='pic/125.jpg'))
+
+lvl_3 = Level(1, info='Реши уравнения!')
+lvl_3.add(Task(text='х - 8 = 75', answer='83'))
+lvl_3.add(Task(text='14 - х = 6', answer='8'))
+
+lvl_4 = Level(1, info='Вычисли, заменяя умножение сложением.')
+lvl_4.add(Task(text='2 * 5', answer='10'))
+lvl_4.add(Task(text='4 * 3', answer='12'))
+lvl_4.add(Task(text='7 * 4', answer='28'))
+lvl_4.add(Task(text='9 * 3', answer='27'))
+
+lvl_5 = Level(1, info='Сравнение + умножение!')
+lvl_5.add(Task(text='7 * 3 ? 7 + 7 + 7 + 7', answer='<', choice=['>', '<', '=']))
+lvl_5.add(Task(text='6 + 6 + 6 + 6 + 6 + 6 ? 6 * 5', answer='>', choice=['>', '<', '=']))
+
+lvl_6 = Level(1, info='Задачки!')
+lvl_6.add(Task(text='На 5 лошадей сели по одному всаднику, сколько всего всадников?', answer='5'))
+lvl_6.add(Task(text='После обеда на столе осталось 4 тарелки, ни на одной не осталось ни одной сосиски.'
+                    ' Сколько всего сосисок на этих тарелках?', answer='0'))
+
+lvl_7 = Level(1, info='Примеры!')
+lvl_7.add(Task(text='1 * 26', answer='26'))
+lvl_7.add(Task(text='0 * (21 - 8)', answer='0'))
+lvl_7.add(Task(text='17 + 80 + 3', answer='100'))
+
+lvl_8 = Level(1, info='Используй свойство умножения.')
+lvl_8.add(Task(text='4 * 5 = 20, 5 * 4 = ?', answer='20'))
+lvl_8.add(Task(text='7 * 4 = 28, 4 * 7 = ?', answer='28'))
+lvl_8.add(Task(text='9 * 3 = 27, 3 * 9 = ?', answer='27'))
+
+lvl_9 = Level(1, info='Сколько раз содержится ...')
+lvl_9.add(Task(text='Сколько раз 4 содержится в числе 8?', answer='2'))
+lvl_9.add(Task(text='А 2 содержится в числе 8?', answer='4'))
+lvl_9.add(Task(text='Сколько раз 4 содержится в числе 16?', answer='4'))
+lvl_9.add(Task(text='Сколько раз 8 содержится в числе 16?', answer='2'))
+
+
+lvl_10 = Level(1, info='Закрепим пройденное!', style='test', time=60, topic='Умножение!')
+lvl_7.add(Task(text='1 * 26', answer='26'))
+lvl_4.add(Task(text='9 * 3', answer='27'))
+lvl_4.add(Task(text='3 * 12', answer='36'))
+lvl_5.add(Task(text='7 * 3 ? 6 * 4', answer='<', choice=['>', '<', '=']))
+lvl_5.add(Task(text='2 * 14 ? 6 * 4', answer='>', choice=['>', '<', '=']))
+
+topic_7.add_level(lvl_1)
+topic_7.add_level(lvl_2)
+topic_7.add_level(lvl_3)
+topic_7.add_level(lvl_4)
+topic_7.add_level(lvl_5)
+topic_7.add_level(lvl_6)
+topic_7.add_level(lvl_7)
+topic_7.add_level(lvl_8)
+topic_7.add_level(lvl_9)
+topic_7.add_level(lvl_10)
+year_2.add_level(topic_7)
+
+topic_8 = Topic('Деление.')
+
+lvl_1 = Level(1, info='Привет! Начнем с примеров!')
+lvl_1.add(Task(text='8 * 3 + 16', answer='40'))
+lvl_1.add(Task(text='3 * 3 - 5', answer='4'))
+lvl_1.add(Task(text='21 - 4 * 5', answer='1'))
+
+lvl_2 = Level(1, info='Выполни деление, используя рисунки')
+lvl_2.add(Task(text='6 : 2', answer='3', image='pic/126.jpg'))
+lvl_2.add(Task(text='10 : 2', answer='5', image='pic/127.jpg'))
+lvl_2.add(Task(text='8 : 4', answer='2', image='pic/128.jpg'))
+
+lvl_3 = Level(1, info='Реши уравнения!')
+lvl_3.add(Task(text='х - 8 = 75', answer='83'))
+lvl_3.add(Task(text='14 - х = 6', answer='8'))
+
+lvl_4 = Level(1, info='Вычисли, заменяя умножение сложением.')
+lvl_4.add(Task(text='2 * 5', answer='10'))
+lvl_4.add(Task(text='4 * 3', answer='12'))
+lvl_4.add(Task(text='7 * 4', answer='28'))
+lvl_4.add(Task(text='9 * 3', answer='27'))
+
+lvl_5 = Level(1, info='Сравнение + умножение!')
+lvl_5.add(Task(text='7 * 3 ? 7 + 7 + 7 + 7', answer='<', choice=['>', '<', '=']))
+lvl_5.add(Task(text='6 + 6 + 6 + 6 + 6 + 6 ? 6 * 5', answer='>', choice=['>', '<', '=']))
+
+lvl_6 = Level(1, info='Задачки!')
+lvl_6.add(Task(text='На 5 лошадей сели по одному всаднику, сколько всего всадников?', answer='5'))
+lvl_6.add(Task(text='После обеда на столе осталось 4 тарелки, ни на одной не осталось ни одной сосиски.'
+                    ' Сколько всего сосисок на этих тарелках?', answer='0'))
+
+lvl_7 = Level(1, info='Примеры!')
+lvl_7.add(Task(text='1 * 26', answer='26'))
+lvl_7.add(Task(text='0 * (21 - 8)', answer='0'))
+lvl_7.add(Task(text='17 + 80 + 3', answer='100'))
+
+lvl_8 = Level(1, info='Используй свойство умножения.')
+lvl_8.add(Task(text='4 * 5 = 20, 5 * 4 = ?', answer='20'))
+lvl_8.add(Task(text='7 * 4 = 28, 4 * 7 = ?', answer='28'))
+lvl_8.add(Task(text='9 * 3 = 27, 3 * 9 = ?', answer='27'))
+
+lvl_9 = Level(1, info='Найди значение выражения 65 - b')
+lvl_9.add(Task(text='Где b = 65.', answer='0'))
+lvl_9.add(Task(text='А если b = 20?', answer='45'))
+lvl_9.add(Task(text='А при b = 49?', answer='16'))
+
+lvl_10 = Level(1, info='Закрепим пройденное!', style='test', time=60, topic='Деление!')
+lvl_10.add(Task(text='1 * 26', answer='26'))
+lvl_10.add(Task(text='9 * 3', answer='27'))
+lvl_10.add(Task(text='3 * 12', answer='36'))
+lvl_10.add(Task(text='7 * 3 ? 6 * 4', answer='<', choice=['>', '<', '=']))
+lvl_10.add(Task(text='2 * 14 ? 6 * 4', answer='>', choice=['>', '<', '=']))
+
+topic_8.add_level(lvl_1)
+topic_8.add_level(lvl_2)
+topic_8.add_level(lvl_3)
+topic_8.add_level(lvl_4)
+topic_8.add_level(lvl_5)
+topic_8.add_level(lvl_6)
+topic_8.add_level(lvl_7)
+topic_8.add_level(lvl_8)
+topic_8.add_level(lvl_9)
+topic_8.add_level(lvl_10)
+year_2.add_level(topic_8)
+
+topic_9 = Topic('Порядок выполнения действий 2.')
+
+lvl_1 = Level(1, info='Привет! Начнем с примеров!')
+lvl_1.add(Task(text='30 + 6 * (13 - 9)', answer='54'))
+lvl_1.add(Task(text='18 : 2 - 2 * 3 ', answer='4'))
+lvl_1.add(Task(text='24 : (3 * 2)', answer='4'))
+
+lvl_2 = Level(1, info='Ещё немного примеров!')
+lvl_2.add(Task(text='43 - (20 - 7) + 15', answer='45'))
+lvl_2.add(Task(text='21 : 7 * 9', answer='27'))
+lvl_2.add(Task(text='60 : (4 + 6) * 3', answer='18'))
+
+lvl_3 = Level(1, info='Бонусная задача на логику!')
+lvl_3.add(Task(text='Масса одного котёнка и одного щенка вместе равна 8 кг. А трёх щенков и двух котят 22 кг. '
+                    'Сколько весит щенок?', answer='6'))
+
+lvl_4 = Level(1, info='Найди значение х в уравнениях.')
+lvl_4.add(Task(text='х + х + х = 30', answer='10'))
+lvl_4.add(Task(text='43 * х = 43 : х', answer='1'))
+lvl_4.add(Task(text='х + 20 = 12 + 8', answer='0'))
+lvl_4.add(Task(text='х - 18 = 23 - 23', answer='18'))
+
+lvl_5 = Level(1, info='Проверь выражения и напиши Верно или Неверно')
+lvl_5.add(Task(text='4 * 7 + 4 = 4 * 8', answer='Верно', choice=['Верно', "Неверно"]))
+lvl_5.add(Task(text='27 : 3 < 10', answer='Верно', choice=['Верно', "Неверно"]))
+lvl_5.add(Task(text='48 + (14 - 12) > 50', answer='Неверно', choice=['Верно', "Неверно"]))
+
+lvl_6 = Level(1, info='Вопросы!')
+lvl_6.add(Task(text='Во сколько раз 18 больше трех? Введи только число', answer='6'))
+lvl_6.add(Task(text='Во сколько раз 4 меньше 16? Введи только число', answer='4'))
+lvl_6.add(Task(text='А во сколько раз метр больше сантиметра? Введи только число', answer='100'))
+
+
+lvl_7 = Level(1, info='Примеры!')
+lvl_7.add(Task(text='(50 - 38) : 4', answer='3'))
+lvl_7.add(Task(text='24 : 4', answer='6'))
+lvl_7.add(Task(text='36 : 6', answer='6'))
+
+lvl_8 = Level(1, info='Устные задачи')
+lvl_8.add(Task(text='В куске 20 м. ткани. На каждый костюм необходимо 3 м, можно ли сшить 6 таких?', answer='Да',
+               choice=['Да', 'Нет']))
+lvl_8.add(Task(text='А 7 таких костюмов получится сшить?', answer='Нет', choice=['Да', 'Нет']))
+lvl_8.add(Task(text='Найди длину стороны квадрата, если его периметр 24 см.', answer='6'))
+
+lvl_9 = Level(1, info='Реши уравнения')
+lvl_9.add(Task(text='х : 5 = 10', answer='50'))
+lvl_9.add(Task(text='х : 7 - 6 = 0', answer='42'))
+lvl_9.add(Task(text='у * 5 = 20', answer='4'))
+lvl_9.add(Task(text='у * 6 + 2 = 38', answer='6'))
+
+lvl_10 = Level(1, info='Закрепим пройденное!', style='test', time=60, topic='Порядок действий 2!')
+lvl_10.add(Task(text='32 + 8 * (13 - 9)', answer='64'))
+lvl_10.add(Task(text='2 * х : 6 = 20', answer='60'))
+lvl_10.add(Task(text='Во сколько раз 8 * 2 больше четырёх? Введи только число', answer='4'))
+lvl_10.add(Task(text='45 : (9 + 6) * 3', answer='9'))
+lvl_10.add(Task(text='48 : 2 + (14 - 12) * 6 > 36', answer='Неверно', choice=['Верно', "Неверно"]))
+
+topic_9.add_level(lvl_1)
+topic_9.add_level(lvl_2)
+topic_9.add_level(lvl_3)
+topic_9.add_level(lvl_4)
+topic_9.add_level(lvl_5)
+topic_9.add_level(lvl_6)
+topic_9.add_level(lvl_7)
+topic_9.add_level(lvl_8)
+topic_9.add_level(lvl_9)
+topic_9.add_level(lvl_10)
+year_2.add_level(topic_9)
+
+topic_10 = Topic('Площадь. Единицы площади.')
+
+lvl_1 = Level(1, info='Привет! Начнем с примеров!')
+lvl_1.add(Task(text='45 : (18 - 13)', answer='9'))
+lvl_1.add(Task(text='(27 + 27) : 9', answer='6'))
+lvl_1.add(Task(text='24 : (11 - 7)', answer='6'))
+
+lvl_2 = Level(1, info='Расчёт площади!')
+lvl_2.add(Task(text='Одна сторона прямоугольника 1 см, а другая 7 см. Какая у него площадь?'
+                    ' Введи только число', answer='7'))
+lvl_2.add(Task(text='Теперь одна сторона прямоугольника 3 см, а другая 2 см. Какая у него площадь?'
+                    ' Введи только число', answer='6'))
+lvl_2.add(Task(text='А если одна сторона прямоугольника 6 см, а другая 7 см. Какая у него площадь?'
+                    ' Введи только число', answer='42'))
+
+lvl_3 = Level(1, info='Найди число')
+lvl_3.add(Task(text='Найди площадь сада по плану.', answer='45', image='pic/129.jpg'))
+lvl_3.add(Task(text='А теперь дома', answer='49', image='pic/129.jpg'))
+
+
+lvl_4 = Level(1, info='Примеры!')
+lvl_4.add(Task(text='35 + 15 : 5 + 2', answer='40'))
+lvl_4.add(Task(text='91 : 9 * 6', answer='54'))
+lvl_4.add(Task(text='63 : 7 * 5', answer='45'))
+
+lvl_5 = Level(1, info='Умножение на 1')
+lvl_5.add(Task(text='1 * 12', answer='12'))
+lvl_5.add(Task(text='(62 + 24) * 1', answer='86'))
+lvl_5.add(Task(text='28 : 4 * 1', answer='7'))
+
+lvl_6 = Level(1, info='Умножение на 0...')
+lvl_6.add(Task(text='54 * 0', answer='0'))
+lvl_6.add(Task(text='0 * 100', answer='0'))
+lvl_6.add(Task(text='(24 + 21) * 0', answer='0'))
+
+
+lvl_7 = Level(1, info='Деление нуля на число')
+lvl_7.add(Task(text='0 : 3', answer='0'))
+lvl_7.add(Task(text='0 : 24', answer='0'))
+lvl_7.add(Task(text='100 - (6 * 9 + 64 : 8) : 2 * 3', answer='7'))
+
+lvl_8 = Level(1, info='Устные задачи')
+lvl_8.add(Task(text='В куске 70 м. ткани. На каждый костюм необходимо 10 м, можно ли сшить 7 таких?', answer='Да',
+               choice=['Да', 'Нет']))
+lvl_8.add(Task(text='А если удлинить костюмы то всё еще хватит?', answer='Нет', choice=['Да', 'Нет']))
+lvl_8.add(Task(text='Найди длину стороны квадрата, если его периметр 24 см.', answer='6'))
+
+lvl_9 = Level(1, info='Реши уравнения')
+lvl_9.add(Task(text='х : 2 + 21 = 31', answer='5'))
+lvl_9.add(Task(text='х * 7 - 6 = 1', answer='1'))
+lvl_9.add(Task(text='у * 5 = 20', answer='4'))
+
+lvl_10 = Level(1, info='Закрепим пройденное!', style='final_test', time=120, topic='Конец второго класса! Удачи.')
+lvl_10.add(Task(text='Назови число, в котором 6 дес. 1 ед.', answer='61'))
+lvl_10.add(Task(text='На столе лежат: помидор, кабачок и картошка. Сколькими '
+                     'способами можно составить набор и двух овощей?', answer='6'))
+lvl_10.add(Task(text='86, 85, ?, 83, 82', answer='84'))
+lvl_10.add(Task(text='80 + 12', answer='92'))
+lvl_10.add(Task(text='Первая игра заняла 1 час, а вторая шла на 10 минут. Сколько минут шли игры вместе?', answer='70'))
+lvl_10.add(Task(text='1 дм 12 см ? 13 см 100 мм', answer='<', choice=['>', '<', '=']))
+lvl_10.add(Task(text='64 - 62 + 4', answer='6'))
+lvl_10.add(Task(text='(5 - 3) + 22 - (2 + 18) + 50', answer='54'))
+lvl_10.add(Task(text='66 - (9 - 3) + 11', answer='71'))
+lvl_10.add(Task(text='12 + 55 + 3 + 8 + 7 + 15', answer='100'))
+lvl_10.add(Task(text='К числу 20 прибавить разность чисел 7 и 5.', answer='22'))
+lvl_10.add(Task(text='Ваня согнул проволоку в треугольник со сторонами 6, 24, 4 см. Какой длины была проволока?', answer='34'))
+lvl_10.add(Task(text='89 - х = 72. х=?', answer='17'))
+lvl_10.add(Task(text='100 - х + (23 - х) + 2. При х = 20', answer='85'))
+lvl_10.add(Task(text='Последовательность: 87 80 73 66 59 ?', answer='52'))
+lvl_10.add(Task(text='Найди значение с + 7 + (с - 4) При с = 10', answer='23'))
+lvl_10.add(Task(text='На одной тарелке 5 пирожков, а на второй 15. После обеда пирожков осталось 9. Сколько съели?', answer='11'))
+lvl_10.add(Task(text='(15 - 12) + (23 - 4)', answer='22'))
+lvl_10.add(Task(text='На полке было 12 книг. После того, как несколько взяли, осталось на 4 книги больше, чем забрали.'
+                     ' Сколько книг взяли с полки?', answer='4'))
+lvl_10.add(Task(text='39 + 10 - 20 ? 30', answer='<', choice=['>', '<', '=']))
+lvl_10.add(Task(text='с + 12 ? с + 21', answer='<', choice=['>', '<', '=']))
+lvl_10.add(Task(text='Какой у него периметр у квадрата со стороной 7 см?', answer='28'))
+lvl_10.add(Task(text='1 м ? 9 дм 16 см', answer='<', choice=['>', '<', '=']))
+lvl_10.add(Task(text='Реши уравнение 75 - x = 67', answer='8'))
+lvl_10.add(Task(text='7 * 3 ? 6 * 4', answer='<', choice=['>', '<', '=']))
+lvl_10.add(Task(text='2 * 14 ? 6 * 4', answer='>', choice=['>', '<', '=']))
+lvl_10.add(Task(text='32 + 8 * (13 - 9)', answer='64'))
+lvl_10.add(Task(text='Во сколько раз 8 * 2 больше четырёх? Введи только число', answer='4'))
+lvl_10.add(Task(text='45 : (9 + 6) * 3', answer='9'))
+lvl_10.add(Task(text='48 : 2 + (14 - 12) * 6 > 36', answer='Неверно', choice=['Верно', "Неверно"]))
+
+
+topic_10.add_level(lvl_1)
+topic_10.add_level(lvl_2)
+topic_10.add_level(lvl_3)
+topic_10.add_level(lvl_4)
+topic_10.add_level(lvl_5)
+topic_10.add_level(lvl_6)
+topic_10.add_level(lvl_7)
+topic_10.add_level(lvl_8)
+topic_10.add_level(lvl_9)
+topic_10.add_level(lvl_10)
+year_2.add_level(topic_10)
