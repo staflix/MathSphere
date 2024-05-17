@@ -172,3 +172,165 @@ topic_5.add_level(lvl_10)
 year_3.add_level(topic_5)
 
 
+topic_6 = Topic('вычисления вида 80:20.')
+
+lvl_1 = Level(1, info='Привет! Будет немного деления')
+lvl_1.add(Task(text="70 / 10 =", answer="7"))
+lvl_1.add(Task(text="90 / 10 =", answer="9"))
+lvl_1.add(Task(text="80 / 10 =", answer="8"))
+
+lvl_2 = Level(1, info='теперь на 20')
+lvl_2.add(Task(text="40 / 20 =", answer="2"))
+lvl_2.add(Task(text="80 / 20 =", answer="4"))
+lvl_2.add(Task(text="60 / 20 =", answer="3"))
+
+
+lvl_3 = Level(1, info='И нужно повторить умножение ')
+lvl_3.add(Task(text="1 * 12 =", answer="12"))
+lvl_3.add(Task(text="22 * 3 =", answer="66"))
+lvl_3.add(Task(text="1 * 17 =", answer="17"))
+lvl_3.add(Task(text="3 * 14 =", answer="42"))
+lvl_3.add(Task(text="5 * 7 =", answer="35"))
+
+lvl_4 = Level(1, info='Реши уравнения!')
+lvl_4.add(Task(text='75 - х = 75', answer='0'))
+lvl_4.add(Task(text='4 + х = 84', answer='80'))
+lvl_4.add(Task(text='89 - х = 0', answer='89'))
+
+lvl_5 = Level(1, info='Вычислительная машина!')
+lvl_5.add(Task(text="(5 + 17) / 2 =", answer="11"))
+lvl_5.add(Task(text="(7 + 8) / 6 =", answer="2"))
+lvl_5.add(Task(text="(11 + 6) / 2 =", answer="8"))
+lvl_5.add(Task(text="(21 + 1) / 7 =", answer="3"))
+lvl_5.add(Task(text="(7 + 14) / 8 =", answer="2"))
+
+
+lvl_10 = Level(1, info='Закрепим пройденное!', style='test', time=60, topic='вычисления вида 80:20..')
+lvl_10.add(Task(text="(11 + 6) / 2 =", answer="8"))
+lvl_10.add(Task(text="(21 + 1) / 7 =", answer="3"))
+lvl_10.add(Task(text="(7 + 14) / 8 =", answer="2"))
+lvl_10.add(Task(text="22 * 3 =", answer="66"))
+lvl_10.add(Task(text="1 * 17 =", answer="17"))
+lvl_10.add(Task(text="3 * 14 =", answer="42"))
+lvl_10.add(Task(text="80 / 20 =", answer="4"))
+lvl_10.add(Task(text="60 / 20 =", answer="3"))
+
+
+topic_6.add_level(lvl_1)
+topic_6.add_level(lvl_2)
+topic_6.add_level(lvl_3)
+topic_6.add_level(lvl_4)
+topic_6.add_level(lvl_5)
+topic_6.add_level(lvl_10)
+year_3.add_level(topic_6)
+
+
+
+topic_7 = Topic('Пероверка деления.')
+
+lvl_1 = Level(1, info='Привет! Проверь уравнения!')
+lvl_1.add(Task(text="21 / 3 = 7", answer="да", choice=["да", "нет"]))
+lvl_1.add(Task(text="4 / 1 = 4", answer="да", choice=["да", "нет"]))
+lvl_1.add(Task(text="20 / 10 = 3", answer="нет", choice=["да", "нет"]))
+lvl_1.add(Task(text="23 / 2 = 12", answer="нет", choice=["да", "нет"]))
+
+lvl_2 = Level(1, info='еще разок ')
+lvl_2.add(Task(text="3 / 1 = 3", answer="да", choice=["да", "нет"]))
+lvl_2.add(Task(text="14 / 1 = 7", answer="нет", choice=["да", "нет"]))
+lvl_2.add(Task(text="21 / 3 = 7", answer="да", choice=["да", "нет"]))
+
+lvl_3 = Level(1, info='Проверка умножения ')
+lvl_3.add(Task(text="16 * 2 = 31", answer="нет", choice=["да", "нет"]))
+lvl_3.add(Task(text="9 * 2 = 18", answer="да", choice=["да", "нет"]))
+lvl_3.add(Task(text="21 * 8 = 168", answer="да", choice=["да", "нет"]))
+
+lvl_4 = Level(1, info='еще разок.')
+lvl_4.add(Task(text="2 * 10 = 12", answer="нет", choice=["да", "нет"]))
+lvl_4.add(Task(text="7 * 4 = 28", answer="да", choice=["да", "нет"]))
+lvl_4.add(Task(text="18 * 7 = 125", answer="нет", choice=["да", "нет"]))
+lvl_4.add(Task(text="20 * 10 = 200", answer="да", choice=["да", "нет"]))
+
+
+lvl_10 = Level(1, info='Закрепим пройденное!', style='test', time=60, topic='Умножение!')
+lvl_10.add(Task(text="21 / 3 = 7", answer="да", choice=["да", "нет"]))
+lvl_10.add(Task(text="4 / 1 = 4", answer="да", choice=["да", "нет"]))
+lvl_10.add(Task(text="14 / 1 = 7", answer="нет", choice=["да", "нет"]))
+lvl_10.add(Task(text="21 / 3 = 7", answer="да", choice=["да", "нет"]))
+lvl_10.add(Task(text="18 * 7 = 125", answer="нет", choice=["да", "нет"]))
+lvl_10.add(Task(text="20 * 10 = 200", answer="да", choice=["да", "нет"]))
+
+topic_7.add_level(lvl_1)
+topic_7.add_level(lvl_2)
+topic_7.add_level(lvl_3)
+topic_7.add_level(lvl_4)
+topic_7.add_level(lvl_5)
+topic_7.add_level(lvl_10)
+year_3.add_level(topic_7)
+
+
+topic_8 = Topic('Деление с остатком.')
+
+lvl_1 = Level(1, info='Привет! Найди остаток!')
+lvl_1.add(Task(text='27 / 3 = ', answer='0'))
+lvl_1.add(Task(text='26 / 3 =', answer='2'))
+lvl_1.add(Task(text='28 / 3 = ', answer='1'))
+
+lvl_2 = Level(1, info='Выполни деление, используя рисунки')
+lvl_2.add(Task(text='6 : 2', answer='3', image='pic/126.jpg'))
+lvl_2.add(Task(text='10 : 2', answer='5', image='pic/127.jpg'))
+lvl_2.add(Task(text='8 : 4', answer='2', image='pic/128.jpg'))
+
+lvl_3 = Level(1, info='Реши уравнения!')
+lvl_3.add(Task(text='х - 8 = 75', answer='83'))
+lvl_3.add(Task(text='14 - х = 6', answer='8'))
+
+lvl_4 = Level(1, info='Вычисли, заменяя умножение сложением.')
+lvl_4.add(Task(text='2 * 5', answer='10'))
+lvl_4.add(Task(text='4 * 3', answer='12'))
+lvl_4.add(Task(text='7 * 4', answer='28'))
+lvl_4.add(Task(text='9 * 3', answer='27'))
+
+lvl_5 = Level(1, info='Сравнение + умножение!')
+lvl_5.add(Task(text='7 * 3 ? 7 + 7 + 7 + 7', answer='<', choice=['>', '<', '=']))
+lvl_5.add(Task(text='6 + 6 + 6 + 6 + 6 + 6 ? 6 * 5', answer='>', choice=['>', '<', '=']))
+
+lvl_6 = Level(1, info='Задачки!')
+lvl_6.add(Task(text='На 5 лошадей сели по одному всаднику, сколько всего всадников?', answer='5'))
+lvl_6.add(Task(text='После обеда на столе осталось 4 тарелки, ни на одной не осталось ни одной сосиски.'
+                    ' Сколько всего сосисок на этих тарелках?', answer='0'))
+
+lvl_7 = Level(1, info='Примеры!')
+lvl_7.add(Task(text='1 * 26', answer='26'))
+lvl_7.add(Task(text='0 * (21 - 8)', answer='0'))
+lvl_7.add(Task(text='17 + 80 + 3', answer='100'))
+
+lvl_8 = Level(1, info='Используй свойство умножения.')
+lvl_8.add(Task(text='4 * 5 = 20, 5 * 4 = ?', answer='20'))
+lvl_8.add(Task(text='7 * 4 = 28, 4 * 7 = ?', answer='28'))
+lvl_8.add(Task(text='9 * 3 = 27, 3 * 9 = ?', answer='27'))
+
+lvl_9 = Level(1, info='Найди значение выражения 65 - b')
+lvl_9.add(Task(text='Где b = 65.', answer='0'))
+lvl_9.add(Task(text='А если b = 20?', answer='45'))
+lvl_9.add(Task(text='А при b = 49?', answer='16'))
+
+lvl_10 = Level(1, info='Закрепим пройденное!', style='test', time=60, topic='Деление!')
+lvl_10.add(Task(text='1 * 26', answer='26'))
+lvl_10.add(Task(text='9 * 3', answer='27'))
+lvl_10.add(Task(text='3 * 12', answer='36'))
+lvl_10.add(Task(text='7 * 3 ? 6 * 4', answer='<', choice=['>', '<', '=']))
+lvl_10.add(Task(text='2 * 14 ? 6 * 4', answer='>', choice=['>', '<', '=']))
+
+topic_8.add_level(lvl_1)
+topic_8.add_level(lvl_2)
+topic_8.add_level(lvl_3)
+topic_8.add_level(lvl_4)
+topic_8.add_level(lvl_5)
+topic_8.add_level(lvl_6)
+topic_8.add_level(lvl_7)
+topic_8.add_level(lvl_8)
+topic_8.add_level(lvl_9)
+topic_8.add_level(lvl_10)
+year_2.add_level(topic_8)
+
+

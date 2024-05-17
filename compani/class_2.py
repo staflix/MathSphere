@@ -493,11 +493,11 @@ lvl_9.add(Task(text='Сколько раз 8 содержится в числе 
 
 
 lvl_10 = Level(1, info='Закрепим пройденное!', style='test', time=60, topic='Умножение!')
-lvl_7.add(Task(text='1 * 26', answer='26'))
-lvl_4.add(Task(text='9 * 3', answer='27'))
-lvl_4.add(Task(text='3 * 12', answer='36'))
-lvl_5.add(Task(text='7 * 3 ? 6 * 4', answer='<', choice=['>', '<', '=']))
-lvl_5.add(Task(text='2 * 14 ? 6 * 4', answer='>', choice=['>', '<', '=']))
+lvl_10.add(Task(text='1 * 26', answer='26'))
+lvl_10.add(Task(text='9 * 3', answer='27'))
+lvl_10.add(Task(text='3 * 12', answer='36'))
+lvl_10.add(Task(text='7 * 3 ? 6 * 4', answer='<', choice=['>', '<', '=']))
+lvl_10.add(Task(text='2 * 14 ? 6 * 4', answer='>', choice=['>', '<', '=']))
 
 topic_7.add_level(lvl_1)
 topic_7.add_level(lvl_2)
