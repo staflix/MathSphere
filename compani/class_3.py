@@ -120,11 +120,55 @@ lvl_10.add(Task(text="33 * 0 =", answer="0"))
 lvl_10.add(Task(text="32 * 0 =", answer="0"))
 lvl_10.add(Task(text="5 * 0 =", answer="0"))
 lvl_10.add(Task(text="57 * 0 =", answer="0"))
+lvl_10.add(Task(text="35 * 0 =", answer="0"))
+lvl_10.add(Task(text="17 * 0 =", answer="0"))
+lvl_10.add(Task(text="26 * 0 =", answer="0"))
 topic_4.add_level(lvl_1)
 topic_4.add_level(lvl_2)
 topic_4.add_level(lvl_3)
 topic_4.add_level(lvl_4)
 topic_4.add_level(lvl_10)
 year_3.add_level(topic_4)
+
+
+topic_5 = Topic('Доли.')
+
+lvl_1 = Level(1, info='Привет! Определи сколько долей ')
+lvl_1.add(Task(text='Сколько яблок на этой картинке?', answer='2', image='pic/53.jpg'))
+lvl_1.add(Task(text='А на этой?', answer='4', image='pic/54.jpg'))
+
+
+lvl_2 = Level(1, info='Привет! Сравни части.')
+lvl_2.add(Task(text='ответь на вопрос на рисунку', answer='одна четвертая', image='pic/55.jpg', choice=['одна шестая', 'одна четвертая']))
+lvl_2.add(Task(text='какая часть меньше одна вторая или одна третья?', answer='одна третья', image='pic/55.jpg', choice=['одна третья', 'одна вторая']))
+
+
+lvl_3 = Level(1, info='Выбери как называется часть на рисунке')
+lvl_3.add(Task(text='как можно назвать часть на рисунке', answer='одна третья', image='pic/56.jpg', choice=['одна третья', 'три первых']))
+lvl_3.add(Task(text='А какя часть здесь выделина?', answer='одна двенадцатая', image='pic/57.jpg', choice=['одна третья', 'три первых', 'одна двенадцатая']))
+
+
+lvl_4 = Level(1, info='Давай еще немного по чястям')
+lvl_4.add(Task(text='сколько здесь частей выделено?', answer='1', image='pic/58.jpg', choice=['1', '2', '3']))
+lvl_4.add(Task(text='а здесь?', answer='1', image='pic/58.jpg', choice=['1', '2', '3']))
+lvl_4.add(Task(text='последний раз', answer='1', image='pic/59.jpg', choice=['1', '2', '3']))
+
+
+lvl_10 = Level(1, info='Закрепим пройденное!', style='test', time=60, topic='Угол. Виды углов. Логика.')
+lvl_10.add(Task(text='Сколько яблок на этой картинке?', answer='2', image='pic/53.jpg'))
+lvl_10.add(Task(text='А на этой?', answer='4', image='pic/54.jpg'))
+lvl_10.add(Task(text='сколько здесь частей выделено?', answer='1', image='pic/58.jpg', choice=['1', '2', '3']))
+lvl_10.add(Task(text='а здесь?', answer='1', image='pic/58.jpg', choice=['1', '2', '3']))
+lvl_10.add(Task(text='последний раз', answer='1', image='pic/59.jpg', choice=['1', '2', '3']))
+lvl_10.add(Task(text='ответь на вопрос на рисунку', answer='одна четвертая', image='pic/55.jpg', choice=['одна шестая', 'одна четвертая']))
+lvl_10.add(Task(text='какая часть меньше одна вторая или одна третья?', answer='одна третья', image='pic/55.jpg', choice=['одна третья', 'одна вторая']))
+
+topic_5.add_level(lvl_1)
+topic_5.add_level(lvl_2)
+topic_5.add_level(lvl_3)
+topic_5.add_level(lvl_4)
+
+topic_5.add_level(lvl_10)
+year_3.add_level(topic_5)
 
 
