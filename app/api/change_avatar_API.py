@@ -1,9 +1,8 @@
 from flask import render_template, redirect
 import flask
-from forms.change_avatar_Form import ChangeAvatarForm
-from flask_login import login_user
-from data import db_session
-from data.users import User, Info
+from app.forms.change_avatar_Form import ChangeAvatarForm
+from app.data import db_session
+from app.data.users import Info
 
 blueprint = flask.Blueprint(
     'changeavatar_api',

@@ -1,5 +1,5 @@
 from trainer import Task
-from data.tools import dictionary_trainer
+from app.data.tools import dictionary_trainer
 
 
 class Generator1:

@@ -1,10 +1,10 @@
 from flask import render_template, redirect
 import flask
-from forms.loginForm import LoginForm
+from app.forms.loginForm import LoginForm
 from flask_login import login_user
-from data import db_session
-from data.users import User, Info
-from data.generate_string import generate_string
+from app.data import db_session
+from app.data.users import User, Info
+from app.data.generate_string import generate_string
 
 blueprint = flask.Blueprint(
     'login_api',

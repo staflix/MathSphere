@@ -2,7 +2,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from sqlalchemy.orm import declarative_base, relationship
 from sqlalchemy_serializer import SerializerMixin
-from data import db_session
+from app.data import db_session
 from sqlalchemy import ForeignKey
 import sqlalchemy
 

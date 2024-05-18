@@ -4,6 +4,7 @@ from wtforms.validators import DataRequired
 
 
 class MenuCompanyForm(FlaskForm):
-    answer_text = StringField('Введите ответ', validators=[DataRequired()])
-    check = SubmitField('Проверить')
-    next = SubmitField('Дальше')
+    start = SubmitField('Начать')
+    close = SubmitField('Закрыть')
+    level1 = SubmitField("1")
+    level2 = SubmitField("2")

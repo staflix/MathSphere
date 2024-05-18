@@ -1,8 +1,8 @@
 from flask import render_template, redirect
-from forms.mainpageForm import UnLogMainPageForm, LogMainPageForm
+from app.forms.mainpageForm import UnLogMainPageForm, LogMainPageForm
 from flask_login import login_user
-from data import db_session
-from data.users import User, Info
+from app.data import db_session
+from app.data.users import User, Info
 import flask
 
 blueprint = flask.Blueprint(

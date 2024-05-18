@@ -1,10 +1,9 @@
 import flask
-from forms.resetpasswordForm import ResetPasswordForm
+from app.forms.resetpasswordForm import ResetPasswordForm
 from flask import render_template, redirect
-from data import db_session
-from data.users import User, Info
-from sqlalchemy import select
-from mail import send_email
+from app.data import db_session
+from app.data.users import User, Info
+from app.mail import send_email
 
 blueprint = flask.Blueprint(
     'resetpassword_api',

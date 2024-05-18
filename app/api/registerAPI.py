@@ -1,11 +1,11 @@
 from flask import render_template, redirect
 import flask
 from sqlalchemy import select
-from forms.registerForm import RegisterForm
-from data import db_session
-from data.users import User, Info
-from check_email import is_valid_email
-from data.generate_string import generate_string
+from app.forms.registerForm import RegisterForm
+from app.data import db_session
+from app.data.users import User, Info
+from app.check_email import is_valid_email
+from app.data.generate_string import generate_string
 
 blueprint = flask.Blueprint(
     'register_api',
