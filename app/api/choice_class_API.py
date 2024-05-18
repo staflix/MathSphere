@@ -1,9 +1,6 @@
 from flask import render_template, redirect
 import flask
-from forms.choice_class_Form import ChoiceClassForm
-from flask_login import login_user
-from data import db_session
-from data.users import User, Info
+from app.forms.choice_class_Form import ChoiceClassForm
 
 blueprint = flask.Blueprint(
     'choiceclass_api',

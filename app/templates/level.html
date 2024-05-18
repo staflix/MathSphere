@@ -4,12 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math-Up Level</title>
-    <link rel="stylesheet" href="../static/css/level.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #43CBFF, #9708CC);
+        }
+
+        .level-container {
+            width: 90%;
+            max-width: 1200px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .level-header, .level-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #5228F5;
+            color: white;
+        }
+
+        .level-header h1, .level-footer .progress {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .level-header .back-button, .level-footer .prev-button, .level-footer .next-button {
+            background-color: #2a0d95;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .level-header:hover .back-button:hover, .level-footer:hover .prev-button:hover, .level-footer:hover .next-button:hover {
+            background: linear-gradient(45deg, #FDD819, #E80505);
+        }
+        .level-main {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .image-container {
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-button {
+            background-color: #5228F5;
+            border: none;
+            padding: 20px;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1.2em;
+        }
+
+        .option-button:hover {
+            background-color: #3e19c9;
+        }
+
+        .level-footer .progress {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .level-footer .progress .dot {
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 600px) {
+            .level-header, .level-footer {
+                flex-direction: column;
+            }
+
+            .level-header .timer, .level-footer .progress {
+                margin-top: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="level-container">
+    <form action="" method="post" class="level-container">
+        {{ form.hidden_tag() }}
         <header class="level-header">
-            <button id="backButton" class="back-button">Выйти</button>
+            {{ form.leave(class="back-button", id="backButton") }}
             <h1>Тема 1</h1>
             <div class="timer">60:00</div>
         </header>
@@ -35,7 +147,7 @@
             </div>
             <button id="nextButton" class="next-button">Дальше</button>
         </footer>
-    </div>
+    </form>
     <script src="../static/js/level.js"></script>
 </body>
 </html>

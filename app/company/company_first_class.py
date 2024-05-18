@@ -42,6 +42,3 @@ class Class:
 
     def add_level(self, topic):
         self.topics.append(topic)
-
-
-

@@ -1,5 +1,5 @@
-from data import db_session
-from data.users import Info
+from app.data import db_session
+from app.data.users import Info
 import random
 import string
 

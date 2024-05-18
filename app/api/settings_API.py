@@ -1,9 +1,8 @@
 from flask import render_template, redirect
 import flask
-from forms.settings_Form import SettingsForm
-from flask_login import login_user
-from data import db_session
-from data.users import User, Info
+from app.forms.settings_Form import SettingsForm
+from app.data import db_session
+from app.data.users import User, Info
 
 blueprint = flask.Blueprint(
     'settings_api',

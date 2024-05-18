@@ -1,10 +1,7 @@
-from flask import render_template, redirect, session
+from flask import render_template, session
 import flask
-from forms.item_count_etc_Form import ItemCountEtcForm
-from flask_login import login_user
-from data import db_session
-from data.users import User, Info
-from data.tools import dictionary_trainer
+from app.forms.item_count_etc_Form import ItemCountEtcForm
+from app.data.tools import dictionary_trainer
 from random import choice
 
 blueprint = flask.Blueprint(
