@@ -11,6 +11,6 @@ services:
       - web
 
   web:
-    build: ./app
+    build: ./
     ports:
       - "80:5000"
