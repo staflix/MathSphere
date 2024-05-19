@@ -2,46 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CodePen - Modern Avatar Slider</title>
+    <title>Modern Avatar Slider</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/avatar.css') }}">
+    <style>
+        .notification {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            animation: fadeOut 2s forwards; /* Анимация затухания */
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; display: none; } /* Когда анимация закончится, скрываем сообщение */
+        }
+
+        .notification.active {
+            display: block; /* Показываем сообщение перед началом анимации */
+        }
+    </style>
 </head>
 <body>
-<link rel="stylesheet" href="../static/css/avatar.css"/>
-<form action="" method="post">
+<form id="avatarForm" action="" method="post">
     {{ form.hidden_tag() }}
     <div class="choose-avatar">
         <span class="title">Выберите аватарку</span>
         <div class="avatars-container">
             <span class="left"></span>
             <div class="avatars">
-                <div class="avatar-item" style="background-image: url('https://i.ibb.co/C2WLdyY/avatar1.png');">
-                    {{ form.submit1(class="text-avatar") }}
-                </div>
-                <div class="avatar-item" style="background-image: url('https://i.ibb.co/0t3JTMz/avatar2.png');">
-                    {{ form.submit2(class="text-avatar") }}
-                </div>
-                <div class="avatar-item" style="background-image: url('https://i.ibb.co/K08BjJx/avatar3.png');">
-                    {{ form.submit3(class="text-avatar") }}
-                </div>
-                <div class="avatar-item" style="background-image: url('https://i.ibb.co/6XW1X2L/avatar4.png');">
-                    {{ form.submit4(class="text-avatar") }}
-                </div>
-                <div class="avatar-item" style="background-image: url('https://i.ibb.co/DVfTxB2/avatar5.png');">
-                    {{ form.submit5(class="text-avatar") }}
-                </div>
-                <div class="avatar-item" style="background-image: url('https://i.ibb.co/Bzvqgg3/avatar6.png');">
-                    {{ form.submit6(class="text-avatar") }}
-                </div>
-                <div class="avatar-item" style="background-image: url('https://i.ibb.co/FDg3t8m/avatar7.png');">
-                    {{ form.submit7(class="text-avatar") }}
-                </div>
+                {% for i in range(1, 61) %}
+                    <div class="avatar-item" style="background-image: url('{{ url_for('static', filename='avatars_img/' ~ i ~ '.png') }}');">
+                        <button type="button" class="text-avatar" data-avatar="{{ i }}">Выбрать</button>
+                    </div>
+                {% endfor %}
             </div>
             <span class="right"></span>
         </div>
-        {{ form.back(class="button-simple") }}
+        <button type="button" id="backButton" class="button-simple">Назад</button>
     </div>
 </form>
-<!-- partial -->
-<script src="../static/js/avatar.js"></script>
+<div class="notification" id="notification">Аватарка успешно изменена!</div>
+<script src="{{ url_for('static', filename='js/avatar.js') }}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const avatarForm = document.getElementById('avatarForm');
+    const notification = document.getElementById('notification');
+    const rdm_string = '{{ rdm_string }}'; // Здесь добавлено определение переменной rdm_string из Jinja
 
+    avatarForm.addEventListener('click', function(event) {
+        if (event.target.classList.contains('text-avatar')) {
+            const avatarNumber = event.target.getAttribute('data-avatar');
+            const formData = new FormData();
+            formData.append('avatar', avatarNumber);
+
+            fetch('{{ url_for("change_avatar_API.change_avatar", rdm_string=rdm_string) }}', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.json())
+              .then(data => {
+                if (data.success) {
+                    notification.classList.add('active'); // Добавляем класс, чтобы показать сообщение перед началом анимации
+                    setTimeout(() => {
+                        notification.classList.remove('active'); // Убираем класс после завершения анимации
+                    }, 2000);
+                } else {
+                    alert('Error changing avatar');
+                }
+            }).catch(error => console.error('Error:', error));
+        } else if (event.target.id === 'backButton') {
+            window.location.href = `/key=${rdm_string}`;
+        }
+    });
+});
+</script>
 </body>
 </html>

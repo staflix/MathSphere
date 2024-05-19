@@ -6,15 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="Super security. bgfix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/change_avatar_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/change_avatar_API.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/menu_company_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/menu_company_API.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/company/level.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/start_level_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/start_level_API.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/company/company_creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/company/company_creator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/company/company_first_class.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/company/company_second_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/company/company_second_class.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/db/MathSphereBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/MathSphereBase.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/forms/change_avatar_Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms/change_avatar_Form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/forms/company_levelForm.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms/company_levelForm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/forms/menu_company_Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms/menu_company_Form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/avatar.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/avatar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/company.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/company.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/level.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/level.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/trainer/company.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/trainer/company_creator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/simple_arithmetic.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,26 +75,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python.company_creator.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develope&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.company_creator.executor": "Run",
+    "Python.company_second_class.executor": "Run",
+    "Python.main (1).executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develope",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\MathProject\Math\app\static" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="company_second_class" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Math" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/company" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/company/company_second_class.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Math" />
       <option name="ENV_FILES" value="" />
@@ -115,6 +148,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.company_second_class" />
       </list>
     </recent_temporary>
   </component>
