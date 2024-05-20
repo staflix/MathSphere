@@ -11,7 +11,7 @@ class Level:
 
     def __init__(self, num=0, topic='', style='base', time=0, class_num=0, info=''):
         if style == 'base':
-            self.name = f'Уровень номер {num}. {info}'
+            self.name = f'{info}'
         elif style == 'test':
             self.name = f'Тест на тему {topic}, даётся {time} минут, удачи!'
             self.text = 'Пройди этот тест для открытия следующего блока заданий! Проиграешь трижды и тема сбросится!'
