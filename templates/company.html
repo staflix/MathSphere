@@ -492,10 +492,25 @@
           </div>
         </div>
         <div id="mini-menu" class="mini-menu hidden">
-          <p id="level-intro">Предисловие к уровню</p>
-          <p id="level-theme">Тема уровня</p>
-          <button id="start-button">Начать</button>
-          <button id="exit-button">Закрыть</button>
+          <div class="lines">
+            <div class="long-line line"></div>
+            <div class="medium-line line"></div>
+            <div class="short-line line"></div>
+            <div class="medium-line line"></div>
+            <div class="long-line line"></div>
+          </div>
+          <div class="rectangle">
+            <h1 class="level-number" id="level-number">1</h1>
+          </div>
+          <div class="level-theme">
+            <h3 id="level-theme"></h3>
+          </div>
+          <div class="level-intro">
+            <h4 id="level-intro"></h4>
+          </div>
+          <div class="buttons">
+            <button class="start-button" id="start-button">Начать</button>
+          </div>
         </div>
       </div>
     </form>
@@ -508,7 +523,6 @@
         const userLevel = {{ level }};
         const miniMenu = document.getElementById('mini-menu');
         const buttons = document.querySelectorAll('.button');
-        const exitButton = document.getElementById('exit-button');
         const startButton = document.getElementById('start-button');
         let selectedLevel = null;
 
@@ -534,9 +548,16 @@
 
             event.preventDefault(); // Prevent default form submission
 
-            const mouseX = event.clientX + window.pageXOffset;
+            let mouseX = event.clientX + window.pageXOffset;
             const mouseY = event.clientY + window.pageYOffset;
+            const screenWidth = window.innerWidth
 
+            if (mouseX + miniMenu.offsetWidth > screenWidth) {
+              mouseX = screenWidth - miniMenu.offsetWidth - 10;
+            }
+            if (mouseX < 0) {
+              mouseX = miniMenu.offsetWidth + 10;
+            }
             miniMenu.style.left = `${mouseX}px`;
             miniMenu.style.top = `${mouseY}px`;
             miniMenu.classList.add('show');
@@ -551,6 +572,7 @@
                 contentType: 'application/json',
                 data: JSON.stringify({ level: selectedLevel }),
                 success: function(response) {
+                    document.getElementById('level-number').textContent = response.levelNumber;
                     document.getElementById('level-intro').textContent = response.levelIntro;
                     document.getElementById('level-theme').textContent = response.levelTheme;
                 },
@@ -573,13 +595,6 @@
             if (!miniMenu.contains(event.target)) {
                 hideMenu();
             }
-        });
-
-        // Обработчик клика по кнопке выхода
-        exitButton.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent default form submission
-            hideMenu();
-            event.stopPropagation(); // Остановить всплытие события, чтобы оно не добралось до обработчика на документе
         });
 
         // Обработчик клика по кнопке старта

@@ -10890,7 +10890,7 @@
   }
   .company-button192 {
     top: 530px;
-    left: -187px;
+    left: 260px;
     width: 55px;
     bottom: -252px;
     height: 55px;
@@ -10901,7 +10901,7 @@
   }
   .company-button193 {
     top: 250px;
-    left: -220px;
+    left: 230px;
     width: 55px;
     height: 55px;
     position: absolute;
@@ -11247,7 +11247,7 @@
   }
   .company-button227 {
     top: 285px;
-    left: -324px;
+    left: 120px;
     width: 55px;
     bottom: -322px;
     height: 55px;
@@ -11258,7 +11258,7 @@
   }
   .company-button228 {
     top: 380px;
-    left: -327px;
+    left: 120px;
     width: 55px;
     bottom: -429px;
     height: 55px;
@@ -17214,16 +17214,93 @@
 }
 
 .mini-menu {
-    position: absolute;
-    background-color: white;
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 100;
-    transform: translateY(-10px);
+  height: 450px;
+  width: 250px;
+  max-width: 50%;
+  position: absolute;
+  background-color: #afaaff;
+  padding: 0 10px 10px 10px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.5);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.5);
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.5);
+  z-index: 100;
+  transform: translateY(-10px);
+}
+.lines{
+  display: flex;
+  justify-content: center;
+
+}
+.line{
+  background-color: white;
+  width: 12px;
+  margin: 0 16px;
+  border-radius: 0  0 10px 10px;
+}
+.long-line{
+  height: 100px;
+}
+.medium-line{
+  height: 80px;
+}
+.short-line{
+  height: 60px;
+}
+.rectangle{
+  display: flex;
+  height: 60px;
+  justify-content: center;
+}
+.level-number{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 61px;
+  background-size: cover;
+  background-image: url("../media/rectangle.png");
+}
+.level-theme{
+  color: white;
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.level-intro{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
 }
 
+.buttons{
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+.start-button{
+  background-color: #5949c4;
+  padding: 10px 70px;
+  margin: 0 10px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.start-button:hover{
+  background-color: #442fd2;
+}
+@media (max-width: 479px) {
+  .mini-menu{
+  }
+}
+@media (max-width: 991px) {
+  .mini-menu{
+  }
+}
 .hidden {
     display: none;
 }

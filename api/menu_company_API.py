@@ -116,10 +116,10 @@ def menu_company(rdm_string):
         elif level_selected == "120":
             info_level = year_2.topics[1].levels[9].name
             topic_level = year_2.topics[1].name
-
         return jsonify({
+            'levelNumber': f'{level_selected}',
             'levelIntro': f'{info_level}',
-            'levelTheme': f'Тема уровня: {topic_level}'
+            'levelTheme': f'{topic_level}'
         })
 
     return render_template("company.html", form=form, level=level, rdm_string=rdm_string)
