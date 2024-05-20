@@ -740,10 +740,8 @@ topic_10.add_level(lvl_9)
 topic_10.add_level(lvl_10)
 year_2.add_level(topic_10)
 
-# info_level = year_2.topics[3].levels[3].name
-# tasks_lvl_1 = year_2.topics[0].levels[0].tasks
-# print(tasks_lvl_1[0].task)
-# print(tasks_lvl_1[1].task)
-# print(tasks_lvl_1[2].task)
-# print(tasks_lvl_1[3].task)
-# print(info_level)
+info_level_1 = year_2.topics[0].levels[0].name
+print(info_level_1)
+
+info_level_2 = year_2.topics[1].levels[2].name
+print(info_level_2)

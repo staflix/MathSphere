@@ -22,10 +22,12 @@ def start_level(level, rdm_string):
     user_info = db_sess.query(Info).filter(Info.random_string == rdm_string).first()
     user = db_sess.query(User).filter(User.id == user_info.user_id).first()
 
-    db_sess.close()
-
     if request.method == 'POST' and form.validate_on_submit():
-        if form.leave.data:
+        if form.finish.data:
+            if str(user.profile_level) <= level:
+                user.profile_level = int(level) + 1
+                db_sess.commit()
+            db_sess.close()
             return redirect(f'/menu_company/key={rdm_string}')
 
     if level == "1":
