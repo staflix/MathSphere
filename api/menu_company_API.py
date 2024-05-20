@@ -22,100 +22,27 @@ def menu_company(rdm_string):
 
     user_info = db_sess.query(Info).filter(Info.random_string == rdm_string).first()
     user = db_sess.query(User).filter(User.id == user_info.user_id).first()
+    # user.profile_level = 200
     level = user.profile_level
+    db_sess.commit()
     db_sess.close()
 
-    if request.method == 'POST' and request.is_json:
+    if request.method == 'POST':
         data = request.get_json()
         level_selected = data.get('level')
 
-        if level_selected == "1":
-            text = "уровень 1"
-            topic = "хуйхуйхуй"
-        elif level_selected == "2":
-            text = "уровень 2"
-            topic = "хуйхухйухй"
+        # if 1 <= level_selected <= 100:
+        #     info_level, topic_level = get_level_info(year_1, level_selected)
 
+        if 101 <= int(level_selected) <= 200:
+            info_level, topic_level = get_level_info(year_2, level_selected)
 
-        elif level_selected == "101":
-            info_level = year_2.topics[0].levels[0].name
-            topic_level = year_2.topics[0].name
+        # elif 201 <= level_selected <= 300:
+        #     info_level, topic_level = get_level_info(year_3, level_selected)
+        #
+        # elif 301 <= level_selected <= 400:
+        #     info_level, topic_level = get_level_info(year_4, level_selected)
 
-        elif level_selected == "102":
-            info_level = year_2.topics[0].levels[1].name
-            topic_level = year_2.topics[0].name
-
-        elif level_selected == "103":
-            info_level = year_2.topics[0].levels[2].name
-            topic_level = year_2.topics[0].name
-
-        elif level_selected == "104":
-            info_level = year_2.topics[0].levels[3].name
-            topic_level = year_2.topics[0].name
-
-        elif level_selected == "105":
-            info_level = year_2.topics[0].levels[4].name
-            topic_level = year_2.topics[0].name
-
-        elif level_selected == "106":
-            info_level = year_2.topics[0].levels[5].name
-            topic_level = year_2.topics[0].name
-
-        elif level_selected == "107":
-            info_level = year_2.topics[0].levels[6].name
-            topic_level = year_2.topics[0].name
-
-        elif level_selected == "108":
-            info_level = year_2.topics[0].levels[7].name
-            topic_level = year_2.topics[0].name
-
-        elif level_selected == "109":
-            info_level = year_2.topics[0].levels[8].name
-            topic_level = year_2.topics[0].name
-
-        elif level_selected == "110":
-            info_level = year_2.topics[0].levels[9].name
-            topic_level = year_2.topics[0].name
-
-        elif level_selected == "111":
-            info_level = year_2.topics[1].levels[0].name
-            topic_level = year_2.topics[1].name
-
-        elif level_selected == "112":
-            info_level = year_2.topics[1].levels[1].name
-            topic_level = year_2.topics[1].name
-
-        elif level_selected == "113":
-            info_level = year_2.topics[1].levels[2].name
-            topic_level = year_2.topics[1].name
-
-        elif level_selected == "114":
-            info_level = year_2.topics[1].levels[3].name
-            topic_level = year_2.topics[1].name
-
-        elif level_selected == "115":
-            info_level = year_2.topics[1].levels[4].name
-            topic_level = year_2.topics[1].name
-
-        elif level_selected == "116":
-            info_level = year_2.topics[1].levels[5].name
-            topic_level = year_2.topics[1].name
-
-        elif level_selected == "117":
-            info_level = year_2.topics[1].levels[6].name
-            topic_level = year_2.topics[1].name
-
-        elif level_selected == "118":
-            info_level = year_2.topics[1].levels[7].name
-            topic_level = year_2.topics[1].name
-
-        elif level_selected == "119":
-            info_level = year_2.topics[1].levels[8].name
-            topic_level = year_2.topics[1].name
-
-        elif level_selected == "120":
-            info_level = year_2.topics[1].levels[9].name
-            topic_level = year_2.topics[1].name
         return jsonify({
             'levelNumber': f'{level_selected}',
             'levelIntro': f'{info_level}',
@@ -123,3 +50,21 @@ def menu_company(rdm_string):
         })
 
     return render_template("company.html", form=form, level=level, rdm_string=rdm_string)
+
+
+def get_level_info(year, level_selected):
+    topic_index = int(level_selected) // 10 % 10
+    level_within_topic_index = (int(level_selected) - 1) % 10
+    if int(level_selected) % 10 == 0 and int(level_selected) % 100 != 0:
+        topic_index -= 1
+
+    elif int(level_selected) % 10 == 0 and int(level_selected) % 100 == 0:
+        topic_index = 9
+
+    selected_topic = year.topics[topic_index]
+    selected_level = selected_topic.levels[level_within_topic_index]
+
+    info_level = selected_level.name
+    topic_level = selected_topic.name
+
+    return info_level, topic_level

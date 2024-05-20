@@ -8,8 +8,9 @@ class CompanyLevelForm(FlaskForm):
     answer2 = SubmitField('Проверить')
     answer3 = SubmitField('Проверить')
     answer4 = SubmitField('Проверить')
-    text_answer = IntegerField("Введите ответ")
+    text_answer = IntegerField("Введите ответ", validators=[DataRequired()])
+    finish = SubmitField('Закончить')
     check_answer = SubmitField("Ответить")
-    right = SubmitField('Дальше')
-    left = SubmitField('Назад')
-    leave = SubmitField('Вернуться')
+    next = SubmitField('Дальше')
+    prev = SubmitField('Назад')
+

@@ -7,9 +7,8 @@ class Task:
 
 
 class Level:
-    tasks = []
-
     def __init__(self, num=0, topic='', style='base', time=0, class_num=0, info=''):
+        self.tasks = []  # Переносим определение списка сюда
         if style == 'base':
             self.name = f'{info}'
         elif style == 'test':
@@ -25,9 +24,8 @@ class Level:
 
 
 class Topic:
-    levels = []
-
     def __init__(self, name=''):
+        self.levels = []  # Переносим определение списка сюда
         self.name = name
 
     def add_level(self, lvl):
@@ -35,9 +33,8 @@ class Topic:
 
 
 class Class:
-    topics = []
-
     def __init__(self, num=1):
+        self.topics = []  # Переносим определение списка сюда
         self.number = num
 
     def add_level(self, topic):

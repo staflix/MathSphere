@@ -5,94 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/level.css') }}">
     <style>
-    .dot {    display: inline-block;
-        width: 10px;    height: 10px;
-        margin: 0 5px;    background-color: grey;
-        border-radius: 50%;}
-    .dot.active {
-        background-color: green;}
-    .message {
-        color: red;    font-weight: bold;
-    }
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: grey;
+            border-radius: 50%;
+        }
+        .dot.active {
+            background-color: green;
+        }
+        .message {
+            color: red;
+            font-weight: bold;
+        }
     </style>
     <title>Math-Up Level</title>
 </head>
 <body>
-    <form action="" method="post" class="level-container">
-        {{ form.hidden_tag() }}
-        <header class="level-header">
-            {{ form.leave(class="back-button", id="backButton") }}
-            <h1>{{ topic }}</h1>
-            {% if timer %}
-            <div class="timer">60:00</div>
+<form action="" method="post" class="level-container">
+    {{ form.hidden_tag() }}
+    <header class="level-header">
+        <a href="/menu_company/key={{ rdm_string }}" class="back-button" id="backButton">Вернуться</a>
+        <h1>{{ topic }}</h1>
+        {% if timer %}
+        <div class="timer">60:00</div>
+        {% endif %}
+    </header>
+    <main class="level-main">
+        <h2 id="question">{{ tasks[0] }}</h2>
+        <div class="image-container">
+            {% if img %}
+            <img id="questionImage" src="">
             {% endif %}
-        </header>
-        <main class="level-main">
-            <h2 id="question">{{ tasks[0] }}</h2>
-            <div class="image-container">
-                {% if img %}
-                <img id="questionImage" src="" alt="Картинка">
-                {% endif %}
-            </div>
-            <div id="message" class="message"></div>
-            {% if choice %}
-            <div class="options">
-                <button type="button" class="option-button">{{ answers[0] }}</button>
-                <button type="button" class="option-button">{{ answers[1] }}</button>
-                <button type="button" class="option-button">{{ answers[2] }}</button>
-                <button type="button" class="option-button">{{ answers[3] }}</button>
-            </div>
-            {% else %}
-            {{ form.text_answer(id="textAnswerInput") }}
-            {% endif %}
-        </main>
-        <footer class="level-footer">
-            <button type="button" id="prevButton" class="prev-button">Назад</button>
-            <div class="progress">
-                {% for _ in range(4) %}
-                <span class="dot"></span>
-                {% endfor %}
-            </div>
-            <button type="button" id="checkButton" class="check-button">Ответить</button>
-            <button type="button" id="nextButton" class="next-button" style="display: none;">Дальше</button>
-        </footer>
-        <input type="hidden" id="currentTaskIndex" value="0">
-    </form>
-    <script src="{{ url_for('static', filename='js/level.js') }}"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {    const tasks = {{ tasks|tojson }};
-    const answers = {{ answers|tojson }};    const messageElement = document.getElementById('message');
-    const questionElement = document.getElementById('question');    const textAnswerInput = document.getElementById('textAnswerInput');
-    const checkButton = document.getElementById('checkButton');    const nextButton = document.getElementById('nextButton');
-    const prevButton = document.getElementById('prevButton');    const currentTaskIndexElement = document.getElementById('currentTaskIndex');
+        </div>
+        <div id="message" class="message"></div>
+        {{ form.text_answer(id="textAnswerInput") }}
+    </main>
+    <footer class="level-footer">
+        <button type="button" id="prevButton" class="prev-button">Назад</button>
+        <div class="progress">
+            {% for _ in tasks %}
+            <span class="dot"></span>
+            {% endfor %}
+        </div>
+        <button type="button" id="checkButton" class="check-button">Ответить</button>
+        <button type="button" id="nextButton" class="next-button" style="display: none;">Дальше</button>
+        {{ form.finish(id="finishButton", class="finish-button", style="display: none;")}}
+    </footer>
+    <input type="hidden" id="currentTaskIndex" value="0">
+</form>
+<script src="{{ url_for('static', filename='js/level.js') }}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const tasks = {{ tasks|tojson }};
+    const answers = {{ answers|tojson }};
+    const messageElement = document.getElementById('message');
+    const questionElement = document.getElementById('question');
+    const textAnswerInput = document.getElementById('textAnswerInput');
+    const checkButton = document.getElementById('checkButton');
+    const nextButton = document.getElementById('nextButton');
+    const finishButton = document.getElementById('finishButton');
+    const prevButton = document.getElementById('prevButton');
+    const currentTaskIndexElement = document.getElementById('currentTaskIndex');
     const dots = document.querySelectorAll('.dot');
-    function updateQuestion() {        const currentIndex = parseInt(currentTaskIndexElement.value);
-        questionElement.textContent = tasks[currentIndex];        textAnswerInput.value = '';
-        messageElement.textContent = '';        checkButton.style.display = 'inline-block';
-        nextButton.style.display = 'none';        updateProgress();
+
+    function updateQuestion() {
+        const currentIndex = parseInt(currentTaskIndexElement.value);
+        questionElement.textContent = tasks[currentIndex];
+        textAnswerInput.value = '';
+        messageElement.textContent = '';
+        checkButton.style.display = 'inline-block';
+        nextButton.style.display = 'none';
+        finishButton.style.display = 'none';
+        updateProgress();
     }
-    function updateProgress() {        const currentIndex = parseInt(currentTaskIndexElement.value);
-        dots.forEach((dot, index) => {            if (index <= currentIndex) {
-                dot.classList.add('active');            } else {
-                dot.classList.remove('active');            }
-        });    }
+
+    function updateProgress() {
+        const currentIndex = parseInt(currentTaskIndexElement.value);
+        dots.forEach((dot, index) => {
+            if (index <= currentIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
     checkButton.addEventListener('click', () => {
-        const currentIndex = parseInt(currentTaskIndexElement.value);        const userAnswer = textAnswerInput.value.trim();
-        if (userAnswer === answers[currentIndex]) {            messageElement.textContent = 'Ответ правильный!';
-            checkButton.style.display = 'none';            nextButton.style.display = 'inline-block';
-        } else {            messageElement.textContent = 'Ответ неправильный. Попробуйте снова.';
-        }    });
-    nextButton.addEventListener('click', () => {
-        let currentIndex = parseInt(currentTaskIndexElement.value);        if (currentIndex < tasks.length - 1) {
-            currentIndex += 1;            currentTaskIndexElement.value = currentIndex;
-            updateQuestion();        }
+        const currentIndex = parseInt(currentTaskIndexElement.value);
+        const userAnswer = textAnswerInput.value.trim();
+        if (userAnswer === answers[currentIndex]) {
+            messageElement.textContent = 'Ответ правильный!';
+            checkButton.style.display = 'none';
+            if (currentIndex < tasks.length - 1) {
+                nextButton.style.display = 'inline-block';
+            } else {
+                finishButton.style.display = 'inline-block';
+            }
+        } else {
+            messageElement.textContent = 'Ответ неправильный. Попробуйте снова.';
+        }
     });
-    prevButton.addEventListener('click', () => {        let currentIndex = parseInt(currentTaskIndexElement.value);
-        if (currentIndex > 0) {            currentIndex -= 1;
-            currentTaskIndexElement.value = currentIndex;            updateQuestion();
-        }    });
+
+    nextButton.addEventListener('click', () => {
+        let currentIndex = parseInt(currentTaskIndexElement.value);
+        if (currentIndex < tasks.length - 1) {
+            currentIndex += 1;
+            currentTaskIndexElement.value = currentIndex;
+            updateQuestion();
+        }
+    });
+
+    finishButton.addEventListener('click', () => {
+        const form = document.querySelector('.level-container');
+        form.submit();
+    });
+
+    prevButton.addEventListener('click', () => {
+        let currentIndex = parseInt(currentTaskIndexElement.value);
+        if (currentIndex > 0) {
+            currentIndex -= 1;
+            currentTaskIndexElement.value = currentIndex;
+            updateQuestion();
+        }
+    });
+
     updateQuestion();
 });
-    </script>
+</script>
 </body>
 </html>
