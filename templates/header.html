@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MathUp!</title>
+    <meta charset="utf-8" />
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" data-tag="font"/>
+    <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"/>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/header.css" />
+    {% block links %}{% endblock %}
+</head>
+<body>
+<div data-role="Header" class="authorizated-navbar-container">
+    <div class="authorizated-navbar">
+        <div class="authorizated-logo">
+            <img
+                    alt="image"
+                    src="../static/media/logo-1500w-1500w.png"
+                    class="authorizated-image"
+                    onclick="location.href='/key={{rdm_string}}'"
+            />
+        </div>
+        <div class="authorizated-container2">
+            <div class="authorizated-container3">
+                <link
+                        rel="stylesheet"
+                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+                        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+                        crossorigin="anonymous"
+                        referrerpolicy="no-referrer"
+                />
+
+                <div class="container">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="{{ avatar }}" alt=""/>
+                        </div>
+                        <h2>
+                            {{ name }} {{ surname }}
+                            <br/>
+                            <span>{{ email }}</span>
+                        </h2>
+                    </div>
+                    <form action="" method="post">
+                        {{ profile.hidden_tag() }}
+                        <ul>
+                            <li>
+                                <a>
+                                    <i class="fa fa-cog" aria-hidden="true">{{ profile.settings(class="settings") }}</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <i class="fa fa-user" aria-hidden="true">{{ profile.change_avatar() }}</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <i class="fa fa-sign-out" aria-hidden="true">{{ profile.exit() }}</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </form>
+                    <div class="toggle">
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+  const container = document.querySelector('.container');
+      const toggle = document.querySelector('.toggle');
+
+      toggle.addEventListener('click', () => {
+          container.classList.toggle('active');
+      });
+</script>
+<script defer="" src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+{% block content %}{% endblock %}
+</body>
+</html>
