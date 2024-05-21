@@ -21,6 +21,7 @@ def main_page_unlog():
 # главная страница для зарегестрированного пользователя
 @blueprint.route('/key=<rdm_string>', methods=['GET', 'POST'])
 def main_page_log(rdm_string):
+    profile = LogMainPageForm()
     form = LogMainPageForm()
 
     db_session.global_init("db/MathSphereBase.db")
@@ -33,13 +34,13 @@ def main_page_log(rdm_string):
     user_email = user.email
     user_avatar = user_info.avatar_href
 
-    if form.settings.data:
+    if profile.settings.data:
         return redirect(f"/settings/key={rdm_string}")
 
-    if form.change_avatar.data:
+    if profile.change_avatar.data:
         return redirect(f"/change_avatar/key={rdm_string}")
 
-    if form.exit.data:
+    if profile.exit.data:
         return redirect(f"/")
 
     if form.trainer_btn.data:
@@ -49,4 +50,4 @@ def main_page_log(rdm_string):
         return redirect(f"/menu_company/key={rdm_string}")
 
     return render_template('log_index.html', name=user_name, surname=user_surname,
-                           email=user_email, avatar=user_avatar, form=form)
+                           email=user_email, avatar=user_avatar, profile=profile, form=form)

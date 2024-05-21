@@ -2,6 +2,7 @@ from flask import render_template, request, jsonify, redirect
 import flask
 from forms.menu_company_Form import MenuCompanyForm
 from forms.company_levelForm import CompanyLevelForm
+from forms.mainpageForm import LogMainPageForm
 from data import db_session
 from data.users import User, Info
 from company.company_second_class import *
@@ -16,12 +17,17 @@ blueprint = flask.Blueprint(
 @blueprint.route('/menu_company/key=<rdm_string>', methods=['GET', 'POST'])
 def menu_company(rdm_string):
     form = MenuCompanyForm()
+    profile = LogMainPageForm()
 
     db_session.global_init("db/MathSphereBase.db")
     db_sess = db_session.create_session()
 
     user_info = db_sess.query(Info).filter(Info.random_string == rdm_string).first()
     user = db_sess.query(User).filter(User.id == user_info.user_id).first()
+    user_name = user.name
+    user_surname = user.surname
+    user_email = user.email
+    user_avatar = f"../{user_info.avatar_href}"
     # user.profile_level = 200
     level = user.profile_level
     db_sess.commit()
@@ -48,8 +54,9 @@ def menu_company(rdm_string):
             'levelIntro': f'{info_level}',
             'levelTheme': f'{topic_level}'
         })
-
-    return render_template("company.html", form=form, level=level, rdm_string=rdm_string)
+    return render_template("company.html", form=form, level=level, rdm_string=rdm_string, profile=profile,
+                           avatar=user_avatar, name=user_name, surname=user_surname,
+                           email=user_email)
 
 
 def get_level_info(year, level_selected):
