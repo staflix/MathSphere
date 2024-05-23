@@ -30,10 +30,25 @@ def start_level(level, rdm_string):
             db_sess.close()
             return redirect(f'/menu_company/key={rdm_string}')
 
+    # if 1 <= int(level) <= 100:
+    #     timer, topic, tasks, answers, choices, imgs = get_level_data(year_1, level)
+    #     return render_template("level.html", timer=timer, choice=choices, img=imgs,
+    #                            topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
+
     if 101 <= int(level) <= 200:
         timer, topic, tasks, answers, choices, imgs = get_level_data(year_2, level)
         return render_template("level.html", timer=timer, choice=choices, img=imgs,
                                topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
+
+#     if 201 <= int(level) <= 300:
+#         timer, topic, tasks, answers, choices, imgs = get_level_data(year_3, level)
+#         return render_template("level.html", timer=timer, choice=choices, img=imgs,
+#                                topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
+
+    # if 301 <= int(level) <= 400:
+    #     timer, topic, tasks, answers, choices, imgs = get_level_data(year_4, level)
+    #     return render_template("level.html", timer=timer, choice=choices, img=imgs,
+    #                            topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
 
 
 def get_level_data(year, level_selected):
