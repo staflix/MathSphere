@@ -20,6 +20,17 @@
             color: red;
             font-weight: bold;
         }
+        .choices-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .choice-button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
     <title>Math-Up Level</title>
 </head>
@@ -30,18 +41,21 @@
         <a href="/menu_company/key={{ rdm_string }}" class="back-button" id="backButton">Вернуться</a>
         <h1>{{ topic }}</h1>
         {% if timer %}
-        <div class="timer">60:00</div>
+        <div class="timer" id="timer">{{ timer }}</div>
         {% endif %}
     </header>
     <main class="level-main">
         <h2 id="question">{{ tasks[0] }}</h2>
         <div class="image-container">
             {% if img %}
-            <img id="questionImage" src="">
+            <img id="questionImage" src="" alt="Question Image">
             {% endif %}
         </div>
         <div id="message" class="message"></div>
-        {{ form.text_answer(id="textAnswerInput") }}
+        <div id="choicesContainer" class="choices-container" style="display: none;"></div>
+        <div id="textAnswerContainer">
+            {{ form.text_answer(id="textAnswerInput") }}
+        </div>
     </main>
     <footer class="level-footer">
         <button type="button" id="prevButton" class="prev-button">Назад</button>
@@ -50,17 +64,21 @@
             <span class="dot"></span>
             {% endfor %}
         </div>
-        <button type="button" id="checkButton" class="check-button">Ответить</button>
+        <button type="button" id="checkButton" class="check-button" style="display: none;">Ответить</button>
         <button type="button" id="nextButton" class="next-button" style="display: none;">Дальше</button>
-        {{ form.finish(id="finishButton", class="finish-button", style="display: none;")}}
+        <button type="submit" id="finishButton" class="finish-button" style="display: none;">Закончить</button>
     </footer>
     <input type="hidden" id="currentTaskIndex" value="0">
 </form>
 <script src="{{ url_for('static', filename='js/level.js') }}"></script>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
     const tasks = {{ tasks|tojson }};
     const answers = {{ answers|tojson }};
+    const choices = {{ choice|tojson }};
+    const imgs = {{ img|tojson }};
+    const timerElement = document.getElementById('timer');
+
     const messageElement = document.getElementById('message');
     const questionElement = document.getElementById('question');
     const textAnswerInput = document.getElementById('textAnswerInput');
@@ -70,15 +88,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevButton = document.getElementById('prevButton');
     const currentTaskIndexElement = document.getElementById('currentTaskIndex');
     const dots = document.querySelectorAll('.dot');
+    const choicesContainer = document.getElementById('choicesContainer');
+    const textAnswerContainer = document.getElementById('textAnswerContainer');
+    const questionImage = document.getElementById('questionImage');
 
     function updateQuestion() {
         const currentIndex = parseInt(currentTaskIndexElement.value);
         questionElement.textContent = tasks[currentIndex];
         textAnswerInput.value = '';
         messageElement.textContent = '';
-        checkButton.style.display = 'inline-block';
         nextButton.style.display = 'none';
         finishButton.style.display = 'none';
+
+        if (imgs[currentIndex]) {
+            questionImage.src = imgs[currentIndex];
+            questionImage.style.display = 'block';
+        } else {
+            questionImage.style.display = 'none';
+        }
+
+        if (choices[currentIndex]) {
+            textAnswerContainer.style.display = 'none';
+            choicesContainer.style.display = 'flex';
+            choicesContainer.innerHTML = '';
+            choices[currentIndex].forEach((choice, index) => {
+                const button = document.createElement('button');
+                button.textContent = choice;
+                button.classList.add('choice-button');
+                button.addEventListener('click', () => checkChoice(choice)); // Передаем текст кнопки в функцию checkChoice
+                choicesContainer.appendChild(button);
+            });
+        } else {
+            textAnswerContainer.style.display = 'block';
+            choicesContainer.style.display = 'none';
+            checkButton.style.display = 'inline-block';
+        }
+
         updateProgress();
     }
 
@@ -91,6 +136,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 dot.classList.remove('active');
             }
         });
+    }
+
+    function checkChoice(selectedChoice) { // Принимаем текст выбранной кнопки
+        const currentIndex = parseInt(currentTaskIndexElement.value);
+        const correctAnswer = answers[currentIndex]; // Получаем правильный ответ
+        if (selectedChoice === correctAnswer) { // Сравниваем текст выбранной кнопки с правильным ответом
+            messageElement.textContent = 'Ответ правильный!';
+            choicesContainer.querySelectorAll('button').forEach(button => {
+                button.disabled = true;
+            });
+            if (currentIndex < tasks.length - 1) {
+                nextButton.style.display = 'inline-block';
+            } else {
+                finishButton.style.display = 'inline-block';
+            }
+        } else {
+            messageElement.textContent = 'Ответ неправильный. Попробуйте снова.';
+        }
     }
 
     checkButton.addEventListener('click', () => {
@@ -132,8 +195,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    if (timerElement) {
+        startTimer(timerElement.textContent);
+    }
+
+    function startTimer(duration) {
+        let timer = duration.split(':').reduce((acc, time) => (60 * acc) + +time);
+        const interval = setInterval(() => {
+            if (--timer < 0) {
+                clearInterval(interval);
+                messageElement.textContent = 'Время вышло. Чтобы вернуться назад, нажмите кнопку Вернуться.';
+                disableAllButtons();
+            } else {
+                const minutes = Math.floor(timer / 60);
+                const seconds = timer % 60;
+                timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            }
+        }, 1000);
+    }
+
+    function disableAllButtons() {
+        checkButton.disabled = true;
+        nextButton.disabled = true;
+        finishButton.disabled = true;
+        prevButton.disabled = true;
+        document.querySelectorAll('.choice-button').forEach(button => {
+            button.disabled = true;
+        });
+        textAnswerInput.disabled = true;
+    }
+
     updateQuestion();
 });
+</script>
+</body>
+</html>
+
 </script>
 </body>
 </html>

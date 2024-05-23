@@ -30,23 +30,30 @@ def start_level(level, rdm_string):
             db_sess.close()
             return redirect(f'/menu_company/key={rdm_string}')
 
-    if level == "1":
-        timer = None
-        return render_template("level.html", timer=timer, form=form)
+    if 101 <= int(level) <= 200:
+        timer, topic, tasks, answers, choices, imgs = get_level_data(year_2, level)
+        return render_template("level.html", timer=timer, choice=choices, img=imgs,
+                               topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
 
-    elif level == "101":
-        topic = year_2.topics[0].name
-        task = year_2.topics[0].levels[0].tasks
-        task1 = task[0].task
-        task1_answer = task[0].answer
-        task2 = task[1].task
-        task2_answer = task[1].answer
-        task3 = task[2].task
-        task3_answer = task[2].answer
-        task4 = task[3].task
-        task4_answer = task[3].answer
-        tasks = [task1, task2, task3, task4]
-        answers = [task1_answer, task2_answer, task3_answer, task4_answer]
 
-        return render_template("level.html", timer=None, choice=None, img=None, topic=topic, tasks=tasks,
-                               rdm_string=rdm_string, answers=answers, form=form)
+def get_level_data(year, level_selected):
+    topic_index = (int(level_selected) // 10) % 10
+    level_within_topic_index = (int(level_selected) - 1) % 10
+    timer = None
+    if int(level_selected) % 10 == 0 and int(level_selected) % 100 != 0:
+        timer = "10:00"
+        topic_index -= 1
+    elif int(level_selected) % 10 == 0 and int(level_selected) % 100 == 0:
+        timer = "20:00"
+        topic_index = 9
+
+    selected_topic = year.topics[topic_index]
+    selected_level = selected_topic.levels[level_within_topic_index]
+
+    topic = selected_topic.name
+    tasks = [task.task for task in selected_level.tasks]
+    answers = [task.answer for task in selected_level.tasks]
+    choices = [task.choice if task.choice else None for task in selected_level.tasks]
+    imgs = [task.image if task.image else None for task in selected_level.tasks]
+
+    return timer, topic, tasks, answers, choices, imgs
