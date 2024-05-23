@@ -137,7 +137,7 @@ lvl_10 = Level(1, info='Закрепим пройденное!', style='test', t
 lvl_10.add(Task(text='80 + 12', answer='92'))
 lvl_10.add(Task(text='Первая игра заняла 1 час, а вторая шла на 10 минут. Сколько минут шли ргы вместе?', answer='70'))
 lvl_10.add(Task(text='? + 11 = 20', answer='9'))
-lvl_10.add(Task(text='80 - ? = 30', answer='9'))
+lvl_10.add(Task(text='80 - ? = 30', answer='50'))
 lvl_10.add(Task(text='1 дм 12 см ? 13 см 100 мм', answer='<', choice=['>', '<', '=']))
 lvl_10.add(Task(text='64 - 62 + 4', answer='6'))
 topic_2.add_level(lvl_1)
@@ -739,9 +739,3 @@ topic_10.add_level(lvl_8)
 topic_10.add_level(lvl_9)
 topic_10.add_level(lvl_10)
 year_2.add_level(topic_10)
-
-info_level_1 = year_2.topics[0].levels[0].name
-print(info_level_1)
-
-info_level_2 = year_2.topics[1].levels[2].name
-print(info_level_2)

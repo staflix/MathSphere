@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="new avatars. 101lvl company added.">
-      <change afterPath="$PROJECT_DIR$/static/css/header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/mainpageAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/mainpageAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/menu_company_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/menu_company_API.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/start_level_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/start_level_API.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/company_second_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/company/company_second_class.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/MathSphereBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/MathSphereBase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/company.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/company.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/log_index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/log_index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/log_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/log_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/level.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/level.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +91,7 @@
       <recent name="C:\MathProject\Math\app\static" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main (1)">
     <configuration name="company_second_class (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Math" />
       <option name="ENV_FILES" value="" />
@@ -201,7 +196,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d68999036c7f-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.14475.56" />
+        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
       </set>
     </attachedChunks>
   </component>
