@@ -5,6 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="bg fix">
+      <change afterPath="$PROJECT_DIR$/company/pic/115.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company/pic/116.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company/pic/117.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company/pic/118.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company/pic/119.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company/pic/120.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company/pic/121.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company/pic/122.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company/pic/123.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company/pic/124.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company/pic/125.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company/pic/126.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company/pic/127.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company/pic/128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company/pic/129.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,12 +63,12 @@
     &quot;assignee&quot;: &quot;staflix&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/staflix/MathSphere.git&quot;,
-    &quot;accountId&quot;: &quot;7dfcea35-3f05-458c-88df-2ab84247f1a3&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/staflix/MathSphere.git",
+    "accountId": "3efe41f3-6ddc-495b-824c-ea763b1d3226"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -61,27 +77,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python.company_creator.executor&quot;: &quot;Run&quot;,
-    &quot;Python.company_second_class (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.company_second_class.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develope&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.company_creator.executor": "Run",
+    "Python.company_second_class (1).executor": "Run",
+    "Python.company_second_class.executor": "Run",
+    "Python.main (1).executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develope",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Laptop Sivets/Documents/MathSphere/company/pic",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Python",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\MathProject\Math\app\static" />
