@@ -5,22 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="bg fix">
-      <change afterPath="$PROJECT_DIR$/company/pic/115.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/company/pic/116.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/company/pic/117.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/company/pic/118.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/company/pic/119.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/company/pic/120.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/company/pic/121.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/company/pic/122.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/company/pic/123.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/company/pic/124.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/company/pic/125.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/company/pic/126.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/company/pic/127.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/company/pic/128.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/company/pic/129.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,6 +85,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Laptop Sivets\Documents\MathSphere\company\pic" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\MathProject\Math\app\static" />
     </key>
