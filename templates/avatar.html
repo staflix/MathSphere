@@ -55,7 +55,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const avatarForm = document.getElementById('avatarForm');
     const notification = document.getElementById('notification');
-    const rdm_string = '{{ rdm_string }}'; // Здесь добавлено определение переменной rdm_string из Jinja
+    const rdm_string = '{{ rdm_string }}';
+    const next_page = '{{ next_page }}';
 
     avatarForm.addEventListener('click', function(event) {
         if (event.target.classList.contains('text-avatar')) {
@@ -69,16 +70,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }).then(response => response.json())
               .then(data => {
                 if (data.success) {
-                    notification.classList.add('active'); // Добавляем класс, чтобы показать сообщение перед началом анимации
+                    notification.classList.add('active');
                     setTimeout(() => {
-                        notification.classList.remove('active'); // Убираем класс после завершения анимации
+                        notification.classList.remove('active');
+                        if (next_page === 'main_page') {
+                            window.location.href = `/key=${rdm_string}`;
+                        } else if (next_page === 'company') {
+                            window.location.href = `/menu_company/key=${rdm_string}`;
+                        }
                     }, 2000);
                 } else {
                     alert('Error changing avatar');
                 }
             }).catch(error => console.error('Error:', error));
         } else if (event.target.id === 'backButton') {
-            window.location.href = `/key=${rdm_string}`;
+            if (next_page === 'main_page') {
+                window.location.href = `/key=${rdm_string}`;
+            } else if (next_page === 'company') {
+                window.location.href = `/menu_company/key=${rdm_string}`;
+            }
         }
     });
 });
