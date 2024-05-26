@@ -6,6 +6,7 @@ from forms.mainpageForm import LogMainPageForm
 from data import db_session
 from data.users import User, Info
 from company.company_second_class import *
+from company.company_first_class import *
 
 blueprint = flask.Blueprint(
     'menu_company_api',
@@ -18,6 +19,7 @@ blueprint = flask.Blueprint(
 def menu_company(rdm_string):
     form = MenuCompanyForm()
     profile = LogMainPageForm()
+    page = 'company'
 
     db_session.global_init("db/MathSphereBase.db")
     db_sess = db_session.create_session()
@@ -28,35 +30,40 @@ def menu_company(rdm_string):
     user_surname = user.surname
     user_email = user.email
     user_avatar = f"../{user_info.avatar_href}"
-    # user.profile_level = 200
+    user.profile_level = 200
     level = user.profile_level
     db_sess.commit()
     db_sess.close()
 
     if request.method == 'POST':
-        data = request.get_json()
-        level_selected = data.get('level')
+        if profile.settings.data:
+            return redirect(f"/settings/key={rdm_string}?next={page}")
 
-        # if 1 <= level_selected <= 100:
-        #     info_level, topic_level = get_level_info(year_1, level_selected)
+        if profile.change_avatar.data:
+            return redirect(f"/change_avatar/key={rdm_string}?next={page}")
 
-        if 101 <= int(level_selected) <= 200:
-            info_level, topic_level = get_level_info(year_2, level_selected)
+        if profile.exit.data:
+            return redirect(f"/logout")
 
-        # elif 201 <= level_selected <= 300:
-        #     info_level, topic_level = get_level_info(year_3, level_selected)
-        #
-        # elif 301 <= level_selected <= 400:
-        #     info_level, topic_level = get_level_info(year_4, level_selected)
+        if request.is_json:
+            data = request.get_json()
+            level_selected = data.get('level')
 
-        return jsonify({
-            'levelNumber': f'{level_selected}',
-            'levelIntro': f'{info_level}',
-            'levelTheme': f'{topic_level}'
-        })
+            if 1 <= int(level_selected) <= 100:
+                info_level, topic_level = get_level_info(year_1, level_selected)
+
+            elif 101 <= int(level_selected) <= 200:
+                info_level, topic_level = get_level_info(year_2, level_selected)
+
+            return jsonify({
+                'levelNumber': f'{level_selected}',
+                'levelIntro': f'{info_level}',
+                'levelTheme': f'{topic_level}'
+            })
+
     return render_template("company.html", form=form, level=level, rdm_string=rdm_string, profile=profile,
                            avatar=user_avatar, name=user_name, surname=user_surname,
-                           email=user_email)
+                           email=user_email, page=page)
 
 
 def get_level_info(year, level_selected):

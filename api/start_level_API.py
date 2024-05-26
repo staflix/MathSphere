@@ -4,6 +4,7 @@ from forms.company_levelForm import CompanyLevelForm
 from data import db_session
 from data.users import User, Info
 from company.company_second_class import *
+from company.company_first_class import *
 
 blueprint = flask.Blueprint(
     'start_level_api',
@@ -30,22 +31,22 @@ def start_level(level, rdm_string):
             db_sess.close()
             return redirect(f'/menu_company/key={rdm_string}')
 
-    # if 1 <= int(level) <= 100:
-    #     timer, topic, tasks, answers, choices, imgs = get_level_data(year_1, level)
-    #     return render_template("level.html", timer=timer, choice=choices, img=imgs,
-    #                            topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
+    if 1 <= int(level) <= 100:
+        timer, topic, tasks, answers, choices, imgs = get_level_data(year_1, level)
+        return render_template("level.html", timer=timer, choice=choices, img=imgs,
+                               topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
 
-    if 101 <= int(level) <= 200:
+    elif 101 <= int(level) <= 200:
         timer, topic, tasks, answers, choices, imgs = get_level_data(year_2, level)
         return render_template("level.html", timer=timer, choice=choices, img=imgs,
                                topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
 
-#     if 201 <= int(level) <= 300:
-#         timer, topic, tasks, answers, choices, imgs = get_level_data(year_3, level)
-#         return render_template("level.html", timer=timer, choice=choices, img=imgs,
-#                                topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
-
-    # if 301 <= int(level) <= 400:
+    # elif 201 <= int(level) <= 300:
+    #     timer, topic, tasks, answers, choices, imgs = get_level_data(year_3, level)
+    #     return render_template("level.html", timer=timer, choice=choices, img=imgs,
+    #                            topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
+    #
+    # elif 301 <= int(level) <= 400:
     #     timer, topic, tasks, answers, choices, imgs = get_level_data(year_4, level)
     #     return render_template("level.html", timer=timer, choice=choices, img=imgs,
     #                            topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)

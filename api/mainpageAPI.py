@@ -23,6 +23,7 @@ def main_page_unlog():
 def main_page_log(rdm_string):
     profile = LogMainPageForm()
     form = LogMainPageForm()
+    page = 'main_page'
 
     db_session.global_init("db/MathSphereBase.db")
     db_sess = db_session.create_session()
@@ -35,13 +36,13 @@ def main_page_log(rdm_string):
     user_avatar = user_info.avatar_href
 
     if profile.settings.data:
-        return redirect(f"/settings/key={rdm_string}")
+        return redirect(f"/settings/key={rdm_string}?next={page}")
 
     if profile.change_avatar.data:
-        return redirect(f"/change_avatar/key={rdm_string}")
+        return redirect(f"/change_avatar/key={rdm_string}?next={page}")
 
     if profile.exit.data:
-        return redirect(f"/")
+        return redirect(f"/logout")
 
     if form.trainer_btn.data:
         return redirect(f"/choice_class/key={rdm_string}")
@@ -49,5 +50,5 @@ def main_page_log(rdm_string):
     if form.company_btn.data:
         return redirect(f"/menu_company/key={rdm_string}")
 
-    return render_template('log_index.html', name=user_name, surname=user_surname,
-                           email=user_email, avatar=user_avatar, profile=profile, form=form)
+    return render_template('log_index.html', name=user_name, surname=user_surname, rdm_string=rdm_string,
+                           email=user_email, avatar=user_avatar, profile=profile, form=form, page=page)
