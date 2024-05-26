@@ -140,6 +140,7 @@ lvl_10.add(Task(text='? + 11 = 20', answer='9'))
 lvl_10.add(Task(text='80 - ? = 30', answer='50'))
 lvl_10.add(Task(text='1 дм 12 см ? 13 см 100 мм', answer='<', choice=['>', '<', '=']))
 lvl_10.add(Task(text='64 - 62 + 4', answer='6'))
+
 topic_2.add_level(lvl_1)
 topic_2.add_level(lvl_2)
 topic_2.add_level(lvl_3)
@@ -691,6 +692,9 @@ lvl_9 = Level(1, info='Реши уравнения')
 lvl_9.add(Task(text='х : 2 + 21 = 31', answer='5'))
 lvl_9.add(Task(text='х * 7 - 6 = 1', answer='1'))
 lvl_9.add(Task(text='у * 5 = 20', answer='4'))
+
+
+
 
 lvl_10 = Level(1, info='Закрепим пройденное!', style='final_test', time=120, topic='Конец второго класса! Удачи.')
 lvl_10.add(Task(text='Назови число, в котором 6 дес. 1 ед.', answer='61'))
