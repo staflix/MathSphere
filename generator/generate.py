@@ -46,6 +46,34 @@ def generate(year, topic):
             if i == 10:
                 img = ['snow.png'] * c
                 img.extend(['pencil.png'] * (c - 1))
-                return Task(text='Чего больше: карандашей или снежинок?', choice=['Снежинок', 'Карандашей', 'Поровну'], answer='Снежинок', image=img)
+                return Task(text='Чего больше: карандашей или снежинок?', choice=['Снежинок', 'Карандашей', 'Поровну'],
+                            answer='Снежинок', image=img)
+        if topic == 'Многоугольники':
+            typ = random.randint(1, 2)
+            if typ == 1:
+                i = random.randint(3, 10)
+                img = f'{i}.png'
+                return Task(text='Сколько углов у этой фигуры?', answer=str(i), image=[img])
+            else:
+                i_1 = random.randint(3, 10)
+                i_2 = random.randint(3, 10)
+                i_3 = random.randint(3, 10)
+                c_1 = random.randint(2, 4)
+                c_2 = random.randint(2, 4)
+                c_3 = random.randint(2, 4)
+                img = [f'{i_1}.png'] * c_1
+                img.extend([f'{i_2}.png'] * c_2)
+                img.extend([f'{i_3}.png'] * c_3)
+                return Task(text=f'Сколько сколько здесь {i_1}-угольников?', answer=str(c_1), image=[img])
+        if topic == 'Задачки на увеличение':
+
+
+
+
+
+
+
+
+
 
 
