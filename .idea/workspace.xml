@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="bg fix">
+      <change beforePath="$PROJECT_DIR$/.idea/MathSphere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MathSphere.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/company_fourth_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/company/company_fourth_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/company_third_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/company/company_third_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/generate.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +52,12 @@
     &quot;assignee&quot;: &quot;staflix&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/staflix/MathSphere.git",
-    "accountId": "c5cd1a59-5b76-402a-a664-6f0191e3a894"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/staflix/MathSphere.git&quot;,
+    &quot;accountId&quot;: &quot;c5cd1a59-5b76-402a-a664-6f0191e3a894&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
