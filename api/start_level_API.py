@@ -5,8 +5,6 @@ from data import db_session
 from data.users import User, Info
 from company.company_second_class import *
 from company.company_first_class import *
-from company.company_fourth_class import *
-from company.company_third_class import *
 
 blueprint = flask.Blueprint(
     'start_level_api',
@@ -25,32 +23,33 @@ def start_level(level, rdm_string):
     user_info = db_sess.query(Info).filter(Info.random_string == rdm_string).first()
     user = db_sess.query(User).filter(User.id == user_info.user_id).first()
 
-    if form.finish.data:
-        if str(user.profile_level) <= level:
-            user.profile_level = int(level) + 1
-            db_sess.commit()
-        db_sess.close()
-        return redirect(f'/menu_company/key={rdm_string}')
+    if request.method == 'POST' and form.validate_on_submit():
+        if form.finish.data:
+            if str(user.profile_level) <= level:
+                user.profile_level = int(level) + 1
+                db_sess.commit()
+            db_sess.close()
+            return redirect(f'/menu_company/key={rdm_string}')
 
     if 1 <= int(level) <= 100:
         timer, topic, tasks, answers, choices, imgs = get_level_data(year_1, level)
-        return render_template("level.html", timer=timer, choice=choices, imgs=imgs,
-                               topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, level=level, form=form)
+        return render_template("level.html", timer=timer, choice=choices, img=imgs,
+                               topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
 
     elif 101 <= int(level) <= 200:
         timer, topic, tasks, answers, choices, imgs = get_level_data(year_2, level)
-        return render_template("level.html", timer=timer, choice=choices, imgs=imgs,
-                               topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, level=level, form=form)
+        return render_template("level.html", timer=timer, choice=choices, img=imgs,
+                               topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
 
-    elif 201 <= int(level) <= 300:
-        timer, topic, tasks, answers, choices, imgs = get_level_data(year_3, level)
-        return render_template("level.html", timer=timer, choice=choices, imgs=imgs,
-                               topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, level=level, form=form)
-
-    elif 301 <= int(level) <= 400:
-        timer, topic, tasks, answers, choices, imgs = get_level_data(year_4, level)
-        return render_template("level.html", timer=timer, choice=choices, imgs=imgs,
-                               topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, level=level, form=form)
+    # elif 201 <= int(level) <= 300:
+    #     timer, topic, tasks, answers, choices, imgs = get_level_data(year_3, level)
+    #     return render_template("level.html", timer=timer, choice=choices, img=imgs,
+    #                            topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
+    #
+    # elif 301 <= int(level) <= 400:
+    #     timer, topic, tasks, answers, choices, imgs = get_level_data(year_4, level)
+    #     return render_template("level.html", timer=timer, choice=choices, img=imgs,
+    #                            topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
 
 
 def get_level_data(year, level_selected):
