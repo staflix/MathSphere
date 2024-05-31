@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кнопочки</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 20px 40px;
+        font-size: 18px;
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        margin: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #45a049;
+    }
+
+    .button-1 {
+        background-color: #ff3333;
+    }
+
+    .button-2 {
+        background-color: #337ab7;
+    }
+
+    .button-3 {
+        background-color: #f0ad4e;
+    }
+
+    .button-4 {
+        background-color: #5bc0de;
+    }
+</style>
+</head>
+<body>
+    <form action="" method="post">
+            {{ form.hidden_tag() }}
+        {{ form.first_class(class="button button-1") }}
+        {{ form.second_class(class="button button-2") }}
+        {{ form.third_class(class="button button-3") }}
+        {{ form.fourth_class(class="button button-4") }}
+    </form>
+</body>
+</html>
