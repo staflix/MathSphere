@@ -162,3 +162,152 @@ def generate(year, topic):
                 n, m = randint(4, 7), randint(0, 3)
                 txt = f'{n} - {m}'
                 return Task(text=txt, answer=str(n + m))
+    if year == 2:
+        if topic == 'Числа от 1 до 20':
+            i = randint(2, 18)
+            typ = randint(1, 4)
+            if typ == 1:
+                return Task(text=f'Назови число, которы встречаются при счете между {i} и {i+2}', answer=str(i+1))
+            if typ == 2:
+                return Task(text=f'Назови число, которы встречаются при счете между {i+2} и {i}', answer=str(i+1))
+            i_1 = randint(7, 13)
+            i_2 = randint(2, 7)
+            if typ == 3:
+                return Task(text=f'Увеличь на {i_2} число {i_1}, напиши ответ.', answer=str(i_1 + i_2))
+            if typ == 4:
+                return Task(text=f'Уменьши на {i_2} число {i_1}, напиши ответ.', answer=str(i_1 - i_2))
+        if topic == 'Счет десятками':
+            i_1 = randint(0, 9)
+            i_2 = randint(0, 9)
+            return Task(text=f'Назови число, в котором {i_1} десятков и {i_2} единиц', answer=str(i_1 * 10 + i_2))
+        if topic == 'Числа от 1 до 100. Сложение и вычитание':
+            typ = randint(1, 6)
+            if typ == 1:
+                i_1, i_2, i_3 = randint(40, 100), randint(20, 40), randint(1, 20)
+                return Task(text=f'{i_1} - {i_2} + {i_3}', answer=str(eval(f'{i_1} - {i_2} + {i_3}')))
+            if typ == 2:
+                i_1, i_2, i_3 = randint(1, 30), randint(1, 30), randint(1, 40)
+                return Task(text=f'{i_1} + {i_2} + {i_3}', answer=str(eval(f'{i_1} + {i_2} + {i_3}')))
+            if typ == 3:
+                i_1, i_2, i_3 = randint(40, 80), randint(1, 20), randint(1, 20)
+                return Task(text=f'{i_1} - {i_2} - {i_3}', answer=str(eval(f'{i_1} - {i_2} - {i_3}')))
+            if typ == 4:
+                i_1, i_2, i_3 = randint(20, 40), randint(20, 60), randint(10, 40)
+                return Task(text=f'{i_1} + {i_2} - {i_3}', answer=str(eval(f'{i_1} + {i_2} - {i_3}')))
+        if topic == 'Уравнения':
+            typ = randint(1, 5)
+            if typ == 1:
+                x = randint(10, 60)
+                i = randint(1, 20)
+                return Task(text=f'x + {i} = {x + i}', answer=str(x))
+            if typ == 2:
+                x = randint(20, 60)
+                i = randint(1, 20)
+                return Task(text=f'x - {i} = {x - i}', answer=str(x))
+            if typ == 3:
+                x = randint(10, 60)
+                i_1 = randint(1, 20)
+                i_2 = randint(1, 20)
+                return Task(text=f'x + {i_1} - {i_2} = {x + i_1 - i_2}', answer=str(x))
+            if typ == 4:
+                x = randint(10, 60)
+                i = randint(1, 20)
+                return Task(text=f'{i} + x = {x + i}', answer=str(x))
+            if typ == 5:
+                x = randint(10, 30)
+                i = randint(30, 60)
+                return Task(text=f'{i} - x = {i - x}', answer=str(x))
+        if topic == 'Умножение (Начальное)':
+            i_1, i_2 = randint(1, 10), randint(0, 5)
+            return Task(text=f'{i_1} * {i_2}', answer=str(i_1 * i_2))
+        if topic == 'Деление (Начальное)':
+            typ = randint(1, 6)
+            if typ == 1:
+                i_1 = random.choice([2, 4, 6, 8, 10])
+                return Task(text=f'{i_1} : 2', answer=str(i_1 // 2))
+            if typ == 2:
+                i_1 = random.choice([3, 6, 9, 12])
+                return Task(text=f'{i_1} : 3', answer=str(i_1 // 3))
+            if typ == 3:
+                i_1 = randint(1, 20)
+                return Task(text=f'{i_1} : 1', answer=str(i_1))
+            if typ == 4:
+                i_1 = random.choice([4, 8, 12, 16])
+                return Task(text=f'{i_1} : 4', answer=str(i_1 // 4))
+            if typ == 5:
+                i_1 = random.choice([5, 10, 15])
+                return Task(text=f'{i_1} : 5', answer=str(i_1 // 5))
+        if topic == 'Примеры':
+            typ = randint(1, 10)
+            i_1, i_2, i_3, i_4 = randint(40, 80), randint(10, 20), randint(30, 40), randint(20, 30)
+            if typ == 1:
+                return Task(text=f'{i_1} - ({i_3} - {i_2}) + {i_4}', answer=str(eval(f'{i_1} - ({i_3} - {i_2}) + {i_4}')))
+            if typ == 2:
+                i_1, i_2, i_3, i_4 = randint(3, 10), randint(3, 10), randint(2, 10), randint(2, 7)
+                return Task(text=f'{i_4 * (i_1 + i_3)} : ({i_1} + {i_3}) * {i_2}', answer=str(i_4 * i_2))
+            if typ == 3:
+                i_1, i_2, i_3, i_4 = randint(10, 20), randint(3, 10), randint(2, 10), randint(2, 7)
+                i_5 = randint(2, 6)
+                return Task(text=f'{i_4 * i_5} : {i_5} + ({i_1} - {i_2}) * {i_3}', answer=str(eval(f'{i_4 * i_5} : {i_5} + ({i_1} - {i_2}) * {i_3}')))
+            if typ == 4:
+                return Task(text=f'({i_2} + {i_3}) * 0', answer='0')
+            if typ == 5:
+                i_2 = randint(1, 10)
+                return Task(text=f'{i_3} + {i_2} * ({i_4} - {i_2})', answer=str(eval(f'{i_3} + {i_2} * ({i_4} - {i_2})')))
+            if typ == 6:
+                return Task(text=f'{i_1} + {i_2} - ({i_3} - {i_4})', answer=str(eval(f'{i_1} + {i_2} - ({i_3} - {i_4})')))
+            if typ == 7:
+                return Task(text=f'({i_1} + {i_2}) - ({i_3} - {i_4})', answer=str(eval(f'({i_1} + {i_2}) - ({i_3} - {i_4})')))
+            if typ == 8:
+                return Task(text=f'{i_1} - {i_2} - ({i_3} - {i_4})', answer=str(eval(f'{i_1} - {i_2} - ({i_3} - {i_4})')))
+            if typ == 9:
+                return Task(text=f'{i_1} - {i_2} * ({i_3} - {i_4})', answer=str(eval(f'{i_1} - {i_2} * ({i_3} - {i_4})')))
+            if typ == 10:
+                return Task(text=f'({i_1} - {i_2} - {i_3} + {i_4}) : 1', answer=str(eval(f'({i_1} - {i_2} - {i_3} + {i_4})')))
+    if year == 3:
+        pass
+    if year == 4:
+        pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

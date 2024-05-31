@@ -1,7 +1,7 @@
 from company.company_creator import *
 
 year_2 = Class(2)
-topic_1 = Topic('Числа   от   1   до   100. Нумерация.')
+topic_1 = Topic('Числа от 1 до 100. Нумерация.')
 lvl_1 = Level(1, info='Привет! Немного повторения на числа от 1 до 20.')
 lvl_1.add(Task(text='Назови число, которы встречаются при счете между 17 и 19', answer='18'))
 lvl_1.add(Task(text='А теперь число между 15 и 17', answer='16'))
@@ -78,7 +78,7 @@ topic_1.add_level(lvl_9)
 topic_1.add_level(lvl_10)
 year_2.add_level(topic_1)
 
-topic_2 = Topic('Числа   от   1   до   100. Сложение и вычитание')
+topic_2 = Topic('Числа от 1 до 100. Сложение и вычитание')
 lvl_1 = Level(1, info='Привет! Рассмотрим отрезки.')
 lvl_1.add(Task(text='Сколько отрезков на этом чертеже?', answer='3', image='pic/100.jpg'))
 lvl_1.add(Task(text='Чему равна длина самого большого отрезка?', answer='8', image='pic/100.jpg'))
@@ -692,8 +692,6 @@ lvl_9 = Level(1, info='Реши уравнения')
 lvl_9.add(Task(text='х : 2 + 21 = 31', answer='5'))
 lvl_9.add(Task(text='х * 7 - 6 = 1', answer='1'))
 lvl_9.add(Task(text='у * 5 = 20', answer='4'))
-
-
 
 
 lvl_10 = Level(1, info='Закрепим пройденное!', style='final_test', time=120, topic='Конец второго класса! Удачи.')
