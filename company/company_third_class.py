@@ -13,13 +13,13 @@ lvl_2.add(Task(text="1 + 34 - 32 =", answer="3"))
 lvl_2.add(Task(text="7 - 6 - 29 =", answer="-28"))
 lvl_2.add(Task(text="1 + 34 - 32 =", answer="3"))
 
-lvl_3 = Level(1, info='продалжием')
+lvl_3 = Level(1, info='Продолжаем')
 lvl_3.add(Task(text="11 - 19 + 8 =", answer="0"))
 lvl_3.add(Task(text="36 + 41 - 1 =", answer="76"))
 lvl_3.add(Task(text="17 - 8 - 12 =", answer="-3"))
 lvl_3.add(Task(text="11 - 19 + 8 =", answer="0"))
 
-lvl_4 = Level(1, info='давай повтарим')
+lvl_4 = Level(1, info='Давай повторим')
 lvl_4.add(Task(text='60 - 50 + 3', answer='13'))
 lvl_4.add(Task(text='11 - 8 + 7', answer='10'))
 lvl_4.add(Task(text='100 - 60 + 3', answer='43'))
@@ -31,7 +31,6 @@ lvl_5.add(Task(text='80 + 12', answer='92'))
 lvl_5.add(Task(text='Первая игра заняла 1 час, а вторая шла на 10 минут. Сколько минут шли ргы вместе?', answer='70'))
 lvl_5.add(Task(text='? + 11 = 20', answer='9'))
 lvl_5.add(Task(text='80 - ? = 30', answer='50'))
-
 
 
 lvl_6 = Level(1, info='Привет! Прочитай записи и выполни действия')
@@ -54,7 +53,7 @@ lvl_9.add(Task(text='Сколько раз 4 содержится в числе 
 lvl_9.add(Task(text='А 2 содержится в числе 8?', answer='4'))
 lvl_9.add(Task(text='Сколько раз 4 содержится в числе 16?', answer='4'))
 
-lvl_10 = Level(1, info='Закрепим пройденное!', style='test', time=60, topic='Числа   от   1   до   100. Сложение и вычитание.')
+lvl_10 = Level(1, info='Закрепим пройденное!', style='test', time=60, topic='Числа от 1 до 100. Сложение и вычитание.')
 lvl_10.add(Task(text='1 + 26', answer='27'))
 lvl_10.add(Task(text='9 - 3', answer='6'))
 lvl_10.add(Task(text='3 + 12', answer='15'))
@@ -73,10 +72,9 @@ topic_1.add_level(lvl_10)
 year_3.add_level(topic_1)
 
 
+topic_2 = Topic('Числа   от   1   до   100. Умножение и деление.')
 
-topic_2 = Topic('Числа   от   1   до   100. Умнажение деление.')
-
-lvl_1 = Level(1, info='Теперь просто без лишникх слов поделеи и поумнажаем')
+lvl_1 = Level(1, info='Теперь просто без лишних слов поделим и поумножаем')
 lvl_1.add(Task(text="3 * 2 / 3 =", answer="2"))
 lvl_1.add(Task(text="4 * 8 / 1 =", answer="32"))
 lvl_1.add(Task(text="6 * 7 / 6 =", answer="7"))

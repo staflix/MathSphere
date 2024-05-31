@@ -217,10 +217,7 @@ def generate(year, topic):
                 x = randint(10, 30)
                 i = randint(30, 60)
                 return Task(text=f'{i} - x = {i - x}', answer=str(x))
-        if topic == 'Умножение (Начальное)':
-            i_1, i_2 = randint(1, 10), randint(0, 5)
-            return Task(text=f'{i_1} * {i_2}', answer=str(i_1 * i_2))
-        if topic == 'Деление (Начальное)':
+        if topic == 'Деление и умножение (Начальные)':
             typ = randint(1, 6)
             if typ == 1:
                 i_1 = random.choice([2, 4, 6, 8, 10])
@@ -237,6 +234,9 @@ def generate(year, topic):
             if typ == 5:
                 i_1 = random.choice([5, 10, 15])
                 return Task(text=f'{i_1} : 5', answer=str(i_1 // 5))
+            if typ == 6:
+                i_1, i_2 = randint(1, 10), randint(0, 5)
+                return Task(text=f'{i_1} * {i_2}', answer=str(i_1 * i_2))
         if topic == 'Примеры':
             typ = randint(1, 10)
             i_1, i_2, i_3, i_4 = randint(40, 80), randint(10, 20), randint(30, 40), randint(20, 30)
