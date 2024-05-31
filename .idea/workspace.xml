@@ -8,15 +8,99 @@
       <change beforePath="$PROJECT_DIR$/.idea/MathSphere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MathSphere.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/change_avatar_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/change_avatar_API.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/mainpageAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/mainpageAPI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/menu_company_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/menu_company_API.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/settings_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/settings_API.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/start_level_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/start_level_API.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company/company_first_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/company/company_first_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/100.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/101.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/102.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/103.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/104.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/105.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/106.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/107.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/108.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/109.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/110.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/111.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/112.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/113.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/114.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/115.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/116.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/117.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/118.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/119.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/120.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/121.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/122.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/123.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/124.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/125.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/126.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/127.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/129.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/25.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/26.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/27.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/28.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/29.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/30.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/31.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/32.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/33.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/34.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/35.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/36.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/37.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/38.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/39.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/40.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/41.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/42.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/43.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/44.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/45.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/46.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/47.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/48.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/49.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/50.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/51.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/52.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/53.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/54.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/55.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/56.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/57.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/58.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/59.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company/pic/9.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db/MathSphereBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/MathSphereBase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/avatar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/avatar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/settings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/level.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/level.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
