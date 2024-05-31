@@ -3,8 +3,12 @@ from wtforms import SubmitField
 
 
 class ChoiceTopicClass1Form(FlaskForm):
-    item_count_etc = SubmitField(
+    topic1 = SubmitField(
         'Счет предметов. Сравнение групп предметов. Пространственные и временные представления.')
-    topic1 = SubmitField('.!.')
-    topic2 = SubmitField('.!.')
-    topic3 = SubmitField('.!.')
+    topic2 = SubmitField('.!.(Пьска)')
+    topic3 = SubmitField('.!.(Пьска)')
+    topic4 = SubmitField('.!.(Пьска)')
+    topic5 = SubmitField('.!.(Пьска)')
+    topic6 = SubmitField('.!.(Пьска)')
+    topic7 = SubmitField('.!.(Пьска)')
+    topic8 = SubmitField('.!.(Пьска)')

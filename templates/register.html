@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0030)http://127.0.0.1:5000/register -->
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -86,7 +85,6 @@
             line-height: 1.15;
             color: var(--dl-color-gray-black);
             background-color: var(--dl-color-gray-white);
-
             fill: var(--dl-color-gray-black);
         }</style>
     <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css">
@@ -104,12 +102,12 @@
             background-color: transparent;
         }
 
-
         body::-webkit-scrollbar-thumb {
             background-color: white;
             box-shadow: 0 -100vh 0 100vh #5128f5;
         / / magic
         }
+
     </style>
 </head>
 <body>
@@ -164,8 +162,8 @@
                             <label for="thq-sign-up-4-terms" class="thq-body-large register-text14">
                                 <span>Я принимаю </span><br/>
                             </label>
-                            <a href="/conf_politic" class="register-link">
-                                <label class="register-text17 thq-body-large">
+                            <a href="javascript:void(0)" class="register-link" onclick="togglePrivacyPolicy()">
+                                <label class="register-text17 thq-body-large" id="policy-text">
                                     <span>политику конфиденциальности</span><br/>
                                 </label>
                             </a>
@@ -179,10 +177,24 @@
                 </div>
             </div>
         </div>
+        <div class="privacy-policy" id="policy">
+            <div class="closeModal" id="close_modal"></div>
+        </div>
     </div>
 </div>
 </div>
 <script defer="" src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
 <script src="../static/js/check-button.js"></script>
+<script src="../static/js/register.js"></script>
+<script>
+    function togglePrivacyPolicy() {
+        var policyElement = document.getElementById('privacy-policy');
+        if (policyElement.classList.contains('visible')) {
+            policyElement.classList.remove('visible');
+        } else {
+            policyElement.classList.add('visible');
+        }
+    }
+</script>
 </body>
 </html>
