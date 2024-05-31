@@ -7,6 +7,8 @@ from data import db_session
 from data.users import User, Info
 from company.company_second_class import *
 from company.company_first_class import *
+from company.company_third_class import *
+from company.company_fourth_class import *
 
 blueprint = flask.Blueprint(
     'menu_company_api',
@@ -30,7 +32,6 @@ def menu_company(rdm_string):
     user_surname = user.surname
     user_email = user.email
     user_avatar = f"../{user_info.avatar_href}"
-    user.profile_level = 200
     level = user.profile_level
     db_sess.commit()
     db_sess.close()
@@ -54,6 +55,12 @@ def menu_company(rdm_string):
 
             elif 101 <= int(level_selected) <= 200:
                 info_level, topic_level = get_level_info(year_2, level_selected)
+
+            elif 201 <= int(level_selected) <= 300:
+                info_level, topic_level = get_level_info(year_3, level_selected)
+
+            elif 301 <= int(level_selected) <= 400:
+                info_level, topic_level = get_level_info(year_4, level_selected)
 
             return jsonify({
                 'levelNumber': f'{level_selected}',
