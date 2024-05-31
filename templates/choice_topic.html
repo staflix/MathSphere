@@ -1,52 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Выберите тему</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        background-color: #f4f4f4;
-    }
+{% extends 'header.html' %}
+{% block links %}
+<link rel="stylesheet" href="../static/css/style.css"/>
+<link href="../static/css/choice_topic.css" rel="stylesheet"/>
+{% endblock %}
+{% block content %}
+<form action="" method="post">
+    <div class="trainer-container">
+        <div class="trainer-container01">
+            <div class="trainer-container02">
+                <div class="trainer-container03">
+                    <div>{{ form.topic1(class="button trainer-container04") }}</div>
+                    <div>{{ form.topic2(class="button trainer-container05") }}</div>
+                </div>
+                <div class="trainer-container06">
+                    <div>{{ form.topic3(class="button trainer-container07") }}</div>
+                    <div>{{ form.topic4(class="button trainer-container08") }}</div>
+                </div>
+            </div>
+            <div class="trainer-container09">
+                <div class="trainer-container10">
+                    <div>{{ form.topic5(class="button trainer-container11") }}</div>
+                    <div>{{ form.topic6(class="button trainer-container12") }}</div>
+                </div>
+                <div class="trainer-container13">
+                    <div>{{ form.topic7(class="button trainer-container14") }}</div>
+                    <div>{{ form.topic8(class="button trainer-container15") }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
 
-    .container {
-        text-align: center;
-    }
-
-    .button {
-        display: inline-block;
-        padding: 20px 40px;
-        font-size: 18px;
-        background-color: #4CAF50;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        border: none;
-        cursor: pointer;
-        border-radius: 8px;
-        margin: 10px;
-        transition: background-color 0.3s ease;
-    }
-
-    .button:hover {
-        background-color: #45a049;
-    }
-</style>
-</head>
-<body>
-<h1>Тут передавать смс темы и if проверять тему. Печатать карточки нужныхз тем</h1>
-    <form action="" method="post" class="container">
-            {{ form.hidden_tag() }}
-        {{ form.item_count_etc(class="button") }}
-        {{ form.topic1(class="button") }}
-        {{ form.topic2(class="button") }}
-        {{ form.topic3(class="button") }}
-    </form>
-</body>
-</html>
