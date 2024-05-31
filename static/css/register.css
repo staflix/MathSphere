@@ -21,7 +21,6 @@
   left: 0px;
   right: 0px;
   width: 100%;
-  border: 2px dashed rgba(120, 120, 120, 0.4);
   bottom: 0px;
   height: 100%;
   display: flex;
@@ -47,9 +46,9 @@
   width: auto;
   display: flex;
   align-items: center;
-  border-radius: 70px;
+  border-radius: 40px;
   flex-direction: column;
-  padding-bottom: var(--dl-space-space-unit);
+  padding-bottom: 10px;
   justify-content: flex-end;
   background-color: var(--dl-color-theme-neutral-light);
 }
@@ -271,57 +270,51 @@
     width: auto;
   }
 }
+
 @media(max-width: 991px) {
-  .register-container1 {
-    gap: var(--dl-space-space-twounits);
-    height: auto;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .register-max-width {
-    width: 100%;
-    padding: var(--dl-space-space-fourunits);
-  }
-  .register-form {
-    width: auto;
-    max-width: auto;
-    border-radius: 70px;
-  }
-}
-@media(max-width: 479px) {
   .register-container1 {
     height: 100vh;
   }
+
   .register-max-width {
     padding: var(--dl-space-space-oneandhalfunits);
   }
+
   .register-form {
     padding-left: var(--dl-space-space-oneandhalfunits);
     border-radius: 30px;
     padding-right: var(--dl-space-space-oneandhalfunits);
   }
+
   .register-text {
     text-align: center;
   }
+
   .register-text03 {
     text-align: center;
   }
+
   .register-text04 {
     text-align: center;
   }
+
   .register-button {
     width: 100%;
   }
+
   .register-button1 {
     width: 100%;
   }
+
   .register-button2 {
     width: 100%;
   }
+
   .register-text14 {
     font-size: 14px;
   }
+
   .register-text17 {
     font-size: 14px;
   }
+}
