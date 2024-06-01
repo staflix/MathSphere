@@ -32,6 +32,13 @@ def menu_company(rdm_string):
     user_surname = user.surname
     user_email = user.email
     user_avatar = f"../{user_info.avatar_href}"
+    next_level = request.args.get('next_level')
+
+    if next_level:
+        if int(user.profile_level) <= user_info.current_level:
+            user.profile_level = int(user_info.current_level) + 1
+            db_sess.commit()
+
     level = user.profile_level
     db_sess.commit()
     db_sess.close()
