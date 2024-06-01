@@ -28,7 +28,7 @@ def choice_topic_class1(num_class, rdm_string):
     user_avatar = f"../{user_info.avatar_href}"
 
     if form.topic1.data:
-        topic = "Счет предметов. Сравнение групп предметов. Пространственные и временные представления."
+        topic = "Счет предметов"
         return redirect(f"/{num_class}/{topic}/key={rdm_string}")
 
     return render_template("choice_topic.html", num_class=num_class, form=form, rdm_string=rdm_string, profile=profile,
