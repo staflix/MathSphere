@@ -1,4 +1,4 @@
-from flask import render_template, redirect
+from flask import render_template, redirect, request
 from forms.mainpageForm import UnLogMainPageForm, LogMainPageForm
 from flask_login import login_user
 from data import db_session
@@ -35,6 +35,8 @@ def main_page_log(rdm_string):
     user_email = user.email
     user_avatar = user_info.avatar_href
 
+    reg_now = request.args.get('reg') == 'True'
+
     if profile.settings.data:
         return redirect(f"/settings/key={rdm_string}?next={page}")
 
@@ -51,4 +53,4 @@ def main_page_log(rdm_string):
         return redirect(f"/menu_company/key={rdm_string}")
 
     return render_template('log_index.html', name=user_name, surname=user_surname, rdm_string=rdm_string,
-                           email=user_email, avatar=user_avatar, profile=profile, form=form, page=page)
+                           email=user_email, avatar=user_avatar, profile=profile, form=form, page=page, reg_now=reg_now)
