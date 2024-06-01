@@ -18,9 +18,9 @@ blueprint = flask.Blueprint(
 )
 
 # Конфигурация Яндекс
-CLIENT_ID = 'f07a1010e5a84481944dea7a07d12041'  # не трогать
-CLIENT_SECRET = '64cd6f61c7c04e8c8af1dbd89ec8c3ea'  # не трогать
-REDIRECT_URI = 'http://127.0.0.1:5000/login/callback'  # потом потрогаю
+CLIENT_ID = '8ec02c8b48804fef9b475ab159c3c8ae'  # не трогать
+CLIENT_SECRET = '6253e92bd6b9421ea0d1abf7af2299cc'  # не трогать
+REDIRECT_URI = 'https://math-up.ru:443/login/callback'  # потом потрогаю
 AUTH_URL = 'https://oauth.yandex.ru/authorize'
 TOKEN_URL = 'https://oauth.yandex.ru/token'
 USERINFO_URL = 'https://login.yandex.ru/info'
