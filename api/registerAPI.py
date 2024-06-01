@@ -42,7 +42,8 @@ def register():
                     info = Info(
                         user_id=user.id,
                         avatar_href=avatar,
-                        random_string=rdm_string
+                        random_string=rdm_string,
+                        current_level=0
                     )
                     db_sess.add(info)
                     db_sess.commit()

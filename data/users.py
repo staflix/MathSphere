@@ -36,6 +36,7 @@ class Info(SqlAlchemyBase):
 
     id = sqlalchemy.Column(sqlalchemy.Integer, autoincrement=True, primary_key=True)
     user_id = sqlalchemy.Column(sqlalchemy.Integer, ForeignKey("Users.id"))
+    current_level = sqlalchemy.Column(sqlalchemy.Integer)
     avatar_href = sqlalchemy.Column(sqlalchemy.String)
     random_string = sqlalchemy.Column(sqlalchemy.String)
 
@@ -84,9 +85,9 @@ def clear_users_table(db_file):
 
     # Очистка всех записей из таблицы User
     db_sess.query(User).delete()
-
+    db_sess.query(Info).delete()
     # Сохранение изменений в базе данных
     db_sess.commit()
 
 
-# clear_and_create_tables("db/MathSphereBase.db")
+# clear_users_table("db/MathSphereBase.db")
