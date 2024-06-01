@@ -103,11 +103,9 @@
             finishButton.style.display = 'none';
             currentAnswerElement.value = '';
 
-            if (imgs[currentIndex]) {
+            if (imgs[currentIndex] !== null) {
                 questionImage.src = `{{ url_for('static', filename='') }}${imgs[currentIndex]}`;
                 questionImage.style.display = 'block';
-            } else {
-                questionImage.style.display = 'none';
             }
 
             if (choices[currentIndex]) {
