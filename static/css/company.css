@@ -38,6 +38,7 @@
   background-size: 100% 100%;
   justify-content: center;
   background-image: url('../media/map/map_01.png');
+  z-index: 100;
 }
 .company-button {
   top: 264px;
@@ -429,6 +430,7 @@
   background-size: 100% 100%;
   justify-content: flex-end;
   background-image: url('../media/map/map_02.png');
+  z-index: 100;
 }
 .company-button021 {
   right: 164px;
@@ -1052,6 +1054,7 @@
   background-size: 100% 100%;
   justify-content: flex-start;
   background-image: url('../media/map/map_03.png');
+  z-index: 100;
 }
 .company-button055 {
   top: 1292px;
@@ -1567,6 +1570,7 @@
   background-size: 100% 100%;
   justify-content: center;
   background-image: url('../media/map/map_04.png');
+  z-index: 100;
 }
 .company-button083 {
   top: 1250px;
@@ -2262,6 +2266,7 @@
   background-size: 100% 100%;
   justify-content: center;
   background-image: url('../media/map/map_05.png');
+  z-index: 100;
 }
 .company-button119 {
   right: 136px;
@@ -2838,6 +2843,7 @@
   background-size: 100% 100%;
   justify-content: flex-start;
   background-image: url('../media/map/map_06.png');
+  z-index: 100;
 }
 .company-button149 {
   left: 587px;
@@ -3443,6 +3449,7 @@
   background-size: 100% 100%;
   justify-content: flex-start;
   background-image: url('../media/map/map_07.png');
+  z-index: 100;
 }
 .company-button182 {
   left: 512px;
@@ -3631,6 +3638,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  z-index: 100;
 }
 .company-button192 {
   top: 703px;
@@ -4056,6 +4064,7 @@
   background-size: 100% 100%;
   justify-content: flex-start;
   background-image: url('../media/map/map_08.png');
+  z-index: 100;
 }
 .company-button215 {
   left: 311px;
@@ -4620,6 +4629,7 @@
   background-size: 100% 100%;
   justify-content: flex-start;
   background-image: url('../media/map/map_09.png');
+  z-index: 100;
 }
 .company-button247 {
   left: 908px;
@@ -5297,6 +5307,7 @@
   background-size: 100% 100%;
   justify-content: flex-start;
   background-image: url('../media/map/map_10.png');
+  z-index: 100;
 }
 .company-button284 {
   top: 718px;
@@ -6191,6 +6202,7 @@
   background-size: 100% 100%;
   justify-content: center;
   background-image: url('../media/map/map_11.png');
+  z-index: 100;
 }
 .company-button331 {
   top: 554px;
@@ -6924,6 +6936,7 @@
   background-size: 100% 100%;
   justify-content: center;
   background-image: url('../media/map/map_12.png');
+  z-index: 100;
 }
 .company-button369 {
   top: 1097px;
@@ -15133,12 +15146,12 @@
 }
 
 .mini-menu {
-  height: 450px;
+  display: flex;
   width: 250px;
   max-width: 50%;
   position: absolute;
   background-color: #afaaff;
-  padding: 0 10px 10px 10px;
+  padding: 0 10px 30px 10px;
   border-radius: 20px;
   -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.5);
   -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.5);
@@ -15147,6 +15160,8 @@
   transform: translateY(-10px);
   font-family: Inter;
   font-size: 16px;
+  gap: 30px;
+  flex-direction: column;
 }
 .lines{
   display: flex;
@@ -15189,7 +15204,6 @@
   margin-top: 10px;
   justify-content: center;
   text-align: center;
-  margin-bottom: 20px;
 }
 .level-intro{
   display: flex;
@@ -15201,7 +15215,7 @@
 .buttons{
   display: flex;
   justify-content: center;
-  margin-top: 80px;
+  z-index: 100;
 }
 .start-button{
   background-color: #5949c4;
@@ -15214,18 +15228,97 @@
 .start-button:hover{
   background-color: #442fd2;
 }
-@media (max-width: 479px) {
-  .mini-menu{
-  }
-}
 @media (max-width: 991px) {
-  .mini-menu{
+  .mini-menu {
+    display: flex;
+    width: 150px;
+    max-width: 50%;
+    position: absolute;
+    background-color: #afaaff;
+    padding: 0 10px 30px 10px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.5);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.5);
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.5);
+    z-index: 100;
+    transform: translateY(-10px);
+    font-family: Inter;
+    font-size: 10px;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .lines{
+    display: flex;
+    justify-content: center;
+
+  }
+  .line{
+    background-color: white;
+    width: 6px;
+    margin: 0 10px;
+    border-radius: 0  0 10px 10px;
+  }
+  .long-line{
+    height: 60px;
+  }
+  .medium-line{
+    height: 40px;
+  }
+  .short-line{
+    height: 20px;
+  }
+  .rectangle{
+    display: flex;
+    height: 60px;
+    justify-content: center;
+  }
+  .level-number{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 61px;
+    background-size: cover;
+    background-image: url("../media/rectangle.png");
+  }
+  .level-theme{
+    color: white;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    text-align: center;
+  }
+  .level-intro{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    color: white;
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: center;
+
+  }
+  .start-button{
+    background-color: #5949c4;
+    padding: 10px 30%;
+    margin: 0 10px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .start-button:hover{
+    background-color: #442fd2;
   }
 }
 .hidden {
-    display: none;
+  position: fixed;
+  opacity: 0;
+
 }
 
 .show {
-    display: block;
+  opacity: 1;
 }

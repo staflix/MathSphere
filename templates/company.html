@@ -473,7 +473,6 @@
         const buttons = document.querySelectorAll('.button');
         const startButton = document.getElementById('start-button');
         let selectedLevel = null;
-
         // Разблокировать кнопки в зависимости от уровня пользователя
         buttons.forEach(button => {
             const level = parseInt(button.getAttribute('data-level'));
@@ -490,22 +489,17 @@
 
         // Переключение видимости меню
         const toggleMenu = (event) => {
+            console.log()
             if (event.target.classList.contains('locked')) {
                 return; // Не показывать меню для заблокированных кнопок
             }
 
             event.preventDefault(); // Prevent default form submission
 
-            let mouseX = event.clientX + window.pageXOffset;
-            const mouseY = event.clientY + window.pageYOffset;
-            const screenWidth = window.innerWidth
+            const mouseX = event.clientX + window.pageXOffset - miniMenu.offsetWidth / 2;
+            const mouseY = event.clientY + window.pageYOffset - miniMenu.offsetHeight / 2;
 
-            if (mouseX + miniMenu.offsetWidth > screenWidth) {
-              mouseX = screenWidth - miniMenu.offsetWidth - 10;
-            }
-            if (mouseX < 0) {
-              mouseX = miniMenu.offsetWidth + 10;
-            }
+
             miniMenu.style.left = `${mouseX}px`;
             miniMenu.style.top = `${mouseY}px`;
             miniMenu.classList.add('show');
