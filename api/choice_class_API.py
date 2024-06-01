@@ -17,6 +17,8 @@ def choice_class(rdm_string):
     form = ChoiceClassForm()
     profile = LogMainPageForm()
 
+    page = 'choice_class'
+
     db_session.global_init("db/MathSphereBase.db")
     db_sess = db_session.create_session()
 
@@ -29,14 +31,23 @@ def choice_class(rdm_string):
     if form.first_class.data:
         return redirect(f"/1/key={rdm_string}")
 
-    elif form.second_class.data:
+    if form.second_class.data:
         return redirect(f"/2/key={rdm_string}")
 
-    elif form.third_class.data:
+    if form.third_class.data:
         return redirect(f"/3/key={rdm_string}")
 
-    elif form.fourth_class.data:
+    if form.fourth_class.data:
         return redirect(f"/4/key={rdm_string}")
+
+    if profile.settings.data:
+        return redirect(f"/settings/key={rdm_string}?next={page}")
+
+    if profile.change_avatar.data:
+        return redirect(f"/change_avatar/key={rdm_string}?next={page}")
+
+    if profile.exit.data:
+        return redirect(f"/logout")
 
     return render_template("choice_class.html", form=form, rdm_string=rdm_string, profile=profile,
                            avatar=user_avatar, name=user_name, surname=user_surname,

@@ -53,4 +53,4 @@ def main_page_log(rdm_string):
         return redirect(f"/menu_company/key={rdm_string}")
 
     return render_template('log_index.html', name=user_name, surname=user_surname, rdm_string=rdm_string,
-                           email=user_email, avatar=user_avatar, profile=profile, form=form, page=page, reg_now=reg_now)
+                           email=user_email, avatar=user_avatar, profile=profile, form=form, reg_now=reg_now)

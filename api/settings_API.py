@@ -36,6 +36,9 @@ def settings(rdm_string):
                 return redirect(f"/key={rdm_string}")
             elif next_page == 'company':
                 return redirect(f"/menu_company/key={rdm_string}")
+            elif next_page == 'choice_class':
+                return redirect(f"/choice_class/key={rdm_string}")
+
         else:
             return render_template("settings.html", form=form,
                                    message="Пароли не совпадают", rdm_string=rdm_string, next_page=next_page)
