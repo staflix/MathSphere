@@ -1,9 +1,57 @@
-
 {% extends 'header.html' %}
 {% block links %}
- <link href="../static/css/log_index.css" rel="stylesheet" />
+<link href="../static/css/log_index.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 {% endblock %}
 {% block content %}
+<style>
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .reg-message {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #ff0000;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    text-align: center;
+    width: 50%;
+    max-width: 500px;
+    border-radius: 10px;
+  }
+
+  .reg-message p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .reg-message button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .reg-message button:hover {
+    background-color: #cc0000;
+  }
+</style>
+
 <div class="authorizated-container">
   <div class="authorizated-container1">
     <form action="" method="post">
@@ -73,4 +121,24 @@
     </footer>
   </div>
 </div>
+
+{% if reg_now %}
+<div class="overlay">
+  <div id="regMessage" class="reg-message">
+    <p>Ваш пароль был отправлен на почту: {{ email }}</p>
+    <button id="regMessageButton">Ок</button>
+  </div>
+</div>
+{% endif %}
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    if ({{ reg_now | tojson }}) {
+        const regMessageButton = document.getElementById('regMessageButton');
+        regMessageButton.addEventListener('click', () => {
+            document.querySelector('.overlay').style.display = 'none';
+        });
+    }
+});
+</script>
 {% endblock %}

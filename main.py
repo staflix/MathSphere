@@ -4,7 +4,7 @@ from flask import Flask, render_template, redirect
 from data import db_session
 from data.users import User
 from api import registerAPI, loginAPI, resetpasswordAPI, mainpageAPI, choice_class_API, choice_topic_class1_API, \
-    item_count_etc_API, menu_company_API, change_avatar_API, settings_API, start_level_API
+    item_count_etc_API, menu_company_API, change_avatar_API, settings_API, start_level_API, reg_log_yandexAPI
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -23,9 +23,7 @@ def load_user(user_id):
 
 # выход с аккаунта, когда нажимаешь на имя
 @app.route('/logout')
-@login_required
 def logout():
-    logout_user()
     return redirect("/")
 
 
@@ -53,6 +51,7 @@ def main():
     app.register_blueprint(change_avatar_API.blueprint)
     app.register_blueprint(settings_API.blueprint)
     app.register_blueprint(start_level_API.blueprint)
+    app.register_blueprint(reg_log_yandexAPI.blueprint)
     app.run(port=5000, host='127.0.0.1', debug=True)
 
 

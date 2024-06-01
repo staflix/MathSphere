@@ -1,7 +1,6 @@
 from flask import render_template, redirect
 import flask
 from forms.loginForm import LoginForm
-from flask_login import login_user
 from data import db_session
 from data.users import User, Info
 from data.generate_string import generate_string
@@ -64,7 +63,6 @@ def login_password(rdm_string):
 
                 db_sess.close()
 
-                login_user(user, remember=form.remember_me.data)
                 return redirect(f'/key={new_random_string}')
             else:
                 db_sess.close()
