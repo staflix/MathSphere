@@ -318,3 +318,30 @@
     width: 100%;
   }
 }
+.yandex{
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+
+}
+.yandex-button{
+  gap: var(--dl-space-space-halfunit);
+  fill: #633df6;
+  color: #633df6;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  transition: 0.3s;
+  align-items: center;
+  border-color: #7350f7;
+  border-style: solid;
+  border-width: 1px;
+  justify-content: center;
+}
+.yandex-logo{
+  width: 24px;
+  height: 24px;
+}
