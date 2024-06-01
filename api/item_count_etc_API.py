@@ -3,7 +3,6 @@ import flask
 from forms.item_count_etc_Form import ItemCountEtcForm
 from data.tools import dictionary_trainer
 from random import choice
-from generator.generate import *
 
 blueprint = flask.Blueprint(
     'itemcountetc_api',
