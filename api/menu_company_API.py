@@ -39,7 +39,7 @@ def menu_company(rdm_string):
             user.profile_level = int(user_info.current_level) + 1
             db_sess.commit()
 
-    level = 400
+    level = user.profile_level
     db_sess.commit()
     db_sess.close()
 

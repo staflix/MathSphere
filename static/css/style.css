@@ -445,7 +445,7 @@
   }
 }
 @media(max-width: 767px) {
-  .card {
+  .card0 {
     padding-top: var(--dl-space-space-threeunits);
     margin-right: 0px;
     padding-bottom: var(--dl-space-space-threeunits);
