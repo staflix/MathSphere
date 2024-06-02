@@ -1,20 +1,20 @@
 from flask import render_template, redirect
 import flask
-from forms.choice_topic_class1_Form import ChoiceTopicClass1Form
+from forms.choice_topic_all_classes_Form import ChoiceTopicAllClassesForm
 from forms.mainpageForm import LogMainPageForm
 from data import db_session
 from data.users import User, Info
 
 blueprint = flask.Blueprint(
-    'choicetopicclass1_api',
+    'choicetopicallclasses_api',
     __name__,
     template_folder='templates'
 )
 
 
 @blueprint.route('/<int:num_class>/key=<rdm_string>', methods=['GET', 'POST'])
-def choice_topic_class1(num_class, rdm_string):
-    form = ChoiceTopicClass1Form()
+def choice_topic_all_classes_trainer(num_class, rdm_string):
+    form = ChoiceTopicAllClassesForm()
     profile = LogMainPageForm()
 
     db_session.global_init("db/MathSphereBase.db")
@@ -27,9 +27,10 @@ def choice_topic_class1(num_class, rdm_string):
     user_email = user.email
     user_avatar = f"../{user_info.avatar_href}"
 
-    if form.topic1.data:
-        topic = "Счет предметов"
-        return redirect(f"/{num_class}/{topic}/key={rdm_string}")
+    if num_class == 1:
+        if form.topic1.data:
+            topic = "Счет предметов"
+            return redirect(f"/{num_class}/{topic}/key={rdm_string}")
 
     return render_template("choice_topic.html", num_class=num_class, form=form, rdm_string=rdm_string, profile=profile,
                            avatar=user_avatar, name=user_name, surname=user_surname,

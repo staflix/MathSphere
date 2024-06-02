@@ -1,4 +1,4 @@
-from generator_creator import *
+from generator.generator_creator import *
 import random
 from random import randint
 

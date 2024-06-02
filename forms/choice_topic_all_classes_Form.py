@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import SubmitField
 
 
-class ChoiceTopicClass1Form(FlaskForm):
+class ChoiceTopicAllClassesForm(FlaskForm):
     topic1 = SubmitField(
         'Счет предметов. Сравнение групп предметов. Пространственные и временные представления.')
     topic2 = SubmitField('Тема2')
