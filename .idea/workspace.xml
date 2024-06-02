@@ -6,7 +6,35 @@
   <component name="ChangeListManager">
     <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="bg fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/item_count_etc_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/item_count_etc_API.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/choice_topic_class1_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/choice_topic_all_classes_API.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/item_count_etc_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/send_task_for_trainer_API.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/menu_company_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/menu_company_API.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/reg_log_yandexAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/reg_log_yandexAPI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/MathSphereBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/MathSphereBase.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/choice_topic_class1_Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/choice_topic_all_classes_Form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/item_count_etc_Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/trainer_class_Form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/yandex_regForm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/generate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/bee.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/bread.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/flower.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/g_apple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/girl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/mushroom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/pencil.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/snow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/umbrella.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/pic/y_apple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/item_count_etc.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task_trainer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,12 +76,12 @@
     &quot;assignee&quot;: &quot;staflix&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/staflix/MathSphere.git&quot;,
-    &quot;accountId&quot;: &quot;c5cd1a59-5b76-402a-a664-6f0191e3a894&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/staflix/MathSphere.git",
+    "accountId": "7dfcea35-3f05-458c-88df-2ab84247f1a3"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -153,8 +181,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.17011.127" />
-        <option value="bundled-python-sdk-48aec45f0201-7e9c3bbb6e34-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.17011.127" />
+        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
       </set>
     </attachedChunks>
   </component>

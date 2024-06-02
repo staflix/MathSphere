@@ -9,7 +9,6 @@ from data.users import User, Info
 from data.generate_string import generate_string
 from api.resetpasswordAPI import generate_password
 from mail import send_email
-from forms.yandex_regForm import YandexForm
 
 blueprint = flask.Blueprint(
     'yandex_api',
@@ -66,7 +65,6 @@ def callback():
 
 @blueprint.route('/profile')
 def profile():
-    form = YandexForm()
     user = session.get('user')
     if not user:
         return redirect(url_for('login'))

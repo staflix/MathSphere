@@ -3,8 +3,8 @@ from flask_login import LoginManager, login_required, logout_user
 from flask import Flask, render_template, redirect
 from data import db_session
 from data.users import User
-from api import registerAPI, loginAPI, resetpasswordAPI, mainpageAPI, choice_class_API, choice_topic_class1_API, \
-    item_count_etc_API, menu_company_API, change_avatar_API, settings_API, start_level_API, reg_log_yandexAPI
+from api import registerAPI, loginAPI, resetpasswordAPI, mainpageAPI, choice_class_API, choice_topic_all_classes_API, \
+    send_task_for_trainer_API, menu_company_API, change_avatar_API, settings_API, start_level_API, reg_log_yandexAPI
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -45,8 +45,8 @@ def main():
     app.register_blueprint(resetpasswordAPI.blueprint)
     app.register_blueprint(mainpageAPI.blueprint)
     app.register_blueprint(choice_class_API.blueprint)
-    app.register_blueprint(choice_topic_class1_API.blueprint)
-    app.register_blueprint(item_count_etc_API.blueprint)
+    app.register_blueprint(choice_topic_all_classes_API.blueprint)
+    app.register_blueprint(send_task_for_trainer_API.blueprint)
     app.register_blueprint(menu_company_API.blueprint)
     app.register_blueprint(change_avatar_API.blueprint)
     app.register_blueprint(settings_API.blueprint)
