@@ -6,7 +6,7 @@ from random import randint
 def generate(year, topic):
     if year == 1:
         if topic == 'Счет предметов':
-            i = randint(1, 10)
+            i = randint(1, 9)
             c = randint(2, 10)
             if i == 1:
                 y = randint(2, 10)
@@ -44,18 +44,13 @@ def generate(year, topic):
                 img.extend(['umbrella.png'] * randint(2, 10))
                 img.extend(['bee.png'] * randint(2, 10))
                 return Task(text='Сколько тут батонов?', answer=str(c), image=img)
-            if i == 10:
-                img = ['snow.png'] * c
-                img.extend(['pencil.png'] * (c - 1))
-                return Task(text='Чего больше: карандашей или снежинок?', choice=['Снежинок', 'Карандашей', 'Поровну'],
-                            answer='Снежинок', image=img)
         if topic == 'Многоугольники':
             typ = randint(1, 2)
             if typ == 1:
                 i = randint(3, 10)
                 img = f'{i}.png'
                 return Task(text='Сколько углов у этой фигуры?', answer=str(i), image=[img])
-            else:
+            if typ == 2:
                 i_1 = randint(3, 10)
                 i_2 = randint(3, 10)
                 i_3 = randint(3, 10)
@@ -266,7 +261,7 @@ def generate(year, topic):
                 return Task(text=f'({i_1} - {i_2} - {i_3} + {i_4}) : 1', answer=str(eval(f'({i_1} - {i_2} - {i_3} + {i_4})')))
     if year == 3:
         if topic == 'Сложение (Трехзначные числа)':
-            i_1 = randint(100, 999)
+            i_1 = randint(100, 790)
             i_2 = random.choice([r for r in range(100, 999 - i_1)])
             return Task(text=f'{i_1} + {i_2}', answer=str(i_1 + i_2))
         if topic == 'Вычитание (Трехзначные числа)':
@@ -315,7 +310,7 @@ def generate(year, topic):
             i_2 = random.choice([r for r in range(100, 999) if r % i_1 == 0])
             return Task(text=f'{i_1} : {i_2}', answer=str(i_1 // i_2))
         if topic == 'Примеры (Трехзначные числа)':
-            typ = randint(1, 6)
+            typ = randint(1, 5)
             if typ == 1:
                 i_3 = randint(2, 10)
                 i_5 = random.choice([r for r in range(300, 999) if r % i_3 == 0])
@@ -324,15 +319,116 @@ def generate(year, topic):
                 i_4 = randint(2, 15)
                 return Task(text=f'({i_1} + {i_2}) : {i_3} * {i_4}', answer=str(eval(f'({i_1} + {i_2}) : {i_3} * {i_4}')))
             if typ == 2:
+                i_2 = randint(2, 10)
+                i_1 = random.choice([r for r in range(100, 400) if r % i_2 == 0])
+                i_3 = randint(5, 25)
+                i_4 = randint(15, 30)
+                return Task(text=f'{i_1} : {i_2} + {i_3} * {i_4}', answer=str(eval(f'{i_1} : {i_2} + {i_3} * {i_4}')))
+            if typ == 3:
+                i_3 = randint(2, 900)
+                i_4 = i_3 + randint(2, 10)
+                i_2 = random.choice([r for r in range(300, 999) if r % (i_4 - i_3) == 0])
+                i_1 = randint(2, 20)
+                return Task(text=f'{i_1} * ({i_2} : ({i_4} - {i_3}))', answer=str(eval(f'{i_1} * ({i_2} : ({i_4} - {i_3}))')))
+            if typ == 4:
+                i_3 = randint(2, 10)
+                i_2 = random.choice([r for r in range(300, 900) if r % i_3 == 0])
+                i_1 = randint(100, 300)
+                i_4 = randint(100, 300)
+                return Task(text=f'{i_1} + {i_2} : {i_3} - {i_4}', answer=str(eval(f'{i_1} + {i_2} : {i_3} - {i_4}')))
+            if typ == 5:
                 i_3 = randint(2, 10)
                 i_5 = random.choice([r for r in range(300, 999) if r % i_3 == 0])
                 i_1 = random.choice([r for r in range(200, i_5)])
                 i_2 = i_5 - i_1
                 i_4 = randint(2, 15)
-                return Task(text=f'({i_1} + {i_2}) : {i_3} * {i_4}', answer=str(eval(f'({i_1} + {i_2}) : {i_3} * {i_4}')))
+                return Task(text=f'({i_1} - {i_2}) * {i_3} : {i_4}', answer=str(eval(f'({i_1} + {i_2}) : {i_3} * {i_4}')))
     if year == 4:
-        pass
-
-
-
-
+        if topic == 'Сложение (Три слагаемых)':
+            i_1 = randint(100, 700)
+            i_2 = random.choice([r for r in range(100, 800 - i_1)])
+            i_3 = randint(100, 1000 - i_1 - i_2)
+            return Task(text=f'{i_1} + {i_2} + {i_3}', answer=str(i_1 + i_2 + i_3))
+        if topic == 'Сложение (Числа больше 1000)':
+            typ = randint(1, 3)
+            if typ == 1:
+                i_1 = randint(100, 900) * 1000
+                i_2 = randint(100, 900)
+                return Task(text=f'{i_1} + {i_2}', answer=str(i_1 + i_2))
+            if typ == 2:
+                i_1 = randint(100, 900) * 1000
+                i_2 = randint(100, 900)
+                i_3 = randint(100, 1000 - i_2)
+                return Task(text=f'{i_1} + ({i_2} + {i_3})', answer=str(i_1 + i_2 + i_3))
+            if typ == 3:
+                i_1 = randint(100, 900) * 1000
+                i_2 = randint(100, 900)
+                i_3 = randint(1, 99)
+                return Task(text=f'{i_1} + {i_2} + {i_3}', answer=str(i_1 + i_2 + i_3))
+        if topic == 'Умножение (На произведение)':
+            i_1 = randint(4, 10)
+            i_2 = randint(4, 10)
+            i_3 = randint(4, 20)
+            typ = randint(1, 2)
+            if typ == 1:
+                return Task(text=f'{i_1} * ({i_2} * {i_3})', answer=str(i_1 * i_2 * i_3))
+            if typ == 2:
+                return Task(text=f'({i_1} * {i_2}) * {i_3}', answer=str(i_1 * i_2 * i_3))
+            if typ == 3:
+                i_2 = randint(100, 999)
+                return Task(text=f'{i_2} * {i_1 * 10}', answer=str(i_1 * i_2 * 10))
+        if topic == 'Умножение (Продвинутое)':
+            typ = randint(1, 4)
+            if typ == 1:
+                i_1 = randint(200, 999)
+                i_2 = randint(20, 99)
+                return Task(text=f'{i_1} * {i_2}', answer=str(i_1 * i_2))
+            if typ == 2:
+                i_1 = randint(300, 999)
+                i_2 = randint(100, 600)
+                return Task(text=f'{i_1} * {i_2}', answer=str(i_1 * i_2))
+            if typ == 3:
+                i_1 = randint(400, 999)
+                i_2 = randint(300, 999)
+                return Task(text=f'{i_1} * {i_2}', answer=str(i_1 * i_2))
+            if typ == 4:
+                i_1 = randint(300, 900)
+                i_2 = randint(300, 900)
+                return Task(text=f'{i_1} * x = {i_1 * i_2}', answer=str(i_2))
+        if topic == 'Деление (На двузначные)':
+            typ = randint(1, 4)
+            if typ == 1:
+                i_1 = randint(20, 99)
+                i_2 = randint(600, 99999)
+                return Task(text=f'Напиши целую часть деления {i_1} : {i_2}', answer=str(i_1 // i_2))
+            if typ == 2:
+                i_1 = randint(20, 99)
+                i_2 = randint(600, 99999)
+                return Task(text=f'Напиши остаток от деления {i_1} : {i_2}', answer=str(i_1 % i_2))
+            if typ == 3:
+                i_1 = randint(20, 99) * 10
+                i_2 = randint(600, 9999) * 100
+                return Task(text=f'Напиши целую часть от деления {i_1} : {i_2}', answer=str(i_1 // i_2))
+            if typ == 4:
+                i_1 = randint(20, 99) * 10
+                i_2 = randint(600, 9999) * 100
+                return Task(text=f'Напиши остаток от деления {i_1} : {i_2}', answer=str(i_1 % i_2))
+        if topic == 'Делание (Продвинутое)':
+            typ = randint(1, 4)
+            if typ == 1:
+                i_1 = randint(100, 999)
+                i_2 = randint(999, 999999)
+                return Task(text=f'Напиши целую часть деления {i_1} : {i_2}', answer=str(i_1 // i_2))
+            if typ == 2:
+                i_1 = randint(100, 999)
+                i_2 = randint(600, 999999)
+                return Task(text=f'Напиши остаток от деления {i_1} : {i_2}', answer=str(i_1 % i_2))
+            if typ == 3:
+                i_1 = randint(200, 999) * 10
+                i_2 = randint(600, 99999) * 100
+                return Task(text=f'Напиши целую часть от деления {i_1} : {i_2}', answer=str(i_1 // i_2))
+            if typ == 4:
+                i_1 = randint(200, 999) * 10
+                i_2 = randint(600, 99999) * 100
+                return Task(text=f'Напиши остаток от деления {i_1} : {i_2}', answer=str(i_1 % i_2))
+    
