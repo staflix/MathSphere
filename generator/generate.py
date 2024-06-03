@@ -10,14 +10,12 @@ def generate(year, topic):
             c = randint(2, 10)
             if i == 1:
                 y = randint(2, 10)
-                g = randint(2, 10)
                 img = ['y_apple.png'] * y
                 return Task(text='Сколько здесь желтых яблок?', answer=str(y), image=img)
             if i == 2:
                 y = randint(2, 10)
-                g = randint(2, 10)
                 img = ['y_apple.png'] * y
-                return Task(text='Сколько здесь всего яблок?', answer=str(y + g), image=img)
+                return Task(text='Сколько здесь всего яблок?', answer=str(y), image=img)
             if i == 3:
                 img = ['mushroom.png'] * c
                 return Task(text='Сколько здесь грибов?', answer=str(c), image=img)
