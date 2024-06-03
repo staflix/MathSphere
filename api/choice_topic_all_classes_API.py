@@ -28,8 +28,28 @@ def choice_topic_all_classes_trainer(num_class, rdm_string):
     user_avatar = f"../{user_info.avatar_href}"
 
     if num_class == 1:
-        if form.topic1.data:
+        if form.topic11.data:
             topic = "Счет предметов"
+            return redirect(f"/{num_class}/{topic}/key={rdm_string}")
+
+        if form.topic12.data:
+            topic = "Многоугольники"
+            return redirect(f"/{num_class}/{topic}/key={rdm_string}")
+
+        if form.topic13.data:
+            topic = "Задачки на увеличение"
+            return redirect(f"/{num_class}/{topic}/key={rdm_string}")
+
+        if form.topic14.data:
+            topic = "Задачки на уменьшение"
+            return redirect(f"/{num_class}/{topic}/key={rdm_string}")
+
+        if form.topic15.data:
+            topic = "Задачки (разнобой)"
+            return redirect(f"/{num_class}/{topic}/key={rdm_string}")
+
+        if form.topic16.data:
+            topic = "Примеры на счет"
             return redirect(f"/{num_class}/{topic}/key={rdm_string}")
 
     return render_template("choice_topic.html", num_class=num_class, form=form, rdm_string=rdm_string, profile=profile,

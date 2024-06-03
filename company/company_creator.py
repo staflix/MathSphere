@@ -10,12 +10,15 @@ class Level:
     def __init__(self, num=0, topic='', style='base', time=0, class_num=0, info=''):
         self.tasks = []  # Переносим определение списка сюда
         if style == 'base':
+            self.time = None
             self.name = f'{info}'
         elif style == 'test':
-            self.name = f'Тест на тему {topic}, даётся {time} минут, удачи!'
+            self.time = "20:00"
+            self.name = f'Тест на тему {topic}, даётся {self.time} минут, удачи!'
             self.text = 'Пройди этот тест для открытия следующего блока заданий! Проиграешь трижды и тема сбросится!'
         elif style == 'final_test':
-            self.name = f'Контрольная работа за {class_num} класс, даётся {time} минут, удачи!'
+            self.time = "30:00"
+            self.name = f'Контрольная работа за {class_num} класс, даётся {self.time} минут, удачи!'
             self.text = ('Ты шел(а) к этому очень долго! Пришло время закончить с этим классом, здесь встретятся задачи'
                          'на все темы этого года, попыток не ограниченное количество!')
 

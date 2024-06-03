@@ -60,17 +60,15 @@ def start_level(level, rdm_string):
 def get_level_data(year, level_selected):
     topic_index = (int(level_selected) // 10) % 10
     level_within_topic_index = (int(level_selected) - 1) % 10
-    timer = None
     if int(level_selected) % 10 == 0 and int(level_selected) % 100 != 0:
-        timer = "10:00"
         topic_index -= 1
     elif int(level_selected) % 10 == 0 and int(level_selected) % 100 == 0:
-        timer = "20:00"
         topic_index = 9
 
     selected_topic = year.topics[topic_index]
     selected_level = selected_topic.levels[level_within_topic_index]
 
+    timer = selected_level.time
     topic = selected_topic.name
     tasks = [task.task for task in selected_level.tasks]
     answers = [task.answer for task in selected_level.tasks]

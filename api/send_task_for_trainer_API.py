@@ -15,19 +15,18 @@ blueprint = flask.Blueprint(
 @blueprint.route('/<int:num_class>/<topic>/key=<rdm_string>', methods=['GET', 'POST'])
 def send_task_for_trainer(num_class, topic, rdm_string):
     form = TrainerClassForm()
-
     task = generate(num_class, topic)
+    text = task.task
+    answer = task.answer
 
-    if num_class == 1:
-        if topic == 'Счет предметов':
-            text = task.task
-            answer = task.answer
-            path_img = task.image[0]
-            count_img = len(task.image)
-            print(text)
-            print(answer)
-            print(path_img)
-            print(count_img)
+    if topic == 'Многоугольники' or topic == 'Счет предметов':
+        path_img = task.image[0]
+        count_img = len(task.image)
+        if str(path_img)[0] not in '1234567890':
+            path_img = f'{path_img.split(".")[0]}{count_img}.png'
+    else:
+        path_img = None
+        count_img = 0
 
     return render_template("task_trainer.html", text=text, answer=answer, path_img=path_img,
                            count_img=count_img, rdm_string=rdm_string, num_class=num_class, form=form)
