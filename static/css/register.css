@@ -42,7 +42,7 @@
   justify-content: center;
 }
 .register-form {
-  gap: var(--dl-space-space-twounits);
+  gap: 12px;
   width: auto;
   display: flex;
   align-items: center;
