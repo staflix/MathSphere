@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    /* Стили для контейнера */
+    .container {
+        width: 60%;
+        margin: auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+    }
+
+    /* Стили для заголовка задания */
+    #question {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Стили для контейнера изображений */
+    #image-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* Стили для кнопок выбора */
+    .choice-button {
+        display: inline-block;
+        margin: 10px 5px;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .choice-button:hover {
+        background-color: #0056b3;
+    }
+
+    .choice-button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    /* Стили для текстового поля и кнопки отправки */
+    #text-answer {
+        padding: 10px;
+        font-size: 18px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: calc(100% - 22px); /* Учитывая padding */
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    #submit-button {
+        padding: 10px 20px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #28a745;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #submit-button:hover {
+        background-color: #218838;
+    }
+
+    #submit-button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    /* Стили для текста результата */
+    #result {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Стили для кнопок "Дальше" и "Вернуться" */
+    #next-button, #back-button {
+        padding: 10px 20px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #ffc107;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+    }
+
+    #next-button:hover, #back-button:hover {
+        background-color: #e0a800;
+    }
+
+    #next-button:disabled, #back-button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Trainer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const num_class = {{ num_class }};
+            const rdm_string = "{{ rdm_string }}";
+            const correctAnswer = "{{ answer }}"; // Получение правильного ответа из шаблона
+
+            function showResult(isCorrect) {
+                if (isCorrect) {
+                    $('#result').text("Правильно!");
+                } else {
+                    $('#result').text("Неправильно!");
+                }
+                $('#next-button').show();
+                $('.choice-button').attr('disabled', true);
+                $('#submit-button').attr('disabled', true);
+                $('#text-answer').attr('disabled', true);
+            }
+
+            // Обработчик для текстового поля
+            $('#submit-button').on('click', function() {
+                const userAnswer = $('#text-answer').val();
+                const isCorrect = userAnswer === correctAnswer;
+                showResult(isCorrect);
+            });
+
+            // Обработчик для кнопки "Дальше"
+            $('#next-button').on('click', function() {
+                location.reload(); // Перезагрузка страницы для получения нового задания
+            });
+
+            // Обработчик для кнопки "Вернуться"
+            $('#back-button').on('click', function() {
+                window.location.href = `/${num_class}/key=${rdm_string}`;
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <p id="question">{{ text }}</p>
+
+    <div id="image-container">
+        {% if count_img > 0 %}
+        <img src="{{ url_for('static', filename='pic_trainer/' + path_img) }}" alt="Task Image">
+        {% endif %}
+    </div>
+
+    <div id="choices-container">
+        {% if choices %}
+        {% for choice in choices %}
+        <button class="choice-button">{{ choice }}</button>
+        {% endfor %}
+        {% else %}
+        <input type="number" id="text-answer" name="answer" placeholder="Введите ответ">
+        <button id="submit-button">Ответить</button>
+        {% endif %}
+    </div>
+
+    <p id="result"></p>
+
+    <button id="next-button" style="display:none;">Дальше</button>
+    <button id="back-button">Вернуться</button>
+</div>
+</body>
+</html>
