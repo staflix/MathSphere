@@ -2,6 +2,7 @@ from flask import render_template, redirect, request, jsonify, url_for
 import flask
 from forms.change_avatar_Form import ChangeAvatarForm
 from data import db_session
+from flask_login import current_user
 from data.users import Info
 
 blueprint = flask.Blueprint(
@@ -11,14 +12,14 @@ blueprint = flask.Blueprint(
 )
 
 
-@blueprint.route('/change_avatar/key=<rdm_string>', methods=['GET', 'POST'])
-def change_avatar(rdm_string):
+@blueprint.route('/change_avatar', methods=['GET', 'POST'])
+def change_avatar():
     form = ChangeAvatarForm()
     next_page = request.args.get('next')
 
     db_session.global_init("db/MathSphereBase.db")
     db_sess = db_session.create_session()
-    user_info = db_sess.query(Info).filter(Info.random_string == rdm_string).first()
+    user_info = db_sess.query(Info).filter(Info.user_id == current_user.id).first()
 
     if request.method == 'POST':
         avatar = request.form.get('avatar')
@@ -29,4 +30,4 @@ def change_avatar(rdm_string):
             return jsonify(success=True, next=next_page)
         return jsonify(success=False)
 
-    return render_template("avatar.html", form=form, rdm_string=rdm_string, next_page=next_page)
+    return render_template("avatar.html", form=form, next_page=next_page)

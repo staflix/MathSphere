@@ -1,11 +1,11 @@
 from flask import render_template, redirect
 import flask
+from flask_login import login_user
 from sqlalchemy import select
 from forms.registerForm import RegisterForm
 from data import db_session
 from data.users import User, Info
-from check_email import is_valid_email
-from data.generate_string import generate_string
+from data.check_email import is_valid_email
 
 blueprint = flask.Blueprint(
     'register_api',
@@ -37,17 +37,16 @@ def register():
                     db_sess.commit()
                     db_sess.refresh(user)
                     avatar = f'static/avatars_img/15.png'
-                    rdm_string = generate_string()
                     info = Info(
                         user_id=user.id,
                         avatar_href=avatar,
-                        random_string=rdm_string,
                         current_level=0
                     )
                     db_sess.add(info)
                     db_sess.commit()
                     db_sess.close()
-                    return redirect(f"/key={rdm_string}")
+                    login_user(user, remember=True)
+                    return redirect(f"/")
                 else:
                     return render_template('register.html',
                                            message='Пароли не совпадают', form=form)

@@ -572,7 +572,7 @@
             // Send AJAX request
             $.ajax({
                 type: 'POST',
-                url: `/menu_company/key={{ rdm_string }}`,
+                url: `/menu_company`,
                 contentType: 'application/json',
                 data: JSON.stringify({ level: selectedLevel }),
                 success: function(response) {
@@ -605,7 +605,7 @@
         startButton.addEventListener('click', (event) => {
             event.preventDefault(); // Prevent default form submission
             if (selectedLevel) {
-                window.location.href = `/start_level/${selectedLevel}/key={{ rdm_string }}`;
+                window.location.href = `/start_level/${selectedLevel}`;
             }
             event.stopPropagation(); // Остановить всплытие события, чтобы оно не добралось до обработчика на документе
         });

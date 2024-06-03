@@ -1,8 +1,6 @@
-from flask import render_template, session
+from flask import render_template
 import flask
 from forms.trainer_class_Form import TrainerClassForm
-from data.tools import dictionary_trainer
-from random import choice
 from generator.generate import generate
 
 blueprint = flask.Blueprint(
@@ -12,8 +10,8 @@ blueprint = flask.Blueprint(
 )
 
 
-@blueprint.route('/<int:num_class>/<topic>/key=<rdm_string>', methods=['GET', 'POST'])
-def send_task_for_trainer(num_class, topic, rdm_string):
+@blueprint.route('/<int:num_class>/<topic>', methods=['GET', 'POST'])
+def send_task_for_trainer(num_class, topic):
     form = TrainerClassForm()
     task = generate(num_class, topic)
     text = task.task
@@ -29,4 +27,4 @@ def send_task_for_trainer(num_class, topic, rdm_string):
         count_img = 0
 
     return render_template("task_trainer.html", text=text, answer=answer, path_img=path_img,
-                           count_img=count_img, rdm_string=rdm_string, num_class=num_class, form=form)
+                           count_img=count_img, num_class=num_class, form=form)

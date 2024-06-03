@@ -122,7 +122,6 @@
     <script>
         $(document).ready(function() {
             const num_class = {{ num_class }};
-            const rdm_string = "{{ rdm_string }}";
             const correctAnswer = "{{ answer }}"; // Получение правильного ответа из шаблона
 
             function showResult(isCorrect) {
@@ -151,7 +150,7 @@
 
             // Обработчик для кнопки "Вернуться"
             $('#back-button').on('click', function() {
-                window.location.href = `/${num_class}/key=${rdm_string}`;
+                window.location.href = `/${num_class}`;
             });
         });
     </script>
