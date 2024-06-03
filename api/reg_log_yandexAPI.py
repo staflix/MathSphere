@@ -1,14 +1,14 @@
-from flask import Flask, redirect, url_for, session, request
+from flask import url_for, session, request
 from urllib.parse import urlencode
 import requests
-from pprint import pprint
-from flask import render_template, redirect
+from flask import redirect
 import flask
 from data import db_session
 from data.users import User, Info
-from data.generate_string import generate_string
 from api.resetpasswordAPI import generate_password
-from mail import send_email
+from data.mail import send_email
+from data.config import *
+from flask_login import login_user
 
 blueprint = flask.Blueprint(
     'yandex_api',
@@ -17,12 +17,12 @@ blueprint = flask.Blueprint(
 )
 
 # Конфигурация Яндекс
-CLIENT_ID = '8ec02c8b48804fef9b475ab159c3c8ae'  # не трогать
-CLIENT_SECRET = '6253e92bd6b9421ea0d1abf7af2299cc'  # не трогать
-REDIRECT_URI = 'https://math-up.ru:443/login/callback'  # потом потрогаю
-AUTH_URL = 'https://oauth.yandex.ru/authorize'
-TOKEN_URL = 'https://oauth.yandex.ru/token'
-USERINFO_URL = 'https://login.yandex.ru/info'
+CLIENT_ID = client_id  # не трогать
+CLIENT_SECRET = client_secret  # не трогать
+REDIRECT_URI = redirect_url  # потом потрогаю
+AUTH_URL = auth_url
+TOKEN_URL = token_url
+USERINFO_URL = userinfo_url
 
 
 @blueprint.route('/reg_yandex', methods=['GET', 'POST'])
@@ -74,12 +74,10 @@ def profile():
     user_table = db_sess.query(User).filter(User.email == user['emails'][0]).first()
 
     if user_table:
-        user_info = db_sess.query(Info).filter(Info.user_id == user_table.id).first()
-        new_random_string = generate_string()
-        user_info.random_string = new_random_string
         db_sess.commit()
         db_sess.close()
-        return redirect(f'/key={new_random_string}')
+        login_user(user_table, remember=True)
+        return redirect(f'/')
 
     if not user_table:
         new_user = User(
@@ -96,14 +94,13 @@ def profile():
         db_sess.commit()
         db_sess.refresh(new_user)
         avatar = f'static/avatars_img/15.png'
-        rdm_string = generate_string()
         info = Info(
             user_id=new_user.id,
             avatar_href=avatar,
-            random_string=rdm_string,
             current_level=0
         )
         db_sess.add(info)
         db_sess.commit()
         db_sess.close()
-        return redirect(f"/key={rdm_string}?reg=True")
+        login_user(user, remember=True)
+        return redirect(f"/?reg=True")

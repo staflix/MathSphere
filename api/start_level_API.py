@@ -2,11 +2,12 @@ from flask import render_template, request, redirect
 import flask
 from forms.company_levelForm import CompanyLevelForm
 from data import db_session
-from data.users import User, Info
+from data.users import Info
 from company.company_second_class import *
 from company.company_first_class import *
 from company.company_third_class import *
 from company.company_fourth_class import *
+from flask_login import current_user
 
 blueprint = flask.Blueprint(
     'start_level_api',
@@ -15,14 +16,14 @@ blueprint = flask.Blueprint(
 )
 
 
-@blueprint.route('/start_level/<level>/key=<rdm_string>', methods=['GET', 'POST'])
-def start_level(level, rdm_string):
+@blueprint.route('/start_level/<level>', methods=['GET', 'POST'])
+def start_level(level):
     form = CompanyLevelForm()
 
     db_session.global_init("db/MathSphereBase.db")
     db_sess = db_session.create_session()
 
-    user_info = db_sess.query(Info).filter(Info.random_string == rdm_string).first()
+    user_info = db_sess.query(Info).filter(Info.user_id == current_user.id).first()
 
     if 1 <= int(level) <= 100:
         user_info.current_level = int(level)
@@ -30,7 +31,7 @@ def start_level(level, rdm_string):
         db_sess.close()
         timer, topic, tasks, answers, choices, imgs = get_level_data(year_1, level)
         return render_template("level.html", timer=timer, choice=choices, imgs=imgs,
-                               topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
+                               topic=topic, tasks=tasks, answers=answers, form=form)
 
     elif 101 <= int(level) <= 200:
         user_info.current_level = int(level)
@@ -38,7 +39,7 @@ def start_level(level, rdm_string):
         db_sess.close()
         timer, topic, tasks, answers, choices, imgs = get_level_data(year_2, level)
         return render_template("level.html", timer=timer, choice=choices, imgs=imgs,
-                               topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
+                               topic=topic, tasks=tasks, answers=answers, form=form)
 
     elif 201 <= int(level) <= 300:
         user_info.current_level = int(level)
@@ -46,7 +47,7 @@ def start_level(level, rdm_string):
         db_sess.close()
         timer, topic, tasks, answers, choices, imgs = get_level_data(year_3, level)
         return render_template("level.html", timer=timer, choice=choices, imgs=imgs,
-                               topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
+                               topic=topic, tasks=tasks, answers=answers, form=form)
 
     elif 301 <= int(level) <= 400:
         user_info.current_level = int(level)
@@ -54,7 +55,7 @@ def start_level(level, rdm_string):
         db_sess.close()
         timer, topic, tasks, answers, choices, imgs = get_level_data(year_4, level)
         return render_template("level.html", timer=timer, choice=choices, imgs=imgs,
-                               topic=topic, tasks=tasks, rdm_string=rdm_string, answers=answers, form=form)
+                               topic=topic, tasks=tasks, answers=answers, form=form)
 
 
 def get_level_data(year, level_selected):

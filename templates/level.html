@@ -38,7 +38,7 @@
 <form id="levelForm" action="" method="post" class="level-container">
     {{ form.hidden_tag() }}
     <header class="level-header">
-        <a href="/menu_company/key={{ rdm_string }}" class="back-button" id="backButton">Вернуться</a>
+        <a href="/menu_company" class="back-button" id="backButton">Вернуться</a>
         <h1>{{ topic }}</h1>
         {% if timer %}
         <div class="timer" id="timer">{{ timer }}</div>
@@ -199,8 +199,7 @@
 
         finishButton.addEventListener('click', () => {
             const form = document.getElementById('levelForm');
-            const rdmString = '{{ rdm_string }}';
-            form.action = `/menu_company/key=${rdmString}?next_level=true`;
+            form.action = `/menu_company?next_level=true`;
             form.submit();
         });
 

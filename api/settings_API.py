@@ -2,7 +2,8 @@ from flask import render_template, redirect, request
 import flask
 from forms.settings_Form import SettingsForm
 from data import db_session
-from data.users import User, Info
+from flask_login import current_user
+from data.users import User
 
 blueprint = flask.Blueprint(
     'settings_api',
@@ -11,16 +12,14 @@ blueprint = flask.Blueprint(
 )
 
 
-@blueprint.route('/settings/key=<rdm_string>', methods=['GET', 'POST'])
-def settings(rdm_string):
+@blueprint.route('/settings', methods=['GET', 'POST'])
+def settings():
     form = SettingsForm()
     next_page = request.args.get('next')
 
     db_session.global_init("db/MathSphereBase.db")
     db_sess = db_session.create_session()
-
-    user_info = db_sess.query(Info).filter(Info.random_string == rdm_string).first()
-    user = db_sess.query(User).filter(User.id == user_info.user_id).first()
+    user = db_sess.query(User).filter(User.id == current_user.id).first()
 
     if form.next.data:
         if form.password.data == form.confirm_password.data:
@@ -33,14 +32,14 @@ def settings(rdm_string):
             db_sess.commit()
             db_sess.close()
             if next_page == 'main_page':
-                return redirect(f"/key={rdm_string}")
+                return redirect(f"/")
             elif next_page == 'company':
-                return redirect(f"/menu_company/key={rdm_string}")
+                return redirect(f"/menu_company")
             elif next_page == 'choice_class':
-                return redirect(f"/choice_class/key={rdm_string}")
+                return redirect(f"/choice_class")
 
         else:
             return render_template("settings.html", form=form,
-                                   message="Пароли не совпадают", rdm_string=rdm_string, next_page=next_page)
+                                   message="Пароли не совпадают", next_page=next_page)
 
-    return render_template("settings.html", form=form, rdm_string=rdm_string, next_page=next_page)
+    return render_template("settings.html", form=form, next_page=next_page)

@@ -55,7 +55,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const avatarForm = document.getElementById('avatarForm');
     const notification = document.getElementById('notification');
-    const rdm_string = '{{ rdm_string }}';
     const next_page = '{{ next_page }}';
 
     avatarForm.addEventListener('click', function(event) {
@@ -74,11 +73,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     setTimeout(() => {
                         notification.classList.remove('active');
                         if (next_page === 'main_page') {
-                            window.location.href = `/key=${rdm_string}`;
+                            window.location.href = `/`;
                         } else if (next_page === 'company') {
-                            window.location.href = `/menu_company/key=${rdm_string}`;
+                            window.location.href = `/menu_company`;
                         } else if (next_page === 'choice_class') {
-                            window.location.href = `/choice_class/key=${rdm_string}`;
+                            window.location.href = `/choice_class`;
                         }
                     }, 2000);
                 } else {
