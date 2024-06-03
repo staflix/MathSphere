@@ -52,6 +52,11 @@
   justify-content: flex-end;
   background-color: var(--dl-color-theme-neutral-light);
 }
+@media (max-height: 864px) {
+  .register-form {
+    gap: 0;
+  }
+}
 .register-title-root {
   gap: var(--dl-space-space-halfunit);
   display: flex;
