@@ -36,7 +36,9 @@ body {
     flex-grow: 1;
     text-align: center;
 }
-
+.back-button{
+    text-decoration: none;
+}
 .level-header .back-button, .level-footer .prev-button, .level-footer .next-button {
     background-color: #2a0d95;
     border: none;
@@ -54,13 +56,15 @@ body {
 }
 
 .image-container {
+    display: flex;
     margin: 20px 0;
+    justify-content: center;
 }
 
 .image-container img {
     max-width: 100%;
+    max-height: 500px;
     height: auto;
-    border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
 }
