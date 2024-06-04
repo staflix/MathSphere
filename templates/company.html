@@ -437,7 +437,8 @@
               {{ form.level1(class="company-button399 button green-button locked", type="button", data_level="1") }}
               </div>
             </div>
-                      <div class="leaderboard-progress">
+                      <div class="leaderboard-progress" id="top">
+                          <div class="closeModal" id="close_modal"></div>
             <div class="current-progress">
                 <h2>Текущий прогресс</h2>
                 <div class="progress-bar">
@@ -523,6 +524,9 @@
           </div>
         </div>
       </div>
+    <div class="toggle-top-button" id="toggle-top">
+        <h1>Топ игроков</h1>
+    </div>
     </form>
     <script
       defer=""
@@ -611,6 +615,7 @@
         });
     });
   </script>
+    <script src="../static/js/company.js"></script>
   <script>
     window.onload = function() {
         window.scrollTo(0, document.body.scrollHeight);
