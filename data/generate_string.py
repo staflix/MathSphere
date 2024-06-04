@@ -12,7 +12,7 @@ def generate_string():
         db_session.global_init("db/MathSphereBase.db")
         db_sess = db_session.create_session()
 
-        existing_info = db_sess.query(Info).filter(Info.random_string == random_string).first()
+        existing_info = db_sess.query(Info).filter(Info.rdm_string == random_string).first()
         db_sess.close()
 
         if not existing_info:

@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="bg fix">
-      <change afterPath="$PROJECT_DIR$/static/js/company.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/MathSphere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MathSphere.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/loginAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/loginAPI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/registerAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/registerAPI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/resetpasswordAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/resetpasswordAPI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/generate_string.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/generate_string.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/MathSphereBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/MathSphereBase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/company.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/company.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/level.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/level.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/level.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/level.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,10 +103,11 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\MathProject\Math\api" />
+      <recent name="C:\MathProject\Math\templates" />
       <recent name="C:\MathProject\Math\app\static" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.MathSphere">
     <configuration name="MathSphere" type="PythonConfigurationType" factoryName="Python">
       <module name="MathSphere" />
       <option name="ENV_FILES" value="" />
