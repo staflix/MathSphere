@@ -4,7 +4,7 @@ from forms.menu_company_Form import MenuCompanyForm
 from flask_login import current_user
 from forms.mainpageForm import LogMainPageForm
 from data import db_session
-from data.users import Info
+from data.users import Info, User
 from company.company_second_class import *
 from company.company_first_class import *
 from company.company_third_class import *
@@ -27,6 +27,7 @@ def menu_company():
     db_sess = db_session.create_session()
 
     user_info = db_sess.query(Info).filter(Info.user_id == current_user.id).first()
+    user = db_sess.query(User).filter(User.id == current_user.id).first()
     user_name = current_user.name
     user_surname = current_user.surname
     user_email = current_user.email
@@ -34,11 +35,11 @@ def menu_company():
     next_level = request.args.get('next_level')
 
     if next_level:
-        if int(current_user.profile_level) <= user_info.current_level:
-            current_user.profile_level = int(user_info.current_level) + 1
+        if int(user.profile_level) <= user_info.current_level:
+            user.profile_level = int(user_info.current_level) + 1
             db_sess.commit()
 
-    level = current_user.profile_level
+    level = user.profile_level
     db_sess.commit()
     db_sess.close()
 
