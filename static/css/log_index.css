@@ -333,9 +333,6 @@
   }
 }
 @media(max-width: 479px) {
-  .authorizated-logo {
-    display: none;
-  }
   .authorizated-features {
     padding-top: 76px;
   }
