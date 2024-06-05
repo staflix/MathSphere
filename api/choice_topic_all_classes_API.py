@@ -27,6 +27,16 @@ def choice_topic_all_classes_trainer(num_class):
     user_email = current_user.email
     user_avatar = f"../{user_info.avatar_href}"
 
+    colors = ["purple", "indigo", "green", "teal", "light-purple", "red-orange"]
+    back_colors = ["#CE93D8", "#9FA8DA", "#b3ffcc", "#80CBC4", "#D1C4E9", "#FFAB91"]
+    topics = {1: {
+        "Счет предметов": "СЮДЫ ВСТАВЬ РЕКОРД ПОЛЬЗОВАТЕЛЯ",
+        "Многоугольники": "10 какашек",
+        "Задачки на увеличение": "25 какашек",
+        "Задачки на уменьшение": "40 какашек",
+        "Задачки (разнобой)": "БОЛЬШАЯ КАКАШКА",
+        "Примеры на счет": "БОЛЬШАЯ ЛЕПЁХА КАК У КОРОВЫ"
+    }}
     if num_class == 1:
         if form.topic11.data:
             topic = "Счет предметов"
@@ -54,4 +64,4 @@ def choice_topic_all_classes_trainer(num_class):
 
     return render_template("choice_topic.html", num_class=num_class, form=form, profile=profile,
                            avatar=user_avatar, name=user_name, surname=user_surname,
-                           email=user_email)
+                           email=user_email, topics=topics, colors=colors, back_colors=back_colors)

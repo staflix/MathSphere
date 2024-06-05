@@ -155,11 +155,11 @@ a {
 .authorizated-container3 {
   display: contents;
 }
-input[type="submit"]{
+.fa input[type="submit"]{
   background-color: white;
   transition: 0.2s;
 }
-input[type="submit"]:hover{
+.fa input[type="submit"]:hover{
   color: #5228F5;
   cursor: pointer;
 }

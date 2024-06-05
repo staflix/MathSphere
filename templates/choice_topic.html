@@ -1,34 +1,56 @@
 {% extends 'header.html' %}
 {% block links %}
-<link rel="stylesheet" href="../static/css/style.css"/>
-<link href="../static/css/choice_topic.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/css/style.css"/>
+    <link href="../static/css/choice_topic.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {% endblock %}
 {% block content %}
-<form action="" method="post">
-    <div class="trainer-container">
-        <div class="trainer-container01">
-            <div class="trainer-container02">
-                <div class="trainer-container03">
-                    <div>{{ form.topic11(class="button trainer-container04") }}</div>
-                    <div>{{ form.topic12(class="button trainer-container05") }}</div>
-                </div>
-                <div class="trainer-container06">
-                    <div>{{ form.topic13(class="button trainer-container07") }}</div>
-                    <div>{{ form.topic14(class="button trainer-container08") }}</div>
-                </div>
-            </div>
-            <div class="trainer-container09">
-                <div class="trainer-container10">
-                    <div>{{ form.topic15(class="button trainer-container11") }}</div>
-                    <div>{{ form.topic16(class="button trainer-container12") }}</div>
-                </div>
-                <div class="trainer-container13">
-                    <div>{{ form.topic17(class="button trainer-container14") }}</div>
-                    <div>{{ form.topic18(class="button trainer-container15") }}</div>
-                </div>
+    <form action="" method="post">
+    <section class="choose-class">
+        <div class="slider">
+            <input type="radio" name="slider" id="item-1" checked>
+            <input type="radio" name="slider" id="item-2">
+            <input type="radio" name="slider" id="item-3">
+            <input type="radio" name="slider" id="item-4">
+            <input type="radio" name="slider" id="item-5">
+            <input type="radio" name="slider" id="item-6">
+            <div class="cards">
+                {% for i in topics[num_class].keys() %}
+                <label class="slide" for="item-{{ loop.index }}" id="song-{{ loop.index }}" data-bg-color="{{ back_colors[loop.index - 1] }}">
+                    <div class="card-section">
+                        <div class="card-front">
+                            <div class="card-front__tp card-front__tp--{{ colors[loop.index - 1] }}">
+                                <h1 class="card-front__heading">{{ i }}</h1>
+                                <h2 class="second-heading">Ваш рекорд: {{ topics[num_class][i] }}</h2>
+                            </div>
+                            <div class="card-front__bt" onclick="location.href='{{ num_class }}/{{ i }}'">
+                                    <p class="card-front__text-view">Начать</p>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                {% endfor %}
             </div>
         </div>
-    </div>
-</form>
-{% endblock %}
+    </section>
+    </form>
 
+    <script>
+        $(document).ready(function() {
+            function updateBackgroundColor() {
+                let checkedSlide = $('input[name="slider"]:checked').attr('id');
+                let color = $('#' + checkedSlide).nextAll('.cards').find('.slide').filter(function() {
+                    return $(this).attr('for') === checkedSlide;
+                }).attr('data-bg-color');
+                $('body').css('background-color', color);
+            }
+
+            $('input[name="slider"]').change(function() {
+                updateBackgroundColor();
+            });
+
+            // Initialize the background color on page load
+            updateBackgroundColor();
+        });
+    </script>
+{% endblock %}
