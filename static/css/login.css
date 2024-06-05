@@ -39,7 +39,7 @@
   justify-content: center;
 }
 .login-form {
-  gap: var(--dl-space-space-twounits);
+  gap: 16px;
   width: 100%;
   display: flex;
   align-self: center;
@@ -166,7 +166,8 @@
   flex-direction: column;
 }
 .login-email {
-  gap: 0;
+  margin-top: -16px;
+  gap: var(--dl-space-space-halfunit);
   width: 100%;
   display: flex;
   align-items: flex-start;
