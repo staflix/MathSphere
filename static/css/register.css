@@ -336,6 +336,15 @@
   border-radius: 20px;
   padding: 20px 20px;
 }
+@media (max-width: 767px) {
+  .privacy-policy{
+     width: 90%;
+     max-width: 100%;
+   }
+  .section{
+    max-height: 90%;
+  }
+}
 .closeModal {
 	position: absolute;
 	top: 30px;
