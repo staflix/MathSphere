@@ -49,8 +49,8 @@ body {
     cursor: pointer;
 }
 
-.level-header:hover .back-button:hover, .level-footer:hover .prev-button:hover, .level-footer:hover .next-button:hover {
-    background: linear-gradient(45deg, #FDD819, #E80505);
+.level-header .back-button:hover, .level-footer .prev-button:hover, .level-footer .next-button:hover {
+    background-color: #3e19c9;
 }
 
 .level-main {

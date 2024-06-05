@@ -16,8 +16,12 @@
         .dot.active {
             background-color: green;
         }
-        .message {
+        .wrong-answer {
             color: red;
+            font-weight: bold;
+        }
+        .good-answer {
+            color: forestgreen;
             font-weight: bold;
         }
         .choices-container {
@@ -51,7 +55,8 @@
             <img id="questionImage" src="{{ url_for('static', filename=imgs[currentIndex]) }}">
             {% endif %}
         </div>
-        <div id="message" class="message"></div>
+        <div id="good-answer" class="good-answer"></div>
+        <div id="wrong-answer" class="wrong-answer"></div>
         <div id="choicesContainer" class="choices-container" style="display: none;"></div>
         <div id="textAnswerContainer">
             {{ form.text_answer(id="textAnswerInput", class="text-answer-input") }}
@@ -80,7 +85,8 @@
         const choices = {{ choice|tojson }};
         const imgs = {{ imgs|tojson }};
         const timerElement = document.getElementById('timer');
-        const messageElement = document.getElementById('message');
+        const goodAnswser = document.getElementById('good-answer');
+        const wrongAnswser = document.getElementById('wrong-answer');
         const questionElement = document.getElementById('question');
         const textAnswerInput = document.getElementById('textAnswerInput');
         const checkButton = document.getElementById('checkButton');
@@ -98,7 +104,8 @@
             const currentIndex = parseInt(currentTaskIndexElement.value);
             questionElement.textContent = tasks[currentIndex];
             textAnswerInput.value = '';
-            messageElement.textContent = '';
+            goodAnswser.textContent = '';
+            wrongAnswser.textContent = '';
             nextButton.style.display = 'none';
             finishButton.style.display = 'none';
             currentAnswerElement.value = '';
@@ -151,7 +158,8 @@
             const currentIndex = parseInt(currentTaskIndexElement.value);
             const correctAnswer = answers[currentIndex];
             if (selectedChoice === correctAnswer) {
-                messageElement.textContent = 'Ответ правильный!';
+                wrongAnswser.textContent = ""
+                goodAnswser.textContent = 'Ответ правильный!';
                 choicesContainer.querySelectorAll('button').forEach(button => {
                     button.disabled = true;
                 });
@@ -161,7 +169,7 @@
                     finishButton.style.display = 'inline-block';
                 }
             } else {
-                messageElement.textContent = 'Ответ неправильный. Попробуйте снова.';
+                wrongAnswser.textContent = 'Ответ неправильный. Попробуйте снова.';
             }
         }
 
@@ -169,7 +177,8 @@
             const currentIndex = parseInt(currentTaskIndexElement.value);
             const userAnswer = textAnswerInput.value.trim();
             if (userAnswer === answers[currentIndex]) {
-                messageElement.textContent = 'Ответ правильный!';
+                wrongAnswser.textContent = ""
+                goodAnswser.textContent = 'Ответ правильный!';
                 checkButton.style.display = 'none';
                 if (currentIndex < tasks.length - 1) {
                     nextButton.style.display = 'inline-block';
@@ -177,7 +186,7 @@
                     finishButton.style.display = 'inline-block';
                 }
             } else {
-                messageElement.textContent = 'Ответ неправильный. Попробуйте снова.';
+                wrongAnswser.textContent = 'Ответ неправильный. Попробуйте снова.';
             }
         });
 
@@ -214,7 +223,7 @@
             const interval = setInterval(() => {
                 if (--timer < 0) {
                     clearInterval(interval);
-                    messageElement.textContent = 'Время вышло. Чтобы вернуться назад, нажмите кнопку Вернуться.';
+                    wrongAnswser.textContent = 'Время вышло. Чтобы вернуться назад, нажмите кнопку Вернуться.';
                     disableAllButtons();
                 } else {
                     const minutes = Math.floor(timer / 60);
