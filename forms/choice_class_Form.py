@@ -3,7 +3,7 @@ from wtforms import SubmitField
 
 
 class ChoiceClassForm(FlaskForm):
-    first_class = SubmitField('1 класс')
-    second_class = SubmitField('2 класс')
-    third_class = SubmitField('3 класс')
-    fourth_class = SubmitField('4 класс')
+    first_class = SubmitField('Начать')
+    second_class = SubmitField('Начать')
+    third_class = SubmitField('Начать')
+    fourth_class = SubmitField('Начать')
