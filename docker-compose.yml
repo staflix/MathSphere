@@ -13,5 +13,5 @@ services:
 
   web:
     build: ./
-    ports:
-      - "80:5000"
+    expose:
+      - "5000"
