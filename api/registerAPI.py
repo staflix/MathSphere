@@ -6,6 +6,7 @@ from forms.registerForm import RegisterForm
 from data import db_session
 from data.users import User, Info
 from data.check_email import is_valid_email
+from data.generate_string import generate_string
 
 blueprint = flask.Blueprint(
     'register_api',
@@ -40,12 +41,13 @@ def register():
                     info = Info(
                         user_id=user.id,
                         avatar_href=avatar,
-                        current_level=0
+                        current_level=0,
+                        rdm_string=generate_string()
                     )
                     db_sess.add(info)
                     db_sess.commit()
-                    db_sess.close()
                     login_user(user, remember=True)
+                    db_sess.close()
                     return redirect(f"/")
                 else:
                     return render_template('register.html',

@@ -1,4 +1,4 @@
-from flask import render_template, redirect, request
+from flask import render_template, redirect, request, make_response
 from forms.mainpageForm import UnLogMainPageForm, LogMainPageForm
 from flask_login import current_user
 from data import db_session
@@ -18,6 +18,11 @@ def main_page_unlog():
         form = UnLogMainPageForm()
         return render_template('unlog_index.html', form=form)
     else:
+        visits_count = int(request.cookies.get("visits_count", 0))
+        res = make_response(
+            f"Вы пришли на эту страницу {visits_count + 1} раз")
+        res.set_cookie("visits_count", str(visits_count + 1),
+                       max_age=60 * 60 * 24 * 365 * 2)
         profile = LogMainPageForm()
         form = LogMainPageForm()
         page = 'main_page'
