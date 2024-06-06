@@ -111,7 +111,7 @@
             currentAnswerElement.value = '';
 
             if (imgs[currentIndex] !== null) {
-                questionImage.src = `{{ url_for('static', filename='') }}${imgs[currentIndex]}`;
+                questionImage.src = "{{ url_for('static', filename='') }}" + imgs[currentIndex];
                 questionImage.style.display = 'block';
             } else {
                 questionImage.style.display = 'none';
@@ -158,11 +158,12 @@
             const currentIndex = parseInt(currentTaskIndexElement.value);
             const correctAnswer = answers[currentIndex];
             if (selectedChoice === correctAnswer) {
-                wrongAnswser.textContent = ""
+                wrongAnswser.textContent = "";
                 goodAnswser.textContent = 'Ответ правильный!';
                 choicesContainer.querySelectorAll('button').forEach(button => {
                     button.disabled = true;
                 });
+                checkButton.style.display = 'none';
                 if (currentIndex < tasks.length - 1) {
                     nextButton.style.display = 'inline-block';
                 } else {
@@ -173,11 +174,12 @@
             }
         }
 
-        checkButton.addEventListener('click', () => {
+        checkButton.addEventListener('click', (event) => {
+            event.preventDefault();
             const currentIndex = parseInt(currentTaskIndexElement.value);
             const userAnswer = textAnswerInput.value.trim();
             if (userAnswer === answers[currentIndex]) {
-                wrongAnswser.textContent = ""
+                wrongAnswser.textContent = "";
                 goodAnswser.textContent = 'Ответ правильный!';
                 checkButton.style.display = 'none';
                 if (currentIndex < tasks.length - 1) {
@@ -210,9 +212,24 @@
 
         finishButton.addEventListener('click', () => {
             const form = document.getElementById('levelForm');
-            form.action = `/menu_company?next_level=true`;
+            form.action = "/menu_company?next_level=true";
             form.submit();
         });
+
+        function handleEnterKey(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                if (checkButton.style.display === 'inline-block') {
+                    checkButton.click();
+                } else if (nextButton.style.display === 'inline-block') {
+                    nextButton.click();
+                } else if (finishButton.style.display === 'inline-block') {
+                    finishButton.click();
+                }
+            }
+        }
+
+        document.addEventListener('keydown', handleEnterKey);
 
         if (timerElement) {
             startTimer(timerElement.textContent);
@@ -237,6 +254,7 @@
             checkButton.disabled = true;
             nextButton.disabled = true;
             prevButton.disabled = true;
+            finishButton.disabled = true;
             document.querySelectorAll('.choice-button').forEach(button => {
                 button.disabled = true;
             });

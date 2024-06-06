@@ -4,9 +4,10 @@ from flask_login import login_user
 from sqlalchemy import select
 from forms.registerForm import RegisterForm
 from data import db_session
-from data.users import User, Info
+from data.users import User, Info, TrainerStatistics
 from data.check_email import is_valid_email
 from data.generate_string import generate_string
+from data.tools import classes, topics
 
 blueprint = flask.Blueprint(
     'register_api',
@@ -36,18 +37,35 @@ def register():
                     user.set_password(form.password.data)
                     db_sess.add(user)
                     db_sess.commit()
+
                     db_sess.refresh(user)
                     avatar = f'static/avatars_img/15.png'
+
                     info = Info(
                         user_id=user.id,
                         avatar_href=avatar,
                         current_level=0,
                         rdm_string=generate_string()
                     )
+
                     db_sess.add(info)
                     db_sess.commit()
+
+                    for i in range(len(classes)):
+                        for j in range(len(topics[i])):
+                            num_class = classes[i]
+                            topic = topics[i][j]
+                            trainer = TrainerStatistics(
+                                user_id=user.id,
+                                num_class=num_class,
+                                topic=topic
+                            )
+                            db_sess.add(trainer)
+                            db_sess.commit()
+
                     login_user(user, remember=True)
                     db_sess.close()
+
                     return redirect(f"/")
                 else:
                     return render_template('register.html',

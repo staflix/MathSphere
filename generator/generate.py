@@ -404,7 +404,7 @@ def generate(year, topic):
                 i_1 = randint(20, 99) * 10
                 i_2 = randint(600, 9999) * 100
                 return Task(text=f'Напиши остаток от деления {i_1} : {i_2}', answer=str(i_1 % i_2))
-        if topic == 'Делание (Продвинутое)':
+        if topic == 'Деление (Продвинутое)':
             typ = randint(1, 4)
             if typ == 1:
                 i_1 = randint(100, 999)

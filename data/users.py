@@ -46,6 +46,25 @@ class Info(SqlAlchemyBase):
         return f"{self.id}-{self.user_id}-{self.random_string}"
 
 
+class TrainerStatistics(SqlAlchemyBase):
+    __tablename__ = "Statistics_class1_topic1"
+
+    id = sqlalchemy.Column(sqlalchemy.Integer, autoincrement=True, primary_key=True)
+    user_id = sqlalchemy.Column(sqlalchemy.Integer, ForeignKey("Users.id"))
+    num_class = sqlalchemy.Column(sqlalchemy.Integer)
+    topic = sqlalchemy.Column(sqlalchemy.String)
+    full_time = sqlalchemy.Column(sqlalchemy.FLOAT, default=None)
+    total_questions = sqlalchemy.Column(sqlalchemy.Integer, default=None)
+    correct_questions = sqlalchemy.Column(sqlalchemy.Integer, default=None)
+    accuracy = sqlalchemy.Column(sqlalchemy.String, default=None)
+    speed = sqlalchemy.Column(sqlalchemy.String, default=None)
+
+    user = relationship("User")
+
+    def __repr__(self):
+        return f"{self.num_class}-{self.topic}-{self.full_time}-{self.total_questions}-{self.correct_questions}-{self.accuracy}-{self.speed}"
+
+
 def clear_and_create_tables(db_file):
     engine = sqlalchemy.create_engine(f'sqlite:///{db_file.strip()}?check_same_thread=False')
     SqlAlchemyBase.metadata.create_all(engine)
@@ -57,11 +76,10 @@ def clear_and_create_tables(db_file):
     db_sess = db_session.create_session()
 
     # Проверка существования таблицы Info и ее создание, если не существует
-    if not table_exists(engine, "Info"):
-        Info.__table__.create(engine)
+    # if not table_exists(engine, "Info"):
+    #     Info.__table__.create(engine)
 
-    # Очистка всех записей из таблицы User
-    db_sess.query(User).delete()
+    TrainerStatistics.__table__.create(engine)
 
     # Сохранение изменений в базе данных
     db_sess.commit()
@@ -86,9 +104,10 @@ def clear_users_table(db_file):
     # Очистка всех записей из таблицы User
     db_sess.query(User).delete()
     db_sess.query(Info).delete()
+    db_sess.query(TrainerStatistics).delete()
+
     # Сохранение изменений в базе данных
     db_sess.commit()
 
-
 # clear_and_create_tables("db/MathSphereBase.db")
-clear_users_table("db/MathSphereBase.db")
+# clear_users_table("db/MathSphereBase.db")
