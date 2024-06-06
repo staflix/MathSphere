@@ -78,6 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             window.location.href = `/menu_company`;
                         } else if (next_page === 'choice_class') {
                             window.location.href = `/choice_class`;
+                        } else if (next_page.includes('choice_topic_all_classes_trainer')) {
+                            const page = next_page.split(',').pop();
+                            window.location.href = `/${page}`;
                         }
                     }, 2000);
                 } else {
@@ -91,6 +94,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.location.href = `/menu_company/key=${rdm_string}`;
             } else if (next_page === 'choice_class') {
                 window.location.href = `/choice_class/key=${rdm_string}`;
+            } else if (next_page.includes('choice_topic_all_classes_trainer')) {
+                const page = next_page.split(',').pop();
+                window.location.href = `/${page}`;
             }
         }
     });

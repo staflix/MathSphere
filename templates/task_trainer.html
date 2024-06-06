@@ -4,45 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Trainer</title>
-    <link rel="stylesheet" href="../static/css/task_trainer.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/task_trainer.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #timer {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+        }
+    </style>
     <script>
         $(document).ready(function() {
             const num_class = {{ num_class }};
-            const correctAnswer = "{{ answer }}"; // Получение правильного ответа из шаблона
+            const topic = "{{ topic }}";
+            const correctAnswer = "{{ answer }}";
+
+            let seconds = localStorage.getItem('seconds') ? parseInt(localStorage.getItem('seconds')) : {{ seconds }};
+            let minutes = localStorage.getItem('minutes') ? parseInt(localStorage.getItem('minutes')) : {{ minutes }};
+            let correct_answers = localStorage.getItem('correct_answers') ? parseInt(localStorage.getItem('correct_answers')) : {{ correct_answers }};
+            let total_questions = localStorage.getItem('total_questions') ? parseInt(localStorage.getItem('total_questions')) : {{ total_questions }};
+
+            const timerElement = $('#timer');
+
+            function updateTimer() {
+                seconds++;
+                if (seconds >= 60) {
+                    seconds = 0;
+                    minutes++;
+                }
+                const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+                const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+                timerElement.text(`${formattedMinutes}:${formattedSeconds}`);
+                localStorage.setItem('seconds', seconds);
+                localStorage.setItem('minutes', minutes);
+            }
+
+            setInterval(updateTimer, 1000);
 
             function showResult(isCorrect) {
                 if (isCorrect) {
                     $('#result').text("Правильно!").removeClass("incorrect").addClass("correct");
+                    correct_answers++;
                 } else {
                     $('#result').text("Неправильно!").removeClass("correct").addClass("incorrect");
                 }
+                total_questions++;
                 $('#next-button').fadeIn();
                 $('.choice-button').attr('disabled', true);
                 $('#submit-button').attr('disabled', true);
                 $('#text-answer').attr('disabled', true);
+
+                localStorage.setItem('correct_answers', correct_answers);
+                localStorage.setItem('total_questions', total_questions);
             }
 
-            // Обработчик для текстового поля
             $('#submit-button').on('click', function() {
                 const userAnswer = $('#text-answer').val();
                 const isCorrect = userAnswer === correctAnswer;
                 showResult(isCorrect);
             });
 
-            // Обработчик для кнопки "Дальше"
             $('#next-button').on('click', function() {
-                location.reload(); // Перезагрузка страницы для получения нового задания
+                $.post(`/${num_class}/${topic}`, {
+                    minutes: minutes,
+                    seconds: seconds,
+                    correct_answers: correct_answers,
+                    total_questions: total_questions
+                }, function() {
+                    window.location.reload();
+                });
             });
 
-            // Обработчик для кнопки "Вернуться"
             $('#back-button').on('click', function() {
-                window.location.href = `/${num_class}`;
+                const timeSpent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+                $.post(`/${num_class}`, {
+                    time: timeSpent,
+                    correct_answers: correct_answers,
+                    total_questions: total_questions,
+                    topic: topic
+                }, function() {
+                    localStorage.removeItem('seconds');
+                    localStorage.removeItem('minutes');
+                    localStorage.removeItem('correct_answers');
+                    localStorage.removeItem('total_questions');
+                    window.location.href = `/${num_class}`;
+                });
             });
         });
     </script>
 </head>
 <body>
+    <div id="timer">{{ minutes|default(0, true) }}:{{ seconds|default('00', true) }}</div>
     <button id="back-button">← Назад</button>
     <div class="container">
         <p id="question">{{ text }}</p>

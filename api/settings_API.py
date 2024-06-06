@@ -37,6 +37,8 @@ def settings():
                 return redirect(f"/menu_company")
             elif next_page == 'choice_class':
                 return redirect(f"/choice_class")
+            elif 'choice_topic_all_classes_trainer' in next_page:
+                return redirect(f"/{next_page.split(',')[-1]}")
 
         else:
             return render_template("settings.html", form=form,

@@ -1,22 +1,9 @@
-dictionary_trainer = {'Class': {1: {
-    'Счет предметов. Сравнение групп предметов. Пространственные и временные представления.': [
-        {'text': 'А сколько здесь всего яблок?', 'image': 'img_trainer/item_count_etc/apple.jpg', 'answer': 1,
-         'count_images': 1},
-        {'text': 'А сколько здесь всего яблок?', 'image': 'img_trainer/item_count_etc/apple.jpg', 'answer': 2,
-         'count_images': 2},
-        {'text': 'А сколько здесь всего яблок?', 'image': 'img_trainer/item_count_etc/apple.jpg', 'answer': 3,
-         'count_images': 3},
-        {'text': 'А сколько здесь всего яблок?', 'image': 'img_trainer/item_count_etc/apple.jpg', 'answer': 4,
-         'count_images': 4},
-        {'text': 'А сколько здесь всего яблок?', 'image': 'img_trainer/item_count_etc/apple.jpg', 'answer': 5,
-         'count_images': 5},
-        {'text': 'А сколько здесь всего яблок?', 'image': 'img_trainer/item_count_etc/apple.jpg', 'answer': 6,
-         'count_images': 6},
-        {'text': 'А сколько здесь всего яблок?', 'image': 'img_trainer/item_count_etc/apple.jpg', 'answer': 7,
-         'count_images': 7},
-        {'text': 'А сколько здесь всего яблок?', 'image': 'img_trainer/item_count_etc/apple.jpg', 'answer': 8,
-         'count_images': 8},
-        {'text': 'А сколько здесь всего яблок?', 'image': 'img_trainer/item_count_etc/apple.jpg', 'answer': 9,
-         'count_images': 9},
-        {'text': 'А сколько здесь всего яблок?', 'image': 'img_trainer/item_count_etc/apple.jpg', 'answer': 10,
-         'count_images': 10}]}}}
+classes = [1, 2, 3, 4]
+topics = [["Счет предметов", "Многоугольники", "Задачки на увеличение", "Задачки на уменьшение", "Задачки (разнобой)",
+           "Примеры на счет"],
+          ["Числа от 1 до 20", "Счет десятками", "Сложение и вычитание (Числа от 1 до 100)", "Уравнения",
+           "Деление и умножение (Начальные)", "Примеры"],
+          ["Сложение (Трехзначные числа)", "Вычитание (Трехзначные числа)", "Деление (Среднее)", "Умножение (Среднее)",
+           "Деление (Трехзначные числа)", "Примеры (Трехзначные числа)"],
+          ["Сложение (Три слагаемых)", "Сложение (Числа больше 1000)", "Умножение (На произведение)",
+           "Умножение (Продвинутое)", "Деление (На двузначные)", "Деление (Продвинутое)"]]

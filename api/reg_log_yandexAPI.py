@@ -4,12 +4,13 @@ import requests
 from flask import redirect
 import flask
 from data import db_session
-from data.users import User, Info
+from data.users import User, Info, TrainerStatistics
 from api.resetpasswordAPI import generate_password
 from data.mail import send_email
 from data.config import *
 from flask_login import login_user
 from data.generate_string import generate_string
+from data.tools import classes, topics
 
 blueprint = flask.Blueprint(
     'yandex_api',
@@ -99,8 +100,19 @@ def profile():
             rdm_string=generate_string()
         )
         db_sess.add(info)
-        db_sess.commit()
-        print(new_user)
+
+        for i in range(len(classes)):
+            for j in range(len(topics[i])):
+                num_class = classes[i]
+                topic = topics[i][j]
+                trainer = TrainerStatistics(
+                    user_id=user.id,
+                    num_class=num_class,
+                    topic=topic
+                )
+                db_sess.add(trainer)
+                db_sess.commit()
+
         login_user(new_user, remember=True)
         db_sess.close()
         return redirect(f"/?reg=True")
