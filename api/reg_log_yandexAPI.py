@@ -9,6 +9,7 @@ from api.resetpasswordAPI import generate_password
 from data.mail import send_email
 from data.config import *
 from flask_login import login_user
+from data.generate_string import generate_string
 
 blueprint = flask.Blueprint(
     'yandex_api',
@@ -66,17 +67,14 @@ def callback():
 @blueprint.route('/profile')
 def profile():
     user = session.get('user')
-    if not user:
-        return redirect(url_for('login'))
 
     db_session.global_init("db/MathSphereBase.db")
     db_sess = db_session.create_session()
     user_table = db_sess.query(User).filter(User.email == user['emails'][0]).first()
 
     if user_table:
-        db_sess.commit()
-        db_sess.close()
         login_user(user_table, remember=True)
+        db_sess.close()
         return redirect(f'/')
 
     if not user_table:
@@ -97,10 +95,12 @@ def profile():
         info = Info(
             user_id=new_user.id,
             avatar_href=avatar,
-            current_level=0
+            current_level=0,
+            rdm_string=generate_string()
         )
         db_sess.add(info)
         db_sess.commit()
+        print(new_user)
+        login_user(new_user, remember=True)
         db_sess.close()
-        login_user(user, remember=True)
         return redirect(f"/?reg=True")
