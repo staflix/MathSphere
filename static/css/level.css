@@ -1,6 +1,4 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -11,6 +9,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(45deg, #43CBFF, #9708CC);
+    margin: 0;
 }
 
 .level-container {
@@ -36,9 +35,11 @@ body {
     flex-grow: 1;
     text-align: center;
 }
-.back-button{
+
+.back-button {
     text-decoration: none;
 }
+
 .level-header .back-button, .level-footer .prev-button, .level-footer .next-button {
     background-color: #2a0d95;
     border: none;
@@ -47,9 +48,11 @@ body {
     border-radius: 4px;
     cursor: pointer;
 }
-.level-header:hover .back-button:hover, .level-footer:hover .prev-button:hover, .level-footer:hover .next-button:hover {
-    background: linear-gradient(45deg, #FDD819, #E80505);
+
+.level-header .back-button:hover, .level-footer .prev-button:hover, .level-footer .next-button:hover {
+    background-color: #3e19c9;
 }
+
 .level-main {
     padding: 40px;
     text-align: center;
@@ -63,10 +66,11 @@ body {
 
 .image-container img {
     max-width: 100%;
-    max-height: 500px;
+    max-height: 300px;
     height: auto;
     border-radius: 4px;
     padding: 5px;
+    object-fit: contain;
 }
 
 .options {
@@ -94,6 +98,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 5px;
+    flex-wrap: wrap;
 }
 
 .level-footer .progress .dot {
@@ -103,6 +108,15 @@ body {
     border-radius: 50%;
 }
 
+.text-answer-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
 @media (max-width: 600px) {
     .level-header, .level-footer {
         flex-direction: column;
@@ -110,5 +124,32 @@ body {
 
     .level-header .timer, .level-footer .progress {
         margin-top: 10px;
+    }
+
+    .level-header .back-button, .level-footer .prev-button, .level-footer .next-button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .level-header .back-button {
+        width: calc(100% - 40px);
+    }
+
+    .image-container img {
+        max-height: 200px;
+    }
+
+    .level-footer {
+        flex-direction: column;
+    }
+
+    .level-footer .progress {
+        order: 1;
+    }
+
+    .level-footer .prev-button, .level-footer .check-button, .level-footer .next-button, .level-footer .finish-button {
+        width: 100%;
+        margin: 5px 0;
+        order: 2;
     }
 }

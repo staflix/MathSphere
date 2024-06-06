@@ -1,35 +1,115 @@
 {% extends 'header.html' %}
 {% block links %}
-<link rel="stylesheet" href="../static/css/style.css"/>
-<link href="../static/css/choice_class.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/css/style.css"/>
+    <link href="../static/css/choice_class.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {% endblock %}
 {% block content %}
-<div>
-    <form action="" method="post">
-    <div class="trainer-container">
-        <div class="trainer-container1">
-            <div class="trainer-container2">
-                <div class="trainer-container3">
-                    <div>
-                        {{ form.first_class(class="button trainer-container4") }}
-                    </div>
-                    <div>
-                        {{ form.second_class(class="button trainer-container5") }}
-                    </div>
-                </div>
-                <div class="trainer-container6">
-                    <div>
-                        {{ form.third_class(class="button trainer-container7") }}
-                    </div>
-                    <div>
-                        {{ form.fourth_class(class="button trainer-container8") }}
-                    </div>
-                </div>
+    <form>
+    <section class="choose-class">
+        <div class="slider">
+            <input type="radio" name="slider" id="item-1" checked>
+            <input type="radio" name="slider" id="item-2">
+            <input type="radio" name="slider" id="item-3">
+            <input type="radio" name="slider" id="item-4">
+            <input type="radio" name="slider" id="item-5">
+            <div class="cards">
+                <label class="slide" for="item-1" id="song-1" data-bg-color="#ffb3d9">
+                    <section class="card-section">
+                        <div class="card-front">
+                            <div class="card-front__tp card-front__tp--city">
+                                <h1 class="card-front__heading">1 Класс</h1>
+                                <h2 class="second-heading">Ваша лучшая тема: Арбузы</h2>
+                                <h2 class="second-heading">Ваша самая неудачная тема: Абрикосы</h2>
+                                <h2 class="second-heading">Вы ещё не пробовали тему: Какашки</h2>
+                            </div>
+                            <div class="card-front__bt" onclick="location.href='/1'">
+                                    <p class="card-front__text-view card-front__text-view--ski">Начать</p>
+                            </div>
+                        </div>
+                    </section>
+                </label>
+                <label class="slide" for="item-2" id="song-2" data-bg-color="#a3e7f0">
+                    <section class="card-section">
+                        <div class="card-front">
+                            <div class="card-front__tp card-front__tp--ski">
+                                <h1 class="card-front__heading">2 Класс</h1>
+                                <h2 class="second-heading">Ваша лучшая тема: Арбузы</h2>
+                                <h2 class="second-heading">Ваша самая неудачная тема: Абрикосы</h2>
+                                <h2 class="second-heading">Вы ещё не пробовали тему: Какашки</h2>
+                            </div>
+                            <div class="card-front__bt" onclick="location.href='/2'">
+                                <p class="card-front__text-view card-front__text-view--ski">Начать</p>
+                            </div>
+                        </div>
+                    </section>
+                </label>
+                <label class="slide" for="item-3" id="song-3" data-bg-color="#b3ffcc">
+                    <section class="card-section">
+                        <div class="card-front">
+                            <div class="card-front__tp card-front__tp--beach">
+                                <h1 class="card-front__heading">3 Класс</h1>
+                                <h2 class="second-heading">Ваша лучшая тема: Арбузы</h2>
+                                <h2 class="second-heading">Ваша самая неудачная тема: Абрикосы</h2>
+                                <h2 class="second-heading">Вы ещё не пробовали тему: Какашки</h2>
+                            </div>
+                            <div class="card-front__bt" onclick="location.href='/3'">
+                                <p class="card-front__text-view card-front__text-view--beach">Начать</p>
+                            </div>
+                        </div>
+                    </section>
+                </label>
+                <label class="slide" for="item-4" id="song-4" data-bg-color="#ffe6a3">
+                    <section class="card-section">
+                        <div class="card-front">
+                            <div class="card-front__tp card-front__tp--camping">
+                                <h1 class="card-front__heading">4 Класс</h1>
+                                <h2 class="second-heading">Ваша лучшая тема: Арбузы</h2>
+                                <h2 class="second-heading">Ваша самая неудачная тема: Абрикосы</h2>
+                                <h2 class="second-heading">Вы ещё не пробовали тему: Какашки</h2>
+                            </div>
+                            <div class="card-front__bt" onclick="location.href='/4'">
+                                <p class="card-front__text-view card-front__text-view--camping">Начать</p>
+                            </div>
+                        </div>
+                    </section>
+                </label>
+                <label class="slide" for="item-5" id="song-5" data-bg-color="#ffccb3">
+                    <section class="card-section">
+                        <div class="card-front">
+                            <div class="card-front__tp card-front__tp--hiking">
+                                <h1 class="card-front__heading">Микс</h1>
+                                <h2 class="second-heading">Ваша лучшая тема: Арбузы</h2>
+                                <h2 class="second-heading">Ваша самая неудачная тема: Абрикосы</h2>
+                                <h2 class="second-heading">Вы ещё не пробовали тему: Какашки</h2>
+                            </div>
+                            <div class="card-front__bt" onclick="location.href='/mix'">
+                                <p class="card-front__text-view card-front__text-view--hiking">Начать</p>
+                            </div>
+                        </div>
+                    </section>
+                </label>
             </div>
         </div>
-    </div>
+    </section>
     </form>
-</div>
 
+    <script>
+        $(document).ready(function() {
+            function updateBackgroundColor() {
+                let checkedSlide = $('input[name="slider"]:checked').attr('id');
+                let color = $('#' + checkedSlide).nextAll('.cards').find('.slide').filter(function() {
+                    return $(this).attr('for') === checkedSlide;
+                }).attr('data-bg-color');
+                $('body').css('background-color', color);
+            }
+
+            $('input[name="slider"]').change(function() {
+                updateBackgroundColor();
+            });
+
+            // Initialize the background color on page load
+            updateBackgroundColor();
+        });
+    </script>
 {% endblock %}
-

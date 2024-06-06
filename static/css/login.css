@@ -16,7 +16,7 @@
   justify-content: center;
 }
 .login-max-width {
-  gap: var(--dl-space-space-twounits);
+  gap: 16px;
   width: auto;
   display: flex;
   z-index: 100;
@@ -39,7 +39,7 @@
   justify-content: center;
 }
 .login-form {
-  gap: var(--dl-space-space-twounits);
+  gap: 16px;
   width: 100%;
   display: flex;
   align-self: center;
@@ -166,6 +166,7 @@
   flex-direction: column;
 }
 .login-email {
+  margin-top: -16px;
   gap: var(--dl-space-space-halfunit);
   width: 100%;
   display: flex;
