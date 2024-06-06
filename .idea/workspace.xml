@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="bg fix">
-      <change beforePath="$PROJECT_DIR$/.idea/MathSphere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MathSphere.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/choice_class_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/choice_class_API.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/choice_topic_all_classes_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/choice_topic_all_classes_API.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/reg_log_yandexAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/reg_log_yandexAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/registerAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/registerAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/send_task_for_trainer_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/send_task_for_trainer_API.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/settings_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/settings_API.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/MathSphereBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/MathSphereBase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/choice_topic_all_classes_Form.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/generate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/company.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/company.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/avatar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/avatar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/choice_class.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/choice_class.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/choice_topic.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/choice_topic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/level.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/level.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task_trainer.html" afterDir="false" />
-    </list>
+    <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="bg fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,7 +95,7 @@
       <recent name="C:\MathProject\Math\app\static" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.MathSphere">
+  <component name="RunManager" selected="Python.main">
     <configuration name="MathSphere" type="PythonConfigurationType" factoryName="Python">
       <module name="MathSphere" />
       <option name="ENV_FILES" value="" />
@@ -153,6 +132,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/g_pic.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -198,6 +178,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/send_task_for_trainer_API.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -317,7 +298,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MathSphere$MathSphere.coverage" NAME="MathSphere Coverage Results" MODIFIED="1717417258080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/MathSphere$main.coverage" NAME="main Coverage Results" MODIFIED="1717392547774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MathSphere$main.coverage" NAME="main Coverage Results" MODIFIED="1717606926589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MathSphereBase_db$main.coverage" NAME="main Coverage Results" MODIFIED="1716287639524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
