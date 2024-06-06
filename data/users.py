@@ -91,4 +91,4 @@ def clear_users_table(db_file):
 
 
 # clear_and_create_tables("db/MathSphereBase.db")
-# clear_users_table("db/MathSphereBase.db")
+clear_users_table("db/MathSphereBase.db")
