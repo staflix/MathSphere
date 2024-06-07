@@ -37,8 +37,7 @@ def save_result():
     num_class = request.form['num_class']
     topic = request.form['topic']
     result = request.form['result']
-    print(1)
-    with open('text.txt', 'a') as f:  # Убедитесь, что указали правильный путь к файлу
+    with open('text.txt', 'a') as f:
         f.write(f"{num_class}; {topic}; {result}\n")
 
     return jsonify(success=True)
