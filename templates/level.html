@@ -69,7 +69,7 @@
             <span class="dot"></span>
             {% endfor %}
         </div>
-        <button type="button" id="checkButton" class="check-button next-button" style="display: none;">Ответить</button>
+        <button type="button" id="checkButton" class="check-button next-button">Ответить</button>
         <button type="button" id="nextButton" class="next-button" style="display: none;">Дальше</button>
         <button type="button" id="finishButton" class="finish-button next-button" style="display: none;">Закончить</button>
     </footer>
@@ -80,188 +80,192 @@
 <script src="{{ url_for('static', filename='js/level.js') }}"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const tasks = {{ tasks|tojson }};
-        const answers = {{ answers|tojson }};
-        const choices = {{ choice|tojson }};
-        const imgs = {{ imgs|tojson }};
-        const timerElement = document.getElementById('timer');
-        const goodAnswser = document.getElementById('good-answer');
-        const wrongAnswser = document.getElementById('wrong-answer');
-        const questionElement = document.getElementById('question');
-        const textAnswerInput = document.getElementById('textAnswerInput');
-        const checkButton = document.getElementById('checkButton');
-        const nextButton = document.getElementById('nextButton');
-        const finishButton = document.getElementById('finishButton');
-        const prevButton = document.getElementById('prevButton');
-        const currentTaskIndexElement = document.getElementById('currentTaskIndex');
-        const currentAnswerElement = document.getElementById('currentAnswer');
-        const dots = document.querySelectorAll('.dot');
-        const choicesContainer = document.getElementById('choicesContainer');
-        const textAnswerContainer = document.getElementById('textAnswerContainer');
-        const questionImage = document.getElementById('questionImage');
+    const tasks = {{ tasks|tojson }};
+    const answers = {{ answers|tojson }};
+    const choices = {{ choice|tojson }};
+    const imgs = {{ imgs|tojson }};
+    const timerElement = document.getElementById('timer');
+    const goodAnswer = document.getElementById('good-answer');
+    const wrongAnswer = document.getElementById('wrong-answer');
+    const questionElement = document.getElementById('question');
+    const textAnswerInput = document.getElementById('textAnswerInput');
+    const checkButton = document.getElementById('checkButton');
+    const nextButton = document.getElementById('nextButton');
+    const finishButton = document.getElementById('finishButton');
+    const prevButton = document.getElementById('prevButton');
+    const currentTaskIndexElement = document.getElementById('currentTaskIndex');
+    const currentAnswerElement = document.getElementById('currentAnswer');
+    const dots = document.querySelectorAll('.dot');
+    const choicesContainer = document.getElementById('choicesContainer');
+    const textAnswerContainer = document.getElementById('textAnswerContainer');
+    const questionImage = document.getElementById('questionImage');
 
-        function updateQuestion() {
-            const currentIndex = parseInt(currentTaskIndexElement.value);
-            questionElement.textContent = tasks[currentIndex];
-            textAnswerInput.value = '';
-            goodAnswser.textContent = '';
-            wrongAnswser.textContent = '';
-            nextButton.style.display = 'none';
-            finishButton.style.display = 'none';
-            currentAnswerElement.value = '';
+    function updateQuestion() {
+        const currentIndex = parseInt(currentTaskIndexElement.value);
+        questionElement.textContent = tasks[currentIndex];
+        textAnswerInput.value = '';
+        goodAnswer.textContent = '';
+        wrongAnswer.textContent = '';
+        nextButton.style.display = 'none';
+        finishButton.style.display = 'none';
+        checkButton.style.display = 'inline-block'; // Ensure the check button is shown initially
+        currentAnswerElement.value = '';
 
-            if (imgs[currentIndex] !== null) {
-                questionImage.src = "{{ url_for('static', filename='') }}" + imgs[currentIndex];
-                questionImage.style.display = 'block';
-            } else {
-                questionImage.style.display = 'none';
-            }
-
-            if (choices[currentIndex]) {
-                textAnswerContainer.style.display = 'none';
-                choicesContainer.style.display = 'flex';
-                choicesContainer.innerHTML = '';
-                choices[currentIndex].forEach((choice) => {
-                    const button = document.createElement('button');
-                    button.textContent = choice;
-                    button.classList.add('choice-button');
-                    button.addEventListener('click', () => {
-                        checkChoice(choice);
-                        currentAnswerElement.value = choice;
-                    });
-                    choicesContainer.appendChild(button);
-                });
-            } else {
-                textAnswerContainer.style.display = 'block';
-                choicesContainer.style.display = 'none';
-                checkButton.style.display = 'inline-block';
-                textAnswerInput.addEventListener('input', () => {
-                    currentAnswerElement.value = textAnswerInput.value;
-                });
-            }
-
-            updateProgress();
+        if (imgs[currentIndex] !== null) {
+            questionImage.src = "{{ url_for('static', filename='') }}" + imgs[currentIndex];
+            questionImage.style.display = 'block';
+        } else {
+            questionImage.style.display = 'none';
         }
 
-        function updateProgress() {
-            const currentIndex = parseInt(currentTaskIndexElement.value);
-            dots.forEach((dot, index) => {
-                if (index <= currentIndex) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
+        if (choices[currentIndex] && choices[currentIndex].length > 0) {
+            textAnswerContainer.style.display = 'none';
+            choicesContainer.style.display = 'flex';
+            choicesContainer.innerHTML = '';
+            choices[currentIndex].forEach((choice) => {
+                const button = document.createElement('button');
+                button.textContent = choice;
+                button.classList.add('choice-button');
+                button.addEventListener('click', () => {
+                    checkChoice(choice);
+                    currentAnswerElement.value = choice;
+                });
+                choicesContainer.appendChild(button);
+            });
+            checkButton.style.display = 'none';
+        } else {
+            textAnswerContainer.style.display = 'block';
+            choicesContainer.style.display = 'none';
+            checkButton.style.display = 'inline-block'; // Ensure the check button is shown for text answers
+            textAnswerInput.addEventListener('input', () => {
+                currentAnswerElement.value = textAnswerInput.value;
             });
         }
 
-        function checkChoice(selectedChoice) {
-            const currentIndex = parseInt(currentTaskIndexElement.value);
-            const correctAnswer = answers[currentIndex];
-            if (selectedChoice === correctAnswer) {
-                wrongAnswser.textContent = "";
-                goodAnswser.textContent = 'Ответ правильный!';
-                choicesContainer.querySelectorAll('button').forEach(button => {
-                    button.disabled = true;
-                });
-                checkButton.style.display = 'none';
-                if (currentIndex < tasks.length - 1) {
-                    nextButton.style.display = 'inline-block';
-                } else {
-                    finishButton.style.display = 'inline-block';
-                }
+        updateProgress();
+    }
+
+    function updateProgress() {
+        const currentIndex = parseInt(currentTaskIndexElement.value);
+        dots.forEach((dot, index) => {
+            if (index <= currentIndex) {
+                dot.classList.add('active');
             } else {
-                wrongAnswser.textContent = 'Ответ неправильный. Попробуйте снова.';
-            }
-        }
-
-        checkButton.addEventListener('click', (event) => {
-            event.preventDefault();
-            const currentIndex = parseInt(currentTaskIndexElement.value);
-            const userAnswer = textAnswerInput.value.trim();
-            if (userAnswer === answers[currentIndex]) {
-                wrongAnswser.textContent = "";
-                goodAnswser.textContent = 'Ответ правильный!';
-                checkButton.style.display = 'none';
-                if (currentIndex < tasks.length - 1) {
-                    nextButton.style.display = 'inline-block';
-                } else {
-                    finishButton.style.display = 'inline-block';
-                }
-            } else {
-                wrongAnswser.textContent = 'Ответ неправильный. Попробуйте снова.';
+                dot.classList.remove('active');
             }
         });
+    }
 
-        nextButton.addEventListener('click', () => {
-            let currentIndex = parseInt(currentTaskIndexElement.value);
-            if (currentIndex < tasks.length - 1) {
-                currentIndex += 1;
-                currentTaskIndexElement.value = currentIndex;
-                updateQuestion();
-            }
-        });
-
-        prevButton.addEventListener('click', () => {
-            let currentIndex = parseInt(currentTaskIndexElement.value);
-            if (currentIndex > 0) {
-                currentIndex -= 1;
-                currentTaskIndexElement.value = currentIndex;
-                updateQuestion();
-            }
-        });
-
-        finishButton.addEventListener('click', () => {
-            const form = document.getElementById('levelForm');
-            form.action = "/menu_company?next_level=true";
-            form.submit();
-        });
-
-        function handleEnterKey(event) {
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                if (checkButton.style.display === 'inline-block') {
-                    checkButton.click();
-                } else if (nextButton.style.display === 'inline-block') {
-                    nextButton.click();
-                } else if (finishButton.style.display === 'inline-block') {
-                    finishButton.click();
-                }
-            }
-        }
-
-        document.addEventListener('keydown', handleEnterKey);
-
-        if (timerElement) {
-            startTimer(timerElement.textContent);
-        }
-
-        function startTimer(duration) {
-            let timer = duration.split(':').reduce((acc, time) => (60 * acc) + +time);
-            const interval = setInterval(() => {
-                if (--timer < 0) {
-                    clearInterval(interval);
-                    wrongAnswser.textContent = 'Время вышло. Чтобы вернуться назад, нажмите кнопку Вернуться.';
-                    disableAllButtons();
-                } else {
-                    const minutes = Math.floor(timer / 60);
-                    const seconds = timer % 60;
-                    timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-                }
-            }, 1000);
-        }
-
-        function disableAllButtons() {
-            checkButton.disabled = true;
-            nextButton.disabled = true;
-            prevButton.disabled = true;
-            finishButton.disabled = true;
-            document.querySelectorAll('.choice-button').forEach(button => {
+    function checkChoice(selectedChoice) {
+        const currentIndex = parseInt(currentTaskIndexElement.value);
+        const correctAnswer = answers[currentIndex];
+        if (selectedChoice === correctAnswer) {
+            wrongAnswer.textContent = "";
+            goodAnswer.textContent = 'Ответ правильный!';
+            choicesContainer.querySelectorAll('button').forEach(button => {
                 button.disabled = true;
             });
+            checkButton.style.display = 'none';
+            if (currentIndex < tasks.length - 1) {
+                nextButton.style.display = 'inline-block';
+            } else {
+                finishButton.style.display = 'inline-block';
+            }
+        } else {
+            wrongAnswer.textContent = 'Ответ неправильный. Попробуйте снова.';
         }
+    }
 
-        updateQuestion();
+    checkButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        const currentIndex = parseInt(currentTaskIndexElement.value);
+        const userAnswer = textAnswerInput.value.trim();
+        const correctAnswer = answers[currentIndex].replace(',', '.'); // Заменяем запятую на точку
+
+        if (userAnswer === correctAnswer) {
+            wrongAnswer.textContent = "";
+            goodAnswer.textContent = 'Ответ правильный!';
+            checkButton.style.display = 'none';
+            if (currentIndex < tasks.length - 1) {
+                nextButton.style.display = 'inline-block';
+            } else {
+                finishButton.style.display = 'inline-block';
+            }
+        } else {
+            wrongAnswer.textContent = 'Ответ неправильный. Попробуйте снова.';
+        }
     });
+
+    nextButton.addEventListener('click', () => {
+        let currentIndex = parseInt(currentTaskIndexElement.value);
+        if (currentIndex < tasks.length - 1) {
+            currentIndex += 1;
+            currentTaskIndexElement.value = currentIndex;
+            updateQuestion();
+        }
+    });
+
+    prevButton.addEventListener('click', () => {
+        let currentIndex = parseInt(currentTaskIndexElement.value);
+        if (currentIndex > 0) {
+            currentIndex -= 1;
+            currentTaskIndexElement.value = currentIndex;
+            updateQuestion();
+        }
+    });
+
+    finishButton.addEventListener('click', () => {
+        const form = document.getElementById('levelForm');
+        form.action = "/menu_company?next_level=true";
+        form.submit();
+    });
+
+    function handleEnterKey(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            if (checkButton.style.display === 'inline-block') {
+                checkButton.click();
+            } else if (nextButton.style.display === 'inline-block') {
+                nextButton.click();
+            } else if (finishButton.style.display === 'inline-block') {
+                finishButton.click();
+            }
+        }
+    }
+
+    document.addEventListener('keydown', handleEnterKey);
+
+    if (timerElement) {
+        startTimer(timerElement.textContent);
+    }
+
+    function startTimer(duration) {
+        let timer = duration.split(':').reduce((acc, time) => (60 * acc) + +time);
+        const interval = setInterval(() => {
+            if (--timer < 0) {
+                clearInterval(interval);
+                wrongAnswer.textContent = 'Время вышло. Чтобы вернуться назад, нажмите кнопку Вернуться.';
+                disableAllButtons();
+            } else {
+                const minutes = Math.floor(timer / 60);
+                const seconds = timer % 60;
+                timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            }
+        }, 1000);
+    }
+
+    function disableAllButtons() {
+        checkButton.disabled = true;
+        nextButton.disabled = true;
+        prevButton.disabled = true;
+        finishButton.disabled = true;
+        document.querySelectorAll('.choice-button').forEach(button => {
+            button.disabled = true;
+        });
+    }
+
+    updateQuestion();
+});
 </script>
 </body>
 </html>
