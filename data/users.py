@@ -39,6 +39,7 @@ class Info(SqlAlchemyBase):
     current_level = sqlalchemy.Column(sqlalchemy.Integer)
     avatar_href = sqlalchemy.Column(sqlalchemy.String)
     rdm_string = sqlalchemy.Column(sqlalchemy.String)
+    topics = sqlalchemy.Column(sqlalchemy.String)
 
     user = relationship("User")
 
@@ -108,6 +109,7 @@ def clear_users_table(db_file):
 
     # Сохранение изменений в базе данных
     db_sess.commit()
+
 
 # clear_and_create_tables("db/MathSphereBase.db")
 # clear_users_table("db/MathSphereBase.db")

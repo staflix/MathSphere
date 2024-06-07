@@ -8,8 +8,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/MathSphere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MathSphere.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/menu_company_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/menu_company_API.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/send_task_for_trainer_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/send_task_for_trainer_API.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/MathSphereBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/MathSphereBase.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/generate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/avatar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/avatar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/choice_topic.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/choice_topic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/mix.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mix.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/task_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task_trainer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
