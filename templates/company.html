@@ -440,63 +440,29 @@
                       <div class="leaderboard-progress" id="top">
                           <div class="closeModal" id="close_modal"></div>
             <div class="current-progress">
-                <h2>Текущий прогресс</h2>
+                <h2>Ваш прогресс</h2>
                 <div class="progress-bar">
-                    <div class="progress-fill" style="width: 75%;"></div>
-                    <span class="progress-text">75%</span>
+                    <div class="progress-fill" style="width: {{ progress_yours }}%;"></div>
+                    <span class="progress-text">{{ progress_yours }}%</span>
                 </div>
             </div>
             <div class="leaderboard">
                 <h2>Топ-100 игроков</h2>
                 <ul id="leaderboard-list">
+                    {% for user in top100 %}
+                    {% set user_name = user[0] %}
+                    {% set user_surname = user[1] %}
+                    {% set user_percent = user[2] %}
+                    {% set user_avatar = user[3] %}
                     <li>
-                        <img src="{{ avatar }}" alt="Avatar">
-                        <span class="nickname">Пользователь1</span>
+                        <img src="{{ user_avatar }}" alt="Avatar">
+                        <span class="nickname">{{ user_name }} {{ user_surname }}</span>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 85%;"></div>
-                            <span class="progress-text">85%</span>
+                            <div class="progress-fill" style="width: {{ user_percent }}%;"></div>
+                            <span class="progress-text">{{ user_percent }}%</span>
                         </div>
                     </li>
-                    <li>
-                        <img src="{{ avatar }}" alt="Avatar">
-                        <span class="nickname">Пользователь2</span>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 80%;"></div>
-                            <span class="progress-text">80%</span>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="{{ avatar }}" alt="Avatar">
-                        <span class="nickname">Пользователь3</span>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 78%;"></div>
-                            <span class="progress-text">78%</span>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="{{ avatar }}" alt="Avatar">
-                        <span class="nickname">Пользователь4</span>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 78%;"></div>
-                            <span class="progress-text">78%</span>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="{{ avatar }}" alt="Avatar">
-                        <span class="nickname">Пользователь4</span>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 78%;"></div>
-                            <span class="progress-text">78%</span>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="{{ avatar }}" alt="Avatar">
-                        <span class="nickname">Пользователь4</span>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 78%;"></div>
-                            <span class="progress-text">78%</span>
-                        </div>
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
