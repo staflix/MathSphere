@@ -305,35 +305,35 @@ def generate(year, topic):
                 i_1 = random.choice([r for r in range(200, i_5)])
                 i_2 = i_5 - i_1
                 i_4 = randint(2, 15)
-                return Task(text=f'({i_1} + {i_2}) : {i_3} * {i_4}',
-                            answer=str(eval(f'({i_1} + {i_2}) : {i_3} * {i_4}')))
+                return Task(text=f'({i_1} + {i_2}) // {i_3} * {i_4}',
+                            answer=str(eval(f'({i_1} + {i_2}) // {i_3} * {i_4}')))
             if typ == 2:
                 i_2 = randint(2, 10)
                 i_1 = random.choice([r for r in range(100, 400) if r % i_2 == 0])
                 i_3 = randint(5, 25)
                 i_4 = randint(15, 30)
-                return Task(text=f'{i_1} : {i_2} + {i_3} * {i_4}', answer=str(eval(f'{i_1} : {i_2} + {i_3} * {i_4}')))
+                return Task(text=f'{i_1} // {i_2} + {i_3} * {i_4}', answer=str(eval(f'{i_1} // {i_2} + {i_3} * {i_4}')))
             if typ == 3:
                 i_3 = randint(2, 900)
                 i_4 = i_3 + randint(2, 10)
                 i_2 = random.choice([r for r in range(300, 999) if r % (i_4 - i_3) == 0])
                 i_1 = randint(2, 20)
-                return Task(text=f'{i_1} * ({i_2} : ({i_4} - {i_3}))',
-                            answer=str(eval(f'{i_1} * ({i_2} : ({i_4} - {i_3}))')))
+                return Task(text=f'{i_1} * ({i_2} // ({i_4} - {i_3}))',
+                            answer=str(eval(f'{i_1} * ({i_2} // ({i_4} - {i_3}))')))
             if typ == 4:
                 i_3 = randint(2, 10)
                 i_2 = random.choice([r for r in range(300, 900) if r % i_3 == 0])
                 i_1 = randint(100, 300)
                 i_4 = randint(100, 300)
-                return Task(text=f'{i_1} + {i_2} : {i_3} - {i_4}', answer=str(eval(f'{i_1} + {i_2} : {i_3} - {i_4}')))
+                return Task(text=f'{i_1} + {i_2} // {i_3} - {i_4}', answer=str(eval(f'{i_1} + {i_2} // {i_3} - {i_4}')))
             if typ == 5:
                 i_3 = randint(2, 10)
                 i_5 = random.choice([r for r in range(300, 999) if r % i_3 == 0])
                 i_1 = random.choice([r for r in range(200, i_5)])
                 i_2 = i_5 - i_1
                 i_4 = randint(2, 15)
-                return Task(text=f'({i_1} - {i_2}) * {i_3} : {i_4}',
-                            answer=str(eval(f'({i_1} + {i_2}) : {i_3} * {i_4}')))
+                return Task(text=f'({i_1} - {i_2}) * {i_3} // {i_4}',
+                            answer=str(eval(f'({i_1} + {i_2}) // {i_3} * {i_4}')))
     if year == 4:
         if topic == 'Сложение (Три слагаемых)':
             i_1 = randint(100, 700)
