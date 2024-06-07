@@ -2,7 +2,8 @@ from flask import render_template, redirect, request
 import flask
 from forms.mainpageForm import LogMainPageForm
 from data import db_session
-from data.users import Info, TrainerStatistics
+from data.users import Info, TrainerStatistics, User
+from api.tituls import tituls
 from flask_login import current_user
 
 blueprint = flask.Blueprint(
@@ -26,6 +27,9 @@ def choice_topic_all_classes_trainer(num_class):
     user_surname = current_user.surname
     user_email = current_user.email
     user_avatar = f"../{user_info.avatar_href}"
+
+    user = db_sess.query(User).filter(User.id == current_user.id).first()
+    level = int(user.profile_level)
 
     if request.method == 'POST':
         time_spent = request.form.get('time')
@@ -521,4 +525,4 @@ def choice_topic_all_classes_trainer(num_class):
 
     return render_template("choice_topic.html", num_class=num_class, profile=profile,
                            avatar=user_avatar, name=user_name, surname=user_surname,
-                           email=user_email, topics=topics, colors=colors, back_colors=back_colors)
+                           email=user_email, topics=topics, colors=colors, back_colors=back_colors, tituls=tituls, level=level)

@@ -2,7 +2,8 @@ from flask import render_template, redirect, request, make_response
 from forms.mainpageForm import UnLogMainPageForm, LogMainPageForm
 from flask_login import current_user
 from data import db_session
-from data.users import Info
+from data.users import Info, User
+from api.tituls import tituls
 import flask
 
 blueprint = flask.Blueprint(
@@ -36,6 +37,9 @@ def main_page_unlog():
         user_email = current_user.email
         user_avatar = user_info.avatar_href
 
+        user = db_sess.query(User).filter(User.id == current_user.id).first()
+        level = int(user.profile_level)
+
         db_sess.close()
 
         reg_now = request.args.get('reg') == 'True'
@@ -54,6 +58,5 @@ def main_page_unlog():
 
         if form.company_btn.data:
             return redirect(f"/menu_company")
-
         return render_template('log_index.html', name=user_name, surname=user_surname, email=user_email,
-                               avatar=user_avatar, profile=profile, form=form, reg_now=reg_now)
+                               avatar=user_avatar, profile=profile, form=form, reg_now=reg_now, level=level, tituls=tituls)

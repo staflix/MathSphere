@@ -48,7 +48,16 @@
                         <h2>
                             {{ name }} {{ surname }}
                             <br/>
-                            <span>{{ email }}</span>
+                            <span class="titul">{{ tituls[level // 100][0] }}</span>
+                            <style>
+                                .titul {
+                                    background: linear-gradient(90deg, {{ tituls[level // 100][1] }}, {{ tituls[level // 100][2] }});
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;
+                                    color: #0B2349;
+                                    display: table;
+                                }
+                            </style>
                         </h2>
                     </div>
                     <form action="" method="post">
