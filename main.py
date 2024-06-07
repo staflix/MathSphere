@@ -5,7 +5,7 @@ from data import db_session
 from data.users import User
 from data.config import *
 from api import registerAPI, loginAPI, resetpasswordAPI, mainpageAPI, choice_class_API, choice_topic_all_classes_API, \
-    send_task_for_trainer_API, menu_company_API, change_avatar_API, settings_API, start_level_API, reg_log_yandexAPI
+    send_task_for_trainer_API, menu_company_API, change_avatar_API, settings_API, start_level_API, reg_log_yandexAPI, mix_API
 from flask import Flask, request, jsonify
 
 
@@ -62,6 +62,7 @@ def main():
     app.register_blueprint(settings_API.blueprint)
     app.register_blueprint(start_level_API.blueprint)
     app.register_blueprint(reg_log_yandexAPI.blueprint)
+    app.register_blueprint(mix_API.blueprint)
     app.run(port=5000, host='127.0.0.1', debug=True)
 
 
