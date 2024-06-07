@@ -33,15 +33,11 @@ def choice_topic_all_classes_trainer(num_class):
         total_questions = request.form.get('total_questions', type=int)
         topic = request.form.get('topic')
 
-        print(f"Time spent: {time_spent}")
-        print(f"Correct answers: {correct_answers}")
-        print(f"Total questions: {total_questions}")
-        print(f"Topic: {topic}")
         trainer_statistic = db_sess.query(TrainerStatistics).filter(current_user.id == TrainerStatistics.user_id,
                                                                     num_class == TrainerStatistics.num_class,
                                                                     topic == TrainerStatistics.topic).first()
 
-        time = int(time_spent.split(":")[0]) + round(int(time_spent.split(":")[1]) / 60, 1)
+        time = round(int(time_spent.split(":")[0]) + (int(time_spent.split(":")[1]) / 60), 2)
 
         if trainer_statistic.full_time is None:
             trainer_statistic.full_time = time
@@ -60,11 +56,20 @@ def choice_topic_all_classes_trainer(num_class):
 
         db_sess.commit()
 
-        trainer_statistic.accuracy = str(round(trainer_statistic.correct_questions / trainer_statistic.total_questions,
-                                               2) * 100)
+        if trainer_statistic.total_questions == 0:
+            trainer_statistic.accuracy = 0
+        else:
+            trainer_statistic.accuracy = str(
+                round(trainer_statistic.correct_questions / trainer_statistic.total_questions,
+                      2) * 100)
 
-        trainer_statistic.speed = str(
-            round(trainer_statistic.correct_questions / trainer_statistic.full_time, 2))
+        db_sess.commit()
+
+        if float(trainer_statistic.full_time) == 0.0:
+            trainer_statistic.speed = 0
+        else:
+            trainer_statistic.speed = str(
+                round(trainer_statistic.correct_questions / trainer_statistic.full_time, 2))
 
         db_sess.commit()
 
@@ -151,7 +156,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic11.full_time is None):
             accuracy = trainer_statistic11.accuracy
             speed = trainer_statistic11.speed
-            full_time = trainer_statistic11.full_time
+            full_time = round(trainer_statistic11.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -162,7 +167,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic12.full_time is None):
             accuracy = trainer_statistic12.accuracy
             speed = trainer_statistic12.speed
-            full_time = trainer_statistic12.full_time
+            full_time = round(trainer_statistic12.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -173,7 +178,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic13.full_time is None):
             accuracy = trainer_statistic13.accuracy
             speed = trainer_statistic13.speed
-            full_time = trainer_statistic13.full_time
+            full_time = round(trainer_statistic13.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -184,7 +189,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic14.full_time is None):
             accuracy = trainer_statistic14.accuracy
             speed = trainer_statistic14.speed
-            full_time = trainer_statistic14.full_time
+            full_time = round(trainer_statistic14.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -195,7 +200,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic15.full_time is None):
             accuracy = trainer_statistic15.accuracy
             speed = trainer_statistic15.speed
-            full_time = trainer_statistic15.full_time
+            full_time = round(trainer_statistic15.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -206,7 +211,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic16.full_time is None):
             accuracy = trainer_statistic16.accuracy
             speed = trainer_statistic16.speed
-            full_time = trainer_statistic16.full_time
+            full_time = round(trainer_statistic16.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -219,7 +224,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic21.full_time is None):
             accuracy = trainer_statistic21.accuracy
             speed = trainer_statistic21.speed
-            full_time = trainer_statistic21.full_time
+            full_time = round(trainer_statistic21.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -230,7 +235,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic22.full_time is None):
             accuracy = trainer_statistic22.accuracy
             speed = trainer_statistic22.speed
-            full_time = trainer_statistic22.full_time
+            full_time = round(trainer_statistic22.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -241,7 +246,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic23.full_time is None):
             accuracy = trainer_statistic23.accuracy
             speed = trainer_statistic23.speed
-            full_time = trainer_statistic23.full_time
+            full_time = round(trainer_statistic23.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -252,7 +257,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic24.full_time is None):
             accuracy = trainer_statistic24.accuracy
             speed = trainer_statistic24.speed
-            full_time = trainer_statistic24.full_time
+            full_time = round(trainer_statistic24.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -263,7 +268,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic25.full_time is None):
             accuracy = trainer_statistic25.accuracy
             speed = trainer_statistic25.speed
-            full_time = trainer_statistic25.full_time
+            full_time = round(trainer_statistic25.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -274,7 +279,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic26.full_time is None):
             accuracy = trainer_statistic26.accuracy
             speed = trainer_statistic26.speed
-            full_time = trainer_statistic26.full_time
+            full_time = round(trainer_statistic26.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -287,7 +292,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic31.full_time is None):
             accuracy = trainer_statistic31.accuracy
             speed = trainer_statistic31.speed
-            full_time = trainer_statistic31.full_time
+            full_time = round(trainer_statistic31.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -298,7 +303,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic32.full_time is None):
             accuracy = trainer_statistic32.accuracy
             speed = trainer_statistic32.speed
-            full_time = trainer_statistic32.full_time
+            full_time = round(trainer_statistic32.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -309,7 +314,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic33.full_time is None):
             accuracy = trainer_statistic33.accuracy
             speed = trainer_statistic33.speed
-            full_time = trainer_statistic33.full_time
+            full_time = round(trainer_statistic33.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -320,7 +325,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic34.full_time is None):
             accuracy = trainer_statistic34.accuracy
             speed = trainer_statistic34.speed
-            full_time = trainer_statistic34.full_time
+            full_time = round(trainer_statistic34.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -331,7 +336,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic35.full_time is None):
             accuracy = trainer_statistic35.accuracy
             speed = trainer_statistic35.speed
-            full_time = trainer_statistic35.full_time
+            full_time = round(trainer_statistic35.full_time, 2)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -342,7 +347,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic36.full_time is None):
             accuracy = trainer_statistic36.accuracy
             speed = trainer_statistic36.speed
-            full_time = trainer_statistic36.full_time
+            full_time = round(trainer_statistic36.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -355,7 +360,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic41.full_time is None):
             accuracy = trainer_statistic41.accuracy
             speed = trainer_statistic41.speed
-            full_time = trainer_statistic41.full_time
+            full_time = round(trainer_statistic41.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -366,7 +371,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic42.full_time is None):
             accuracy = trainer_statistic42.accuracy
             speed = trainer_statistic42.speed
-            full_time = trainer_statistic42.full_time
+            full_time = round(trainer_statistic42.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -377,7 +382,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic43.full_time is None):
             accuracy = trainer_statistic43.accuracy
             speed = trainer_statistic43.speed
-            full_time = trainer_statistic43.full_time
+            full_time = round(trainer_statistic43.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -388,7 +393,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic44.full_time is None):
             accuracy = trainer_statistic44.accuracy
             speed = trainer_statistic44.speed
-            full_time = trainer_statistic44.full_time
+            full_time = round(trainer_statistic44.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -399,7 +404,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic45.full_time is None):
             accuracy = trainer_statistic45.accuracy
             speed = trainer_statistic45.speed
-            full_time = trainer_statistic45.full_time
+            full_time = round(trainer_statistic45.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -410,7 +415,7 @@ def choice_topic_all_classes_trainer(num_class):
         if not (trainer_statistic46.full_time is None):
             accuracy = trainer_statistic46.accuracy
             speed = trainer_statistic46.speed
-            full_time = trainer_statistic46.full_time
+            full_time = round(trainer_statistic46.full_time, 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
