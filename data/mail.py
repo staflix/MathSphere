@@ -1,6 +1,7 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
+from data.config import mail_password
 
 
 def send_email(recipient, subject, body):
@@ -12,7 +13,7 @@ def send_email(recipient, subject, body):
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.ehlo()
         server.starttls()
-        server.login('mathup.help@gmail.com', 'fubt tijc dfgz zzlw')
+        server.login('mathup.help@gmail.com', mail_password)
         server.sendmail(msg['From'], msg['To'], msg.as_string())
         server.close()
     except Exception as e:
