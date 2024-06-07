@@ -4,7 +4,8 @@ from forms.choice_class_Form import ChoiceClassForm
 from forms.mainpageForm import LogMainPageForm
 from flask_login import current_user
 from data import db_session
-from data.users import Info, TrainerStatistics
+from data.users import Info, TrainerStatistics, User
+from api.tituls import tituls
 
 blueprint = flask.Blueprint(
     'choiceclass_api',
@@ -28,6 +29,9 @@ def choice_class():
     user_surname = current_user.surname
     user_email = current_user.email
     user_avatar = f"../{user_info.avatar_href}"
+
+    user = db_sess.query(User).filter(User.id == current_user.id).first()
+    level = int(user.profile_level)
 
     class1 = db_sess.query(TrainerStatistics).filter(current_user.id == TrainerStatistics.user_id,
                                                      1 == TrainerStatistics.num_class).all()
@@ -94,10 +98,9 @@ def choice_class():
 
     if profile.exit.data:
         return redirect(f"/logout")
-
     return render_template("choice_class.html", form=form, profile=profile,
                            avatar=user_avatar, name=user_name, surname=user_surname,
-                           email=user_email,
+                           email=user_email, level=level, tituls=tituls,
                            best_result_class1=best_result_class1, worst_result_class1=worst_result_class1,
                            best_result_class2=best_result_class2, worst_result_class2=worst_result_class2,
                            best_result_class3=best_result_class3, worst_result_class3=worst_result_class3,

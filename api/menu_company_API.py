@@ -9,6 +9,7 @@ from company.company_second_class import *
 from company.company_first_class import *
 from company.company_third_class import *
 from company.company_fourth_class import *
+from api.tituls import tituls
 
 blueprint = flask.Blueprint(
     'menu_company_api',
@@ -39,7 +40,7 @@ def menu_company():
             user.profile_level = int(user_info.current_level) + 1
             db_sess.commit()
 
-    level = user.profile_level
+    level = int(user.profile_level)
 
     progress_yours = round((int(level) - 1) * 100 / 400, 2)
 
@@ -88,10 +89,9 @@ def menu_company():
                 'levelIntro': f'{info_level}',
                 'levelTheme': f'{topic_level}'
             })
-
     return render_template("company.html", form=form, level=level, profile=profile,
                            avatar=user_avatar, name=user_name, surname=user_surname,
-                           email=user_email, page=page, progress_yours=progress_yours, top100=top100)
+                           email=user_email, page=page, progress_yours=progress_yours, top100=top100, tituls=tituls)
 
 
 def get_level_info(year, level_selected):
