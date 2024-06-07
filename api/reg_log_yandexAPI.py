@@ -62,6 +62,7 @@ def callback():
     user_info = user_info_response.json()
 
     session['user'] = user_info
+
     return redirect('/profile')
 
 
@@ -100,18 +101,20 @@ def profile():
             rdm_string=generate_string()
         )
         db_sess.add(info)
-
+        db_sess.commit()
+        db_sess.refresh(info)
         for i in range(len(classes)):
             for j in range(len(topics[i])):
                 num_class = classes[i]
                 topic = topics[i][j]
                 trainer = TrainerStatistics(
-                    user_id=user.id,
+                    user_id=new_user.id,
                     num_class=num_class,
                     topic=topic
                 )
                 db_sess.add(trainer)
                 db_sess.commit()
+                db_sess.refresh(trainer)
 
         login_user(new_user, remember=True)
         db_sess.close()
