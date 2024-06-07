@@ -40,6 +40,20 @@ def menu_company():
             db_sess.commit()
 
     level = user.profile_level
+
+    progress_yours = round((int(level) - 1) * 100 / 400, 2)
+
+    tmp_top100 = sorted(
+        [(user.id, user.name, user.surname, round((int(user.profile_level) - 1) * 100 / 400, 2)) for user in
+         db_sess.query(User)],
+        key=lambda x: x[3], reverse=True)[:99]
+
+    top100 = []
+
+    for user_top in tmp_top100:
+        href = f"../{db_sess.query(Info).filter(Info.user_id == user_top[0]).first().avatar_href}"
+        top100.append((user_top[1], user_top[2], user_top[3], href))
+
     db_sess.commit()
     db_sess.close()
 
@@ -77,7 +91,7 @@ def menu_company():
 
     return render_template("company.html", form=form, level=level, profile=profile,
                            avatar=user_avatar, name=user_name, surname=user_surname,
-                           email=user_email, page=page)
+                           email=user_email, page=page, progress_yours=progress_yours, top100=top100)
 
 
 def get_level_info(year, level_selected):
