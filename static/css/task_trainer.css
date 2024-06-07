@@ -1,6 +1,6 @@
 /* Общие стили */
 body {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background-color: rgb(206, 147, 216);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,7 +34,7 @@ body {
     width: 90%;
     max-width: 800px;
     padding: 20px;
-    background: linear-gradient(to right, #43e97b, #38f9d7);
+    background: linear-gradient(to bottom, #AB47BC, #9C27B0);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     text-align: center;
