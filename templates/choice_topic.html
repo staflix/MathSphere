@@ -45,9 +45,9 @@
                             <div class="card-front__tp card-front__tp--{{ colors[loop.index - 1] }}">
                                 <h1 class="card-front__heading">{{ topic }}</h1>
                                 <div class="record-info">
-                                    <p>Ваша точность: {{ data['Ваша точность:'] }}%</p>
-                                    <p>Ваша скорость ответов: {{ data['Ваша скорость ответов:'] }} воп. в мин.</p>
-                                    <p>Общее время: {{ data['Общее время:'] }} минут</p>
+                                    <p class="second-heading">Ваша точность: {{ data['Ваша точность:'] }}%</p>
+                                    <p class="second-heading">Ваша скорость ответов: {{ data['Ваша скорость ответов:'] }} воп. в мин.</p>
+                                    <p class="second-heading">Общее время: {{ data['Общее время:'] }} минут</p>
                                 </div>
                             </div>
                             <div class="card-front__bt" onclick="location.href='{{ num_class }}/{{ topic }}'">
