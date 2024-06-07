@@ -48,11 +48,11 @@
             setInterval(updateTimer, 1000);
 
             function showResult(isCorrect) {
+                const resultText = isCorrect ? "Правильно!" : "Неправильно!";
+                $('#result').text(resultText).toggleClass("correct", isCorrect).toggleClass("incorrect", !isCorrect);
+
                 if (isCorrect) {
-                    $('#result').text("Правильно!").removeClass("incorrect").addClass("correct");
                     correct_answers++;
-                } else {
-                    $('#result').text("Неправильно!").removeClass("correct").addClass("incorrect");
                 }
                 total_questions++;
                 $('#next-button').fadeIn();
@@ -62,6 +62,14 @@
 
                 localStorage.setItem('correct_answers', correct_answers);
                 localStorage.setItem('total_questions', total_questions);
+
+                // Отправка результата на сервер для записи в файл
+                $.post('/save_result', {
+                    num_class: num_class,
+                    topic: topic,
+                    result: isCorrect ? "+" : "-"
+                    email:
+                });
             }
 
             $('#submit-button').on('click', function() {
