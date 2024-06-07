@@ -47,7 +47,7 @@ def menu_company():
     tmp_top100 = sorted(
         [(user.id, user.name, user.surname, round((int(user.profile_level) - 1) * 100 / 400, 2)) for user in
          db_sess.query(User)],
-        key=lambda x: x[3], reverse=True)[:99]
+        key=lambda x: x[3], reverse=True)[:100]
 
     top100 = []
 

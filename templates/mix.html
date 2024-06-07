@@ -7,176 +7,188 @@
     <link rel="stylesheet" href="../static/css/mix.css">
 </head>
 <body>
-    <h1>Выберите темы</h1>
+<h1>Выберите темы</h1>
+<form id="theme-form" action="/mix" method="POST">
     <div class="checkbox-container">
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-1" type="checkbox">
+                <input id="check-1" name="theme" type="checkbox" value="Счет предметов">
                 <label for="check-1"></label>
             </div>
-            <span>Тема 1xasdfasd</span>
+            <span>Счет предметов</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-2" type="checkbox">
+                <input id="check-2" name="theme" type="checkbox" value="Многоугольники">
                 <label for="check-2"></label>
             </div>
-            <span>Тема 2</span>
+            <span>Многоугольники</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-3" type="checkbox">
+                <input id="check-3" name="theme" type="checkbox" value="Задачки на увеличение">
                 <label for="check-3"></label>
             </div>
-            <span>Тема 3</span>
+            <span>Задачки на увеличение</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-4" type="checkbox">
+                <input id="check-4" name="theme" type="checkbox" value="Задачки на уменьшение">
                 <label for="check-4"></label>
             </div>
-            <span>Тема 4</span>
+            <span>Задачки на уменьшение</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-5" type="checkbox">
+                <input id="check-5" name="theme" type="checkbox" value="Задачки (разнобой)">
                 <label for="check-5"></label>
             </div>
-            <span>Тема 5</span>
+            <span>Задачки (разнобой)</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-6" type="checkbox">
+                <input id="check-6" name="theme" type="checkbox" value="Примеры на счет">
                 <label for="check-6"></label>
             </div>
-            <span>Тема 6</span>
+            <span>Примеры на счет</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-7" type="checkbox">
+                <input id="check-7" name="theme" type="checkbox" value="Числа от 1 до 20">
                 <label for="check-7"></label>
             </div>
-            <span>Тема 7</span>
+            <span>Числа от 1 до 20</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-8" type="checkbox">
+                <input id="check-8" name="theme" type="checkbox" value="Счет десятками">
                 <label for="check-8"></label>
             </div>
-            <span>Тема 8</span>
+            <span>Счет десятками</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-9" type="checkbox">
+                <input id="check-9" name="theme" type="checkbox" value="Сложение и вычитание (Числа от 1 до 100)">
                 <label for="check-9"></label>
             </div>
-            <span>Тема 9</span>
+            <span>Сложение и вычитание (Числа от 1 до 100)</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-10" type="checkbox">
+                <input id="check-10" name="theme" type="checkbox" value="Уравнения">
                 <label for="check-10"></label>
             </div>
-            <span>Тема 10</span>
+            <span>Уравнения</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-11" type="checkbox">
+                <input id="check-11" name="theme" type="checkbox" value="Деление и умножение (Начальные)">
                 <label for="check-11"></label>
             </div>
-            <span>Тема 11</span>
+            <span>Деление и умножение (Начальные)</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-12" type="checkbox">
+                <input id="check-12" name="theme" type="checkbox" value="Примеры">
                 <label for="check-12"></label>
             </div>
-            <span>Тема 12</span>
+            <span>Примеры</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-13" type="checkbox">
+                <input id="check-13" name="theme" type="checkbox" value="Сложение (Трехзначные числа)">
                 <label for="check-13"></label>
             </div>
-            <span>Тема 13</span>
+            <span>Сложение (Трехзначные числа)</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-14" type="checkbox">
+                <input id="check-14" name="theme" type="checkbox" value="Вычитание (Трехзначные числа)">
                 <label for="check-14"></label>
             </div>
-            <span>Тема 14</span>
+            <span>Вычитание (Трехзначные числа)</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-15" type="checkbox">
+                <input id="check-15" name="theme" type="checkbox" value="Деление (Среднее)">
                 <label for="check-15"></label>
             </div>
-            <span>Тема 15</span>
+            <span>Деление (Среднее)</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-16" type="checkbox">
+                <input id="check-16" name="theme" type="checkbox" value="Умножение (Среднее)">
                 <label for="check-16"></label>
             </div>
-            <span>Тема 16</span>
+            <span>Умножение (Среднее)</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-17" type="checkbox">
+                <input id="check-17" name="theme" type="checkbox" value="Деление (Трехзначные числа)">
                 <label for="check-17"></label>
             </div>
-            <span>Тема 17</span>
+            <span>Деление (Трехзначные числа)</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-18" type="checkbox">
+                <input id="check-18" name="theme" type="checkbox" value="Примеры (Трехзначные числа)">
                 <label for="check-18"></label>
             </div>
-            <span>Тема 18</span>
+            <span>Примеры (Трехзначные числа)</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-19" type="checkbox">
+                <input id="check-19" name="theme" type="checkbox" value="Сложение (Три слагаемых)">
                 <label for="check-19"></label>
             </div>
-            <span>Тема 19</span>
+            <span>Сложение (Три слагаемых)</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-20" type="checkbox">
+                <input id="check-20" name="theme" type="checkbox" value="Сложение (Числа больше 1000)">
                 <label for="check-20"></label>
             </div>
-            <span>Тема 20</span>
+            <span>Сложение (Числа больше 1000)</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-21" type="checkbox">
+                <input id="check-21" name="theme" type="checkbox" value="Умножение (На произведение)">
                 <label for="check-21"></label>
             </div>
-            <span>Тема 21</span>
+            <span>Умножение (На произведение)</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-22" type="checkbox">
+                <input id="check-22" name="theme" type="checkbox" value="Умножение (Продвинутое)">
                 <label for="check-22"></label>
             </div>
-            <span>Тема 22</span>
+            <span>Умножение (Продвинутое)</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-23" type="checkbox">
+                <input id="check-23" name="theme" type="checkbox" value="Деление (На двузначные)">
                 <label for="check-23"></label>
             </div>
-            <span>Тема 23</span>
+            <span>Деление (На двузначные)</span>
         </div>
         <div class="checkbox-wrapper-5">
             <div class="check">
-                <input id="check-24" type="checkbox">
+                <input id="check-24" name="theme" type="checkbox" value="Деление (Продвинутое)">
                 <label for="check-24"></label>
             </div>
-            <span>Тема 24</span>
+            <span>Деление (Продвинутое)</span>
         </div>
     </div>
+    <button type="submit" id="next-btn">Дальше</button>
+</form>
+<script>
+    document.getElementById('theme-form').addEventListener('submit', function(event) {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        if (checkboxes.length === 0) {
+            event.preventDefault();
+            alert('Ни одна тема не выбрана');
+        }
+    });
+</script>
 </body>
 </html>
