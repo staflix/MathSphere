@@ -7,3 +7,8 @@
 out
 gen
 __pycache__
+/.idea
+/forms/__pycache__
+/data/__pycache__
+/company/__pycache__
+/api/__pycache__
