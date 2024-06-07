@@ -6,6 +6,8 @@ from data.users import User
 from data.config import *
 from api import registerAPI, loginAPI, resetpasswordAPI, mainpageAPI, choice_class_API, choice_topic_all_classes_API, \
     send_task_for_trainer_API, menu_company_API, change_avatar_API, settings_API, start_level_API, reg_log_yandexAPI
+from flask import Flask, request, jsonify
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = key
@@ -28,6 +30,18 @@ def load_user(user_id):
 def logout():
     logout_user()
     return redirect("/")
+
+
+@app.route('/save_result', methods=['POST'])
+def save_result():
+    num_class = request.form['num_class']
+    topic = request.form['topic']
+    result = request.form['result']
+    print(1)
+    with open('text.txt', 'a') as f:  # Убедитесь, что указали правильный путь к файлу
+        f.write(f"{num_class}; {topic}; {result}\n")
+
+    return jsonify(success=True)
 
 
 # обработка ошибки 404
