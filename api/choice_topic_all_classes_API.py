@@ -33,45 +33,47 @@ def choice_topic_all_classes_trainer(num_class):
         total_questions = request.form.get('total_questions', type=int)
         topic = request.form.get('topic')
 
-        trainer_statistic = db_sess.query(TrainerStatistics).filter(current_user.id == TrainerStatistics.user_id,
-                                                                    num_class == TrainerStatistics.num_class,
-                                                                    topic == TrainerStatistics.topic).first()
+        if not (time_spent is None) or not (correct_answers is None) or not (total_questions is None) or not (
+                topic is None):
+            trainer_statistic = db_sess.query(TrainerStatistics).filter(current_user.id == TrainerStatistics.user_id,
+                                                                        num_class == TrainerStatistics.num_class,
+                                                                        topic == TrainerStatistics.topic).first()
 
-        time = round(int(time_spent.split(":")[0]) + (int(time_spent.split(":")[1]) / 60), 2)
+            time = round(int(time_spent.split(":")[0]) + (int(time_spent.split(":")[1]) / 60), 2)
 
-        if trainer_statistic.full_time is None:
-            trainer_statistic.full_time = time
-        else:
-            trainer_statistic.full_time += time
+            if trainer_statistic.full_time is None:
+                trainer_statistic.full_time = time
+            else:
+                trainer_statistic.full_time += time
 
-        if trainer_statistic.total_questions is None:
-            trainer_statistic.total_questions = total_questions
-        else:
-            trainer_statistic.total_questions += total_questions
+            if trainer_statistic.total_questions is None:
+                trainer_statistic.total_questions = total_questions
+            else:
+                trainer_statistic.total_questions += total_questions
 
-        if trainer_statistic.correct_questions is None:
-            trainer_statistic.correct_questions = correct_answers
-        else:
-            trainer_statistic.correct_questions += correct_answers
+            if trainer_statistic.correct_questions is None:
+                trainer_statistic.correct_questions = correct_answers
+            else:
+                trainer_statistic.correct_questions += correct_answers
 
-        db_sess.commit()
+            db_sess.commit()
 
-        if trainer_statistic.total_questions == 0:
-            trainer_statistic.accuracy = 0
-        else:
-            trainer_statistic.accuracy = str(
-                round(trainer_statistic.correct_questions / trainer_statistic.total_questions,
-                      2) * 100)
+            if trainer_statistic.total_questions == 0:
+                trainer_statistic.accuracy = 0
+            else:
+                trainer_statistic.accuracy = str(
+                    round(trainer_statistic.correct_questions / trainer_statistic.total_questions,
+                          2) * 100)
 
-        db_sess.commit()
+            db_sess.commit()
 
-        if float(trainer_statistic.full_time) == 0.0:
-            trainer_statistic.speed = 0
-        else:
-            trainer_statistic.speed = str(
-                round(trainer_statistic.correct_questions / trainer_statistic.full_time, 2))
+            if float(trainer_statistic.full_time) == 0.0:
+                trainer_statistic.speed = 0
+            else:
+                trainer_statistic.speed = str(
+                    round(trainer_statistic.correct_questions / trainer_statistic.full_time, 2))
 
-        db_sess.commit()
+            db_sess.commit()
 
     all_accuracies = []
     all_speeds = []
