@@ -13,9 +13,9 @@ body {
 
 h1 {
     text-align: center;
-    color: #333;
+    color: white;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 26px;
 }
 
 .checkbox-container {
@@ -143,4 +143,17 @@ h1 {
     font-size: calc(.6 * var(--size));
     line-height: 0;
 }
+.submit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #f19af3, #f099b5);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
 
+.submit-button:hover {
+    background: linear-gradient(90deg, #f360fc, #ff1f62);
+}
