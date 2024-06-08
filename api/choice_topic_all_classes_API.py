@@ -160,9 +160,9 @@ def choice_topic_all_classes_trainer(num_class):
                                                                   TrainerStatistics.topic == "Деление (Продвинутое)").first()
     if num_class == 1:
         if not (trainer_statistic11.full_time is None):
-            accuracy = trainer_statistic11.accuracy
-            speed = trainer_statistic11.speed
-            full_time = round(trainer_statistic11.full_time, 1)
+            accuracy = round(float(trainer_statistic11.accuracy), 2)
+            speed = round(float(trainer_statistic11.speed), 2)
+            full_time = round(float(trainer_statistic11.full_time), 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -171,8 +171,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic12.full_time is None):
-            accuracy = trainer_statistic12.accuracy
-            speed = trainer_statistic12.speed
+            accuracy = round(float(trainer_statistic12.accuracy), 2)
+            speed = round(float(trainer_statistic12.speed), 2)
             full_time = round(trainer_statistic12.full_time, 1)
         else:
             accuracy = "0.00"
@@ -182,8 +182,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic13.full_time is None):
-            accuracy = trainer_statistic13.accuracy
-            speed = trainer_statistic13.speed
+            accuracy = round(float(trainer_statistic13.accuracy), 2)
+            speed = round(float(trainer_statistic13.speed), 2)
             full_time = round(trainer_statistic13.full_time, 1)
         else:
             accuracy = "0.00"
@@ -193,8 +193,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic14.full_time is None):
-            accuracy = trainer_statistic14.accuracy
-            speed = trainer_statistic14.speed
+            accuracy = round(float(trainer_statistic14.accuracy), 2)
+            speed = round(float(trainer_statistic14.speed), 2)
             full_time = round(trainer_statistic14.full_time, 1)
         else:
             accuracy = "0.00"
@@ -204,8 +204,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic15.full_time is None):
-            accuracy = trainer_statistic15.accuracy
-            speed = trainer_statistic15.speed
+            accuracy = round(float(trainer_statistic15.accuracy), 2)
+            speed = round(float(trainer_statistic15.speed), 2)
             full_time = round(trainer_statistic15.full_time, 1)
         else:
             accuracy = "0.00"
@@ -215,8 +215,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic16.full_time is None):
-            accuracy = trainer_statistic16.accuracy
-            speed = trainer_statistic16.speed
+            accuracy = round(float(trainer_statistic16.accuracy), 2)
+            speed = round(float(trainer_statistic16.speed), 2)
             full_time = round(trainer_statistic16.full_time, 1)
         else:
             accuracy = "0.00"
@@ -228,8 +228,8 @@ def choice_topic_all_classes_trainer(num_class):
 
     if num_class == 2:
         if not (trainer_statistic21.full_time is None):
-            accuracy = trainer_statistic21.accuracy
-            speed = trainer_statistic21.speed
+            accuracy = round(float(trainer_statistic21.accuracy), 2)
+            speed = round(float(trainer_statistic21.speed), 2)
             full_time = round(trainer_statistic21.full_time, 1)
         else:
             accuracy = "0.00"
@@ -239,8 +239,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic22.full_time is None):
-            accuracy = trainer_statistic22.accuracy
-            speed = trainer_statistic22.speed
+            accuracy = round(float(trainer_statistic22.accuracy), 2)
+            speed = round(float(trainer_statistic22.speed), 2)
             full_time = round(trainer_statistic22.full_time, 1)
         else:
             accuracy = "0.00"
@@ -250,9 +250,9 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic23.full_time is None):
-            accuracy = trainer_statistic23.accuracy
-            speed = trainer_statistic23.speed
-            full_time = round(trainer_statistic23.full_time, 1)
+            accuracy = round(float(trainer_statistic23.accuracy), 2)
+            speed = round(float(trainer_statistic23.speed), 2)
+            full_time = round(float(trainer_statistic23.full_time), 1)
         else:
             accuracy = "0.00"
             speed = "0.00"
@@ -261,8 +261,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic24.full_time is None):
-            accuracy = trainer_statistic24.accuracy
-            speed = trainer_statistic24.speed
+            accuracy = round(float(trainer_statistic24.accuracy), 2)
+            speed = round(float(trainer_statistic24.speed), 2)
             full_time = round(trainer_statistic24.full_time, 1)
         else:
             accuracy = "0.00"
@@ -272,8 +272,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic25.full_time is None):
-            accuracy = trainer_statistic25.accuracy
-            speed = trainer_statistic25.speed
+            accuracy = round(float(trainer_statistic25.accuracy), 2)
+            speed = round(float(trainer_statistic25.speed), 2)
             full_time = round(trainer_statistic25.full_time, 1)
         else:
             accuracy = "0.00"
@@ -283,8 +283,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic26.full_time is None):
-            accuracy = trainer_statistic26.accuracy
-            speed = trainer_statistic26.speed
+            accuracy = round(float(trainer_statistic26.accuracy), 2)
+            speed = round(float(trainer_statistic26.speed), 2)
             full_time = round(trainer_statistic26.full_time, 1)
         else:
             accuracy = "0.00"
@@ -296,8 +296,8 @@ def choice_topic_all_classes_trainer(num_class):
 
     elif num_class == 3:
         if not (trainer_statistic31.full_time is None):
-            accuracy = trainer_statistic31.accuracy
-            speed = trainer_statistic31.speed
+            accuracy = round(float(trainer_statistic31.accuracy), 2)
+            speed = round(float(trainer_statistic31.speed), 2)
             full_time = round(trainer_statistic31.full_time, 1)
         else:
             accuracy = "0.00"
@@ -307,8 +307,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic32.full_time is None):
-            accuracy = trainer_statistic32.accuracy
-            speed = trainer_statistic32.speed
+            accuracy = round(float(trainer_statistic32.accuracy), 2)
+            speed = round(float(trainer_statistic32.speed), 2)
             full_time = round(trainer_statistic32.full_time, 1)
         else:
             accuracy = "0.00"
@@ -318,8 +318,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic33.full_time is None):
-            accuracy = trainer_statistic33.accuracy
-            speed = trainer_statistic33.speed
+            accuracy = round(float(trainer_statistic33.accuracy), 2)
+            speed = round(float(trainer_statistic33.speed), 2)
             full_time = round(trainer_statistic33.full_time, 1)
         else:
             accuracy = "0.00"
@@ -329,8 +329,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic34.full_time is None):
-            accuracy = trainer_statistic34.accuracy
-            speed = trainer_statistic34.speed
+            accuracy = round(float(trainer_statistic34.accuracy), 2)
+            speed = round(float(trainer_statistic34.speed), 2)
             full_time = round(trainer_statistic34.full_time, 1)
         else:
             accuracy = "0.00"
@@ -340,8 +340,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic35.full_time is None):
-            accuracy = trainer_statistic35.accuracy
-            speed = trainer_statistic35.speed
+            accuracy = round(float(trainer_statistic35.accuracy), 2)
+            speed = round(float(trainer_statistic35.speed), 2)
             full_time = round(trainer_statistic35.full_time, 2)
         else:
             accuracy = "0.00"
@@ -351,8 +351,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic36.full_time is None):
-            accuracy = trainer_statistic36.accuracy
-            speed = trainer_statistic36.speed
+            accuracy = round(float(trainer_statistic36.accuracy), 2)
+            speed = round(float(trainer_statistic36.speed), 2)
             full_time = round(trainer_statistic36.full_time, 1)
         else:
             accuracy = "0.00"
@@ -364,8 +364,8 @@ def choice_topic_all_classes_trainer(num_class):
 
     elif num_class == 4:
         if not (trainer_statistic41.full_time is None):
-            accuracy = trainer_statistic41.accuracy
-            speed = trainer_statistic41.speed
+            accuracy = round(float(trainer_statistic41.accuracy), 2)
+            speed = round(float(trainer_statistic41.speed), 2)
             full_time = round(trainer_statistic41.full_time, 1)
         else:
             accuracy = "0.00"
@@ -375,8 +375,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic42.full_time is None):
-            accuracy = trainer_statistic42.accuracy
-            speed = trainer_statistic42.speed
+            accuracy = round(float(trainer_statistic42.accuracy), 2)
+            speed = round(float(trainer_statistic42.speed), 2)
             full_time = round(trainer_statistic42.full_time, 1)
         else:
             accuracy = "0.00"
@@ -386,8 +386,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic43.full_time is None):
-            accuracy = trainer_statistic43.accuracy
-            speed = trainer_statistic43.speed
+            accuracy = round(float(trainer_statistic43.accuracy), 2)
+            speed = round(float(trainer_statistic43.speed), 2)
             full_time = round(trainer_statistic43.full_time, 1)
         else:
             accuracy = "0.00"
@@ -397,8 +397,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic44.full_time is None):
-            accuracy = trainer_statistic44.accuracy
-            speed = trainer_statistic44.speed
+            accuracy = round(float(trainer_statistic44.accuracy), 2)
+            speed = round(float(trainer_statistic44.speed), 2)
             full_time = round(trainer_statistic44.full_time, 1)
         else:
             accuracy = "0.00"
@@ -408,8 +408,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic45.full_time is None):
-            accuracy = trainer_statistic45.accuracy
-            speed = trainer_statistic45.speed
+            accuracy = round(float(trainer_statistic45.accuracy), 2)
+            speed = round(float(trainer_statistic45.speed), 2)
             full_time = round(trainer_statistic45.full_time, 1)
         else:
             accuracy = "0.00"
@@ -419,8 +419,8 @@ def choice_topic_all_classes_trainer(num_class):
         all_speeds.append(speed)
         all_times.append(str(full_time))
         if not (trainer_statistic46.full_time is None):
-            accuracy = trainer_statistic46.accuracy
-            speed = trainer_statistic46.speed
+            accuracy = round(float(trainer_statistic46.accuracy), 2)
+            speed = round(float(trainer_statistic46.speed), 2)
             full_time = round(trainer_statistic46.full_time, 1)
         else:
             accuracy = "0.00"

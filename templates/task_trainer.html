@@ -24,6 +24,7 @@
             const num_class = {{ num_class }};
             const topic = "{{ topic }}";
             const correctAnswer = "{{ answer }}";
+            const mix = "{{ mix }}";  // Add mix variable
 
             let seconds = localStorage.getItem('seconds') ? parseInt(localStorage.getItem('seconds')) : {{ seconds }};
             let minutes = localStorage.getItem('minutes') ? parseInt(localStorage.getItem('minutes')) : {{ minutes }};
@@ -67,8 +68,7 @@
                 $.post('/save_result', {
                     num_class: num_class,
                     topic: topic,
-                    result: isCorrect ? "+" : "-",
-                    action: "add"
+                    result: isCorrect ? "+" : "-"
                 });
             }
 
@@ -90,27 +90,20 @@
             });
 
             $('#back-button').on('click', function() {
+                if (mix === 'True') {
+                    localStorage.removeItem('seconds');
+                    localStorage.removeItem('minutes');
+                    localStorage.removeItem('correct_answers');
+                    localStorage.removeItem('total_questions');
+                }
                 const timeSpent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-                $.post('/save_result', {
-                    num_class: num_class,
+                $.post(`/${num_class}`, {
                     time: timeSpent,
                     correct_answers: correct_answers,
                     total_questions: total_questions,
-                    topic: topic,
-                    action: "end"
-                }).done(function() {
-                    $.post(`/${num_class}`, {
-                        time: timeSpent,
-                        correct_answers: correct_answers,
-                        total_questions: total_questions,
-                        topic: topic
-                    }).done(function() {
-                        localStorage.removeItem('seconds');
-                        localStorage.removeItem('minutes');
-                        localStorage.removeItem('correct_answers');
-                        localStorage.removeItem('total_questions');
-                        window.location.href = `/${num_class}`;
-                    });
+                    topic: topic
+                }, function() {
+                    window.location.href = '/choice_class';
                 });
             });
         });
@@ -118,7 +111,7 @@
 </head>
 <body>
 <div id="timer">{{ minutes|default(0, true) }}:{{ seconds|default('00', true) }}</div>
-<button id="back-button" {% if mix == 'True' %} onclick="window.location.href='/mix'" {% endif %}>← Завершить попытку</button>
+<button id="back-button" {% if mix == 'True' %} onclick="window.location.href='/mix'" {% endif %}>← Назад</button>
 <div class="container">
     <p id="question">{{ text }}</p>
 
