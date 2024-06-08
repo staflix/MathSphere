@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="mix backend">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/choice_class.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/choice_class.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/choice_class.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/choice_class.html" afterDir="false" />
-    </list>
+    <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="mix backend" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -227,8 +223,7 @@
       <workItem from="1716188753489" duration="12098000" />
       <workItem from="1716280080447" duration="9541000" />
       <workItem from="1717248304598" duration="738000" />
-      <workItem from="1717821861872" duration="2397000" />
-      <workItem from="1717841799140" duration="679000" />
+      <workItem from="1717821861872" duration="608000" />
     </task>
     <task id="LOCAL-00001" summary="Super security. bgfix">
       <option name="closed" value="true" />
