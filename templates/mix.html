@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../static/css/mix.css">
 </head>
 <body>
-<button type="submit" class="back-button" id="back-btn" onclick="location.href='/choice_class'">Вернуться</button>
+<button type="button" class="back-button" id="back-btn" onclick="location.href='/choice_class'">Вернуться</button>
 <h1>Выберите темы</h1>
     <form class="checkbox-container" id="theme-form" action="/mix" method="POST">
         <div class="checkbox-wrapper-5">
@@ -179,19 +179,44 @@
             <span>Деление (Продвинутое)</span>
         </div>
         <div class="hidden"></div>
-        <button type="submit" class="submit-button" id="next-btn">Дальше</button>
+        <button type="button" class="submit-button" id="next-btn" onclick="startMix()">Дальше</button>
     </form>
 <script>
+    function startMix() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        if (checkboxes.length === 0) {
+            alert('Ни одна тема не выбрана');
+            return;
+        }
+
+        const selectedThemes = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+        fetch('/save_result', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                action: "start_mix",
+                topic: selectedThemes
+            })
+        }).then(response => {
+            if (response.ok) {
+                document.getElementById('theme-form').submit();
+            } else {
+                alert('Ошибка при сохранении данных');
+            }
+        }).catch(error => {
+            alert('Ошибка сети: ' + error.message);
+        });
+    }
+
     document.getElementById('theme-form').addEventListener('submit', function(event) {
         const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
         if (checkboxes.length === 0) {
             event.preventDefault();
             alert('Ни одна тема не выбрана');
-        } else {
-           $.post('/save_result', {
-           action: "start_mix",
-           topics: checkboxes
-        }})
+        }
     });
 </script>
 </body>
