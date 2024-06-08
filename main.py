@@ -7,6 +7,8 @@ from data.config import *
 from api import registerAPI, loginAPI, resetpasswordAPI, mainpageAPI, choice_class_API, choice_topic_all_classes_API, \
     send_task_for_trainer_API, menu_company_API, change_avatar_API, settings_API, start_level_API, reg_log_yandexAPI, mix_API
 from flask import Flask, request, jsonify
+from flask_login import current_user
+import hashlib
 
 
 app = Flask(__name__)
@@ -34,12 +36,29 @@ def logout():
 
 @app.route('/save_result', methods=['POST'])
 def save_result():
-    num_class = request.form['num_class']
+    print(1)
+    action = request.form['action']
+    md5_hash = hashlib.new('md5')
+    md5_hash.update(current_user.email.encode())
     topic = request.form['topic']
-    result = request.form['result']
-    with open('text.txt', 'a') as f:
-        f.write(f"{num_class}; {topic}; {result}\n")
-
+    if action == 'start':
+        num_class = request.form['num_class']
+        with open(f'history/{md5_hash.hexdigest()}.txt', 'a', encoding='utf-8') as f:
+            f.write(f"Начало попытки. Класс {num_class}; Тема {topic}\n")
+    if action == 'add':
+        num_class = request.form['num_class']
+        result = request.form['result']
+        with open(f'history/{md5_hash.hexdigest()}.txt', 'a', encoding='utf-8') as f:
+            f.write(f"{num_class}; {topic}; {result}\n")
+    if action == 'end':
+        with open(f'history/{md5_hash.hexdigest()}.txt', 'a', encoding='utf-8') as f:
+            time = request.form['time'].split(':')
+            time = round(int(time[0]) + int(time[1]) / 60, 2)
+            print(time)
+            correct = int(request.form['correct_answers'])
+            summary = int(request.form['total_questions'])
+            f.write(f"Конец попытки.  Точность ответов {round((correct / summary) * 100, 2)}%; Затраченное время: {time};"
+                    f"Средняя скорость дачи правильных ответов: {round(correct / time, 2)} отв/мин;\n")
     return jsonify(success=True)
 
 
