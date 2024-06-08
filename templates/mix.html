@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="../static/css/mix.css">
 </head>
 <body>
+<button type="submit" class="back-button" id="back-btn">Назад</button>
 <h1>Выберите темы</h1>
-<form id="theme-form" action="/mix" method="POST">
-    <div class="checkbox-container">
+    <form class="checkbox-container" id="theme-form" action="/mix" method="POST">
         <div class="checkbox-wrapper-5">
             <div class="check">
                 <input id="check-1" name="theme" type="checkbox" value="Счет предметов">
@@ -178,9 +178,9 @@
             </div>
             <span>Деление (Продвинутое)</span>
         </div>
-    </div>
-    <button type="submit" id="next-btn">Дальше</button>
-</form>
+        <div class="hidden"></div>
+        <button type="submit" class="submit-button" id="next-btn">Дальше</button>
+    </form>
 <script>
     document.getElementById('theme-form').addEventListener('submit', function(event) {
         const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
