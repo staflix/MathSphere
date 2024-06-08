@@ -358,3 +358,63 @@ input[type=radio] {
 input[type="submit" i] {
     background: none;
 }
+.attempts-history{
+    position: absolute;
+    left: 10%;
+    top: 30px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #f19af3, #f099b5);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 15000;
+}
+.attempts-history:hover {
+    background: linear-gradient(90deg, #f360fc, #ff1f62);
+}
+@media (max-width: 1800px){
+  .attempts-history{
+    left: 12%;
+  }
+}
+@media (max-width: 1600px){
+  .attempts-history{
+    font-size: 16px;
+    left: 11%;
+    top: 20px;
+  }
+}
+@media (max-width: 1200px){
+  .attempts-history{
+    font-size: 14px;
+    left: 11%;
+    top: 18px;
+  }
+}
+@media (max-width: 991px) {
+  .attempts-history {
+    font-size: 12px;
+    left: 13%;
+    top: 16px;
+    padding: 8px 16px;
+  }
+}
+@media (max-width: 768px) {
+  .attempts-history {
+    font-size: 12px;
+    left: 16%;
+    top: 14px;
+    padding: 6px 14px;
+  }
+}
+@media (max-width: 576px) {
+  .attempts-history {
+    font-size: 10px;
+    left: 25%;
+    top: 16px;
+    padding: 6px 14px;
+  }
+}
+
