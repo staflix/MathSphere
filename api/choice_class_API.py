@@ -6,6 +6,7 @@ from flask_login import current_user
 from data import db_session
 from data.users import Info, TrainerStatistics, User
 from api.tituls import tituls
+import hashlib
 
 blueprint = flask.Blueprint(
     'choiceclass_api',
@@ -98,10 +99,17 @@ def choice_class():
 
     if profile.exit.data:
         return redirect(f"/logout")
+
+    md5_hash = hashlib.new('md5')
+    md5_hash.update(current_user.email.encode())
+    history_text = open(f'history/{md5_hash.hexdigest()}.txt', encoding='utf-8').readlines()
+    if not history_text:
+        history_text = ['Пока что здесь пусто, начните тренировку, и информация о ней сохранится здесь.']
     return render_template("choice_class.html", form=form, profile=profile,
                            avatar=user_avatar, name=user_name, surname=user_surname,
                            email=user_email, level=level, tituls=tituls,
                            best_result_class1=best_result_class1, worst_result_class1=worst_result_class1,
                            best_result_class2=best_result_class2, worst_result_class2=worst_result_class2,
                            best_result_class3=best_result_class3, worst_result_class3=worst_result_class3,
-                           best_result_class4=best_result_class4, worst_result_class4=worst_result_class4)
+                           best_result_class4=best_result_class4, worst_result_class4=worst_result_class4,
+                           history_text=history_text)

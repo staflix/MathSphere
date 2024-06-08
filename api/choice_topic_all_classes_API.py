@@ -1,3 +1,5 @@
+import hashlib
+
 from flask import render_template, redirect, request
 import flask
 from forms.mainpageForm import LogMainPageForm
@@ -522,7 +524,12 @@ def choice_topic_all_classes_trainer(num_class):
 
     if profile.exit.data:
         return redirect(f"/logout")
-
+    md5_hash = hashlib.new('md5')
+    md5_hash.update(current_user.email.encode())
+    history_text = open(f'history/{md5_hash.hexdigest()}.txt', encoding='utf-8').readlines()
+    if not history_text:
+        history_text = ['Пока что здесь пусто, начните тренировку, и информация о ней сохранится здесь.']
     return render_template("choice_topic.html", num_class=num_class, profile=profile,
                            avatar=user_avatar, name=user_name, surname=user_surname,
-                           email=user_email, topics=topics, colors=colors, back_colors=back_colors, tituls=tituls, level=level)
+                           email=user_email, topics=topics, colors=colors, back_colors=back_colors, tituls=tituls, level=level,
+                           history_text=history_text)
