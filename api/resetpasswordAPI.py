@@ -4,6 +4,8 @@ from flask import render_template, redirect
 from data import db_session
 from data.users import User, Info
 from data.mail import send_email
+import string
+import random
 
 blueprint = flask.Blueprint(
     'resetpassword_api',
@@ -12,9 +14,21 @@ blueprint = flask.Blueprint(
 )
 
 
-# потом напилить норм пароль, как у яндекса
 def generate_password():
-    return '1'
+    length = 8
+    all_characters = string.ascii_letters + string.digits
+
+    password = ''.join(random.choice(all_characters) for _ in range(length))
+
+    has_digit = any(char.isdigit() for char in password)
+    has_letter = any(char.isalpha() for char in password)
+
+    while not (has_digit and has_letter):
+        password = ''.join(random.choice(all_characters) for _ in range(length))
+        has_digit = any(char.isdigit() for char in password)
+        has_letter = any(char.isalpha() for char in password)
+
+    return password
 
 
 @blueprint.route('/reset_password/key=<rdm_string>', methods=['POST', 'GET'])
