@@ -10,6 +10,7 @@ from api import registerAPI, loginAPI, resetpasswordAPI, mainpageAPI, choice_cla
 from flask import Flask, request, jsonify
 from flask_login import current_user
 import hashlib
+import time
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = key
@@ -38,33 +39,37 @@ def logout():
 def save_result():
     md5_hash = hashlib.new('md5')
     md5_hash.update(current_user.email.encode())
+    local_time = time.gmtime(time.time())
+    t = local_time[:5]
     if 'action' in request.form:
         action = request.form['action']
         topic = request.form['topic']
         if action == 'start':
             num_class = request.form['num_class']
             with open(f'history/{md5_hash.hexdigest()}.txt', 'a', encoding='utf-8') as f:
-                f.write(f"Начало попытки. Класс {num_class}; Тема {topic}\n")
+                f.write(f'{str(t[2]).rjust(2, "0")}.{str(t[1]).rjust(2, "0")}.{t[0]} - {t[3]}:{t[4]} UTC \n'
+                        f'Начало попытки. Класс {num_class}, Тема {topic}.\n')
         if action == 'add':
             num_class = request.form['num_class']
             result = request.form['result']
             with open(f'history/{md5_hash.hexdigest()}.txt', 'a', encoding='utf-8') as f:
-                f.write(f"{num_class}; {topic}; {result}\n")
+                f.write(f"Класс {num_class}, Тема '{topic}', Вердикт {result}.\n")
         if action == 'end':
             with open(f'history/{md5_hash.hexdigest()}.txt', 'a', encoding='utf-8') as f:
-                time = request.form['time'].split(':')
-                time = round(int(time[0]) + int(time[1]) * 60, 2)
+                t = request.form['time'].split(':')
+                t = round(int(t[0]) + int(t[1]) / 60, 2)
                 correct = int(request.form['correct_answers'])
                 summary = int(request.form['total_questions'])
                 if summary != 0:
-                    f.write(f"Конец попытки.  Точность ответов {round((correct / summary) * 100, 2)}%; Затраченное время: {time};"
-                        f"Средняя скорость дачи правильных ответов: {round(correct / time, 2)} отв/мин;\n")
+                    f.write(f"Конец попытки.  Точность ответов {round((correct / summary) * 100, 2)}%, Затраченное время: {t} мин,"
+                            f"\nСредняя скорость дачи правильных ответов: {round(correct / t, 2)} отв/мин.\n")
                 else:
-                    f.write(f"Конец попытки. Вы не ответили ни разу.")
+                    f.write(f"Конец попытки. Вы не ответили ни разу.\n")
     else:
         topic = request.json['topic']
         with open(f'history/{md5_hash.hexdigest()}.txt', 'a', encoding='utf-8') as f:
-            f.write(f"Начало попытки. Режим микс. Темы: {', '.join(topic)}\n")
+            f.write(f'{str(t[2]).rjust(2, "0")}.{str(t[1]).rjust(2, "0")}.{t[0]} - {t[3]}:{t[4]} UTC \n'
+                    f'Начало попытки. Режим микс. Темы: {", ".join(topic)}.\n')
     return jsonify(success=True)
 
 

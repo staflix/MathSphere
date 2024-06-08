@@ -29,6 +29,9 @@
 <form action="" method="post">
 <div class="attempts-history" id="attempts-history">История попыток</div>
     <div class="history" id="history">
+        {% for line in history_text %}
+        <h2>{{line}}</h2>
+        {% endfor %}
         <div class="closeModal" id="close_modal"></div>
     </div>
     <section class="choose-class">
