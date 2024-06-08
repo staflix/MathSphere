@@ -24,7 +24,7 @@
             const num_class = {{ num_class }};
             const topic = "{{ topic }}";
             const correctAnswer = "{{ answer }}";
-            const mix = "{{ mix }}";
+            const mix = "{{ mix }}";  // Add mix variable
 
             let seconds = localStorage.getItem('seconds') ? parseInt(localStorage.getItem('seconds')) : {{ seconds }};
             let minutes = localStorage.getItem('minutes') ? parseInt(localStorage.getItem('minutes')) : {{ minutes }};
@@ -65,11 +65,11 @@
                 localStorage.setItem('total_questions', total_questions);
 
                 // Отправка результата на сервер для записи в файл
-                $.post('/save_result', {
-                    num_class: num_class,
-                    topic: topic,
-                    result: isCorrect ? "+" : "-",
-                    action: "add"
+                    $.post('/save_result', {
+                        num_class: num_class,
+                        topic: topic,
+                        result: isCorrect ? "+" : "-",
+                        action: "add"
                 });
             }
 
@@ -91,12 +91,6 @@
             });
 
             $('#back-button').on('click', function() {
-                if (!correct_answers){
-                    correct_answers = 0
-                }
-                if (!total_questions){
-                    total_questions = 0
-                }
                 if (mix === 'True') {
                     localStorage.removeItem('seconds');
                     localStorage.removeItem('minutes');
@@ -104,6 +98,12 @@
                     localStorage.removeItem('total_questions');
                 }
                 const timeSpent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+                if (!correct_answers){
+                    correct_answers = 0
+                }
+                if (!total_questions){
+                    total_questions = 0
+                }
                 $.post('/save_result', {
                     num_class: num_class,
                     time: timeSpent,
@@ -112,55 +112,43 @@
                     topic: topic,
                     action: "end"
                 }).done(function() {
-                    window.location.href = `/${num_class}`;
-                });
-            });
-
-            // Ensure the back-button always submits the form
-            if (mix === 'True') {
-                $('#back-button').attr('onclick', 'window.location.href="/mix"');
-            } else {
-                $('#back-button').on('click', function() {
-                    const timeSpent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-                    $.post('/save_result', {
-                        num_class: num_class,
+                    $.post(`/${num_class}`, {
                         time: timeSpent,
                         correct_answers: correct_answers,
                         total_questions: total_questions,
-                        topic: topic,
-                        action: "end"
+                        topic: topic
                     }).done(function() {
                         window.location.href = `/${num_class}`;
                     });
                 });
-            }
+            });
         });
     </script>
 </head>
 <body>
-    <div id="timer">{{ minutes|default(0, true) }}:{{ seconds|default('00', true) }}</div>
-    <button id="back-button">← Завершить попытку</button>
-    <div class="container">
-        <p id="question">{{ text }}</p>
-        <div id="image-container">
-            {% if count_img > 0 %}
-            <img src="{{ url_for('static', filename='pic_trainer/' + path_img) }}" alt="Task Image">
-            {% endif %}
-        </div>
-        <div id="choices-container">
-            {% if choices %}
-            {% for choice in choices %}
-            <button class="choice-button">{{ choice }}</button>
-            {% endfor %}
-            {% else %}
-            <input type="number" id="text-answer" name="answer" placeholder="Введите ответ">
-            <button id="submit-button">Ответить</button>
-            {% endif %}
-        </div>
-
-        <p id="result"></p>
-
-        <button id="next-button" style="display:none;">Дальше</button>
+<div id="timer">{{ minutes|default(0, true) }}:{{ seconds|default('00', true) }}</div>
+<button id="back-button" {% if mix == 'True' %} onclick="window.location.href='/mix'" {% endif %}>← Завершить попытку</button>
+<div class="container">
+    <p id="question">{{ text }}</p>
+    <div id="image-container">
+        {% if count_img > 0 %}
+        <img src="{{ url_for('static', filename='pic_trainer/' + path_img) }}" alt="Task Image">
+        {% endif %}
     </div>
+    <div id="choices-container">
+        {% if choices %}
+        {% for choice in choices %}
+        <button class="choice-button">{{ choice }}</button>
+        {% endfor %}
+        {% else %}
+        <input type="number" id="text-answer" name="answer" placeholder="Введите ответ">
+        <button id="submit-button">Ответить</button>
+        {% endif %}
+    </div>
+
+    <p id="result"></p>
+
+    <button id="next-button" style="display:none;">Дальше</button>
+</div>
 </body>
 </html>

@@ -53,7 +53,7 @@ def save_result():
         if action == 'end':
             with open(f'history/{md5_hash.hexdigest()}.txt', 'a', encoding='utf-8') as f:
                 time = request.form['time'].split(':')
-                time = round(int(time[0]) + int(time[1]) / 60, 2)
+                time = round(int(time[0]) + int(time[1]) * 60, 2)
                 correct = int(request.form['correct_answers'])
                 summary = int(request.form['total_questions'])
                 if summary != 0:
