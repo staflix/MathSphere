@@ -67,7 +67,8 @@
                 $.post('/save_result', {
                     num_class: num_class,
                     topic: topic,
-                    result: isCorrect ? "+" : "-"
+                    result: isCorrect ? "+" : "-",
+                    action: "add"
                 });
             }
 
@@ -90,17 +91,26 @@
 
             $('#back-button').on('click', function() {
                 const timeSpent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-                $.post(`/${num_class}`, {
+                $.post('/save_result', {
+                    num_class: num_class,
                     time: timeSpent,
                     correct_answers: correct_answers,
                     total_questions: total_questions,
-                    topic: topic
-                }, function() {
-                    localStorage.removeItem('seconds');
-                    localStorage.removeItem('minutes');
-                    localStorage.removeItem('correct_answers');
-                    localStorage.removeItem('total_questions');
-                    window.location.href = `/${num_class}`;
+                    topic: topic,
+                    action: "end"
+                }).done(function() {
+                    $.post(`/${num_class}`, {
+                        time: timeSpent,
+                        correct_answers: correct_answers,
+                        total_questions: total_questions,
+                        topic: topic
+                    }).done(function() {
+                        localStorage.removeItem('seconds');
+                        localStorage.removeItem('minutes');
+                        localStorage.removeItem('correct_answers');
+                        localStorage.removeItem('total_questions');
+                        window.location.href = `/${num_class}`;
+                    });
                 });
             });
         });
@@ -108,7 +118,7 @@
 </head>
 <body>
 <div id="timer">{{ minutes|default(0, true) }}:{{ seconds|default('00', true) }}</div>
-<button id="back-button" {% if mix == 'True' %} onclick="window.location.href='/mix'" {% endif %}>← Назад</button>
+<button id="back-button" {% if mix == 'True' %} onclick="window.location.href='/mix'" {% endif %}>← Завершить попытку</button>
 <div class="container">
     <p id="question">{{ text }}</p>
 
@@ -135,4 +145,3 @@
 </div>
 </body>
 </html>
-
