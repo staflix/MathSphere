@@ -6,7 +6,10 @@
 {% endblock %}
 {% block content %}
     <form>
-    <button type="submit" class="attempts-history" id="attempts-history">История попыток</button>
+    <div class="attempts-history" id="attempts-history">История попыток</div>
+    <div class="history" id="history">
+        <div class="closeModal" id="close_modal"></div>
+    </div>
     <section class="choose-class">
         <div class="slider">
             <input type="radio" name="slider" id="item-1" checked>
@@ -108,4 +111,5 @@
             updateBackgroundColor();
         });
     </script>
+    <script src="../static/js/history.js"></script>
 {% endblock %}
