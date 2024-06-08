@@ -20,7 +20,7 @@ h1 {
 
 .checkbox-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     width: 100%;
     max-width: 1200px;
@@ -155,5 +155,24 @@ h1 {
 }
 
 .submit-button:hover {
+    background: linear-gradient(90deg, #f360fc, #ff1f62);
+}
+.hidden{
+    opacity: 0;
+}
+.back-button {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #f19af3, #f099b5);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.back-button:hover {
     background: linear-gradient(90deg, #f360fc, #ff1f62);
 }
