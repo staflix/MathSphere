@@ -51,8 +51,8 @@
     <main class="level-main">
         <h2 id="question">{{ tasks[0] }}</h2>
         <div class="image-container">
-            {% if imgs[0] %}
-            <img id="questionImage" src="{{ url_for('static', filename=imgs[currentIndex]) }}">
+            {% if imgs[currentIndex] != None %}
+                <img id="questionImage" src="{{ url_for('static', filename=imgs[currentIndex]) }}">
             {% endif %}
         </div>
         <div id="good-answer" class="good-answer"></div>

@@ -5,11 +5,11 @@ from data import db_session
 from data.users import User
 from data.config import *
 from api import registerAPI, loginAPI, resetpasswordAPI, mainpageAPI, choice_class_API, choice_topic_all_classes_API, \
-    send_task_for_trainer_API, menu_company_API, change_avatar_API, settings_API, start_level_API, reg_log_yandexAPI, mix_API
+    send_task_for_trainer_API, menu_company_API, change_avatar_API, settings_API, start_level_API, reg_log_yandexAPI, \
+    mix_API
 from flask import Flask, request, jsonify
 from flask_login import current_user
 import hashlib
-
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = key
@@ -57,8 +57,12 @@ def save_result():
             print(time)
             correct = int(request.form['correct_answers'])
             summary = int(request.form['total_questions'])
-            f.write(f"Конец попытки.  Точность ответов {round((correct / summary) * 100, 2)}%; Затраченное время: {time};"
-                    f"Средняя скорость дачи правильных ответов: {round(correct / time, 2)} отв/мин;\n")
+            f.write(
+                f"Конец попытки.  Точность ответов {round((correct / summary) * 100, 2)}%; Затраченное время: {time};"
+                f"Средняя скорость дачи правильных ответов: {round(correct / time, 2)} отв/мин;\n")
+    if action == 'start_mix':
+        with open(f'history/{md5_hash.hexdigest()}.txt', 'a', encoding='utf-8') as f:
+            f.write(f"Начало попытки. Режим микс. Темы: {', '.join(request.form['topics'])}\n")
     return jsonify(success=True)
 
 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../static/css/mix.css">
 </head>
 <body>
-<button type="submit" class="back-button" id="back-btn">Назад</button>
+<button type="submit" class="back-button" id="back-btn" onclick="location.href='/choice_class'">Вернуться</button>
 <h1>Выберите темы</h1>
     <form class="checkbox-container" id="theme-form" action="/mix" method="POST">
         <div class="checkbox-wrapper-5">
@@ -187,7 +187,11 @@
         if (checkboxes.length === 0) {
             event.preventDefault();
             alert('Ни одна тема не выбрана');
-        }
+        } else {
+           $.post('/save_result', {
+           action: "start_mix",
+           topics: checkboxes
+        }})
     });
 </script>
 </body>
