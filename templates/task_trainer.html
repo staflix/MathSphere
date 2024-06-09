@@ -18,6 +18,9 @@
             font-family: 'Arial', sans-serif;
             font-size: 16px;
         }
+        #next-button {
+            display: block;
+        }
     </style>
     <script>
         $(document).ready(function() {
@@ -56,7 +59,6 @@
                     correct_answers++;
                 }
                 total_questions++;
-                $('#next-button').fadeIn();
                 $('.choice-button').attr('disabled', true);
                 $('#submit-button').attr('disabled', true);
                 $('#text-answer').attr('disabled', true);
@@ -65,11 +67,11 @@
                 localStorage.setItem('total_questions', total_questions);
 
                 // Отправка результата на сервер для записи в файл
-                    $.post('/save_result', {
-                        num_class: num_class,
-                        topic: topic,
-                        result: isCorrect ? "+" : "-",
-                        action: "add"
+                $.post('/save_result', {
+                    num_class: num_class,
+                    topic: topic,
+                    result: isCorrect ? "+" : "-",
+                    action: "add"
                 });
             }
 
@@ -80,14 +82,27 @@
             });
 
             $('#next-button').on('click', function() {
-                $.post(`/${num_class}/${topic}`, {
-                    minutes: minutes,
-                    seconds: seconds,
-                    correct_answers: correct_answers,
-                    total_questions: total_questions
-                }, function() {
-                    window.location.reload();
-                });
+                if ($('#submit-button').is(':disabled')) {
+                    $.post(`/${num_class}/${topic}`, {
+                        minutes: minutes,
+                        seconds: seconds,
+                        correct_answers: correct_answers,
+                        total_questions: total_questions
+                    }, function() {
+                        window.location.reload();
+                    });
+                } else {
+                    total_questions++;
+                    localStorage.setItem('total_questions', total_questions);
+                    $.post(`/${num_class}/${topic}`, {
+                        minutes: minutes,
+                        seconds: seconds,
+                        correct_answers: correct_answers,
+                        total_questions: total_questions
+                    }, function() {
+                        window.location.reload();
+                    });
+                }
             });
 
             $('#back-button').on('click', function() {
@@ -150,7 +165,7 @@
 
     <p id="result"></p>
 
-    <button id="next-button" style="display:none;">Дальше</button>
+    <button id="next-button">Дальше</button>
 </div>
 </body>
 </html>

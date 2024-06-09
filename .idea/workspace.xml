@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="mix backend">
-      <change beforePath="$PROJECT_DIR$/.idea/MathSphere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MathSphere.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/choice_topic_all_classes_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/choice_topic_all_classes_API.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/reg_log_yandexAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/reg_log_yandexAPI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/registerAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/registerAPI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/resetpasswordAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/resetpasswordAPI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/MathSphereBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/MathSphereBase.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/g_pic.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/history/449d9d6696d1c1880168d1a89d5b8e17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/history/449d9d6696d1c1880168d1a89d5b8e17.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/choice_class.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/choice_class.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/choice_topic.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/choice_topic.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/company.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/task_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task_trainer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,12 +59,12 @@
     &quot;assignee&quot;: &quot;staflix&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/staflix/MathSphere.git&quot;,
-    &quot;accountId&quot;: &quot;3efe41f3-6ddc-495b-824c-ea763b1d3226&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/staflix/MathSphere.git",
+    "accountId": "7dfcea35-3f05-458c-88df-2ab84247f1a3"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
