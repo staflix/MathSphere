@@ -102,8 +102,11 @@ def choice_class():
 
     md5_hash = hashlib.new('md5')
     md5_hash.update(current_user.email.encode())
-    history_text = open(f'history/{md5_hash.hexdigest()}.txt', encoding='utf-8').readlines()
-    if not history_text:
+    try:
+        history_text = open(f'history/{md5_hash.hexdigest()}.txt', encoding='utf-8').readlines()
+        if not history_text:
+            history_text = ['Пока что здесь пусто, начните тренировку, и информация о ней сохранится здесь.']
+    except Exception:
         history_text = ['Пока что здесь пусто, начните тренировку, и информация о ней сохранится здесь.']
     return render_template("choice_class.html", form=form, profile=profile,
                            avatar=user_avatar, name=user_name, surname=user_surname,
