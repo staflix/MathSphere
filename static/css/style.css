@@ -359,7 +359,7 @@
   position: relative;
   align-self: stretch;
   transition: 0.3s;
-  padding-top: var(--dl-space-space-fiveunits);
+
   padding-left: var(--dl-space-space-oneandhalfunits);
   border-radius: 30px;
   padding-right: var(--dl-space-space-oneandhalfunits);
