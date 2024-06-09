@@ -79,11 +79,6 @@ def not_found_error(_):
     return render_template('404.html')
 
 
-@app.errorhandler(503)
-def ddos_error(_):
-    return '<h1>нехуй досить<\h1>'
-
-
 def main():
     app.register_blueprint(registerAPI.blueprint)
     app.register_blueprint(loginAPI.blueprint)
