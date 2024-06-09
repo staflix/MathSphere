@@ -526,7 +526,12 @@ def choice_topic_all_classes_trainer(num_class):
         return redirect(f"/logout")
     md5_hash = hashlib.new('md5')
     md5_hash.update(current_user.email.encode())
-    history_text = open(f'history/{md5_hash.hexdigest()}.txt', encoding='utf-8').readlines()
+    try:
+        history_text = open(f'history/{md5_hash.hexdigest()}.txt', encoding='utf-8').readlines()
+        if not history_text:
+            history_text = ['Пока что здесь пусто, начните тренировку, и информация о ней сохранится здесь.']
+    except Exception:
+        history_text = ['Пока что здесь пусто, начните тренировку, и информация о ней сохранится здесь.']
     if not history_text:
         history_text = ['Пока что здесь пусто, начните тренировку, и информация о ней сохранится здесь.']
     return render_template("choice_topic.html", num_class=num_class, profile=profile,
