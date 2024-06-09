@@ -1,6 +1,4 @@
-input[type="submit"] {
-  font-size: 0;
-}
+
 .authorizated-container {
   width: 100%;
   display: flex;
@@ -61,7 +59,7 @@ input[type="submit"] {
 }
 
 .authorizated-text03 {
-  font-size: 28px;
+  font-size: 0;
   font-style: normal;
   font-family: "Inter";
   font-weight: 700;
@@ -90,7 +88,7 @@ input[type="submit"] {
   border-radius: 70px;
 }
 .authorizated-text06 {
-  font-size: 28px;
+  font-size: 0;
   font-style: normal;
   font-family: "Inter";
   font-weight: 700;
@@ -317,7 +315,7 @@ input[type="submit"] {
     margin-left: 0px;
   }
   .authorizated-text06 {
-    font-size: 24px;
+    font-size: 0;
   }
   .authorizated-statistics {
     height: 100%;
