@@ -96,6 +96,8 @@
                     localStorage.removeItem('minutes');
                     localStorage.removeItem('correct_answers');
                     localStorage.removeItem('total_questions');
+                } else {
+                    localStorage.clear();  // Clear all local storage items
                 }
                 const timeSpent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
                 if (!correct_answers){
