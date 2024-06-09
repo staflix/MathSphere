@@ -273,7 +273,6 @@
   width: 100%;
   height: 392px;
   max-width: 392px;
-  border: 2px dashed rgba(120, 120, 120, 0.4);
   cursor: pointer;
   display: flex;
   position: relative;
@@ -283,6 +282,8 @@
   border-radius: var(--dl-radius-radius-radius1);
   flex-direction: column;
   justify-content: center;
+  background-image: url(../media/unlog_index/trainer.JPG);
+  background-size: cover;
 }
 .home-container08:hover {
   transform: scale(1.04);
@@ -397,7 +398,6 @@
 .home-container15 {
   width: 100%;
   max-width: 392px;
-  border: 2px dashed rgba(120, 120, 120, 0.4);
   cursor: pointer;
   height: 392px;
   display: flex;
@@ -407,9 +407,10 @@
   align-items: center;
   border-radius: var(--dl-radius-radius-radius1);
   flex-direction: column;
-  background-size: cover;
   justify-content: center;
   background-position: center;
+  background-image: url(../media/unlog_index/company.JPG);
+  background-size: cover;
 }
 .home-container15:hover {
   transform: scale(1.04);
@@ -487,7 +488,6 @@
 .home-container20 {
   width: 100%;
   max-width: 392px;
-  border: 2px dashed rgba(120, 120, 120, 0.4);
   cursor: pointer;
   height: 392px;
   display: flex;
@@ -498,6 +498,8 @@
   border-radius: var(--dl-radius-radius-radius1);
   flex-direction: column;
   justify-content: center;
+  background-image: url(../media/unlog_index/study.JPG);
+  background-size: cover;
 }
 .home-container20:hover {
   transform: scale(1.04);
@@ -570,7 +572,6 @@
 .home-container26 {
   width: 100%;
   max-width: 392px;
-  border: 2px dashed rgba(120, 120, 120, 0.4);
   cursor: pointer;
   height: 392px;
   display: flex;
@@ -580,9 +581,10 @@
   align-items: center;
   border-radius: var(--dl-radius-radius-radius1);
   flex-direction: column;
-  background-size: cover;
   justify-content: center;
   background-position: center;
+  background-image: url(../media/unlog_index/program.JPG);
+  background-size: cover;
 }
 .home-container26:hover {
   transform: scale(1.04);
