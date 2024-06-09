@@ -13,3 +13,4 @@ __pycache__
 /company/__pycache__
 /api/__pycache__
 .idea/workspace.xml
+.env
