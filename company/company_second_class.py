@@ -178,9 +178,9 @@ lvl_4.add(
 lvl_4.add(Task(text='А теперь у него вышли стороны 7, 9 и 2 см. Какой длины проволоку он использовал?', answer='18'))
 
 lvl_5 = Level(1, info='Расшифруй! Чтобы прочитать шифр, замени каждое число суммой.')
-lvl_5.add(Task(text='55, 51, 29', answer='кот', image='pic/107.jpg', choice=['кот', 'сова','волк']))
-# lvl_5.add(Task(text='21, 51, 27, 53', answer='сова', image='pic/107.jpg', choice=['кот', 'сова','волк']))
-# lvl_5.add(Task(text='27, 51, 25, 55', answer='волк', image='pic/107.jpg', choice=['кот', 'сова','волк']))
+lvl_5.add(Task(text='55, 51, 29', answer='кот', image='pic/130.jpg', choice=['кот', 'сова','волк']))
+lvl_5.add(Task(text='21, 51, 27, 53', answer='сова', image='pic/130.jpg', choice=['кот', 'сова','волк']))
+lvl_5.add(Task(text='27, 51, 25, 55', answer='волк', image='pic/130.jpg', choice=['кот', 'сова','волк']))
 
 lvl_6 = Level(1, info='Используй свойства сложения. Устный счёт!')
 lvl_6.add(Task(text='20 + 2 + 8 + 40', answer='70'))
