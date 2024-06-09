@@ -11,6 +11,7 @@ from flask import Flask, request, jsonify
 from flask_login import current_user
 import hashlib
 import time
+import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = key
@@ -61,8 +62,9 @@ def save_result():
                 correct = int(request.form['correct_answers'])
                 summary = int(request.form['total_questions'])
                 if summary != 0:
-                    f.write(f"Конец попытки.  Точность ответов {round((correct / summary) * 100, 2)}%, Затраченное время: {t} мин,"
-                            f"\nСредняя скорость дачи правильных ответов: {round(correct / t, 2)} отв/мин.\n")
+                    f.write(
+                        f"Конец попытки.  Точность ответов {round((correct / summary) * 100, 2)}%, Затраченное время: {t} мин,"
+                        f"\nСредняя скорость дачи правильных ответов: {round(correct / t, 2)} отв/мин.\n")
                 else:
                     f.write(f"Конец попытки. Вы не ответили ни разу.\n")
     else:
