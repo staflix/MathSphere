@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="mix backend">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/choice_topic_all_classes_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/choice_topic_all_classes_API.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/reg_log_yandexAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/reg_log_yandexAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/registerAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/registerAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/resetpasswordAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/resetpasswordAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/MathSphereBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/MathSphereBase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/g_pic.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/history/449d9d6696d1c1880168d1a89d5b8e17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/history/449d9d6696d1c1880168d1a89d5b8e17.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/choice_class.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/choice_class.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/choice_topic.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/choice_topic.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task_trainer.html" afterDir="false" />
-    </list>
+    <list default="true" id="a6f5265a-2f34-4dd9-9edd-945a4b794803" name="Changes" comment="mix backend" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,12 +45,12 @@
     &quot;assignee&quot;: &quot;staflix&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/staflix/MathSphere.git",
-    "accountId": "7dfcea35-3f05-458c-88df-2ab84247f1a3"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/staflix/MathSphere.git&quot;,
+    &quot;accountId&quot;: &quot;c5cd1a59-5b76-402a-a664-6f0191e3a894&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -91,7 +77,7 @@
     &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;develope&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Laptop Sivets/Documents/MathSphere/company/pic&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/mathup-apk&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -111,7 +97,7 @@
       <recent name="C:\MathProject\Math\app\static" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.MathSphere">
+  <component name="RunManager" selected="Python.main">
     <configuration name="MathSphere" type="PythonConfigurationType" factoryName="Python">
       <module name="MathSphere" />
       <option name="ENV_FILES" value="" />
@@ -148,6 +134,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/choice_class_API.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -239,6 +226,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -250,9 +238,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.choice_class_API" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.send_task_for_trainer_API" />
         <item itemvalue="Python.g_pic" />
       </list>
@@ -261,7 +249,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.17011.127" />
+        <option value="bundled-python-sdk-48aec45f0201-7e9c3bbb6e34-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.17011.127" />
       </set>
     </attachedChunks>
   </component>
@@ -284,6 +273,7 @@
       <workItem from="1716280080447" duration="9541000" />
       <workItem from="1717248304598" duration="738000" />
       <workItem from="1717821861872" duration="608000" />
+      <workItem from="1717942609618" duration="1033000" />
     </task>
     <task id="LOCAL-00001" summary="Super security. bgfix">
       <option name="closed" value="true" />
@@ -413,7 +403,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MathSphere$MathSphere.coverage" NAME="MathSphere Coverage Results" MODIFIED="1717855418039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/MathSphere$main.coverage" NAME="main Coverage Results" MODIFIED="1717854475926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MathSphere$main.coverage" NAME="main Coverage Results" MODIFIED="1717948662651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MathSphereBase_db$main.coverage" NAME="main Coverage Results" MODIFIED="1716287639524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
