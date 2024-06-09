@@ -5,7 +5,6 @@ from flask import redirect
 import flask
 from data import db_session
 from data.users import User, Info, TrainerStatistics
-from api.resetpasswordAPI import generate_password
 from data.mail import send_email
 from data.config import *
 from flask_login import login_user
@@ -86,7 +85,7 @@ def profile():
             profile_level=1,
             email=user['emails'][0]
         )
-        password = generate_password()
+        password = generate_string()
         send_email(user['emails'][0], 'Ваш пароль MathUp!',
                    f'Вы зарегистрировались с помощью своего яндекс аккаунта. Пароль: {password}')
         new_user.set_password(password)

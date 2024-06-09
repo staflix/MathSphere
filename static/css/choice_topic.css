@@ -429,6 +429,7 @@ input[type="submit" i] {
   transition: top 1s ease;
   border-radius: 20px;
   padding: 20px 20px;
+  Overflow-y: auto;
 }
 @media (max-width: 900px) {
   .history{
