@@ -505,6 +505,7 @@
         const buttons = document.querySelectorAll('.button');
         const startButton = document.getElementById('start-button');
         let selectedLevel = null;
+
         // Разблокировать кнопки в зависимости от уровня пользователя
         buttons.forEach(button => {
             const level = parseInt(button.getAttribute('data-level'));
@@ -512,6 +513,21 @@
                 button.classList.remove('locked');
             }
         });
+
+        // Прокрутить страницу до текущего уровня
+        const scrollToCurrentLevel = () => {
+            const currentButton = document.querySelector(`.button[data-level="${userLevel}"]`);
+            if (currentButton) {
+                const buttonPosition = currentButton.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({
+                    top: buttonPosition,
+                    behavior: 'smooth'
+                });
+            }
+        };
+
+        // Вызов функции прокрутки после разблокировки кнопок с небольшой задержкой
+        setTimeout(scrollToCurrentLevel, 100);  // Adjust the delay as needed
 
         // Функция для скрытия меню
         const hideMenu = () => {
@@ -521,7 +537,6 @@
 
         // Переключение видимости меню
         const toggleMenu = (event) => {
-            console.log()
             if (event.target.classList.contains('locked')) {
                 return; // Не показывать меню для заблокированных кнопок
             }
@@ -530,7 +545,6 @@
 
             const mouseX = event.clientX + window.pageXOffset - miniMenu.offsetWidth / 2;
             const mouseY = event.clientY + window.pageYOffset - miniMenu.offsetHeight / 2;
-
 
             miniMenu.style.left = `${mouseX}px`;
             miniMenu.style.top = `${mouseY}px`;
@@ -580,7 +594,7 @@
             event.stopPropagation(); // Остановить всплытие события, чтобы оно не добралось до обработчика на документе
         });
     });
-  </script>
+</script>
     <script src="../static/js/company.js"></script>
   <script>
     window.onload = function() {

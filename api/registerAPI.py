@@ -20,6 +20,11 @@ blueprint = flask.Blueprint(
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
+        is_valid, password_message = validate_password(form.password.data)
+        if not is_valid:
+            return render_template('register.html',
+                                   message=password_message, form=form)
+
         db_session.global_init("db/MathSphereBase.db")
         db_sess = db_session.create_session()
         query = select(User).filter(User.email == form.email.data)
@@ -79,3 +84,13 @@ def register():
                                    message='Аккаунт с данной почтой уже существует',
                                    form=form)
     return render_template('register.html', form=form)
+
+
+def validate_password(password):
+    if len(password) < 10:
+        return False, 'Пароль должен быть не менее 10 символов.'
+    if not any(char.isupper() for char in password):
+        return False, 'Пароль должен содержать заглавную букву.'
+    if not any(char in '*-?.' for char in password):
+        return False, 'Пароль должен содержать специальный символ (*-?.).'
+    return True, ''

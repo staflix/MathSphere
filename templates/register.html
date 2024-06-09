@@ -179,7 +179,8 @@
                         </div>
                         <div class="register-email3">
                             <span>Пароль</span>
-                            {{ form.password(class="register-textinput3 thq-body-large thq-input", type="password") }}
+                            {{ form.password(class="register-textinput3 thq-body-large thq-input", type="password", id="password") }}
+                            <div id="passwordMessage" class="error"></div>
                         </div>
                         <div class="register-email4">
                             <span>Подтверждение пароля</span>

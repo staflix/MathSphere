@@ -531,5 +531,6 @@ def choice_topic_all_classes_trainer(num_class):
         history_text = ['Пока что здесь пусто, начните тренировку, и информация о ней сохранится здесь.']
     return render_template("choice_topic.html", num_class=num_class, profile=profile,
                            avatar=user_avatar, name=user_name, surname=user_surname,
-                           email=user_email, topics=topics, colors=colors, back_colors=back_colors, tituls=tituls, level=level,
+                           email=user_email, topics=topics, colors=colors, back_colors=back_colors, tituls=tituls,
+                           level=level,
                            history_text=history_text)
